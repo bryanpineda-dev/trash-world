@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#e6efeb" />
+    <link rel="icon" type="image/png" href="./icons/icon-192.png" />
+    <title>Trash World / Assets</title>
+  </head>
+  <body>
+    <header class="lab-header">
+      <div><a href="./index.html">Trash World</a><h1>Assets</h1></div>
+      <nav aria-label="Archivos">
+        <a id="download-atlas" class="icon-button" download="trash-world-atlas.png" aria-label="Descargar atlas PNG" data-tooltip="Atlas PNG"><i data-lucide="image-down"></i></a>
+        <a id="download-json" class="icon-button" download="trash-world-atlas.json" aria-label="Descargar metadata JSON" data-tooltip="Metadata JSON"><i data-lucide="file-down"></i></a>
+      </nav>
+    </header>
+    <main>
+      <section class="animation-section" aria-labelledby="animation-heading">
+        <div class="section-title"><h2 id="animation-heading">Animaciones</h2><span id="rig-label">64 x 64 px</span></div>
+        <div class="preview-layout">
+          <div class="preview-column">
+            <div class="selectors">
+              <label>Personaje<select id="character"></select></label>
+              <label>Animacion<select id="clip"></select></label>
+            </div>
+            <div class="view-controls">
+              <fieldset class="view-control"><legend class="sr-only">Vista</legend>
+                <label><input type="radio" name="view" value="body" checked /><span>Cuerpo</span></label>
+                <label><input type="radio" name="view" value="face" /><span>Rostro</span></label>
+              </fieldset>
+              <label class="speed-control">Ritmo<input id="speed" type="range" min="50" max="150" step="25" value="100" aria-label="Ritmo" /><output id="speed-value">100%</output></label>
+            </div>
+            <div class="stage"><canvas id="preview" role="img" aria-label="Vista previa animada de Miga"></canvas></div>
+            <div class="playback-toolbar">
+              <button id="playback" class="icon-button" aria-label="Pausar" aria-pressed="true" data-tooltip="Pausar"><i data-lucide="pause"></i></button>
+              <button id="restart" class="icon-button" aria-label="Reiniciar animacion" data-tooltip="Reiniciar"><i data-lucide="rotate-ccw"></i></button>
+              <button id="direction" class="icon-button" aria-label="Mirar a la izquierda" data-tooltip="Cambiar direccion"><i data-lucide="arrow-left-right"></i></button>
+              <label class="zoom-control"><i data-lucide="zoom-in" aria-hidden="true"></i><span class="sr-only">Escala</span><input id="zoom" type="range" min="2" max="8" value="5" step="1" /><output id="zoom-value">5x</output></label>
+              <label class="baseline-control"><input id="baseline" type="checkbox" checked />Suelo</label>
+            </div>
+            <label class="timeline-control"><span class="sr-only">Tiempo de animacion</span><input id="timeline" type="range" min="0" max="1000" value="0" step="1" /><output id="time-value">0.00 s</output></label>
+            <div class="frame-status"><span id="frame-name"></span><span id="frame-duration"></span></div>
+          </div>
+          <aside class="palette-panel" aria-labelledby="palette-heading">
+            <h3 id="palette-heading">Paleta</h3><div id="palette" class="palette-grid"></div>
+          </aside>
+        </div>
+      </section>
+      <section aria-labelledby="study-heading">
+        <div class="section-title"><h2 id="study-heading">Poses</h2><span>Miga</span></div>
+        <div id="study-characters" class="study-characters"></div>
+        <div id="study-faces" class="study-faces"></div>
+      </section>
+      <section aria-labelledby="objects-heading"><div class="section-title"><h2 id="objects-heading">Objetos</h2></div><div id="objects" class="object-grid"></div></section>
+      <section aria-labelledby="parts-heading"><div class="section-title"><h2 id="parts-heading">Piezas</h2></div><div id="parts" class="parts-grid"></div></section>
+    </main>
+    <script type="module" src="./src/asset-lab.js"></script>
+  </body>
+</html>

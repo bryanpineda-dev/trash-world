@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#214c43" />
+    <meta name="description" content="Un diminuto mundo vivo dentro de tu telefono." />
+    <link rel="icon" type="image/png" href="./icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="./icons/icon-192.png" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <title>Trash World</title>
+  </head>
+  <body>
+    <main id="app">
+      <canvas id="world" aria-label="Mundo de Miga, una pequena criatura autonoma" role="img"></canvas>
+      <header class="world-header">
+        <div class="brand"><span class="brand-mark" aria-hidden="true"></span><h1>Trash World</h1></div>
+        <nav class="toolbar" aria-label="Controles del mundo">
+          <button id="fullscreen" class="icon-button" aria-label="Pantalla completa" data-tooltip="Pantalla completa"><i data-lucide="maximize"></i></button>
+          <button id="debug-toggle" class="icon-button" aria-label="Abrir depuracion" aria-expanded="false" aria-controls="debug-panel" data-tooltip="Depuracion"><i data-lucide="bug"></i></button>
+        </nav>
+      </header>
+      <footer class="world-footer">
+        <div class="creature-status"><span class="status-dot" aria-hidden="true"></span><span>Miga</span><span class="separator" aria-hidden="true">/</span><span id="activity">Observando</span></div>
+        <div class="world-status"><span id="phase">Dia</span><span id="save-status" aria-live="polite">Guardado local</span></div>
+      </footer>
+      <aside id="debug-panel" class="debug-panel" aria-label="Depuracion" hidden>
+        <div class="panel-heading"><h2>Depuracion</h2><button id="debug-close" class="icon-button" aria-label="Cerrar depuracion" data-tooltip="Cerrar"><i data-lucide="x"></i></button></div>
+        <dl id="debug-values"></dl>
+        <div class="debug-actions">
+          <button data-action="sleep"><i data-lucide="moon"></i>Dormir</button>
+          <button data-action="wake"><i data-lucide="sun"></i>Despertar</button>
+          <button data-action="inspect"><i data-lucide="search"></i>Investigar</button>
+          <button data-action="surprise"><i data-lucide="sparkles"></i>Sorprender</button>
+          <button data-action="feed"><i data-lucide="apple"></i>Alimentar</button>
+          <button data-action="save"><i data-lucide="save"></i>Guardar</button>
+          <button data-action="load"><i data-lucide="rotate-ccw"></i>Cargar</button>
+        </div>
+        <label class="debug-switch"><span>Movimiento ambiental</span><input id="ambient-motion" type="checkbox" checked /></label>
+        <button class="reset-button" data-action="reset"><i data-lucide="trash-2"></i>Reiniciar mundo</button>
+        <div id="reset-confirm" class="reset-confirm" hidden><p>Se borrara la vida actual de Miga.</p><button data-action="confirm-reset">Reiniciar</button><button data-action="cancel-reset">Cancelar</button></div>
+        <p id="debug-message" role="status"></p>
+      </aside>
+    </main>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>

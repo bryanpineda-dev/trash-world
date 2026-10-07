@@ -1,0 +1,121 @@
+{
+  "rig": {
+    "id": "skeleton-v2",
+    "size": [
+      64,
+      64
+    ],
+    "anchor": [
+      32,
+      61
+    ],
+    "slots": [
+      {
+        "name": "leftArm",
+        "at": [
+          12,
+          22
+        ],
+        "mirror": true
+      },
+      {
+        "name": "leftLeg",
+        "at": [
+          17,
+          39
+        ],
+        "mirror": true
+      },
+      {
+        "name": "rightLeg",
+        "at": [
+          31,
+          39
+        ]
+      },
+      {
+        "name": "body",
+        "at": [
+          25,
+          22
+        ]
+      },
+      {
+        "name": "pelvis",
+        "at": [
+          26,
+          38
+        ]
+      },
+      {
+        "name": "rightArm",
+        "at": [
+          36,
+          22
+        ]
+      },
+      {
+        "name": "head",
+        "at": [
+          22,
+          4
+        ]
+      }
+    ]
+  },
+  "characters": {
+    "miga": {
+      "label": "Miga",
+      "parts": {
+        "head": "skull",
+        "body": "ribs",
+        "pelvis": "pelvis",
+        "leftArm": "arm",
+        "rightArm": "arm",
+        "leftLeg": "leg",
+        "rightLeg": "leg"
+      },
+      "remap": {}
+    }
+  },
+  "objects": {
+    "lantern": {
+      "label": "Farol",
+      "part": "lantern",
+      "anchor": [
+        8,
+        23
+      ],
+      "frames": [
+        [
+          "rest",
+          480
+        ],
+        [
+          "flicker",
+          180
+        ]
+      ],
+      "loop": true
+    },
+    "rune": {
+      "label": "Runa",
+      "part": "rune",
+      "anchor": [
+        12,
+        30
+      ],
+      "frames": [
+        [
+          "rest",
+          1800
+        ],
+        [
+          "lit",
+          800
+        ]
+      ],
+      "loop": true
+    }
+  }
+}

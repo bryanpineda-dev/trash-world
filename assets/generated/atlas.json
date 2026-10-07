@@ -1,0 +1,2014 @@
+{
+  "version": 1,
+  "style": "trash-world-medieval-v1",
+  "width": 544,
+  "height": 884,
+  "palette": {
+    "k": "#233b37",
+    "b": "#eee4c9",
+    "h": "#fff6df",
+    "s": "#b7b19a",
+    "t": "#365d5c",
+    "c": "#5e8b83",
+    "e": "#91b6a2",
+    "g": "#68815b",
+    "m": "#9aa96a",
+    "a": "#61746e",
+    "r": "#8b998b",
+    "l": "#b4bcaa",
+    "w": "#7f6351",
+    "o": "#bb865a",
+    "f": "#efc278",
+    "p": "#cf8685"
+  },
+  "states": {
+    "IDLE": "idle",
+    "WALK": "walk",
+    "LOOK_AROUND": "look",
+    "INSPECT": "inspect",
+    "SLEEP": "sleep",
+    "WAKE": "wake",
+    "SURPRISED": "surprise",
+    "HAPPY": "happy"
+  },
+  "characters": {
+    "miga": {
+      "label": "Miga",
+      "clips": {
+        "idle": {
+          "label": "Reposo",
+          "loop": true,
+          "frames": [
+            {
+              "id": "miga:stand",
+              "duration": 2200
+            },
+            {
+              "id": "miga:blink",
+              "duration": 130
+            },
+            {
+              "id": "miga:stand",
+              "duration": 1050
+            },
+            {
+              "id": "miga:mouth-small",
+              "duration": 120
+            },
+            {
+              "id": "miga:mouth-open",
+              "duration": 140
+            },
+            {
+              "id": "miga:mouth-small",
+              "duration": 120
+            },
+            {
+              "id": "miga:stand",
+              "duration": 370
+            },
+            {
+              "id": "miga:look-right",
+              "duration": 350
+            }
+          ]
+        },
+        "murmur": {
+          "label": "Boquita",
+          "loop": true,
+          "frames": [
+            {
+              "id": "miga:stand",
+              "duration": 400
+            },
+            {
+              "id": "miga:mouth-small",
+              "duration": 100
+            },
+            {
+              "id": "miga:mouth-open",
+              "duration": 130
+            },
+            {
+              "id": "miga:mouth-small",
+              "duration": 110
+            },
+            {
+              "id": "miga:stand",
+              "duration": 160
+            },
+            {
+              "id": "miga:mouth-small",
+              "duration": 90
+            },
+            {
+              "id": "miga:stand",
+              "duration": 620
+            }
+          ]
+        },
+        "walk": {
+          "label": "Caminar",
+          "loop": true,
+          "frames": [
+            {
+              "id": "miga:walk-a",
+              "duration": 120
+            },
+            {
+              "id": "miga:walk-down-a",
+              "duration": 120
+            },
+            {
+              "id": "miga:walk-pass-a",
+              "duration": 120
+            },
+            {
+              "id": "miga:walk-up-a",
+              "duration": 120
+            },
+            {
+              "id": "miga:walk-b",
+              "duration": 120
+            },
+            {
+              "id": "miga:walk-down-b",
+              "duration": 120
+            },
+            {
+              "id": "miga:walk-pass-b",
+              "duration": 120
+            },
+            {
+              "id": "miga:walk-up-b",
+              "duration": 120
+            }
+          ]
+        },
+        "look": {
+          "label": "Observar",
+          "loop": true,
+          "frames": [
+            {
+              "id": "miga:look-left",
+              "duration": 700
+            },
+            {
+              "id": "miga:stand",
+              "duration": 300
+            },
+            {
+              "id": "miga:look-right",
+              "duration": 700
+            },
+            {
+              "id": "miga:blink",
+              "duration": 120
+            }
+          ]
+        },
+        "inspect": {
+          "label": "Investigar",
+          "loop": true,
+          "frames": [
+            {
+              "id": "miga:inspect",
+              "duration": 900
+            },
+            {
+              "id": "miga:inspect-blink",
+              "duration": 130
+            },
+            {
+              "id": "miga:look-right",
+              "duration": 350
+            },
+            {
+              "id": "miga:inspect",
+              "duration": 600
+            }
+          ]
+        },
+        "sleep": {
+          "label": "Dormir",
+          "loop": true,
+          "loopFrom": 13,
+          "frames": [
+            {
+              "id": "miga:doze-heavy",
+              "duration": 180
+            },
+            {
+              "id": "miga:doze-yawn",
+              "duration": 180
+            },
+            {
+              "id": "miga:doze-close",
+              "duration": 120
+            },
+            {
+              "id": "miga:doze-nod",
+              "duration": 140
+            },
+            {
+              "id": "miga:doze-crouch",
+              "duration": 120
+            },
+            {
+              "id": "miga:doze-release",
+              "duration": 100
+            },
+            {
+              "id": "miga:doze-fall-high",
+              "duration": 80
+            },
+            {
+              "id": "miga:doze-fall-low",
+              "duration": 80
+            },
+            {
+              "id": "miga:doze-impact",
+              "duration": 80
+            },
+            {
+              "id": "miga:doze-rebound",
+              "duration": 80
+            },
+            {
+              "id": "miga:doze-rebound-low",
+              "duration": 80
+            },
+            {
+              "id": "miga:doze-settle",
+              "duration": 100
+            },
+            {
+              "id": "miga:doze-last-tap",
+              "duration": 80
+            },
+            {
+              "id": "miga:sleep",
+              "duration": 2200
+            }
+          ]
+        },
+        "wake": {
+          "label": "Despertar",
+          "loop": false,
+          "frames": [
+            {
+              "id": "miga:sleep",
+              "duration": 180
+            },
+            {
+              "id": "miga:sleep-bounce",
+              "duration": 140
+            },
+            {
+              "id": "miga:sleep-drop",
+              "duration": 180
+            },
+            {
+              "id": "miga:sleep-slump",
+              "duration": 180
+            },
+            {
+              "id": "miga:sleep-drowsy",
+              "duration": 160
+            },
+            {
+              "id": "miga:stand",
+              "duration": 400
+            }
+          ]
+        },
+        "surprise": {
+          "label": "Sorpresa",
+          "loop": false,
+          "frames": [
+            {
+              "id": "miga:surprise",
+              "duration": 250
+            },
+            {
+              "id": "miga:stand",
+              "duration": 120
+            },
+            {
+              "id": "miga:surprise",
+              "duration": 200
+            },
+            {
+              "id": "miga:stand",
+              "duration": 800
+            }
+          ]
+        },
+        "happy": {
+          "label": "Alegria",
+          "loop": true,
+          "frames": [
+            {
+              "id": "miga:happy",
+              "duration": 250
+            },
+            {
+              "id": "miga:happy-hop",
+              "duration": 250
+            },
+            {
+              "id": "miga:happy-mouth",
+              "duration": 120
+            },
+            {
+              "id": "miga:happy",
+              "duration": 180
+            }
+          ]
+        },
+        "wave": {
+          "label": "Saludar",
+          "loop": true,
+          "frames": [
+            {
+              "id": "miga:stand",
+              "duration": 700
+            },
+            {
+              "id": "miga:wave-a",
+              "duration": 240
+            },
+            {
+              "id": "miga:wave-b",
+              "duration": 240
+            },
+            {
+              "id": "miga:wave-a",
+              "duration": 240
+            },
+            {
+              "id": "miga:wave-b",
+              "duration": 240
+            },
+            {
+              "id": "miga:wave-mouth",
+              "duration": 240
+            },
+            {
+              "id": "miga:stand",
+              "duration": 700
+            }
+          ]
+        }
+      }
+    }
+  },
+  "objects": {
+    "lantern": {
+      "label": "Farol",
+      "loop": true,
+      "frames": [
+        {
+          "id": "object:lantern:rest",
+          "duration": 480
+        },
+        {
+          "id": "object:lantern:flicker",
+          "duration": 180
+        }
+      ]
+    },
+    "rune": {
+      "label": "Runa",
+      "loop": true,
+      "frames": [
+        {
+          "id": "object:rune:rest",
+          "duration": 1800
+        },
+        {
+          "id": "object:rune:lit",
+          "duration": 800
+        }
+      ]
+    }
+  },
+  "frames": {
+    "miga:stand": {
+      "x": 2,
+      "y": 2,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        61
+      ],
+      "bounds": {
+        "x": 18,
+        "y": 5,
+        "width": 28,
+        "height": 56
+      }
+    },
+    "miga:blink": {
+      "x": 70,
+      "y": 2,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        61
+      ],
+      "bounds": {
+        "x": 18,
+        "y": 5,
+        "width": 28,
+        "height": 56
+      }
+    },
+    "miga:mouth-small": {
+      "x": 138,
+      "y": 2,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        61
+      ],
+      "bounds": {
+        "x": 18,
+        "y": 5,
+        "width": 28,
+        "height": 56
+      }
+    },
+    "miga:mouth-open": {
+      "x": 206,
+      "y": 2,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        61
+      ],
+      "bounds": {
+        "x": 18,
+        "y": 5,
+        "width": 28,
+        "height": 56
+      }
+    },
+    "miga:look-right": {
+      "x": 274,
+      "y": 2,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        61
+      ],
+      "bounds": {
+        "x": 18,
+        "y": 5,
+        "width": 28,
+        "height": 56
+      }
+    },
+    "miga:walk-a": {
+      "x": 342,
+      "y": 2,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        61
+      ],
+      "bounds": {
+        "x": 23,
+        "y": 7,
+        "width": 22,
+        "height": 54
+      }
+    },
+    "miga:walk-down-a": {
+      "x": 410,
+      "y": 2,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        61
+      ],
+      "bounds": {
+        "x": 25,
+        "y": 8,
+        "width": 19,
+        "height": 53
+      }
+    },
+    "miga:walk-pass-a": {
+      "x": 478,
+      "y": 2,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        61
+      ],
+      "bounds": {
+        "x": 26,
+        "y": 7,
+        "width": 15,
+        "height": 54
+      }
+    },
+    "miga:walk-up-a": {
+      "x": 2,
+      "y": 70,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        61
+      ],
+      "bounds": {
+        "x": 26,
+        "y": 6,
+        "width": 18,
+        "height": 55
+      }
+    },
+    "miga:walk-b": {
+      "x": 70,
+      "y": 70,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        61
+      ],
+      "bounds": {
+        "x": 24,
+        "y": 7,
+        "width": 20,
+        "height": 54
+      }
+    },
+    "miga:walk-down-b": {
+      "x": 138,
+      "y": 70,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        61
+      ],
+      "bounds": {
+        "x": 26,
+        "y": 8,
+        "width": 17,
+        "height": 53
+      }
+    },
+    "miga:walk-pass-b": {
+      "x": 206,
+      "y": 70,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        61
+      ],
+      "bounds": {
+        "x": 26,
+        "y": 7,
+        "width": 15,
+        "height": 54
+      }
+    },
+    "miga:walk-up-b": {
+      "x": 274,
+      "y": 70,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        61
+      ],
+      "bounds": {
+        "x": 25,
+        "y": 6,
+        "width": 20,
+        "height": 55
+      }
+    },
+    "miga:look-left": {
+      "x": 342,
+      "y": 70,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        61
+      ],
+      "bounds": {
+        "x": 18,
+        "y": 5,
+        "width": 28,
+        "height": 56
+      }
+    },
+    "miga:inspect": {
+      "x": 410,
+      "y": 70,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        61
+      ],
+      "bounds": {
+        "x": 18,
+        "y": 6,
+        "width": 27,
+        "height": 55
+      }
+    },
+    "miga:inspect-blink": {
+      "x": 478,
+      "y": 70,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        61
+      ],
+      "bounds": {
+        "x": 18,
+        "y": 6,
+        "width": 27,
+        "height": 55
+      }
+    },
+    "miga:doze-heavy": {
+      "x": 2,
+      "y": 138,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        61
+      ],
+      "bounds": {
+        "x": 18,
+        "y": 5,
+        "width": 28,
+        "height": 56
+      }
+    },
+    "miga:doze-yawn": {
+      "x": 70,
+      "y": 138,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        61
+      ],
+      "bounds": {
+        "x": 18,
+        "y": 6,
+        "width": 28,
+        "height": 55
+      }
+    },
+    "miga:doze-close": {
+      "x": 138,
+      "y": 138,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        61
+      ],
+      "bounds": {
+        "x": 18,
+        "y": 6,
+        "width": 28,
+        "height": 55
+      }
+    },
+    "miga:doze-nod": {
+      "x": 206,
+      "y": 138,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        61
+      ],
+      "bounds": {
+        "x": 18,
+        "y": 9,
+        "width": 28,
+        "height": 52
+      }
+    },
+    "miga:doze-crouch": {
+      "x": 274,
+      "y": 138,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        61
+      ],
+      "bounds": {
+        "x": 18,
+        "y": 13,
+        "width": 28,
+        "height": 48
+      }
+    },
+    "miga:doze-release": {
+      "x": 342,
+      "y": 138,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        61
+      ],
+      "bounds": {
+        "x": 11,
+        "y": 15,
+        "width": 34,
+        "height": 46
+      }
+    },
+    "miga:doze-fall-high": {
+      "x": 410,
+      "y": 138,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        61
+      ],
+      "bounds": {
+        "x": 7,
+        "y": 25,
+        "width": 41,
+        "height": 33
+      }
+    },
+    "miga:doze-fall-low": {
+      "x": 478,
+      "y": 138,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        61
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 36,
+        "width": 48,
+        "height": 25
+      }
+    },
+    "miga:doze-impact": {
+      "x": 2,
+      "y": 206,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        61
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 43,
+        "width": 52,
+        "height": 18
+      }
+    },
+    "miga:doze-rebound": {
+      "x": 70,
+      "y": 206,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        61
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 40,
+        "width": 53,
+        "height": 21
+      }
+    },
+    "miga:doze-rebound-low": {
+      "x": 138,
+      "y": 206,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        61
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 42,
+        "width": 52,
+        "height": 19
+      }
+    },
+    "miga:doze-settle": {
+      "x": 206,
+      "y": 206,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        61
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 43,
+        "width": 52,
+        "height": 18
+      }
+    },
+    "miga:doze-last-tap": {
+      "x": 274,
+      "y": 206,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        61
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 43,
+        "width": 52,
+        "height": 18
+      }
+    },
+    "miga:sleep": {
+      "x": 342,
+      "y": 206,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        61
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 44,
+        "width": 52,
+        "height": 17
+      }
+    },
+    "miga:sleep-bounce": {
+      "x": 410,
+      "y": 206,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        61
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 41,
+        "width": 52,
+        "height": 20
+      }
+    },
+    "miga:sleep-drop": {
+      "x": 478,
+      "y": 206,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        61
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 28,
+        "width": 48,
+        "height": 33
+      }
+    },
+    "miga:sleep-slump": {
+      "x": 2,
+      "y": 274,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        61
+      ],
+      "bounds": {
+        "x": 18,
+        "y": 19,
+        "width": 28,
+        "height": 42
+      }
+    },
+    "miga:sleep-drowsy": {
+      "x": 70,
+      "y": 274,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        61
+      ],
+      "bounds": {
+        "x": 18,
+        "y": 6,
+        "width": 28,
+        "height": 55
+      }
+    },
+    "miga:surprise": {
+      "x": 138,
+      "y": 274,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        61
+      ],
+      "bounds": {
+        "x": 13,
+        "y": 3,
+        "width": 38,
+        "height": 56
+      }
+    },
+    "miga:happy": {
+      "x": 206,
+      "y": 274,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        61
+      ],
+      "bounds": {
+        "x": 19,
+        "y": 5,
+        "width": 32,
+        "height": 56
+      }
+    },
+    "miga:happy-hop": {
+      "x": 274,
+      "y": 274,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        61
+      ],
+      "bounds": {
+        "x": 19,
+        "y": 3,
+        "width": 32,
+        "height": 56
+      }
+    },
+    "miga:happy-mouth": {
+      "x": 342,
+      "y": 274,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        61
+      ],
+      "bounds": {
+        "x": 19,
+        "y": 5,
+        "width": 32,
+        "height": 56
+      }
+    },
+    "miga:wave-a": {
+      "x": 410,
+      "y": 274,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        61
+      ],
+      "bounds": {
+        "x": 18,
+        "y": 5,
+        "width": 33,
+        "height": 56
+      }
+    },
+    "miga:wave-b": {
+      "x": 478,
+      "y": 274,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        61
+      ],
+      "bounds": {
+        "x": 18,
+        "y": 5,
+        "width": 31,
+        "height": 56
+      }
+    },
+    "miga:wave-mouth": {
+      "x": 2,
+      "y": 342,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        61
+      ],
+      "bounds": {
+        "x": 18,
+        "y": 5,
+        "width": 33,
+        "height": 56
+      }
+    },
+    "object:lantern:rest": {
+      "x": 70,
+      "y": 342,
+      "width": 16,
+      "height": 24,
+      "anchor": [
+        8,
+        23
+      ],
+      "bounds": {
+        "x": 3,
+        "y": 0,
+        "width": 10,
+        "height": 23
+      }
+    },
+    "object:lantern:flicker": {
+      "x": 138,
+      "y": 342,
+      "width": 16,
+      "height": 24,
+      "anchor": [
+        8,
+        23
+      ],
+      "bounds": {
+        "x": 3,
+        "y": 0,
+        "width": 10,
+        "height": 23
+      }
+    },
+    "object:rune:rest": {
+      "x": 206,
+      "y": 342,
+      "width": 24,
+      "height": 32,
+      "anchor": [
+        12,
+        30
+      ],
+      "bounds": {
+        "x": 1,
+        "y": 0,
+        "width": 20,
+        "height": 30
+      }
+    },
+    "object:rune:lit": {
+      "x": 274,
+      "y": 342,
+      "width": 24,
+      "height": 32,
+      "anchor": [
+        12,
+        30
+      ],
+      "bounds": {
+        "x": 1,
+        "y": 0,
+        "width": 20,
+        "height": 30
+      }
+    },
+    "part:skull:rest": {
+      "x": 342,
+      "y": 342,
+      "width": 20,
+      "height": 22,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 1,
+        "y": 1,
+        "width": 18,
+        "height": 17
+      }
+    },
+    "part:skull:blink": {
+      "x": 410,
+      "y": 342,
+      "width": 20,
+      "height": 22,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 1,
+        "y": 1,
+        "width": 18,
+        "height": 17
+      }
+    },
+    "part:skull:happy": {
+      "x": 478,
+      "y": 342,
+      "width": 20,
+      "height": 22,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 1,
+        "y": 1,
+        "width": 18,
+        "height": 17
+      }
+    },
+    "part:skull:surprise": {
+      "x": 2,
+      "y": 410,
+      "width": 20,
+      "height": 22,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 1,
+        "y": 1,
+        "width": 18,
+        "height": 17
+      }
+    },
+    "part:skull:mouth-small": {
+      "x": 70,
+      "y": 410,
+      "width": 20,
+      "height": 22,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 1,
+        "y": 1,
+        "width": 18,
+        "height": 19
+      }
+    },
+    "part:skull:mouth-open": {
+      "x": 138,
+      "y": 410,
+      "width": 20,
+      "height": 22,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 1,
+        "y": 1,
+        "width": 18,
+        "height": 20
+      }
+    },
+    "part:skull:happy-mouth": {
+      "x": 206,
+      "y": 410,
+      "width": 20,
+      "height": 22,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 1,
+        "y": 1,
+        "width": 18,
+        "height": 19
+      }
+    },
+    "part:skull:profile": {
+      "x": 274,
+      "y": 410,
+      "width": 20,
+      "height": 22,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 2,
+        "width": 15,
+        "height": 15
+      }
+    },
+    "part:skull:profile-blink": {
+      "x": 342,
+      "y": 410,
+      "width": 20,
+      "height": 22,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 2,
+        "width": 15,
+        "height": 15
+      }
+    },
+    "part:skull:sleep-heavy": {
+      "x": 410,
+      "y": 410,
+      "width": 20,
+      "height": 22,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 1,
+        "y": 1,
+        "width": 18,
+        "height": 17
+      }
+    },
+    "part:skull:sleep-yawn": {
+      "x": 478,
+      "y": 410,
+      "width": 20,
+      "height": 22,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 1,
+        "y": 1,
+        "width": 18,
+        "height": 20
+      }
+    },
+    "part:skull:sleep-yawn-close": {
+      "x": 2,
+      "y": 478,
+      "width": 20,
+      "height": 22,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 1,
+        "y": 1,
+        "width": 18,
+        "height": 19
+      }
+    },
+    "part:ribs:rest": {
+      "x": 70,
+      "y": 478,
+      "width": 14,
+      "height": 18,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 1,
+        "y": 0,
+        "width": 12,
+        "height": 17
+      }
+    },
+    "part:ribs:profile": {
+      "x": 138,
+      "y": 478,
+      "width": 14,
+      "height": 18,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 3,
+        "y": 0,
+        "width": 10,
+        "height": 17
+      }
+    },
+    "part:pelvis:rest": {
+      "x": 206,
+      "y": 478,
+      "width": 12,
+      "height": 8,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 12,
+        "height": 6
+      }
+    },
+    "part:pelvis:profile": {
+      "x": 274,
+      "y": 478,
+      "width": 12,
+      "height": 8,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 0,
+        "width": 9,
+        "height": 6
+      }
+    },
+    "part:arm:rest": {
+      "x": 342,
+      "y": 478,
+      "width": 16,
+      "height": 26,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 4,
+        "width": 8,
+        "height": 19
+      }
+    },
+    "part:arm:forward": {
+      "x": 410,
+      "y": 478,
+      "width": 16,
+      "height": 26,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 4,
+        "width": 9,
+        "height": 17
+      }
+    },
+    "part:arm:back": {
+      "x": 478,
+      "y": 478,
+      "width": 16,
+      "height": 26,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 4,
+        "width": 13,
+        "height": 19
+      }
+    },
+    "part:arm:raised": {
+      "x": 2,
+      "y": 546,
+      "width": 16,
+      "height": 26,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 0,
+        "width": 13,
+        "height": 13
+      }
+    },
+    "part:arm:wave": {
+      "x": 70,
+      "y": 546,
+      "width": 16,
+      "height": 26,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 0,
+        "width": 11,
+        "height": 13
+      }
+    },
+    "part:arm:swing-forward": {
+      "x": 138,
+      "y": 546,
+      "width": 16,
+      "height": 26,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 6,
+        "y": 4,
+        "width": 10,
+        "height": 19
+      }
+    },
+    "part:arm:swing-forward-mid": {
+      "x": 206,
+      "y": 546,
+      "width": 16,
+      "height": 26,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 6,
+        "y": 4,
+        "width": 8,
+        "height": 20
+      }
+    },
+    "part:arm:swing-neutral": {
+      "x": 274,
+      "y": 546,
+      "width": 16,
+      "height": 26,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 4,
+        "width": 6,
+        "height": 20
+      }
+    },
+    "part:arm:swing-back-mid": {
+      "x": 342,
+      "y": 546,
+      "width": 16,
+      "height": 26,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 4,
+        "width": 8,
+        "height": 20
+      }
+    },
+    "part:arm:swing-back": {
+      "x": 410,
+      "y": 546,
+      "width": 16,
+      "height": 26,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 4,
+        "width": 10,
+        "height": 19
+      }
+    },
+    "part:arm:loose": {
+      "x": 478,
+      "y": 546,
+      "width": 16,
+      "height": 26,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 15,
+        "width": 16,
+        "height": 11
+      }
+    },
+    "part:arm:far-swing-forward": {
+      "x": 2,
+      "y": 614,
+      "width": 16,
+      "height": 26,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 4,
+        "width": 10,
+        "height": 19
+      }
+    },
+    "part:arm:far-swing-forward-mid": {
+      "x": 70,
+      "y": 614,
+      "width": 16,
+      "height": 26,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 4,
+        "width": 8,
+        "height": 20
+      }
+    },
+    "part:arm:far-swing-neutral": {
+      "x": 138,
+      "y": 614,
+      "width": 16,
+      "height": 26,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 4,
+        "width": 6,
+        "height": 20
+      }
+    },
+    "part:arm:far-swing-back-mid": {
+      "x": 206,
+      "y": 614,
+      "width": 16,
+      "height": 26,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 6,
+        "y": 4,
+        "width": 8,
+        "height": 20
+      }
+    },
+    "part:arm:far-swing-back": {
+      "x": 274,
+      "y": 614,
+      "width": 16,
+      "height": 26,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 6,
+        "y": 4,
+        "width": 10,
+        "height": 19
+      }
+    },
+    "part:arm:sleep-spill": {
+      "x": 342,
+      "y": 614,
+      "width": 16,
+      "height": 26,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 9,
+        "width": 16,
+        "height": 14
+      }
+    },
+    "part:arm:sleep-folded": {
+      "x": 410,
+      "y": 614,
+      "width": 16,
+      "height": 26,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 1,
+        "y": 14,
+        "width": 14,
+        "height": 12
+      }
+    },
+    "part:arm:sleep-folded-air": {
+      "x": 478,
+      "y": 614,
+      "width": 16,
+      "height": 26,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 1,
+        "y": 11,
+        "width": 14,
+        "height": 12
+      }
+    },
+    "part:leg:rest": {
+      "x": 2,
+      "y": 682,
+      "width": 16,
+      "height": 24,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 0,
+        "width": 10,
+        "height": 22
+      }
+    },
+    "part:leg:folded": {
+      "x": 70,
+      "y": 682,
+      "width": 16,
+      "height": 24,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 1,
+        "y": 14,
+        "width": 13,
+        "height": 8
+      }
+    },
+    "part:leg:profile-stand": {
+      "x": 138,
+      "y": 682,
+      "width": 16,
+      "height": 24,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 0,
+        "width": 10,
+        "height": 22
+      }
+    },
+    "part:leg:contact-a": {
+      "x": 206,
+      "y": 682,
+      "width": 16,
+      "height": 24,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 3,
+        "y": 0,
+        "width": 13,
+        "height": 22
+      }
+    },
+    "part:leg:contact-b": {
+      "x": 274,
+      "y": 682,
+      "width": 16,
+      "height": 24,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 8,
+        "height": 22
+      }
+    },
+    "part:leg:pass": {
+      "x": 342,
+      "y": 682,
+      "width": 16,
+      "height": 24,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 3,
+        "y": 0,
+        "width": 9,
+        "height": 18
+      }
+    },
+    "part:leg:support-front": {
+      "x": 410,
+      "y": 682,
+      "width": 16,
+      "height": 24,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 3,
+        "y": 0,
+        "width": 12,
+        "height": 22
+      }
+    },
+    "part:leg:support-mid": {
+      "x": 478,
+      "y": 682,
+      "width": 16,
+      "height": 24,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 3,
+        "y": 0,
+        "width": 8,
+        "height": 22
+      }
+    },
+    "part:leg:support-back": {
+      "x": 2,
+      "y": 750,
+      "width": 16,
+      "height": 24,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 1,
+        "y": 0,
+        "width": 8,
+        "height": 22
+      }
+    },
+    "part:leg:lift-back": {
+      "x": 70,
+      "y": 750,
+      "width": 16,
+      "height": 24,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 1,
+        "y": 0,
+        "width": 8,
+        "height": 19
+      }
+    },
+    "part:leg:reach": {
+      "x": 138,
+      "y": 750,
+      "width": 16,
+      "height": 24,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 3,
+        "y": 0,
+        "width": 13,
+        "height": 20
+      }
+    },
+    "part:leg:loose": {
+      "x": 206,
+      "y": 750,
+      "width": 16,
+      "height": 24,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 12,
+        "width": 16,
+        "height": 12
+      }
+    },
+    "part:leg:sleep-crouch-mid": {
+      "x": 274,
+      "y": 750,
+      "width": 16,
+      "height": 24,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 4,
+        "width": 10,
+        "height": 18
+      }
+    },
+    "part:leg:sleep-crouch-low": {
+      "x": 342,
+      "y": 750,
+      "width": 16,
+      "height": 24,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 8,
+        "width": 12,
+        "height": 14
+      }
+    },
+    "part:leg:sleep-spill": {
+      "x": 410,
+      "y": 750,
+      "width": 16,
+      "height": 24,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 7,
+        "width": 16,
+        "height": 15
+      }
+    },
+    "part:leg:sleep-folded": {
+      "x": 478,
+      "y": 750,
+      "width": 16,
+      "height": 24,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 12,
+        "width": 15,
+        "height": 12
+      }
+    },
+    "part:leg:sleep-folded-air": {
+      "x": 2,
+      "y": 818,
+      "width": 16,
+      "height": 24,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 9,
+        "width": 15,
+        "height": 12
+      }
+    },
+    "part:lantern:rest": {
+      "x": 70,
+      "y": 818,
+      "width": 16,
+      "height": 24,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 3,
+        "y": 0,
+        "width": 10,
+        "height": 23
+      }
+    },
+    "part:lantern:flicker": {
+      "x": 138,
+      "y": 818,
+      "width": 16,
+      "height": 24,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 3,
+        "y": 0,
+        "width": 10,
+        "height": 23
+      }
+    },
+    "part:rune:rest": {
+      "x": 206,
+      "y": 818,
+      "width": 24,
+      "height": 32,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 1,
+        "y": 0,
+        "width": 20,
+        "height": 30
+      }
+    },
+    "part:rune:lit": {
+      "x": 274,
+      "y": 818,
+      "width": 24,
+      "height": 32,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 1,
+        "y": 0,
+        "width": 20,
+        "height": 30
+      }
+    }
+  }
+}

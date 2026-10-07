@@ -1,0 +1,26 @@
+{
+  "id": "trash-world-medieval-v1",
+  "version": 1,
+  "transparent": ".",
+  "maxSize": [64, 64],
+  "lightDirection": "upper-left",
+  "outlineWidth": 1,
+  "colors": {
+    "k": { "hex": "#233b37", "name": "Contorno" },
+    "b": { "hex": "#eee4c9", "name": "Hueso" },
+    "h": { "hex": "#fff6df", "name": "Luz de hueso" },
+    "s": { "hex": "#b7b19a", "name": "Sombra de hueso" },
+    "t": { "hex": "#365d5c", "name": "Tela oscura" },
+    "c": { "hex": "#5e8b83", "name": "Tela" },
+    "e": { "hex": "#91b6a2", "name": "Luz de tela / magia" },
+    "g": { "hex": "#68815b", "name": "Musgo" },
+    "m": { "hex": "#9aa96a", "name": "Luz de musgo" },
+    "a": { "hex": "#61746e", "name": "Piedra oscura" },
+    "r": { "hex": "#8b998b", "name": "Piedra" },
+    "l": { "hex": "#b4bcaa", "name": "Luz de piedra" },
+    "w": { "hex": "#7f6351", "name": "Cuero / madera" },
+    "o": { "hex": "#bb865a", "name": "Metal / brasa" },
+    "f": { "hex": "#efc278", "name": "Luz de farol" },
+    "p": { "hex": "#cf8685", "name": "Acento coral" }
+  }
+}

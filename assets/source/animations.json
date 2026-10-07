@@ -1,0 +1,1481 @@
+{
+  "poses": {
+    "stand": {
+      "variants": {
+        "head": "rest",
+        "body": "rest",
+        "pelvis": "rest",
+        "leftArm": "rest",
+        "rightArm": "rest",
+        "leftLeg": "rest",
+        "rightLeg": "rest"
+      }
+    },
+    "blink": {
+      "extends": "stand",
+      "variants": {
+        "head": "blink"
+      }
+    },
+    "mouth-small": {
+      "extends": "stand",
+      "variants": {
+        "head": "mouth-small"
+      }
+    },
+    "mouth-open": {
+      "extends": "stand",
+      "variants": {
+        "head": "mouth-open"
+      }
+    },
+    "look-left": {
+      "extends": "stand",
+      "offsets": {
+        "head": [
+          -1,
+          0
+        ]
+      }
+    },
+    "look-right": {
+      "extends": "stand",
+      "offsets": {
+        "head": [
+          1,
+          0
+        ]
+      }
+    },
+    "walk-a": {
+      "extends": "side",
+      "variants": {
+        "leftLeg": "contact-b",
+        "rightLeg": "contact-a",
+        "leftArm": "far-swing-forward",
+        "rightArm": "swing-back"
+      },
+      "offsets": {
+        "leftArm": [
+          12,
+          0
+        ],
+        "rightArm": [
+          -13,
+          0
+        ],
+        "leftLeg": [
+          11,
+          0
+        ],
+        "rightLeg": [
+          -2,
+          0
+        ],
+        "head": [
+          2,
+          1
+        ],
+        "body": [
+          1,
+          0
+        ],
+        "pelvis": [
+          0,
+          0
+        ]
+      }
+    },
+    "walk-b": {
+      "extends": "side",
+      "variants": {
+        "leftLeg": "contact-a",
+        "rightLeg": "contact-b",
+        "leftArm": "far-swing-back",
+        "rightArm": "swing-forward"
+      },
+      "offsets": {
+        "leftArm": [
+          12,
+          0
+        ],
+        "rightArm": [
+          -13,
+          0
+        ],
+        "leftLeg": [
+          11,
+          0
+        ],
+        "rightLeg": [
+          -2,
+          0
+        ],
+        "head": [
+          2,
+          1
+        ],
+        "body": [
+          1,
+          0
+        ],
+        "pelvis": [
+          0,
+          0
+        ]
+      }
+    },
+    "inspect": {
+      "extends": "stand",
+      "variants": {
+        "rightArm": "forward"
+      },
+      "offsets": {
+        "head": [
+          1,
+          1
+        ]
+      }
+    },
+    "inspect-blink": {
+      "extends": "inspect",
+      "variants": {
+        "head": "blink"
+      }
+    },
+    "sleep": {
+      "extends": "stand",
+      "variants": {
+        "head": "blink",
+        "leftArm": "sleep-folded",
+        "rightArm": "sleep-folded",
+        "leftLeg": "sleep-folded",
+        "rightLeg": "sleep-folded"
+      },
+      "mirrors": {
+        "leftArm": false,
+        "leftLeg": true,
+        "rightLeg": true
+      },
+      "rotations": {
+        "body": 90,
+        "pelvis": 90
+      },
+      "remaps": {
+        "leftArm": {
+          "h": "b",
+          "b": "s"
+        },
+        "leftLeg": {
+          "h": "b",
+          "b": "s"
+        }
+      },
+      "offsets": {
+        "head": [
+          16,
+          39
+        ],
+        "body": [
+          -9,
+          26
+        ],
+        "pelvis": [
+          -17,
+          11
+        ],
+        "leftArm": [
+          -8,
+          8
+        ],
+        "rightArm": [
+          -19,
+          13
+        ],
+        "leftLeg": [
+          -13,
+          -2
+        ],
+        "rightLeg": [
+          -9,
+          -2
+        ]
+      },
+      "drawOrder": [
+        "leftArm",
+        "rightLeg",
+        "leftLeg",
+        "rightArm",
+        "body",
+        "pelvis",
+        "head"
+      ]
+    },
+    "surprise": {
+      "extends": "stand",
+      "variants": {
+        "head": "surprise",
+        "leftArm": "raised",
+        "rightArm": "raised"
+      },
+      "offset": [
+        0,
+        -2
+      ]
+    },
+    "happy": {
+      "extends": "stand",
+      "variants": {
+        "head": "happy",
+        "leftArm": "forward",
+        "rightArm": "raised"
+      }
+    },
+    "happy-hop": {
+      "extends": "happy",
+      "offset": [
+        0,
+        -2
+      ]
+    },
+    "happy-mouth": {
+      "extends": "happy",
+      "variants": {
+        "head": "happy-mouth"
+      }
+    },
+    "wave-a": {
+      "extends": "stand",
+      "variants": {
+        "rightArm": "raised"
+      }
+    },
+    "wave-b": {
+      "extends": "wave-a",
+      "variants": {
+        "rightArm": "wave"
+      }
+    },
+    "wave-mouth": {
+      "extends": "wave-a",
+      "variants": {
+        "head": "mouth-small"
+      }
+    },
+    "side": {
+      "extends": "stand",
+      "variants": {
+        "head": "profile",
+        "body": "profile",
+        "pelvis": "profile",
+        "leftArm": "far-swing-neutral",
+        "rightArm": "swing-neutral",
+        "leftLeg": "support-mid",
+        "rightLeg": "support-mid"
+      },
+      "mirrors": {
+        "leftArm": true,
+        "leftLeg": false
+      },
+      "offsets": {
+        "leftArm": [
+          12,
+          0
+        ],
+        "rightArm": [
+          -13,
+          0
+        ],
+        "leftLeg": [
+          11,
+          0
+        ],
+        "rightLeg": [
+          -2,
+          0
+        ],
+        "head": [
+          2,
+          1
+        ],
+        "body": [
+          1,
+          0
+        ]
+      },
+      "remaps": {
+        "leftArm": {
+          "h": "b",
+          "b": "s"
+        },
+        "leftLeg": {
+          "h": "b",
+          "b": "s"
+        }
+      },
+      "drawOrder": [
+        "leftArm",
+        "leftLeg",
+        "rightLeg",
+        "pelvis",
+        "body",
+        "rightArm",
+        "head"
+      ]
+    },
+    "walk-down-a": {
+      "extends": "side",
+      "variants": {
+        "leftLeg": "lift-back",
+        "rightLeg": "support-front",
+        "leftArm": "far-swing-forward-mid",
+        "rightArm": "swing-back-mid"
+      },
+      "offsets": {
+        "leftArm": [
+          12,
+          1
+        ],
+        "rightArm": [
+          -13,
+          1
+        ],
+        "leftLeg": [
+          11,
+          0
+        ],
+        "rightLeg": [
+          -2,
+          0
+        ],
+        "head": [
+          2,
+          2
+        ],
+        "body": [
+          1,
+          1
+        ],
+        "pelvis": [
+          0,
+          1
+        ]
+      }
+    },
+    "walk-pass-a": {
+      "extends": "side",
+      "variants": {
+        "leftLeg": "pass",
+        "rightLeg": "support-mid",
+        "leftArm": "far-swing-neutral",
+        "rightArm": "swing-neutral"
+      },
+      "offsets": {
+        "leftArm": [
+          12,
+          0
+        ],
+        "rightArm": [
+          -13,
+          0
+        ],
+        "leftLeg": [
+          11,
+          0
+        ],
+        "rightLeg": [
+          -2,
+          0
+        ],
+        "head": [
+          2,
+          1
+        ],
+        "body": [
+          1,
+          0
+        ],
+        "pelvis": [
+          0,
+          0
+        ]
+      }
+    },
+    "walk-down-b": {
+      "extends": "side",
+      "variants": {
+        "leftLeg": "support-front",
+        "rightLeg": "lift-back",
+        "leftArm": "far-swing-back-mid",
+        "rightArm": "swing-forward-mid"
+      },
+      "offsets": {
+        "leftArm": [
+          12,
+          1
+        ],
+        "rightArm": [
+          -13,
+          1
+        ],
+        "leftLeg": [
+          11,
+          0
+        ],
+        "rightLeg": [
+          -2,
+          0
+        ],
+        "head": [
+          2,
+          2
+        ],
+        "body": [
+          1,
+          1
+        ],
+        "pelvis": [
+          0,
+          1
+        ]
+      }
+    },
+    "walk-pass-b": {
+      "extends": "side",
+      "variants": {
+        "leftLeg": "support-mid",
+        "rightLeg": "pass",
+        "leftArm": "far-swing-neutral",
+        "rightArm": "swing-neutral"
+      },
+      "offsets": {
+        "leftArm": [
+          12,
+          0
+        ],
+        "rightArm": [
+          -13,
+          0
+        ],
+        "leftLeg": [
+          11,
+          0
+        ],
+        "rightLeg": [
+          -2,
+          0
+        ],
+        "head": [
+          2,
+          1
+        ],
+        "body": [
+          1,
+          0
+        ],
+        "pelvis": [
+          0,
+          0
+        ]
+      }
+    },
+    "wake-rise": {
+      "extends": "stand",
+      "variants": {
+        "head": "blink",
+        "leftLeg": "folded",
+        "rightLeg": "folded"
+      },
+      "offsets": {
+        "head": [
+          0,
+          14
+        ],
+        "body": [
+          0,
+          14
+        ],
+        "pelvis": [
+          0,
+          12
+        ],
+        "leftArm": [
+          0,
+          14
+        ],
+        "rightArm": [
+          0,
+          14
+        ]
+      }
+    },
+    "side-blink": {
+      "extends": "side",
+      "variants": {
+        "head": "profile-blink"
+      }
+    },
+    "walk-up-a": {
+      "extends": "side",
+      "variants": {
+        "leftLeg": "reach",
+        "rightLeg": "support-back",
+        "leftArm": "far-swing-back-mid",
+        "rightArm": "swing-forward-mid"
+      },
+      "offsets": {
+        "leftArm": [
+          12,
+          -1
+        ],
+        "rightArm": [
+          -13,
+          -1
+        ],
+        "leftLeg": [
+          11,
+          0
+        ],
+        "rightLeg": [
+          -2,
+          0
+        ],
+        "head": [
+          2,
+          0
+        ],
+        "body": [
+          1,
+          -1
+        ],
+        "pelvis": [
+          0,
+          -1
+        ]
+      }
+    },
+    "walk-up-b": {
+      "extends": "side",
+      "variants": {
+        "leftLeg": "support-back",
+        "rightLeg": "reach",
+        "leftArm": "far-swing-forward-mid",
+        "rightArm": "swing-back-mid"
+      },
+      "offsets": {
+        "leftArm": [
+          12,
+          -1
+        ],
+        "rightArm": [
+          -13,
+          -1
+        ],
+        "leftLeg": [
+          11,
+          0
+        ],
+        "rightLeg": [
+          -2,
+          0
+        ],
+        "head": [
+          2,
+          0
+        ],
+        "body": [
+          1,
+          -1
+        ],
+        "pelvis": [
+          0,
+          -1
+        ]
+      }
+    },
+    "sleep-drowsy": {
+      "extends": "blink",
+      "offsets": {
+        "head": [
+          0,
+          1
+        ]
+      }
+    },
+    "sleep-slump": {
+      "extends": "wake-rise"
+    },
+    "sleep-drop": {
+      "extends": "sleep",
+      "offsets": {
+        "head": [
+          12,
+          23
+        ],
+        "body": [
+          -9,
+          20
+        ],
+        "pelvis": [
+          -17,
+          11
+        ],
+        "leftArm": [
+          -8,
+          8
+        ],
+        "rightLeg": [
+          -9,
+          -2
+        ]
+      },
+      "drawOrder": [
+        "leftArm",
+        "rightLeg",
+        "leftLeg",
+        "rightArm",
+        "body",
+        "pelvis",
+        "head"
+      ],
+      "variants": {
+        "leftArm": "sleep-folded",
+        "rightArm": "sleep-folded",
+        "leftLeg": "sleep-folded",
+        "rightLeg": "sleep-folded"
+      },
+      "mirrors": {
+        "leftLeg": true,
+        "rightLeg": true
+      }
+    },
+    "sleep-bounce": {
+      "extends": "sleep",
+      "offsets": {
+        "head": [
+          16,
+          36
+        ],
+        "pelvis": [
+          -17,
+          11
+        ],
+        "leftArm": [
+          -8,
+          8
+        ],
+        "body": [
+          -9,
+          26
+        ],
+        "rightLeg": [
+          -9,
+          -2
+        ]
+      },
+      "drawOrder": [
+        "leftArm",
+        "rightLeg",
+        "leftLeg",
+        "rightArm",
+        "body",
+        "pelvis",
+        "head"
+      ],
+      "variants": {
+        "leftArm": "sleep-folded",
+        "rightArm": "sleep-folded",
+        "leftLeg": "sleep-folded",
+        "rightLeg": "sleep-folded"
+      },
+      "mirrors": {
+        "leftLeg": true,
+        "rightLeg": true
+      }
+    },
+    "doze-heavy": {
+      "extends": "stand",
+      "variants": {
+        "head": "sleep-heavy"
+      }
+    },
+    "doze-yawn": {
+      "extends": "stand",
+      "variants": {
+        "head": "sleep-yawn"
+      },
+      "offsets": {
+        "head": [
+          0,
+          1
+        ]
+      }
+    },
+    "doze-close": {
+      "extends": "stand",
+      "variants": {
+        "head": "sleep-yawn-close"
+      },
+      "offsets": {
+        "head": [
+          0,
+          1
+        ]
+      }
+    },
+    "doze-nod": {
+      "extends": "blink",
+      "variants": {
+        "leftLeg": "sleep-crouch-mid",
+        "rightLeg": "sleep-crouch-mid"
+      },
+      "offsets": {
+        "head": [
+          0,
+          4
+        ],
+        "body": [
+          0,
+          4
+        ],
+        "pelvis": [
+          0,
+          4
+        ],
+        "leftArm": [
+          0,
+          4
+        ],
+        "rightArm": [
+          0,
+          4
+        ]
+      }
+    },
+    "doze-crouch": {
+      "extends": "doze-nod",
+      "variants": {
+        "leftLeg": "sleep-crouch-low",
+        "rightLeg": "sleep-crouch-low"
+      },
+      "offsets": {
+        "head": [
+          1,
+          8
+        ],
+        "body": [
+          0,
+          8
+        ],
+        "pelvis": [
+          0,
+          8
+        ],
+        "leftArm": [
+          0,
+          8
+        ],
+        "rightArm": [
+          0,
+          8
+        ]
+      }
+    },
+    "doze-release": {
+      "extends": "doze-crouch",
+      "variants": {
+        "leftArm": "sleep-folded-air",
+        "rightArm": "sleep-folded-air"
+      },
+      "mirrors": {
+        "leftArm": false
+      },
+      "remaps": {
+        "leftArm": {
+          "h": "b",
+          "b": "s"
+        }
+      },
+      "offsets": {
+        "head": [
+          2,
+          10
+        ],
+        "leftArm": [
+          -2,
+          0
+        ],
+        "rightArm": [
+          -7,
+          5
+        ]
+      },
+      "drawOrder": [
+        "leftArm",
+        "rightLeg",
+        "leftLeg",
+        "rightArm",
+        "body",
+        "pelvis",
+        "head"
+      ]
+    },
+    "doze-fall-high": {
+      "extends": "sleep",
+      "variants": {
+        "leftArm": "sleep-folded-air",
+        "rightArm": "sleep-folded-air",
+        "leftLeg": "sleep-folded-air",
+        "rightLeg": "sleep-folded-air"
+      },
+      "offsets": {
+        "head": [
+          7,
+          20
+        ],
+        "body": [
+          -8,
+          16
+        ],
+        "pelvis": [
+          -16,
+          8
+        ],
+        "leftArm": [
+          -6,
+          6
+        ],
+        "rightArm": [
+          -19,
+          11
+        ],
+        "leftLeg": [
+          -10,
+          -2
+        ],
+        "rightLeg": [
+          -6,
+          -2
+        ]
+      },
+      "drawOrder": [
+        "leftArm",
+        "rightLeg",
+        "leftLeg",
+        "rightArm",
+        "body",
+        "pelvis",
+        "head"
+      ],
+      "mirrors": {
+        "leftLeg": true,
+        "rightLeg": true
+      }
+    },
+    "doze-fall-low": {
+      "extends": "sleep",
+      "variants": {
+        "leftArm": "sleep-folded-air",
+        "rightArm": "sleep-folded-air",
+        "leftLeg": "sleep-folded",
+        "rightLeg": "sleep-folded"
+      },
+      "offsets": {
+        "head": [
+          12,
+          31
+        ],
+        "body": [
+          -9,
+          23
+        ],
+        "pelvis": [
+          -17,
+          10
+        ],
+        "leftArm": [
+          -7,
+          7
+        ],
+        "rightArm": [
+          -19,
+          12
+        ],
+        "rightLeg": [
+          -9,
+          -2
+        ]
+      },
+      "drawOrder": [
+        "leftArm",
+        "rightLeg",
+        "leftLeg",
+        "rightArm",
+        "body",
+        "pelvis",
+        "head"
+      ],
+      "mirrors": {
+        "leftLeg": true,
+        "rightLeg": true
+      }
+    },
+    "doze-impact": {
+      "extends": "sleep",
+      "offsets": {
+        "body": [
+          -9,
+          26
+        ],
+        "leftArm": [
+          -8,
+          7
+        ],
+        "rightArm": [
+          -19,
+          12
+        ],
+        "pelvis": [
+          -17,
+          11
+        ],
+        "rightLeg": [
+          -9,
+          -2
+        ]
+      },
+      "drawOrder": [
+        "leftArm",
+        "rightLeg",
+        "leftLeg",
+        "rightArm",
+        "body",
+        "pelvis",
+        "head"
+      ],
+      "variants": {
+        "leftArm": "sleep-folded",
+        "rightArm": "sleep-folded",
+        "leftLeg": "sleep-folded",
+        "rightLeg": "sleep-folded"
+      },
+      "mirrors": {
+        "leftLeg": true,
+        "rightLeg": true
+      }
+    },
+    "doze-rebound": {
+      "extends": "sleep",
+      "offsets": {
+        "head": [
+          17,
+          35
+        ],
+        "body": [
+          -9,
+          25
+        ],
+        "leftArm": [
+          -8,
+          6
+        ],
+        "rightArm": [
+          -19,
+          12
+        ],
+        "pelvis": [
+          -17,
+          11
+        ],
+        "rightLeg": [
+          -9,
+          -2
+        ]
+      },
+      "drawOrder": [
+        "leftArm",
+        "rightLeg",
+        "leftLeg",
+        "rightArm",
+        "body",
+        "pelvis",
+        "head"
+      ],
+      "variants": {
+        "leftArm": "sleep-folded",
+        "rightArm": "sleep-folded",
+        "leftLeg": "sleep-folded",
+        "rightLeg": "sleep-folded"
+      },
+      "mirrors": {
+        "leftLeg": true,
+        "rightLeg": true
+      }
+    },
+    "doze-rebound-low": {
+      "extends": "sleep",
+      "offsets": {
+        "head": [
+          16,
+          37
+        ],
+        "body": [
+          -9,
+          26
+        ],
+        "leftArm": [
+          -8,
+          7
+        ],
+        "pelvis": [
+          -17,
+          11
+        ],
+        "rightLeg": [
+          -9,
+          -2
+        ]
+      },
+      "drawOrder": [
+        "leftArm",
+        "rightLeg",
+        "leftLeg",
+        "rightArm",
+        "body",
+        "pelvis",
+        "head"
+      ],
+      "variants": {
+        "leftArm": "sleep-folded",
+        "rightArm": "sleep-folded",
+        "leftLeg": "sleep-folded",
+        "rightLeg": "sleep-folded"
+      },
+      "mirrors": {
+        "leftLeg": true,
+        "rightLeg": true
+      }
+    },
+    "doze-settle": {
+      "extends": "sleep",
+      "offsets": {
+        "leftArm": [
+          -8,
+          7
+        ],
+        "pelvis": [
+          -17,
+          11
+        ],
+        "body": [
+          -9,
+          26
+        ],
+        "rightLeg": [
+          -9,
+          -2
+        ]
+      },
+      "drawOrder": [
+        "leftArm",
+        "rightLeg",
+        "leftLeg",
+        "rightArm",
+        "body",
+        "pelvis",
+        "head"
+      ],
+      "variants": {
+        "leftArm": "sleep-folded",
+        "rightArm": "sleep-folded",
+        "leftLeg": "sleep-folded",
+        "rightLeg": "sleep-folded"
+      },
+      "mirrors": {
+        "leftLeg": true,
+        "rightLeg": true
+      }
+    },
+    "doze-last-tap": {
+      "extends": "sleep",
+      "offsets": {
+        "head": [
+          16,
+          38
+        ],
+        "pelvis": [
+          -17,
+          11
+        ],
+        "leftArm": [
+          -8,
+          8
+        ],
+        "body": [
+          -9,
+          26
+        ],
+        "rightLeg": [
+          -9,
+          -2
+        ]
+      },
+      "drawOrder": [
+        "leftArm",
+        "rightLeg",
+        "leftLeg",
+        "rightArm",
+        "body",
+        "pelvis",
+        "head"
+      ],
+      "variants": {
+        "leftArm": "sleep-folded",
+        "rightArm": "sleep-folded",
+        "leftLeg": "sleep-folded",
+        "rightLeg": "sleep-folded"
+      },
+      "mirrors": {
+        "leftLeg": true,
+        "rightLeg": true
+      }
+    }
+  },
+  "clips": {
+    "idle": {
+      "label": "Reposo",
+      "loop": true,
+      "frames": [
+        [
+          "stand",
+          2200
+        ],
+        [
+          "blink",
+          130
+        ],
+        [
+          "stand",
+          1050
+        ],
+        [
+          "mouth-small",
+          120
+        ],
+        [
+          "mouth-open",
+          140
+        ],
+        [
+          "mouth-small",
+          120
+        ],
+        [
+          "stand",
+          370
+        ],
+        [
+          "look-right",
+          350
+        ]
+      ]
+    },
+    "murmur": {
+      "label": "Boquita",
+      "loop": true,
+      "frames": [
+        [
+          "stand",
+          400
+        ],
+        [
+          "mouth-small",
+          100
+        ],
+        [
+          "mouth-open",
+          130
+        ],
+        [
+          "mouth-small",
+          110
+        ],
+        [
+          "stand",
+          160
+        ],
+        [
+          "mouth-small",
+          90
+        ],
+        [
+          "stand",
+          620
+        ]
+      ]
+    },
+    "walk": {
+      "label": "Caminar",
+      "loop": true,
+      "frames": [
+        [
+          "walk-a",
+          120
+        ],
+        [
+          "walk-down-a",
+          120
+        ],
+        [
+          "walk-pass-a",
+          120
+        ],
+        [
+          "walk-up-a",
+          120
+        ],
+        [
+          "walk-b",
+          120
+        ],
+        [
+          "walk-down-b",
+          120
+        ],
+        [
+          "walk-pass-b",
+          120
+        ],
+        [
+          "walk-up-b",
+          120
+        ]
+      ]
+    },
+    "look": {
+      "label": "Observar",
+      "loop": true,
+      "frames": [
+        [
+          "look-left",
+          700
+        ],
+        [
+          "stand",
+          300
+        ],
+        [
+          "look-right",
+          700
+        ],
+        [
+          "blink",
+          120
+        ]
+      ]
+    },
+    "inspect": {
+      "label": "Investigar",
+      "loop": true,
+      "frames": [
+        [
+          "inspect",
+          900
+        ],
+        [
+          "inspect-blink",
+          130
+        ],
+        [
+          "look-right",
+          350
+        ],
+        [
+          "inspect",
+          600
+        ]
+      ]
+    },
+    "sleep": {
+      "label": "Dormir",
+      "loop": true,
+      "loopFrom": 13,
+      "frames": [
+        [
+          "doze-heavy",
+          180
+        ],
+        [
+          "doze-yawn",
+          180
+        ],
+        [
+          "doze-close",
+          120
+        ],
+        [
+          "doze-nod",
+          140
+        ],
+        [
+          "doze-crouch",
+          120
+        ],
+        [
+          "doze-release",
+          100
+        ],
+        [
+          "doze-fall-high",
+          80
+        ],
+        [
+          "doze-fall-low",
+          80
+        ],
+        [
+          "doze-impact",
+          80
+        ],
+        [
+          "doze-rebound",
+          80
+        ],
+        [
+          "doze-rebound-low",
+          80
+        ],
+        [
+          "doze-settle",
+          100
+        ],
+        [
+          "doze-last-tap",
+          80
+        ],
+        [
+          "sleep",
+          2200
+        ]
+      ]
+    },
+    "wake": {
+      "label": "Despertar",
+      "loop": false,
+      "frames": [
+        [
+          "sleep",
+          180
+        ],
+        [
+          "sleep-bounce",
+          140
+        ],
+        [
+          "sleep-drop",
+          180
+        ],
+        [
+          "sleep-slump",
+          180
+        ],
+        [
+          "sleep-drowsy",
+          160
+        ],
+        [
+          "stand",
+          400
+        ]
+      ]
+    },
+    "surprise": {
+      "label": "Sorpresa",
+      "loop": false,
+      "frames": [
+        [
+          "surprise",
+          250
+        ],
+        [
+          "stand",
+          120
+        ],
+        [
+          "surprise",
+          200
+        ],
+        [
+          "stand",
+          800
+        ]
+      ]
+    },
+    "happy": {
+      "label": "Alegria",
+      "loop": true,
+      "frames": [
+        [
+          "happy",
+          250
+        ],
+        [
+          "happy-hop",
+          250
+        ],
+        [
+          "happy-mouth",
+          120
+        ],
+        [
+          "happy",
+          180
+        ]
+      ]
+    },
+    "wave": {
+      "label": "Saludar",
+      "loop": true,
+      "frames": [
+        [
+          "stand",
+          700
+        ],
+        [
+          "wave-a",
+          240
+        ],
+        [
+          "wave-b",
+          240
+        ],
+        [
+          "wave-a",
+          240
+        ],
+        [
+          "wave-b",
+          240
+        ],
+        [
+          "wave-mouth",
+          240
+        ],
+        [
+          "stand",
+          700
+        ]
+      ]
+    }
+  },
+  "states": {
+    "IDLE": "idle",
+    "WALK": "walk",
+    "LOOK_AROUND": "look",
+    "INSPECT": "inspect",
+    "SLEEP": "sleep",
+    "WAKE": "wake",
+    "SURPRISED": "surprise",
+    "HAPPY": "happy"
+  }
+}
