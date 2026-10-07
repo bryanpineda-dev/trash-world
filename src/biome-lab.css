@@ -1,0 +1,43 @@
+@import './style.css';
+#app { position: fixed; inset: 0; }
+.biome-toolbar { position: absolute; inset: 0 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; gap: 12px; pointer-events: none; color: #233b37; background: #f1f5edea; border-bottom: 1px solid #b8cbbd; }
+.biome-toolbar h1 { font-size: 16px; white-space: normal; line-height: 1.3; }
+.biome-toolbar nav { display: flex; gap: 4px; pointer-events: auto; }
+.biome-toolbar a { color: #233b37; }
+.biome-toolbar button { color: #233b37; }
+#biome-library { width: min(980px, calc(100% - 24px)); max-height: calc(100dvh - 24px); margin: auto; padding: 0; border: 1px solid #a1b9ab; border-radius: 6px; background: #f1f5ed; color: #233b37; overflow: auto; }
+#biome-library::backdrop { background: #142e34bb; }
+.library-toolbar { position: sticky; top: 0; z-index: 1; display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 16px; background: #f1f5ed; border-bottom: 1px solid #b8cbbd; }
+.library-toolbar h2 { margin: 0; font-size: 16px; }
+.library-family { margin-left: auto; display: grid; gap: 3px; min-width: 0; font-size: 11px; }
+.library-family select { width: 150px; height: 36px; border: 1px solid #a1b9ab; border-radius: 4px; background: white; color: inherit; font: inherit; }
+#library-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; padding: 16px; }
+#library-grid figure { display: grid; justify-items: center; margin: 0; padding: 8px; border: 1px solid #b8cbbd; border-radius: 4px; background: #fff; min-width: 0; }
+#library-grid figure[hidden] { display: none; }
+#library-grid canvas { display: block; position: static; width: 208px; height: 208px; image-rendering: pixelated; }
+#library-grid figcaption { display: grid; gap: 4px; text-align: center; padding: 10px 0 4px; font-size: 12px; }
+#library-grid figcaption span { font-size: 11px; color: #586d69; overflow-wrap: anywhere; }
+.biome-controls { position: absolute; inset: auto 0 0; display: flex; justify-content: center; align-items: end; gap: 18px; padding: 12px 20px; background: #f1f5edea; border-top: 1px solid #b8cbbd; color: #233b37; }
+.biome-controls label { display: grid; gap: 6px; font-size: 11px; min-width: 0; }
+.biome-controls select { min-width: 120px; height: 40px; padding: 0 8px; border: 1px solid #a1b9ab; border-radius: 4px; background: #fff; color: inherit; font: inherit; }
+.position-control { width: 200px; }
+.position-control span { display: flex; justify-content: space-between; }
+.position-control input { height: 40px; margin: 0; width: 100%; accent-color: #426c53; }
+.biome-controls .icon-button { height: 40px; width: 40px; }
+@media (max-width: 520px) {
+  #app { display: grid; grid-template-rows: auto minmax(0,1fr) auto; }
+  #app #world { position: static; grid-row: 2; width: 100%; height: 100%; min-height: 0; min-width: 0; }
+  .biome-toolbar { position: static; grid-row: 1; padding: 12px; }
+  .biome-toolbar h1 { font-size: 14px; }
+  .biome-toolbar .icon-button { width: 36px; height: 36px; }
+  .biome-controls { position: static; grid-row: 3; display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr) 40px; gap: 10px; padding: 12px; }
+  .biome-controls select { width: 100%; min-width: 0; }
+  .position-control { width: auto; grid-column: 1 / 3; grid-row: 2; }
+  .biome-controls .icon-button { grid-column: 3; grid-row: 2; }
+  #library-grid { grid-template-columns: minmax(240px,1fr); padding: 12px; }
+  .library-toolbar h2 { font-size: 14px; }
+  .library-toolbar { flex-wrap: wrap; gap: 8px; padding: 12px; }
+  .library-family { order: 3; width: 100%; }
+  .library-family select { width: 100%; }
+  .library-toolbar .icon-button { margin-left: auto; }
+}

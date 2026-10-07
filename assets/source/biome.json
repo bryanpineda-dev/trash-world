@@ -1,0 +1,612 @@
+{
+  "version": 2,
+  "id": "enchanted-cemetery-v3",
+  "label": "Bosque de las ruinas",
+  "palettes": {
+    "DAY": {
+      "colors": {
+        "k": "#233a34",
+        "b": "#eee4c9",
+        "h": "#fff6df",
+        "s": "#b7b19a",
+        "t": "#314b43",
+        "c": "#5b7d73",
+        "e": "#9ead7b",
+        "g": "#4b6650",
+        "m": "#7f9461",
+        "a": "#5b6a69",
+        "r": "#83958d",
+        "l": "#a5b2a0",
+        "w": "#66554f",
+        "o": "#938069",
+        "f": "#efc278",
+        "p": "#cf8685",
+        "d": "#1d3d38",
+        "i": "#2e4f42",
+        "j": "#4b6d46",
+        "n": "#94a967",
+        "q": "#b3b374",
+        "u": "#393d40",
+        "v": "#554b46",
+        "x": "#a38363",
+        "y": "#c7aa78",
+        "z": "#3f555e",
+        "A": "#65757c",
+        "B": "#899693",
+        "C": "#bdc1a6",
+        "D": "#f1bd6b",
+        "E": "#30454f",
+        "F": "#746c60"
+      },
+      "sky": "#a6b9b5",
+      "horizon": "#adbeb1",
+      "grass": "#506c50",
+      "soil": "#625b58",
+      "earth": "#414b45",
+      "path": "#96977c",
+      "pathShadow": "#737c66",
+      "light": "#d6d3ae",
+      "mist": "#b2c4bb"
+    },
+    "EVENING": {
+      "colors": {
+        "k": "#263c36",
+        "b": "#eee4c9",
+        "h": "#fff6df",
+        "s": "#b7b19a",
+        "t": "#314c44",
+        "c": "#597a78",
+        "e": "#abc0a5",
+        "g": "#4b6d59",
+        "m": "#879c79",
+        "a": "#586d69",
+        "r": "#82938b",
+        "l": "#b1b7a7",
+        "w": "#61515e",
+        "o": "#96806e",
+        "f": "#efc278",
+        "p": "#cf8685",
+        "d": "#243d38",
+        "i": "#365446",
+        "j": "#53734f",
+        "n": "#97aa75",
+        "q": "#bcb07b",
+        "u": "#3e4147",
+        "v": "#5c514e",
+        "x": "#a18671",
+        "y": "#c5aa86",
+        "z": "#4a5963",
+        "A": "#70808a",
+        "B": "#929e97",
+        "C": "#bfc3ae",
+        "D": "#f1b16c",
+        "E": "#374b52",
+        "F": "#77706b"
+      },
+      "sky": "#a59eaa",
+      "horizon": "#b5b0b0",
+      "grass": "#536e58",
+      "soil": "#615758",
+      "earth": "#3e4945",
+      "path": "#959587",
+      "pathShadow": "#6b7b70",
+      "light": "#dfc9aa",
+      "mist": "#b9c6bd"
+    },
+    "NIGHT": {
+      "colors": {
+        "k": "#1e3335",
+        "b": "#eee4c9",
+        "h": "#fff6df",
+        "s": "#b7b19a",
+        "t": "#294844",
+        "c": "#588e86",
+        "e": "#94d0bc",
+        "g": "#3e6555",
+        "m": "#6e9374",
+        "a": "#4d686f",
+        "r": "#718e91",
+        "l": "#a6bdaf",
+        "w": "#56545b",
+        "o": "#857d77",
+        "f": "#d3c58d",
+        "p": "#b4808e",
+        "d": "#193633",
+        "i": "#2b4b40",
+        "j": "#4b7050",
+        "n": "#839b68",
+        "q": "#a4a16a",
+        "u": "#303b41",
+        "v": "#484c50",
+        "x": "#8b7a65",
+        "y": "#b0a078",
+        "z": "#3a535e",
+        "A": "#60777f",
+        "B": "#82968e",
+        "C": "#b1bd9f",
+        "D": "#e8ac5e",
+        "E": "#263f49",
+        "F": "#606861"
+      },
+      "sky": "#263a46",
+      "horizon": "#526b7e",
+      "grass": "#446754",
+      "soil": "#535856",
+      "earth": "#344448",
+      "path": "#87968a",
+      "pathShadow": "#5c736b",
+      "light": "#eee4c9",
+      "mist": "#7d9caa"
+    }
+  },
+  "assetFiles": [
+    {
+      "id": "oak",
+      "path": "trees/oak.json"
+    },
+    {
+      "id": "birch",
+      "path": "trees/birch.json"
+    },
+    {
+      "id": "distantOak",
+      "path": "trees/distant-oak.json"
+    },
+    {
+      "id": "twistedTree",
+      "path": "trees/twisted-tree.json"
+    },
+    {
+      "id": "cypress",
+      "path": "trees/cypress.json"
+    },
+    {
+      "id": "ruins",
+      "path": "ruins/broken-arch.json"
+    },
+    {
+      "id": "shrub",
+      "path": "vegetation/shrub.json"
+    },
+    {
+      "id": "fern",
+      "path": "vegetation/fern.json"
+    },
+    {
+      "id": "mushrooms",
+      "path": "vegetation/mushrooms.json"
+    },
+    {
+      "id": "flowers",
+      "path": "vegetation/flowers.json"
+    },
+    {
+      "id": "rocks",
+      "path": "terrain/mossy-rock.json"
+    },
+    {
+      "id": "pointedGrave",
+      "path": "gravestones/pointed-grave.json"
+    },
+    {
+      "id": "wornGrave",
+      "path": "gravestones/worn-grave.json"
+    },
+    {
+      "id": "ringCross",
+      "path": "gravestones/ring-cross.json"
+    },
+    {
+      "id": "fence",
+      "path": "fences/iron-fence.json"
+    },
+    {
+      "id": "moon",
+      "path": "sky/moon.json"
+    },
+    {
+      "id": "church",
+      "path": "architecture/churches/forest-chapel.json"
+    },
+    {
+      "id": "groundA",
+      "path": "terrain/ground-a.json"
+    },
+    {
+      "id": "groundB",
+      "path": "terrain/ground-b.json"
+    },
+    {
+      "id": "groundC",
+      "path": "terrain/ground-c.json"
+    }
+  ],
+  "layers": [
+    {
+      "id": "far-wood",
+      "depth": "far",
+      "parallax": 0.16,
+      "period": 600,
+      "placements": [
+        {
+          "sprite": "distantOak",
+          "at": [
+            -32,
+            -26
+          ]
+        },
+        {
+          "sprite": "distantOak",
+          "at": [
+            36,
+            -22
+          ],
+          "mirror": true
+        },
+        {
+          "sprite": "distantOak",
+          "at": [
+            103,
+            -30
+          ]
+        },
+        {
+          "sprite": "distantOak",
+          "at": [
+            186,
+            -25
+          ],
+          "mirror": true
+        },
+        {
+          "sprite": "distantOak",
+          "at": [
+            269,
+            -21
+          ]
+        },
+        {
+          "sprite": "distantOak",
+          "at": [
+            339,
+            -28
+          ],
+          "mirror": true
+        },
+        {
+          "sprite": "distantOak",
+          "at": [
+            429,
+            -26
+          ]
+        },
+        {
+          "sprite": "distantOak",
+          "at": [
+            504,
+            -22
+          ],
+          "mirror": true
+        },
+        {
+          "sprite": "distantOak",
+          "at": [
+            562,
+            -26
+          ]
+        }
+      ]
+    },
+    {
+      "id": "architecture",
+      "depth": "far",
+      "parallax": 0.24,
+      "period": 760,
+      "placements": [
+        {
+          "sprite": "church",
+          "at": [
+            16,
+            -34
+          ]
+        }
+      ]
+    },
+    {
+      "id": "middle-wood",
+      "depth": "middle",
+      "parallax": 0.42,
+      "period": 760,
+      "placements": [
+        {
+          "sprite": "birch",
+          "at": [
+            -5,
+            -24
+          ]
+        },
+        {
+          "sprite": "cypress",
+          "at": [
+            15,
+            -26
+          ]
+        },
+        {
+          "sprite": "birch",
+          "at": [
+            412,
+            -28
+          ],
+          "mirror": true
+        },
+        {
+          "sprite": "cypress",
+          "at": [
+            465,
+            -24
+          ]
+        },
+        {
+          "sprite": "birch",
+          "at": [
+            512,
+            -22
+          ]
+        },
+        {
+          "sprite": "cypress",
+          "at": [
+            625,
+            -28
+          ]
+        },
+        {
+          "sprite": "ruins",
+          "at": [
+            133,
+            -24
+          ]
+        },
+        {
+          "sprite": "ruins",
+          "at": [
+            480,
+            -24
+          ],
+          "mirror": true
+        },
+        {
+          "sprite": "fence",
+          "at": [
+            207,
+            -18
+          ]
+        },
+        {
+          "sprite": "fence",
+          "at": [
+            303,
+            -18
+          ]
+        },
+        {
+          "sprite": "fence",
+          "at": [
+            608,
+            -18
+          ]
+        },
+        {
+          "sprite": "fence",
+          "at": [
+            704,
+            -18
+          ]
+        },
+        {
+          "sprite": "pointedGrave",
+          "at": [
+            180,
+            -19
+          ]
+        },
+        {
+          "sprite": "wornGrave",
+          "at": [
+            262,
+            -17
+          ]
+        },
+        {
+          "sprite": "pointedGrave",
+          "at": [
+            532,
+            -19
+          ]
+        },
+        {
+          "sprite": "wornGrave",
+          "at": [
+            673,
+            -17
+          ]
+        },
+        {
+          "sprite": "shrub",
+          "at": [
+            27,
+            -8
+          ]
+        },
+        {
+          "sprite": "shrub",
+          "at": [
+            399,
+            -13
+          ]
+        }
+      ]
+    },
+    {
+      "id": "near-wood",
+      "depth": "near",
+      "parallax": 0.78,
+      "period": 900,
+      "placements": [
+        {
+          "sprite": "oak",
+          "at": [
+            12,
+            -6
+          ]
+        },
+        {
+          "sprite": "oak",
+          "at": [
+            431,
+            -7
+          ],
+          "mirror": true
+        },
+        {
+          "sprite": "oak",
+          "at": [
+            713,
+            -8
+          ],
+          "mirror": true
+        },
+        {
+          "sprite": "ringCross",
+          "at": [
+            346,
+            -9
+          ]
+        },
+        {
+          "sprite": "pointedGrave",
+          "at": [
+            135,
+            -11
+          ]
+        },
+        {
+          "sprite": "wornGrave",
+          "at": [
+            271,
+            -12
+          ]
+        },
+        {
+          "sprite": "ringCross",
+          "at": [
+            777,
+            -9
+          ]
+        },
+        {
+          "sprite": "shrub",
+          "at": [
+            50,
+            -4
+          ]
+        },
+        {
+          "sprite": "shrub",
+          "at": [
+            394,
+            -4
+          ],
+          "mirror": true
+        },
+        {
+          "sprite": "shrub",
+          "at": [
+            641,
+            -4
+          ]
+        }
+      ]
+    },
+    {
+      "id": "verge",
+      "depth": "near",
+      "parallax": 1,
+      "period": 560,
+      "placements": [
+        {
+          "sprite": "fern",
+          "at": [
+            38,
+            0
+          ]
+        },
+        {
+          "sprite": "mushrooms",
+          "at": [
+            68,
+            0
+          ]
+        },
+        {
+          "sprite": "flowers",
+          "at": [
+            124,
+            0
+          ]
+        },
+        {
+          "sprite": "fern",
+          "at": [
+            207,
+            0
+          ],
+          "mirror": true
+        },
+        {
+          "sprite": "rocks",
+          "at": [
+            259,
+            0
+          ]
+        },
+        {
+          "sprite": "flowers",
+          "at": [
+            297,
+            0
+          ]
+        },
+        {
+          "sprite": "mushrooms",
+          "at": [
+            376,
+            0
+          ]
+        },
+        {
+          "sprite": "fern",
+          "at": [
+            411,
+            0
+          ]
+        },
+        {
+          "sprite": "flowers",
+          "at": [
+            495,
+            0
+          ]
+        },
+        {
+          "sprite": "rocks",
+          "at": [
+            539,
+            0
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "groundC",
+  "label": "Sendero de piedra 3",
+  "size": [
+    64,
+    32
+  ],
+  "anchor": [
+    32,
+    31
+  ],
+  "pixels": [
+    "ggggggggggmmgggggggggggggggggggggggggggggggggggggggggggggggggggg",
+    "gggggggggmjggggggggggmmggggggggggggggggggggggggggggggggggggggggg",
+    "BBBBBBBBBggiiiggBrCgmjggggCCCCrrBBBBBBBBBBBBmmggBBBBrCCCCCCCrrBB",
+    "BBrCCCCCCCrrBBBBBrrrggiiiggrrrrABBBBrCCCCCgmjggggBBBrrrrrrrrrABB",
+    "BBrrrrrrrrrABBBBBBBBBBBBBBBBBBBBBBBBrrrrrrrggiiiggBBBBBBBBBBBBBB",
+    "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+    "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+    "BBBBBBBBBBBBBBBBBBBBBBBBrCCCCCCrrBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+    "AAAAAArCCCCCCCCCCrrAAAAArrrrrrrrAAAAAAAArCCCCCCCCCCCCCrrAAAAAAAA",
+    "AAAAAArrrrrrrrrrrrAAAAAAAAAAAAAAAAAAAAAArrrrrrrrrrrrrrrAAAAAAAAA",
+    "AAAAAAAAAAAAAAAAAmmggAAAAAAAAAmmggAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+    "AAAAAAAAAAAAAAAgmjggggAAAAAAgmjggggAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+    "vvvvvvvvvvvvvvvvggiuiggvvvvvvggiiiggvvvvvuvvvvvvvvvvvvvvvvvvvvvv",
+    "vvvvvvvvvvvvvvvvvvwuvvvvvvvvvvvvvvvvvvvvvuvvvvvvvvvvvvvvvvvvvvvv",
+    "vvvvvvvvvvvvvvvvvvwuvvvvvvvvvvvvvvvvvvvvvuvvvvvvvvvvvvvvvvvvvvvv",
+    "vvvvvvvvvvvvvvvvvvwuvvvvvvvvvvvvvvvvvvvvvuvvvvvvvvvvvvvvvvvvvvvv",
+    "zzzzzzzzzzzzzzzzzzwuzzzzzzzzzzzzzzzzzzzzuzzzzzzzzzzzzzzzzzzzzzzz",
+    "zzzzzzzzzzzzzzzzzzzwzzzzzzzzzzzzzzzzzzzzuzzzzzzzzzzzzzzzzzzzzzzz",
+    "zzzzzzzzzzzzzzzzzzzwuzzzzzzzzzAAAazzzzzzuzzzzzzzzzzzzzzzzzzzzzzz",
+    "zzzzzzzzzzzzzzzzzzzwuzzzzzzzzzaaaazzzzzzuzzzzzzzzzzzzzzzzzzzzzzz",
+    "zzzzzzzzzzzzzzzzAAAwuzzzzzzzzzzzzzzzzzzzuzzzzzzzzzzzzzzzzzzzzzzz",
+    "zzzzzzzzzzzzzzzzaaaauuuzzzzzzzzzzzzzzzzzuzzzzzzzzzzzzzzzzzzzzzzz",
+    "zzzzzzzzzzzzzzzzzzzzuzzuzzzzzzzzzzzzzzzuzzzzzzzzzzzzzzzzzzzzzzzz",
+    "zzzzzzzzzzzzzzzzzzzzuzzzuuzzzzzzzzzzzzzuzzzzzzzzzzzzzzzzzzzzzzzz",
+    "zzzzzzzzzzzzzzzzzzzzuzzzzzuzzzzzzzzzzzzuzzzzzzzzzzzzAAazzzzzzzzz",
+    "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzaaazzzzzzzzz",
+    "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",
+    "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",
+    "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",
+    "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzAazzzzzzzzzzzzzzzzzzzz",
+    "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzaazzzzzzzzzzzzzzzzzzzz",
+    "................................................................"
+  ]
+}

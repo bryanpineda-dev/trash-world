@@ -9,6 +9,7 @@ export default defineConfig({
       input: {
         world: fileURLToPath(new URL('./index.html', import.meta.url)),
         assets: fileURLToPath(new URL('./asset-lab.html', import.meta.url)),
+        biome: fileURLToPath(new URL('./biome-lab.html', import.meta.url)),
       },
     },
   },

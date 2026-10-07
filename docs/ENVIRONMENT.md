@@ -1,6 +1,6 @@
 # Entorno: familia de assets a escala estable
 
-Los cuatro objetos se dibujan pixel a pixel con el mismo contorno de 1 px, paleta de 16 colores y luz superior izquierda que Miga. Aumentar detalle no significa cambiar el tamano de un pixel. Ningun objeto recibe una ampliacion individual en el mundo.
+Los cuatro objetos se dibujan pixel a pixel con bordes de 1 px propios de cada material, paleta de 16 colores y luz superior izquierda. Miga mantiene su contorno aprobado. Aumentar detalle no significa cambiar el tamano de un pixel. Ningun objeto recibe una ampliacion individual en el mundo.
 
 ## Medidas nativas
 
@@ -29,7 +29,7 @@ Las posiciones y los IDs persistentes siguen intactos: `plant` (x = 95), `can`/f
 
 `WORLD_OBJECTS` conserva el alto visible y el radio que cubre todos los frames de cada objeto. Las pruebas comparan esas medidas con el atlas. El toque acepta 6 px de margen y cubre tambien la parte alta de la tumba y la copa. La distancia de investigacion es el radio del objeto mas 16 px; Miga se detiene junto a la silueta, en ambos sentidos.
 
-Miga, sus siete slots, todos sus pixeles, limites visibles y tiempos permanecen intactos. El fondo, la camara y las paletas del dia siguen siendo los de la base anterior; no se redisenaron en esta pasada.
+Miga, sus siete slots, todos sus pixeles, limites visibles y tiempos permanecen intactos. Esta familia se aprobo antes del rediseno del fondo. La segunda propuesta del [bioma](BIOME.md) sustituye solo los contornos casi negros de estos objetos por tonos de material, sin cambiar su dibujo, transparencias, variantes ni animaciones. Una regresion fija su geometria y tiempos anteriores.
 
 ## Revision
 

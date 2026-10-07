@@ -1,0 +1,1808 @@
+{
+  "version": 1,
+  "id": "enchanted-cemetery-v3",
+  "width": 3600,
+  "height": 1764,
+  "frames": {
+    "DAY:far:oak": {
+      "x": 2,
+      "y": 2,
+      "width": 176,
+      "height": 192,
+      "anchor": [
+        88,
+        191
+      ]
+    },
+    "DAY:far:birch": {
+      "x": 182,
+      "y": 2,
+      "width": 104,
+      "height": 146,
+      "anchor": [
+        52,
+        145
+      ]
+    },
+    "DAY:far:distantOak": {
+      "x": 362,
+      "y": 2,
+      "width": 56,
+      "height": 84,
+      "anchor": [
+        28,
+        83
+      ]
+    },
+    "DAY:far:twistedTree": {
+      "x": 542,
+      "y": 2,
+      "width": 168,
+      "height": 176,
+      "anchor": [
+        88,
+        175
+      ]
+    },
+    "DAY:far:cypress": {
+      "x": 722,
+      "y": 2,
+      "width": 64,
+      "height": 168,
+      "anchor": [
+        32,
+        167
+      ]
+    },
+    "DAY:far:ruins": {
+      "x": 902,
+      "y": 2,
+      "width": 112,
+      "height": 80,
+      "anchor": [
+        56,
+        79
+      ]
+    },
+    "DAY:far:shrub": {
+      "x": 1082,
+      "y": 2,
+      "width": 72,
+      "height": 40,
+      "anchor": [
+        36,
+        39
+      ]
+    },
+    "DAY:far:fern": {
+      "x": 1262,
+      "y": 2,
+      "width": 32,
+      "height": 24,
+      "anchor": [
+        16,
+        23
+      ]
+    },
+    "DAY:far:mushrooms": {
+      "x": 1442,
+      "y": 2,
+      "width": 28,
+      "height": 18,
+      "anchor": [
+        14,
+        17
+      ]
+    },
+    "DAY:far:flowers": {
+      "x": 1622,
+      "y": 2,
+      "width": 24,
+      "height": 16,
+      "anchor": [
+        12,
+        15
+      ]
+    },
+    "DAY:far:rocks": {
+      "x": 1802,
+      "y": 2,
+      "width": 32,
+      "height": 20,
+      "anchor": [
+        16,
+        19
+      ]
+    },
+    "DAY:far:pointedGrave": {
+      "x": 1982,
+      "y": 2,
+      "width": 48,
+      "height": 72,
+      "anchor": [
+        24,
+        71
+      ]
+    },
+    "DAY:far:wornGrave": {
+      "x": 2162,
+      "y": 2,
+      "width": 48,
+      "height": 46,
+      "anchor": [
+        24,
+        45
+      ]
+    },
+    "DAY:far:ringCross": {
+      "x": 2342,
+      "y": 2,
+      "width": 64,
+      "height": 96,
+      "anchor": [
+        32,
+        95
+      ]
+    },
+    "DAY:far:fence": {
+      "x": 2522,
+      "y": 2,
+      "width": 96,
+      "height": 40,
+      "anchor": [
+        48,
+        39
+      ]
+    },
+    "DAY:far:moon": {
+      "x": 2702,
+      "y": 2,
+      "width": 48,
+      "height": 48,
+      "anchor": [
+        24,
+        47
+      ]
+    },
+    "DAY:far:church": {
+      "x": 2882,
+      "y": 2,
+      "width": 88,
+      "height": 112,
+      "anchor": [
+        44,
+        111
+      ]
+    },
+    "DAY:far:groundA": {
+      "x": 3062,
+      "y": 2,
+      "width": 64,
+      "height": 32,
+      "anchor": [
+        32,
+        31
+      ]
+    },
+    "DAY:far:groundB": {
+      "x": 3242,
+      "y": 2,
+      "width": 64,
+      "height": 32,
+      "anchor": [
+        32,
+        31
+      ]
+    },
+    "DAY:far:groundC": {
+      "x": 3422,
+      "y": 2,
+      "width": 64,
+      "height": 32,
+      "anchor": [
+        32,
+        31
+      ]
+    },
+    "DAY:middle:oak": {
+      "x": 2,
+      "y": 198,
+      "width": 176,
+      "height": 192,
+      "anchor": [
+        88,
+        191
+      ]
+    },
+    "DAY:middle:birch": {
+      "x": 182,
+      "y": 198,
+      "width": 104,
+      "height": 146,
+      "anchor": [
+        52,
+        145
+      ]
+    },
+    "DAY:middle:distantOak": {
+      "x": 362,
+      "y": 198,
+      "width": 56,
+      "height": 84,
+      "anchor": [
+        28,
+        83
+      ]
+    },
+    "DAY:middle:twistedTree": {
+      "x": 542,
+      "y": 198,
+      "width": 168,
+      "height": 176,
+      "anchor": [
+        88,
+        175
+      ]
+    },
+    "DAY:middle:cypress": {
+      "x": 722,
+      "y": 198,
+      "width": 64,
+      "height": 168,
+      "anchor": [
+        32,
+        167
+      ]
+    },
+    "DAY:middle:ruins": {
+      "x": 902,
+      "y": 198,
+      "width": 112,
+      "height": 80,
+      "anchor": [
+        56,
+        79
+      ]
+    },
+    "DAY:middle:shrub": {
+      "x": 1082,
+      "y": 198,
+      "width": 72,
+      "height": 40,
+      "anchor": [
+        36,
+        39
+      ]
+    },
+    "DAY:middle:fern": {
+      "x": 1262,
+      "y": 198,
+      "width": 32,
+      "height": 24,
+      "anchor": [
+        16,
+        23
+      ]
+    },
+    "DAY:middle:mushrooms": {
+      "x": 1442,
+      "y": 198,
+      "width": 28,
+      "height": 18,
+      "anchor": [
+        14,
+        17
+      ]
+    },
+    "DAY:middle:flowers": {
+      "x": 1622,
+      "y": 198,
+      "width": 24,
+      "height": 16,
+      "anchor": [
+        12,
+        15
+      ]
+    },
+    "DAY:middle:rocks": {
+      "x": 1802,
+      "y": 198,
+      "width": 32,
+      "height": 20,
+      "anchor": [
+        16,
+        19
+      ]
+    },
+    "DAY:middle:pointedGrave": {
+      "x": 1982,
+      "y": 198,
+      "width": 48,
+      "height": 72,
+      "anchor": [
+        24,
+        71
+      ]
+    },
+    "DAY:middle:wornGrave": {
+      "x": 2162,
+      "y": 198,
+      "width": 48,
+      "height": 46,
+      "anchor": [
+        24,
+        45
+      ]
+    },
+    "DAY:middle:ringCross": {
+      "x": 2342,
+      "y": 198,
+      "width": 64,
+      "height": 96,
+      "anchor": [
+        32,
+        95
+      ]
+    },
+    "DAY:middle:fence": {
+      "x": 2522,
+      "y": 198,
+      "width": 96,
+      "height": 40,
+      "anchor": [
+        48,
+        39
+      ]
+    },
+    "DAY:middle:moon": {
+      "x": 2702,
+      "y": 198,
+      "width": 48,
+      "height": 48,
+      "anchor": [
+        24,
+        47
+      ]
+    },
+    "DAY:middle:church": {
+      "x": 2882,
+      "y": 198,
+      "width": 88,
+      "height": 112,
+      "anchor": [
+        44,
+        111
+      ]
+    },
+    "DAY:middle:groundA": {
+      "x": 3062,
+      "y": 198,
+      "width": 64,
+      "height": 32,
+      "anchor": [
+        32,
+        31
+      ]
+    },
+    "DAY:middle:groundB": {
+      "x": 3242,
+      "y": 198,
+      "width": 64,
+      "height": 32,
+      "anchor": [
+        32,
+        31
+      ]
+    },
+    "DAY:middle:groundC": {
+      "x": 3422,
+      "y": 198,
+      "width": 64,
+      "height": 32,
+      "anchor": [
+        32,
+        31
+      ]
+    },
+    "DAY:near:oak": {
+      "x": 2,
+      "y": 394,
+      "width": 176,
+      "height": 192,
+      "anchor": [
+        88,
+        191
+      ]
+    },
+    "DAY:near:birch": {
+      "x": 182,
+      "y": 394,
+      "width": 104,
+      "height": 146,
+      "anchor": [
+        52,
+        145
+      ]
+    },
+    "DAY:near:distantOak": {
+      "x": 362,
+      "y": 394,
+      "width": 56,
+      "height": 84,
+      "anchor": [
+        28,
+        83
+      ]
+    },
+    "DAY:near:twistedTree": {
+      "x": 542,
+      "y": 394,
+      "width": 168,
+      "height": 176,
+      "anchor": [
+        88,
+        175
+      ]
+    },
+    "DAY:near:cypress": {
+      "x": 722,
+      "y": 394,
+      "width": 64,
+      "height": 168,
+      "anchor": [
+        32,
+        167
+      ]
+    },
+    "DAY:near:ruins": {
+      "x": 902,
+      "y": 394,
+      "width": 112,
+      "height": 80,
+      "anchor": [
+        56,
+        79
+      ]
+    },
+    "DAY:near:shrub": {
+      "x": 1082,
+      "y": 394,
+      "width": 72,
+      "height": 40,
+      "anchor": [
+        36,
+        39
+      ]
+    },
+    "DAY:near:fern": {
+      "x": 1262,
+      "y": 394,
+      "width": 32,
+      "height": 24,
+      "anchor": [
+        16,
+        23
+      ]
+    },
+    "DAY:near:mushrooms": {
+      "x": 1442,
+      "y": 394,
+      "width": 28,
+      "height": 18,
+      "anchor": [
+        14,
+        17
+      ]
+    },
+    "DAY:near:flowers": {
+      "x": 1622,
+      "y": 394,
+      "width": 24,
+      "height": 16,
+      "anchor": [
+        12,
+        15
+      ]
+    },
+    "DAY:near:rocks": {
+      "x": 1802,
+      "y": 394,
+      "width": 32,
+      "height": 20,
+      "anchor": [
+        16,
+        19
+      ]
+    },
+    "DAY:near:pointedGrave": {
+      "x": 1982,
+      "y": 394,
+      "width": 48,
+      "height": 72,
+      "anchor": [
+        24,
+        71
+      ]
+    },
+    "DAY:near:wornGrave": {
+      "x": 2162,
+      "y": 394,
+      "width": 48,
+      "height": 46,
+      "anchor": [
+        24,
+        45
+      ]
+    },
+    "DAY:near:ringCross": {
+      "x": 2342,
+      "y": 394,
+      "width": 64,
+      "height": 96,
+      "anchor": [
+        32,
+        95
+      ]
+    },
+    "DAY:near:fence": {
+      "x": 2522,
+      "y": 394,
+      "width": 96,
+      "height": 40,
+      "anchor": [
+        48,
+        39
+      ]
+    },
+    "DAY:near:moon": {
+      "x": 2702,
+      "y": 394,
+      "width": 48,
+      "height": 48,
+      "anchor": [
+        24,
+        47
+      ]
+    },
+    "DAY:near:church": {
+      "x": 2882,
+      "y": 394,
+      "width": 88,
+      "height": 112,
+      "anchor": [
+        44,
+        111
+      ]
+    },
+    "DAY:near:groundA": {
+      "x": 3062,
+      "y": 394,
+      "width": 64,
+      "height": 32,
+      "anchor": [
+        32,
+        31
+      ]
+    },
+    "DAY:near:groundB": {
+      "x": 3242,
+      "y": 394,
+      "width": 64,
+      "height": 32,
+      "anchor": [
+        32,
+        31
+      ]
+    },
+    "DAY:near:groundC": {
+      "x": 3422,
+      "y": 394,
+      "width": 64,
+      "height": 32,
+      "anchor": [
+        32,
+        31
+      ]
+    },
+    "EVENING:far:oak": {
+      "x": 2,
+      "y": 590,
+      "width": 176,
+      "height": 192,
+      "anchor": [
+        88,
+        191
+      ]
+    },
+    "EVENING:far:birch": {
+      "x": 182,
+      "y": 590,
+      "width": 104,
+      "height": 146,
+      "anchor": [
+        52,
+        145
+      ]
+    },
+    "EVENING:far:distantOak": {
+      "x": 362,
+      "y": 590,
+      "width": 56,
+      "height": 84,
+      "anchor": [
+        28,
+        83
+      ]
+    },
+    "EVENING:far:twistedTree": {
+      "x": 542,
+      "y": 590,
+      "width": 168,
+      "height": 176,
+      "anchor": [
+        88,
+        175
+      ]
+    },
+    "EVENING:far:cypress": {
+      "x": 722,
+      "y": 590,
+      "width": 64,
+      "height": 168,
+      "anchor": [
+        32,
+        167
+      ]
+    },
+    "EVENING:far:ruins": {
+      "x": 902,
+      "y": 590,
+      "width": 112,
+      "height": 80,
+      "anchor": [
+        56,
+        79
+      ]
+    },
+    "EVENING:far:shrub": {
+      "x": 1082,
+      "y": 590,
+      "width": 72,
+      "height": 40,
+      "anchor": [
+        36,
+        39
+      ]
+    },
+    "EVENING:far:fern": {
+      "x": 1262,
+      "y": 590,
+      "width": 32,
+      "height": 24,
+      "anchor": [
+        16,
+        23
+      ]
+    },
+    "EVENING:far:mushrooms": {
+      "x": 1442,
+      "y": 590,
+      "width": 28,
+      "height": 18,
+      "anchor": [
+        14,
+        17
+      ]
+    },
+    "EVENING:far:flowers": {
+      "x": 1622,
+      "y": 590,
+      "width": 24,
+      "height": 16,
+      "anchor": [
+        12,
+        15
+      ]
+    },
+    "EVENING:far:rocks": {
+      "x": 1802,
+      "y": 590,
+      "width": 32,
+      "height": 20,
+      "anchor": [
+        16,
+        19
+      ]
+    },
+    "EVENING:far:pointedGrave": {
+      "x": 1982,
+      "y": 590,
+      "width": 48,
+      "height": 72,
+      "anchor": [
+        24,
+        71
+      ]
+    },
+    "EVENING:far:wornGrave": {
+      "x": 2162,
+      "y": 590,
+      "width": 48,
+      "height": 46,
+      "anchor": [
+        24,
+        45
+      ]
+    },
+    "EVENING:far:ringCross": {
+      "x": 2342,
+      "y": 590,
+      "width": 64,
+      "height": 96,
+      "anchor": [
+        32,
+        95
+      ]
+    },
+    "EVENING:far:fence": {
+      "x": 2522,
+      "y": 590,
+      "width": 96,
+      "height": 40,
+      "anchor": [
+        48,
+        39
+      ]
+    },
+    "EVENING:far:moon": {
+      "x": 2702,
+      "y": 590,
+      "width": 48,
+      "height": 48,
+      "anchor": [
+        24,
+        47
+      ]
+    },
+    "EVENING:far:church": {
+      "x": 2882,
+      "y": 590,
+      "width": 88,
+      "height": 112,
+      "anchor": [
+        44,
+        111
+      ]
+    },
+    "EVENING:far:groundA": {
+      "x": 3062,
+      "y": 590,
+      "width": 64,
+      "height": 32,
+      "anchor": [
+        32,
+        31
+      ]
+    },
+    "EVENING:far:groundB": {
+      "x": 3242,
+      "y": 590,
+      "width": 64,
+      "height": 32,
+      "anchor": [
+        32,
+        31
+      ]
+    },
+    "EVENING:far:groundC": {
+      "x": 3422,
+      "y": 590,
+      "width": 64,
+      "height": 32,
+      "anchor": [
+        32,
+        31
+      ]
+    },
+    "EVENING:middle:oak": {
+      "x": 2,
+      "y": 786,
+      "width": 176,
+      "height": 192,
+      "anchor": [
+        88,
+        191
+      ]
+    },
+    "EVENING:middle:birch": {
+      "x": 182,
+      "y": 786,
+      "width": 104,
+      "height": 146,
+      "anchor": [
+        52,
+        145
+      ]
+    },
+    "EVENING:middle:distantOak": {
+      "x": 362,
+      "y": 786,
+      "width": 56,
+      "height": 84,
+      "anchor": [
+        28,
+        83
+      ]
+    },
+    "EVENING:middle:twistedTree": {
+      "x": 542,
+      "y": 786,
+      "width": 168,
+      "height": 176,
+      "anchor": [
+        88,
+        175
+      ]
+    },
+    "EVENING:middle:cypress": {
+      "x": 722,
+      "y": 786,
+      "width": 64,
+      "height": 168,
+      "anchor": [
+        32,
+        167
+      ]
+    },
+    "EVENING:middle:ruins": {
+      "x": 902,
+      "y": 786,
+      "width": 112,
+      "height": 80,
+      "anchor": [
+        56,
+        79
+      ]
+    },
+    "EVENING:middle:shrub": {
+      "x": 1082,
+      "y": 786,
+      "width": 72,
+      "height": 40,
+      "anchor": [
+        36,
+        39
+      ]
+    },
+    "EVENING:middle:fern": {
+      "x": 1262,
+      "y": 786,
+      "width": 32,
+      "height": 24,
+      "anchor": [
+        16,
+        23
+      ]
+    },
+    "EVENING:middle:mushrooms": {
+      "x": 1442,
+      "y": 786,
+      "width": 28,
+      "height": 18,
+      "anchor": [
+        14,
+        17
+      ]
+    },
+    "EVENING:middle:flowers": {
+      "x": 1622,
+      "y": 786,
+      "width": 24,
+      "height": 16,
+      "anchor": [
+        12,
+        15
+      ]
+    },
+    "EVENING:middle:rocks": {
+      "x": 1802,
+      "y": 786,
+      "width": 32,
+      "height": 20,
+      "anchor": [
+        16,
+        19
+      ]
+    },
+    "EVENING:middle:pointedGrave": {
+      "x": 1982,
+      "y": 786,
+      "width": 48,
+      "height": 72,
+      "anchor": [
+        24,
+        71
+      ]
+    },
+    "EVENING:middle:wornGrave": {
+      "x": 2162,
+      "y": 786,
+      "width": 48,
+      "height": 46,
+      "anchor": [
+        24,
+        45
+      ]
+    },
+    "EVENING:middle:ringCross": {
+      "x": 2342,
+      "y": 786,
+      "width": 64,
+      "height": 96,
+      "anchor": [
+        32,
+        95
+      ]
+    },
+    "EVENING:middle:fence": {
+      "x": 2522,
+      "y": 786,
+      "width": 96,
+      "height": 40,
+      "anchor": [
+        48,
+        39
+      ]
+    },
+    "EVENING:middle:moon": {
+      "x": 2702,
+      "y": 786,
+      "width": 48,
+      "height": 48,
+      "anchor": [
+        24,
+        47
+      ]
+    },
+    "EVENING:middle:church": {
+      "x": 2882,
+      "y": 786,
+      "width": 88,
+      "height": 112,
+      "anchor": [
+        44,
+        111
+      ]
+    },
+    "EVENING:middle:groundA": {
+      "x": 3062,
+      "y": 786,
+      "width": 64,
+      "height": 32,
+      "anchor": [
+        32,
+        31
+      ]
+    },
+    "EVENING:middle:groundB": {
+      "x": 3242,
+      "y": 786,
+      "width": 64,
+      "height": 32,
+      "anchor": [
+        32,
+        31
+      ]
+    },
+    "EVENING:middle:groundC": {
+      "x": 3422,
+      "y": 786,
+      "width": 64,
+      "height": 32,
+      "anchor": [
+        32,
+        31
+      ]
+    },
+    "EVENING:near:oak": {
+      "x": 2,
+      "y": 982,
+      "width": 176,
+      "height": 192,
+      "anchor": [
+        88,
+        191
+      ]
+    },
+    "EVENING:near:birch": {
+      "x": 182,
+      "y": 982,
+      "width": 104,
+      "height": 146,
+      "anchor": [
+        52,
+        145
+      ]
+    },
+    "EVENING:near:distantOak": {
+      "x": 362,
+      "y": 982,
+      "width": 56,
+      "height": 84,
+      "anchor": [
+        28,
+        83
+      ]
+    },
+    "EVENING:near:twistedTree": {
+      "x": 542,
+      "y": 982,
+      "width": 168,
+      "height": 176,
+      "anchor": [
+        88,
+        175
+      ]
+    },
+    "EVENING:near:cypress": {
+      "x": 722,
+      "y": 982,
+      "width": 64,
+      "height": 168,
+      "anchor": [
+        32,
+        167
+      ]
+    },
+    "EVENING:near:ruins": {
+      "x": 902,
+      "y": 982,
+      "width": 112,
+      "height": 80,
+      "anchor": [
+        56,
+        79
+      ]
+    },
+    "EVENING:near:shrub": {
+      "x": 1082,
+      "y": 982,
+      "width": 72,
+      "height": 40,
+      "anchor": [
+        36,
+        39
+      ]
+    },
+    "EVENING:near:fern": {
+      "x": 1262,
+      "y": 982,
+      "width": 32,
+      "height": 24,
+      "anchor": [
+        16,
+        23
+      ]
+    },
+    "EVENING:near:mushrooms": {
+      "x": 1442,
+      "y": 982,
+      "width": 28,
+      "height": 18,
+      "anchor": [
+        14,
+        17
+      ]
+    },
+    "EVENING:near:flowers": {
+      "x": 1622,
+      "y": 982,
+      "width": 24,
+      "height": 16,
+      "anchor": [
+        12,
+        15
+      ]
+    },
+    "EVENING:near:rocks": {
+      "x": 1802,
+      "y": 982,
+      "width": 32,
+      "height": 20,
+      "anchor": [
+        16,
+        19
+      ]
+    },
+    "EVENING:near:pointedGrave": {
+      "x": 1982,
+      "y": 982,
+      "width": 48,
+      "height": 72,
+      "anchor": [
+        24,
+        71
+      ]
+    },
+    "EVENING:near:wornGrave": {
+      "x": 2162,
+      "y": 982,
+      "width": 48,
+      "height": 46,
+      "anchor": [
+        24,
+        45
+      ]
+    },
+    "EVENING:near:ringCross": {
+      "x": 2342,
+      "y": 982,
+      "width": 64,
+      "height": 96,
+      "anchor": [
+        32,
+        95
+      ]
+    },
+    "EVENING:near:fence": {
+      "x": 2522,
+      "y": 982,
+      "width": 96,
+      "height": 40,
+      "anchor": [
+        48,
+        39
+      ]
+    },
+    "EVENING:near:moon": {
+      "x": 2702,
+      "y": 982,
+      "width": 48,
+      "height": 48,
+      "anchor": [
+        24,
+        47
+      ]
+    },
+    "EVENING:near:church": {
+      "x": 2882,
+      "y": 982,
+      "width": 88,
+      "height": 112,
+      "anchor": [
+        44,
+        111
+      ]
+    },
+    "EVENING:near:groundA": {
+      "x": 3062,
+      "y": 982,
+      "width": 64,
+      "height": 32,
+      "anchor": [
+        32,
+        31
+      ]
+    },
+    "EVENING:near:groundB": {
+      "x": 3242,
+      "y": 982,
+      "width": 64,
+      "height": 32,
+      "anchor": [
+        32,
+        31
+      ]
+    },
+    "EVENING:near:groundC": {
+      "x": 3422,
+      "y": 982,
+      "width": 64,
+      "height": 32,
+      "anchor": [
+        32,
+        31
+      ]
+    },
+    "NIGHT:far:oak": {
+      "x": 2,
+      "y": 1178,
+      "width": 176,
+      "height": 192,
+      "anchor": [
+        88,
+        191
+      ]
+    },
+    "NIGHT:far:birch": {
+      "x": 182,
+      "y": 1178,
+      "width": 104,
+      "height": 146,
+      "anchor": [
+        52,
+        145
+      ]
+    },
+    "NIGHT:far:distantOak": {
+      "x": 362,
+      "y": 1178,
+      "width": 56,
+      "height": 84,
+      "anchor": [
+        28,
+        83
+      ]
+    },
+    "NIGHT:far:twistedTree": {
+      "x": 542,
+      "y": 1178,
+      "width": 168,
+      "height": 176,
+      "anchor": [
+        88,
+        175
+      ]
+    },
+    "NIGHT:far:cypress": {
+      "x": 722,
+      "y": 1178,
+      "width": 64,
+      "height": 168,
+      "anchor": [
+        32,
+        167
+      ]
+    },
+    "NIGHT:far:ruins": {
+      "x": 902,
+      "y": 1178,
+      "width": 112,
+      "height": 80,
+      "anchor": [
+        56,
+        79
+      ]
+    },
+    "NIGHT:far:shrub": {
+      "x": 1082,
+      "y": 1178,
+      "width": 72,
+      "height": 40,
+      "anchor": [
+        36,
+        39
+      ]
+    },
+    "NIGHT:far:fern": {
+      "x": 1262,
+      "y": 1178,
+      "width": 32,
+      "height": 24,
+      "anchor": [
+        16,
+        23
+      ]
+    },
+    "NIGHT:far:mushrooms": {
+      "x": 1442,
+      "y": 1178,
+      "width": 28,
+      "height": 18,
+      "anchor": [
+        14,
+        17
+      ]
+    },
+    "NIGHT:far:flowers": {
+      "x": 1622,
+      "y": 1178,
+      "width": 24,
+      "height": 16,
+      "anchor": [
+        12,
+        15
+      ]
+    },
+    "NIGHT:far:rocks": {
+      "x": 1802,
+      "y": 1178,
+      "width": 32,
+      "height": 20,
+      "anchor": [
+        16,
+        19
+      ]
+    },
+    "NIGHT:far:pointedGrave": {
+      "x": 1982,
+      "y": 1178,
+      "width": 48,
+      "height": 72,
+      "anchor": [
+        24,
+        71
+      ]
+    },
+    "NIGHT:far:wornGrave": {
+      "x": 2162,
+      "y": 1178,
+      "width": 48,
+      "height": 46,
+      "anchor": [
+        24,
+        45
+      ]
+    },
+    "NIGHT:far:ringCross": {
+      "x": 2342,
+      "y": 1178,
+      "width": 64,
+      "height": 96,
+      "anchor": [
+        32,
+        95
+      ]
+    },
+    "NIGHT:far:fence": {
+      "x": 2522,
+      "y": 1178,
+      "width": 96,
+      "height": 40,
+      "anchor": [
+        48,
+        39
+      ]
+    },
+    "NIGHT:far:moon": {
+      "x": 2702,
+      "y": 1178,
+      "width": 48,
+      "height": 48,
+      "anchor": [
+        24,
+        47
+      ]
+    },
+    "NIGHT:far:church": {
+      "x": 2882,
+      "y": 1178,
+      "width": 88,
+      "height": 112,
+      "anchor": [
+        44,
+        111
+      ]
+    },
+    "NIGHT:far:groundA": {
+      "x": 3062,
+      "y": 1178,
+      "width": 64,
+      "height": 32,
+      "anchor": [
+        32,
+        31
+      ]
+    },
+    "NIGHT:far:groundB": {
+      "x": 3242,
+      "y": 1178,
+      "width": 64,
+      "height": 32,
+      "anchor": [
+        32,
+        31
+      ]
+    },
+    "NIGHT:far:groundC": {
+      "x": 3422,
+      "y": 1178,
+      "width": 64,
+      "height": 32,
+      "anchor": [
+        32,
+        31
+      ]
+    },
+    "NIGHT:middle:oak": {
+      "x": 2,
+      "y": 1374,
+      "width": 176,
+      "height": 192,
+      "anchor": [
+        88,
+        191
+      ]
+    },
+    "NIGHT:middle:birch": {
+      "x": 182,
+      "y": 1374,
+      "width": 104,
+      "height": 146,
+      "anchor": [
+        52,
+        145
+      ]
+    },
+    "NIGHT:middle:distantOak": {
+      "x": 362,
+      "y": 1374,
+      "width": 56,
+      "height": 84,
+      "anchor": [
+        28,
+        83
+      ]
+    },
+    "NIGHT:middle:twistedTree": {
+      "x": 542,
+      "y": 1374,
+      "width": 168,
+      "height": 176,
+      "anchor": [
+        88,
+        175
+      ]
+    },
+    "NIGHT:middle:cypress": {
+      "x": 722,
+      "y": 1374,
+      "width": 64,
+      "height": 168,
+      "anchor": [
+        32,
+        167
+      ]
+    },
+    "NIGHT:middle:ruins": {
+      "x": 902,
+      "y": 1374,
+      "width": 112,
+      "height": 80,
+      "anchor": [
+        56,
+        79
+      ]
+    },
+    "NIGHT:middle:shrub": {
+      "x": 1082,
+      "y": 1374,
+      "width": 72,
+      "height": 40,
+      "anchor": [
+        36,
+        39
+      ]
+    },
+    "NIGHT:middle:fern": {
+      "x": 1262,
+      "y": 1374,
+      "width": 32,
+      "height": 24,
+      "anchor": [
+        16,
+        23
+      ]
+    },
+    "NIGHT:middle:mushrooms": {
+      "x": 1442,
+      "y": 1374,
+      "width": 28,
+      "height": 18,
+      "anchor": [
+        14,
+        17
+      ]
+    },
+    "NIGHT:middle:flowers": {
+      "x": 1622,
+      "y": 1374,
+      "width": 24,
+      "height": 16,
+      "anchor": [
+        12,
+        15
+      ]
+    },
+    "NIGHT:middle:rocks": {
+      "x": 1802,
+      "y": 1374,
+      "width": 32,
+      "height": 20,
+      "anchor": [
+        16,
+        19
+      ]
+    },
+    "NIGHT:middle:pointedGrave": {
+      "x": 1982,
+      "y": 1374,
+      "width": 48,
+      "height": 72,
+      "anchor": [
+        24,
+        71
+      ]
+    },
+    "NIGHT:middle:wornGrave": {
+      "x": 2162,
+      "y": 1374,
+      "width": 48,
+      "height": 46,
+      "anchor": [
+        24,
+        45
+      ]
+    },
+    "NIGHT:middle:ringCross": {
+      "x": 2342,
+      "y": 1374,
+      "width": 64,
+      "height": 96,
+      "anchor": [
+        32,
+        95
+      ]
+    },
+    "NIGHT:middle:fence": {
+      "x": 2522,
+      "y": 1374,
+      "width": 96,
+      "height": 40,
+      "anchor": [
+        48,
+        39
+      ]
+    },
+    "NIGHT:middle:moon": {
+      "x": 2702,
+      "y": 1374,
+      "width": 48,
+      "height": 48,
+      "anchor": [
+        24,
+        47
+      ]
+    },
+    "NIGHT:middle:church": {
+      "x": 2882,
+      "y": 1374,
+      "width": 88,
+      "height": 112,
+      "anchor": [
+        44,
+        111
+      ]
+    },
+    "NIGHT:middle:groundA": {
+      "x": 3062,
+      "y": 1374,
+      "width": 64,
+      "height": 32,
+      "anchor": [
+        32,
+        31
+      ]
+    },
+    "NIGHT:middle:groundB": {
+      "x": 3242,
+      "y": 1374,
+      "width": 64,
+      "height": 32,
+      "anchor": [
+        32,
+        31
+      ]
+    },
+    "NIGHT:middle:groundC": {
+      "x": 3422,
+      "y": 1374,
+      "width": 64,
+      "height": 32,
+      "anchor": [
+        32,
+        31
+      ]
+    },
+    "NIGHT:near:oak": {
+      "x": 2,
+      "y": 1570,
+      "width": 176,
+      "height": 192,
+      "anchor": [
+        88,
+        191
+      ]
+    },
+    "NIGHT:near:birch": {
+      "x": 182,
+      "y": 1570,
+      "width": 104,
+      "height": 146,
+      "anchor": [
+        52,
+        145
+      ]
+    },
+    "NIGHT:near:distantOak": {
+      "x": 362,
+      "y": 1570,
+      "width": 56,
+      "height": 84,
+      "anchor": [
+        28,
+        83
+      ]
+    },
+    "NIGHT:near:twistedTree": {
+      "x": 542,
+      "y": 1570,
+      "width": 168,
+      "height": 176,
+      "anchor": [
+        88,
+        175
+      ]
+    },
+    "NIGHT:near:cypress": {
+      "x": 722,
+      "y": 1570,
+      "width": 64,
+      "height": 168,
+      "anchor": [
+        32,
+        167
+      ]
+    },
+    "NIGHT:near:ruins": {
+      "x": 902,
+      "y": 1570,
+      "width": 112,
+      "height": 80,
+      "anchor": [
+        56,
+        79
+      ]
+    },
+    "NIGHT:near:shrub": {
+      "x": 1082,
+      "y": 1570,
+      "width": 72,
+      "height": 40,
+      "anchor": [
+        36,
+        39
+      ]
+    },
+    "NIGHT:near:fern": {
+      "x": 1262,
+      "y": 1570,
+      "width": 32,
+      "height": 24,
+      "anchor": [
+        16,
+        23
+      ]
+    },
+    "NIGHT:near:mushrooms": {
+      "x": 1442,
+      "y": 1570,
+      "width": 28,
+      "height": 18,
+      "anchor": [
+        14,
+        17
+      ]
+    },
+    "NIGHT:near:flowers": {
+      "x": 1622,
+      "y": 1570,
+      "width": 24,
+      "height": 16,
+      "anchor": [
+        12,
+        15
+      ]
+    },
+    "NIGHT:near:rocks": {
+      "x": 1802,
+      "y": 1570,
+      "width": 32,
+      "height": 20,
+      "anchor": [
+        16,
+        19
+      ]
+    },
+    "NIGHT:near:pointedGrave": {
+      "x": 1982,
+      "y": 1570,
+      "width": 48,
+      "height": 72,
+      "anchor": [
+        24,
+        71
+      ]
+    },
+    "NIGHT:near:wornGrave": {
+      "x": 2162,
+      "y": 1570,
+      "width": 48,
+      "height": 46,
+      "anchor": [
+        24,
+        45
+      ]
+    },
+    "NIGHT:near:ringCross": {
+      "x": 2342,
+      "y": 1570,
+      "width": 64,
+      "height": 96,
+      "anchor": [
+        32,
+        95
+      ]
+    },
+    "NIGHT:near:fence": {
+      "x": 2522,
+      "y": 1570,
+      "width": 96,
+      "height": 40,
+      "anchor": [
+        48,
+        39
+      ]
+    },
+    "NIGHT:near:moon": {
+      "x": 2702,
+      "y": 1570,
+      "width": 48,
+      "height": 48,
+      "anchor": [
+        24,
+        47
+      ]
+    },
+    "NIGHT:near:church": {
+      "x": 2882,
+      "y": 1570,
+      "width": 88,
+      "height": 112,
+      "anchor": [
+        44,
+        111
+      ]
+    },
+    "NIGHT:near:groundA": {
+      "x": 3062,
+      "y": 1570,
+      "width": 64,
+      "height": 32,
+      "anchor": [
+        32,
+        31
+      ]
+    },
+    "NIGHT:near:groundB": {
+      "x": 3242,
+      "y": 1570,
+      "width": 64,
+      "height": 32,
+      "anchor": [
+        32,
+        31
+      ]
+    },
+    "NIGHT:near:groundC": {
+      "x": 3422,
+      "y": 1570,
+      "width": 64,
+      "height": 32,
+      "anchor": [
+        32,
+        31
+      ]
+    }
+  }
+}

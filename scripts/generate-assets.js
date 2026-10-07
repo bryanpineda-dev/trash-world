@@ -3,10 +3,12 @@ import { fileURLToPath } from 'node:url';
 import { compileCatalog, validateCatalog } from '../src/rendering/AssetModel.js';
 import { readAssetSource } from './asset-source.js';
 import { createBitmap, paintPixels, rgba, encodePng } from './png.js';
+import { generateBiome } from './generate-biome.js';
 
 const source = readAssetSource();
 validateCatalog(source);
 if (process.argv.includes('--check')) {
+  generateBiome(true);
   console.log(`Style valid: ${source.style.id}; ${Object.keys(source.parts).length} parts; ${Object.keys(source.animations.clips).length} shared clips.`);
   process.exit(0);
 }
@@ -53,3 +55,4 @@ const sprite = createBitmap(512, 512);
 paintPixels(sprite, catalog.frames['miga:wave-a'].pixels, catalog.palette, 0, 0, 8);
 writeFileSync(`${output}/miga.png`, encodePng(sprite));
 console.log(`Generated ${entries.length} atlas frames, ${Object.keys(catalog.characters).length} character, ${Object.keys(source.animations.clips).length} animation clips.`);
+generateBiome();

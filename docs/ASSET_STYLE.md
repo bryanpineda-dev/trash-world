@@ -9,13 +9,13 @@ El tablero de inspiracion es una referencia de ambiente, no un spritesheet listo
 ## Reglas visuales
 
 - Trabajar a resolucion nativa, sin suavizado, degradados, blur ni subpixeles.
-- Contorno oscuro de 1 px. Luz desde arriba a la izquierda; sombras agrupadas, no ruido aleatorio.
+- Miga conserva el contorno verde oscuro aprobado de 1 px. En el entorno, el borde pertenece al material: piedra gris verdosa, hierro frio y follaje verde profundo. No usar un delineado universal negro o casi negro. Luz desde arriba a la izquierda; sombras agrupadas, no ruido aleatorio.
 - Cabeza grande y silueta legible. Expresiones con pocos pixeles, ojos oscuros y gestos tranquilos.
 - Los cambios de color conservan contraste entre contorno, material, sombra y luz.
 - Escalar por numeros enteros y con nearest-neighbor. No reinterpretar el tamano de un pixel entre assets.
 - El suelo es el punto de apoyo del personaje y los objetos. Cambiar una pieza no debe mover ese punto.
 
-La paleta siguiente se aplica a este kit de personajes y objetos. El fondo procedural de V0.1 todavia tiene sus propias paletas de dia, tarde y noche; migrarlo al nuevo lenguaje visual queda para la siguiente pasada de arte.
+La paleta siguiente se aplica a este kit de personajes y objetos. El bosque usa una biblioteca independiente de escenografia con 32 tokens de material, tres luces y contraste por profundidad. Sus rampas extra no se aplican a Miga ni a los objetos interactivos. Los arboles grandes se dibujan a escala nativa, no ampliando el roble pequeno. Ver [bioma](BIOME.md).
 
 ## Paleta canonica
 
@@ -79,6 +79,8 @@ El farol usa un lienzo de **24 x 40 px**, ancla **[12, 39]** y dos variantes par
 Miga mide 56 px visibles en reposo. El farol mide 38, la tumba 46, el arbusto 26 y el roble 62. Todos se dibujan a escala 1 en el mundo y a escala 2 en las miniaturas del visor. La hoja `style-kit.png` compara los cinco sobre el mismo suelo a escala 3. Ver [contrato de medidas del entorno](ENVIRONMENT.md).
 
 Mantener un aspecto gastado pero sencillo. La luz del farol y las runas se dibuja con colores de la paleta, no con bloom o efectos que oculten los pixeles.
+
+Los cuatro objetos ya usan contornos por material. El recolor conserva sus mascaras de transparencia, geometria, anclas, zonas de toque y variantes animadas. El token `k` permanece disponible para el personaje, no se usa en objetos ni escenografia. La biblioteca del bioma suma veinte dibujos originales con escala nativa comun.
 
 ## Revision
 

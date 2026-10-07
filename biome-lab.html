@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="./icons/icon-192.png" />
+    <title>Bosque de las ruinas - Trash World</title>
+  </head>
+  <body>
+    <main id="app">
+      <canvas id="world" role="img" aria-label="Miga en un bosque misterioso con ruinas y niebla"></canvas>
+      <header class="biome-toolbar">
+        <h1>Bosque de las ruinas</h1>
+        <nav aria-label="Visores"><a href="./" class="icon-button" aria-label="Mundo vivo" data-tooltip="Mundo vivo"><i data-lucide="earth"></i></a><a href="./asset-lab.html" class="icon-button" aria-label="Personaje y objetos" data-tooltip="Personaje y objetos"><i data-lucide="shapes"></i></a><button id="library-open" type="button" class="icon-button" aria-label="Biblioteca del bioma" data-tooltip="Biblioteca del bioma"><i data-lucide="grid-2x2"></i></button></nav>
+      </header>
+      <form class="biome-controls" aria-label="Vista del bioma">
+        <label><span>Momento</span><select id="biome-phase"><option value="DAY">Dia</option><option value="EVENING">Atardecer</option><option value="NIGHT" selected>Noche</option></select></label>
+        <label><span>Miga</span><select id="biome-pose"><option value="IDLE">Reposo</option><option value="WALK">Caminar</option><option value="SLEEP">Dormir</option></select></label>
+        <label class="position-control"><span>Posicion <output id="position-output">275</output></span><input id="biome-position" type="range" min="32" max="528" step="1" value="275" /></label>
+        <button id="biome-play" type="button" class="icon-button" aria-label="Pausar" data-tooltip="Pausar"><i data-lucide="pause"></i></button>
+      </form>
+    </main>
+    <dialog id="biome-library" aria-labelledby="library-title">
+      <header class="library-toolbar"><h2 id="library-title">Biblioteca del bioma</h2><label class="library-family"><span>Familia</span><select id="library-family"><option value="all">Todas</option></select></label><button id="library-close" class="icon-button" type="button" aria-label="Cerrar biblioteca" data-tooltip="Cerrar biblioteca"><i data-lucide="x"></i></button></header>
+      <div id="library-grid"></div>
+    </dialog>
+    <script type="module" src="./src/biome-lab.js"></script>
+  </body>
+</html>

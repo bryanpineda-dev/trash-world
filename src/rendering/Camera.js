@@ -5,7 +5,7 @@ export class Camera {
   resize(width, height) {
     this.width = width;
     this.height = height;
-    this.ground = Math.round(height * 0.70);
+    this.ground = Math.min(height - 32, Math.round(height * 0.79));
     this.x = clamp(this.x, width / 2, WORLD_WIDTH - width / 2);
   }
   update(target, dt) {

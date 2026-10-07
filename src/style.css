@@ -14,9 +14,9 @@ button:disabled { cursor: default; }
 [hidden] { display: none !important; }
 #app { position: relative; isolation: isolate; height: 100%; height: 100dvh; min-height: 240px; }
 #world { display: block; width: 100%; height: 100%; image-rendering: pixelated; touch-action: none; }
-.world-header { position: absolute; top: 0; left: 0; right: 0; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: max(16px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right)) 0 max(20px, env(safe-area-inset-left)); pointer-events: none; }
+.world-header { position: absolute; top: 0; left: 0; right: 0; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: max(16px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right)) 12px max(20px, env(safe-area-inset-left)); pointer-events: none; color: #fff6df; background: #233b37e0; }
 .brand { display: flex; align-items: center; gap: 10px; min-width: 0; }
-.brand-mark { width: 14px; height: 14px; background: #214c43; box-shadow: inset 4px -4px #92c8a2; flex-shrink: 0; }
+.brand-mark { width: 14px; height: 14px; background: #fff6df; box-shadow: inset 4px -4px #92c8a2; flex-shrink: 0; }
 h1 { font-size: 18px; font-weight: 600; margin: 0; white-space: nowrap; }
 .toolbar { display: flex; gap: 4px; pointer-events: auto; flex-shrink: 0; }
 .icon-button { position: relative; display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; color: inherit; background: transparent; border: 1px solid transparent; border-radius: 4px; padding: 0; flex-shrink: 0; }
