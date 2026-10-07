@@ -167,10 +167,10 @@ for (const [variant, label] of [['rest', 'Cerrada'], ['mouth-small', 'Entreabier
   facePreviews.push({ ...previewTile(variant, label, '#study-faces', 144, 154), variant });
 }
 for (const [id, object] of Object.entries(assetManifest.objects)) {
-  objectPreviews.push(previewTile(id, object.label, '#objects', 160, 100));
+  objectPreviews.push(previewTile(id, object.label, '#objects', 160, 160));
 }
 for (const [id, part] of Object.entries(sourceParts)) {
-  const preview = previewTile(id, part.label ?? id, '#parts', 100, 90);
+  const preview = previewTile(id, part.label ?? id, '#parts', 160, 160);
   const variants = document.createElement('select');
   variants.setAttribute('aria-label', `Variante de ${part.label ?? id}`);
   options(variants, Object.keys(part.variants).map(value => [value, value]));
@@ -239,7 +239,7 @@ function render(now) {
   }
   for (const preview of objectPreviews) {
     preview.ctx.clearRect(0, 0, preview.canvas.width, preview.canvas.height);
-    assets.drawObject(preview.ctx, preview.id, now / 1000, preview.canvas.width / 2, 84, 2);
+    assets.drawObject(preview.ctx, preview.id, now / 1000, preview.canvas.width / 2, 148, 2);
   }
   for (const preview of partPreviews) {
     preview.ctx.clearRect(0, 0, preview.canvas.width, preview.canvas.height);

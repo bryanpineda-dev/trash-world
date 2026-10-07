@@ -6,15 +6,15 @@ A tiny autonomous creature living inside your phone. A mobile-first pixel world 
 
 Miga vive en un pequeno mundo, explora objetos, descansa, duerme y despierta por su cuenta. Tiene necesidades y personalidad. Tocar la criatura, mantener el toque o tocar el entorno produce distintas reacciones. Su vida se guarda en el dispositivo.
 
-Esta version incluye Canvas 2D, reloj del mundo, planta que puede investigar y comer, limites del mundo, memoria de descubrimientos, guardado versionado, progreso offline resumido, panel de depuracion y PWA. Miga es un esqueleto sin accesorios; el farol y la runa comparten un kit original de pixel art modular.
+Esta version incluye Canvas 2D, reloj del mundo, planta que puede investigar y comer, limites del mundo, memoria de descubrimientos, guardado versionado, progreso offline resumido, panel de depuracion y PWA. Miga es un esqueleto sin accesorios; el farol, la tumba runica, el arbusto y el roble comparten un kit original de pixel art modular.
 
 ## Kit de assets
 
-Paleta fija de 16 colores, personaje de 64 x 64 px construido con cinco piezas y siete slots independientes, diez clips y dos objetos animados. El fondo procedural conserva por ahora su arte de V0.1.
+Paleta fija de 16 colores, personaje de 64 x 64 px construido con cinco piezas y siete slots independientes, diez clips y cuatro objetos animados. Los objetos usan la misma escala de pixel nativo, sin ampliaciones individuales. El fondo procedural conserva por ahora su arte de V0.1.
 
 `assets/source/` guarda los originales editables. `npm run assets` produce un atlas PNG transparente, metadata JSON, una hoja comparativa y los iconos de la app. `npm run assets:check` valida el contrato del kit. Los archivos generados se incluyen junto a sus fuentes.
 
-El visor esta en `/asset-lab.html`, tanto en desarrollo como en el build. Ver [guia de estilo](docs/ASSET_STYLE.md) y [flujo de trabajo](docs/ASSET_WORKFLOW.md).
+El visor esta en `/asset-lab.html`, tanto en desarrollo como en el build. Ver [guia de estilo](docs/ASSET_STYLE.md), [medidas del entorno](docs/ENVIRONMENT.md) y [flujo de trabajo](docs/ASSET_WORKFLOW.md).
 
 La calaverita aprobada es el unico personaje activo, `miga`. Camina con ocho fases, craneo compacto de perfil y dientes desiguales; el torax se ensancha hacia abajo y oculta parte de los brazos. Al dormir sus huesos se separan y descansan junto a la cabeza; al despertar se reconstruye. La boquita y el saludo siguen disponibles en el visor, sin audio. Ver [contrato del personaje](docs/CHARACTER.md). Los estudios descartados se retiraron del kit activo; se conserva un respaldo local previo a la promocion.
 

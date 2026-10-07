@@ -80,11 +80,11 @@
   },
   "objects": {
     "lantern": {
-      "label": "Farol",
+      "label": "Farol de hierro",
       "part": "lantern",
       "anchor": [
-        8,
-        23
+        12,
+        39
       ],
       "frames": [
         [
@@ -99,11 +99,11 @@
       "loop": true
     },
     "rune": {
-      "label": "Runa",
+      "label": "Tumba runica",
       "part": "rune",
       "anchor": [
-        12,
-        30
+        18,
+        47
       ],
       "frames": [
         [
@@ -113,6 +113,44 @@
         [
           "lit",
           800
+        ]
+      ],
+      "loop": true
+    },
+    "plant": {
+      "label": "Arbusto de bayas",
+      "part": "plant",
+      "anchor": [
+        14,
+        27
+      ],
+      "frames": [
+        [
+          "rest",
+          2400
+        ],
+        [
+          "breeze",
+          1400
+        ]
+      ],
+      "loop": true
+    },
+    "tree": {
+      "label": "Roble pequeno",
+      "part": "tree",
+      "anchor": [
+        32,
+        63
+      ],
+      "frames": [
+        [
+          "rest",
+          3000
+        ],
+        [
+          "breeze",
+          1800
         ]
       ],
       "loop": true

@@ -143,18 +143,8 @@ export class Renderer {
   drawObject(object, discovered) {
     const { ctx } = this;
     const { x, y } = this.camera.toScreen(object.x);
-    if (object.kind === 'lantern' || object.kind === 'rune') {
+    if (assetManifest.objects[object.kind]) {
       this.assets.drawObject(ctx, object.kind, this.animationTime, x, y);
-    } else if (object.kind === 'plant') {
-      ctx.fillStyle = '#365c46'; ctx.fillRect(x - 1, y - 19, 2, 19);
-      ctx.fillStyle = '#719251'; ctx.fillRect(x - 8, y - 15, 7, 4); ctx.fillRect(x + 1, y - 10, 8, 4);
-      ctx.fillStyle = '#9db668'; ctx.fillRect(x - 5, y - 20, 8, 5);
-      ctx.fillStyle = '#cc756e'; ctx.fillRect(x + 1, y - 16, 4, 4); ctx.fillRect(x - 6, y - 11, 3, 3);
-    } else if (object.kind === 'tree') {
-      ctx.fillStyle = '#7e6956'; ctx.fillRect(x - 3, y - 34, 6, 34);
-      ctx.fillStyle = '#46674c'; ctx.fillRect(x - 18, y - 45, 34, 17); ctx.fillRect(x - 12, y - 54, 22, 12);
-      ctx.fillStyle = '#64875e'; ctx.fillRect(x - 13, y - 47, 18, 10); ctx.fillRect(x - 8, y - 53, 13, 5);
-      ctx.fillStyle = '#91a66c'; ctx.fillRect(x - 11, y - 45, 7, 3);
     } else {
       ctx.fillStyle = '#858e85'; ctx.fillRect(x - 9, y - 7, 18, 6); ctx.fillRect(x - 5, y - 10, 9, 3);
       ctx.fillStyle = '#b4bab0'; ctx.fillRect(x - 5, y - 8, 8, 2);

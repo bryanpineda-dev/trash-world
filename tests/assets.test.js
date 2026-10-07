@@ -202,7 +202,7 @@ test('composition stays stable across repeated calls and does not mutate source 
 test('only the approved skeleton and current prop sources remain active', () => {
   const source = readAssetSource();
   assert.deepEqual(Object.keys(source.characters.characters), ['miga']);
-  assert.deepEqual(Object.keys(source.parts).sort(), ['arm', 'leg', 'skull', 'ribs', 'pelvis', 'lantern', 'rune'].sort());
+  assert.deepEqual(Object.keys(source.parts).sort(), ['arm', 'leg', 'skull', 'ribs', 'pelvis', 'lantern', 'rune', 'plant', 'tree'].sort());
   const rig = rigForCharacter(source, 'miga');
   assert.deepEqual(rig.size, [64, 64]);
   assert.deepEqual(rig.anchor, [32, 61]);

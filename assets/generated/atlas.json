@@ -2,7 +2,7 @@
   "version": 1,
   "style": "trash-world-medieval-v1",
   "width": 544,
-  "height": 884,
+  "height": 952,
   "palette": {
     "k": "#233b37",
     "b": "#eee4c9",
@@ -365,7 +365,7 @@
   },
   "objects": {
     "lantern": {
-      "label": "Farol",
+      "label": "Farol de hierro",
       "loop": true,
       "frames": [
         {
@@ -379,7 +379,7 @@
       ]
     },
     "rune": {
-      "label": "Runa",
+      "label": "Tumba runica",
       "loop": true,
       "frames": [
         {
@@ -389,6 +389,34 @@
         {
           "id": "object:rune:lit",
           "duration": 800
+        }
+      ]
+    },
+    "plant": {
+      "label": "Arbusto de bayas",
+      "loop": true,
+      "frames": [
+        {
+          "id": "object:plant:rest",
+          "duration": 2400
+        },
+        {
+          "id": "object:plant:breeze",
+          "duration": 1400
+        }
+      ]
+    },
+    "tree": {
+      "label": "Roble pequeno",
+      "loop": true,
+      "frames": [
+        {
+          "id": "object:tree:rest",
+          "duration": 3000
+        },
+        {
+          "id": "object:tree:breeze",
+          "duration": 1800
         }
       ]
     }
@@ -1053,70 +1081,134 @@
     "object:lantern:rest": {
       "x": 70,
       "y": 342,
-      "width": 16,
-      "height": 24,
+      "width": 24,
+      "height": 40,
       "anchor": [
-        8,
-        23
+        12,
+        39
       ],
       "bounds": {
         "x": 3,
-        "y": 0,
-        "width": 10,
-        "height": 23
+        "y": 1,
+        "width": 15,
+        "height": 38
       }
     },
     "object:lantern:flicker": {
       "x": 138,
       "y": 342,
-      "width": 16,
-      "height": 24,
+      "width": 24,
+      "height": 40,
       "anchor": [
-        8,
-        23
+        12,
+        39
       ],
       "bounds": {
         "x": 3,
-        "y": 0,
-        "width": 10,
-        "height": 23
+        "y": 1,
+        "width": 15,
+        "height": 38
       }
     },
     "object:rune:rest": {
       "x": 206,
       "y": 342,
-      "width": 24,
-      "height": 32,
+      "width": 36,
+      "height": 48,
       "anchor": [
-        12,
-        30
+        18,
+        47
       ],
       "bounds": {
-        "x": 1,
-        "y": 0,
-        "width": 20,
-        "height": 30
+        "x": 0,
+        "y": 1,
+        "width": 33,
+        "height": 46
       }
     },
     "object:rune:lit": {
       "x": 274,
       "y": 342,
-      "width": 24,
-      "height": 32,
+      "width": 36,
+      "height": 48,
       "anchor": [
-        12,
-        30
+        18,
+        47
       ],
       "bounds": {
-        "x": 1,
-        "y": 0,
-        "width": 20,
-        "height": 30
+        "x": 0,
+        "y": 1,
+        "width": 33,
+        "height": 46
+      }
+    },
+    "object:plant:rest": {
+      "x": 342,
+      "y": 342,
+      "width": 28,
+      "height": 28,
+      "anchor": [
+        14,
+        27
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 1,
+        "width": 24,
+        "height": 26
+      }
+    },
+    "object:plant:breeze": {
+      "x": 410,
+      "y": 342,
+      "width": 28,
+      "height": 28,
+      "anchor": [
+        14,
+        27
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 1,
+        "width": 24,
+        "height": 26
+      }
+    },
+    "object:tree:rest": {
+      "x": 478,
+      "y": 342,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        63
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 1,
+        "width": 55,
+        "height": 62
+      }
+    },
+    "object:tree:breeze": {
+      "x": 2,
+      "y": 410,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        32,
+        63
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 1,
+        "width": 55,
+        "height": 62
       }
     },
     "part:skull:rest": {
-      "x": 342,
-      "y": 342,
+      "x": 70,
+      "y": 410,
       "width": 20,
       "height": 22,
       "anchor": [
@@ -1131,8 +1223,8 @@
       }
     },
     "part:skull:blink": {
-      "x": 410,
-      "y": 342,
+      "x": 138,
+      "y": 410,
       "width": 20,
       "height": 22,
       "anchor": [
@@ -1147,8 +1239,8 @@
       }
     },
     "part:skull:happy": {
-      "x": 478,
-      "y": 342,
+      "x": 206,
+      "y": 410,
       "width": 20,
       "height": 22,
       "anchor": [
@@ -1163,7 +1255,7 @@
       }
     },
     "part:skull:surprise": {
-      "x": 2,
+      "x": 274,
       "y": 410,
       "width": 20,
       "height": 22,
@@ -1179,7 +1271,7 @@
       }
     },
     "part:skull:mouth-small": {
-      "x": 70,
+      "x": 342,
       "y": 410,
       "width": 20,
       "height": 22,
@@ -1195,7 +1287,7 @@
       }
     },
     "part:skull:mouth-open": {
-      "x": 138,
+      "x": 410,
       "y": 410,
       "width": 20,
       "height": 22,
@@ -1211,7 +1303,7 @@
       }
     },
     "part:skull:happy-mouth": {
-      "x": 206,
+      "x": 478,
       "y": 410,
       "width": 20,
       "height": 22,
@@ -1227,8 +1319,8 @@
       }
     },
     "part:skull:profile": {
-      "x": 274,
-      "y": 410,
+      "x": 2,
+      "y": 478,
       "width": 20,
       "height": 22,
       "anchor": [
@@ -1243,8 +1335,8 @@
       }
     },
     "part:skull:profile-blink": {
-      "x": 342,
-      "y": 410,
+      "x": 70,
+      "y": 478,
       "width": 20,
       "height": 22,
       "anchor": [
@@ -1259,8 +1351,8 @@
       }
     },
     "part:skull:sleep-heavy": {
-      "x": 410,
-      "y": 410,
+      "x": 138,
+      "y": 478,
       "width": 20,
       "height": 22,
       "anchor": [
@@ -1275,8 +1367,8 @@
       }
     },
     "part:skull:sleep-yawn": {
-      "x": 478,
-      "y": 410,
+      "x": 206,
+      "y": 478,
       "width": 20,
       "height": 22,
       "anchor": [
@@ -1291,7 +1383,7 @@
       }
     },
     "part:skull:sleep-yawn-close": {
-      "x": 2,
+      "x": 274,
       "y": 478,
       "width": 20,
       "height": 22,
@@ -1307,7 +1399,7 @@
       }
     },
     "part:ribs:rest": {
-      "x": 70,
+      "x": 342,
       "y": 478,
       "width": 14,
       "height": 18,
@@ -1323,7 +1415,7 @@
       }
     },
     "part:ribs:profile": {
-      "x": 138,
+      "x": 410,
       "y": 478,
       "width": 14,
       "height": 18,
@@ -1339,7 +1431,7 @@
       }
     },
     "part:pelvis:rest": {
-      "x": 206,
+      "x": 478,
       "y": 478,
       "width": 12,
       "height": 8,
@@ -1355,8 +1447,8 @@
       }
     },
     "part:pelvis:profile": {
-      "x": 274,
-      "y": 478,
+      "x": 2,
+      "y": 546,
       "width": 12,
       "height": 8,
       "anchor": [
@@ -1371,8 +1463,8 @@
       }
     },
     "part:arm:rest": {
-      "x": 342,
-      "y": 478,
+      "x": 70,
+      "y": 546,
       "width": 16,
       "height": 26,
       "anchor": [
@@ -1387,8 +1479,8 @@
       }
     },
     "part:arm:forward": {
-      "x": 410,
-      "y": 478,
+      "x": 138,
+      "y": 546,
       "width": 16,
       "height": 26,
       "anchor": [
@@ -1403,8 +1495,8 @@
       }
     },
     "part:arm:back": {
-      "x": 478,
-      "y": 478,
+      "x": 206,
+      "y": 546,
       "width": 16,
       "height": 26,
       "anchor": [
@@ -1419,7 +1511,7 @@
       }
     },
     "part:arm:raised": {
-      "x": 2,
+      "x": 274,
       "y": 546,
       "width": 16,
       "height": 26,
@@ -1435,7 +1527,7 @@
       }
     },
     "part:arm:wave": {
-      "x": 70,
+      "x": 342,
       "y": 546,
       "width": 16,
       "height": 26,
@@ -1451,7 +1543,7 @@
       }
     },
     "part:arm:swing-forward": {
-      "x": 138,
+      "x": 410,
       "y": 546,
       "width": 16,
       "height": 26,
@@ -1467,7 +1559,7 @@
       }
     },
     "part:arm:swing-forward-mid": {
-      "x": 206,
+      "x": 478,
       "y": 546,
       "width": 16,
       "height": 26,
@@ -1483,8 +1575,8 @@
       }
     },
     "part:arm:swing-neutral": {
-      "x": 274,
-      "y": 546,
+      "x": 2,
+      "y": 614,
       "width": 16,
       "height": 26,
       "anchor": [
@@ -1499,8 +1591,8 @@
       }
     },
     "part:arm:swing-back-mid": {
-      "x": 342,
-      "y": 546,
+      "x": 70,
+      "y": 614,
       "width": 16,
       "height": 26,
       "anchor": [
@@ -1515,8 +1607,8 @@
       }
     },
     "part:arm:swing-back": {
-      "x": 410,
-      "y": 546,
+      "x": 138,
+      "y": 614,
       "width": 16,
       "height": 26,
       "anchor": [
@@ -1531,8 +1623,8 @@
       }
     },
     "part:arm:loose": {
-      "x": 478,
-      "y": 546,
+      "x": 206,
+      "y": 614,
       "width": 16,
       "height": 26,
       "anchor": [
@@ -1547,7 +1639,7 @@
       }
     },
     "part:arm:far-swing-forward": {
-      "x": 2,
+      "x": 274,
       "y": 614,
       "width": 16,
       "height": 26,
@@ -1563,7 +1655,7 @@
       }
     },
     "part:arm:far-swing-forward-mid": {
-      "x": 70,
+      "x": 342,
       "y": 614,
       "width": 16,
       "height": 26,
@@ -1579,7 +1671,7 @@
       }
     },
     "part:arm:far-swing-neutral": {
-      "x": 138,
+      "x": 410,
       "y": 614,
       "width": 16,
       "height": 26,
@@ -1595,7 +1687,7 @@
       }
     },
     "part:arm:far-swing-back-mid": {
-      "x": 206,
+      "x": 478,
       "y": 614,
       "width": 16,
       "height": 26,
@@ -1611,8 +1703,8 @@
       }
     },
     "part:arm:far-swing-back": {
-      "x": 274,
-      "y": 614,
+      "x": 2,
+      "y": 682,
       "width": 16,
       "height": 26,
       "anchor": [
@@ -1627,8 +1719,8 @@
       }
     },
     "part:arm:sleep-spill": {
-      "x": 342,
-      "y": 614,
+      "x": 70,
+      "y": 682,
       "width": 16,
       "height": 26,
       "anchor": [
@@ -1643,8 +1735,8 @@
       }
     },
     "part:arm:sleep-folded": {
-      "x": 410,
-      "y": 614,
+      "x": 138,
+      "y": 682,
       "width": 16,
       "height": 26,
       "anchor": [
@@ -1659,8 +1751,8 @@
       }
     },
     "part:arm:sleep-folded-air": {
-      "x": 478,
-      "y": 614,
+      "x": 206,
+      "y": 682,
       "width": 16,
       "height": 26,
       "anchor": [
@@ -1675,7 +1767,7 @@
       }
     },
     "part:leg:rest": {
-      "x": 2,
+      "x": 274,
       "y": 682,
       "width": 16,
       "height": 24,
@@ -1691,7 +1783,7 @@
       }
     },
     "part:leg:folded": {
-      "x": 70,
+      "x": 342,
       "y": 682,
       "width": 16,
       "height": 24,
@@ -1707,7 +1799,7 @@
       }
     },
     "part:leg:profile-stand": {
-      "x": 138,
+      "x": 410,
       "y": 682,
       "width": 16,
       "height": 24,
@@ -1723,7 +1815,7 @@
       }
     },
     "part:leg:contact-a": {
-      "x": 206,
+      "x": 478,
       "y": 682,
       "width": 16,
       "height": 24,
@@ -1739,8 +1831,8 @@
       }
     },
     "part:leg:contact-b": {
-      "x": 274,
-      "y": 682,
+      "x": 2,
+      "y": 750,
       "width": 16,
       "height": 24,
       "anchor": [
@@ -1755,8 +1847,8 @@
       }
     },
     "part:leg:pass": {
-      "x": 342,
-      "y": 682,
+      "x": 70,
+      "y": 750,
       "width": 16,
       "height": 24,
       "anchor": [
@@ -1771,8 +1863,8 @@
       }
     },
     "part:leg:support-front": {
-      "x": 410,
-      "y": 682,
+      "x": 138,
+      "y": 750,
       "width": 16,
       "height": 24,
       "anchor": [
@@ -1787,8 +1879,8 @@
       }
     },
     "part:leg:support-mid": {
-      "x": 478,
-      "y": 682,
+      "x": 206,
+      "y": 750,
       "width": 16,
       "height": 24,
       "anchor": [
@@ -1803,7 +1895,7 @@
       }
     },
     "part:leg:support-back": {
-      "x": 2,
+      "x": 274,
       "y": 750,
       "width": 16,
       "height": 24,
@@ -1819,7 +1911,7 @@
       }
     },
     "part:leg:lift-back": {
-      "x": 70,
+      "x": 342,
       "y": 750,
       "width": 16,
       "height": 24,
@@ -1835,7 +1927,7 @@
       }
     },
     "part:leg:reach": {
-      "x": 138,
+      "x": 410,
       "y": 750,
       "width": 16,
       "height": 24,
@@ -1851,7 +1943,7 @@
       }
     },
     "part:leg:loose": {
-      "x": 206,
+      "x": 478,
       "y": 750,
       "width": 16,
       "height": 24,
@@ -1867,8 +1959,8 @@
       }
     },
     "part:leg:sleep-crouch-mid": {
-      "x": 274,
-      "y": 750,
+      "x": 2,
+      "y": 818,
       "width": 16,
       "height": 24,
       "anchor": [
@@ -1883,8 +1975,8 @@
       }
     },
     "part:leg:sleep-crouch-low": {
-      "x": 342,
-      "y": 750,
+      "x": 70,
+      "y": 818,
       "width": 16,
       "height": 24,
       "anchor": [
@@ -1899,8 +1991,8 @@
       }
     },
     "part:leg:sleep-spill": {
-      "x": 410,
-      "y": 750,
+      "x": 138,
+      "y": 818,
       "width": 16,
       "height": 24,
       "anchor": [
@@ -1915,8 +2007,8 @@
       }
     },
     "part:leg:sleep-folded": {
-      "x": 478,
-      "y": 750,
+      "x": 206,
+      "y": 818,
       "width": 16,
       "height": 24,
       "anchor": [
@@ -1931,7 +2023,7 @@
       }
     },
     "part:leg:sleep-folded-air": {
-      "x": 2,
+      "x": 274,
       "y": 818,
       "width": 16,
       "height": 24,
@@ -1947,67 +2039,131 @@
       }
     },
     "part:lantern:rest": {
-      "x": 70,
+      "x": 342,
       "y": 818,
-      "width": 16,
-      "height": 24,
+      "width": 24,
+      "height": 40,
       "anchor": [
         0,
         0
       ],
       "bounds": {
         "x": 3,
-        "y": 0,
-        "width": 10,
-        "height": 23
+        "y": 1,
+        "width": 15,
+        "height": 38
       }
     },
     "part:lantern:flicker": {
-      "x": 138,
+      "x": 410,
       "y": 818,
-      "width": 16,
-      "height": 24,
+      "width": 24,
+      "height": 40,
       "anchor": [
         0,
         0
       ],
       "bounds": {
         "x": 3,
-        "y": 0,
-        "width": 10,
-        "height": 23
+        "y": 1,
+        "width": 15,
+        "height": 38
       }
     },
     "part:rune:rest": {
-      "x": 206,
+      "x": 478,
       "y": 818,
-      "width": 24,
-      "height": 32,
+      "width": 36,
+      "height": 48,
       "anchor": [
         0,
         0
       ],
       "bounds": {
-        "x": 1,
-        "y": 0,
-        "width": 20,
-        "height": 30
+        "x": 0,
+        "y": 1,
+        "width": 33,
+        "height": 46
       }
     },
     "part:rune:lit": {
-      "x": 274,
-      "y": 818,
-      "width": 24,
-      "height": 32,
+      "x": 2,
+      "y": 886,
+      "width": 36,
+      "height": 48,
       "anchor": [
         0,
         0
       ],
       "bounds": {
-        "x": 1,
-        "y": 0,
-        "width": 20,
-        "height": 30
+        "x": 0,
+        "y": 1,
+        "width": 33,
+        "height": 46
+      }
+    },
+    "part:plant:rest": {
+      "x": 70,
+      "y": 886,
+      "width": 28,
+      "height": 28,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 1,
+        "width": 24,
+        "height": 26
+      }
+    },
+    "part:plant:breeze": {
+      "x": 138,
+      "y": 886,
+      "width": 28,
+      "height": 28,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 1,
+        "width": 24,
+        "height": 26
+      }
+    },
+    "part:tree:rest": {
+      "x": 206,
+      "y": 886,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 1,
+        "width": 55,
+        "height": 62
+      }
+    },
+    "part:tree:breeze": {
+      "x": 274,
+      "y": 886,
+      "width": 64,
+      "height": 64,
+      "anchor": [
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 1,
+        "width": 55,
+        "height": 62
       }
     }
   }

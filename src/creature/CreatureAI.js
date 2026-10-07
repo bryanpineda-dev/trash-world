@@ -67,7 +67,8 @@ export class CreatureAI {
   investigate(id) {
     const object = this.world.objects.find(item => item.id === id);
     if (!object) return;
-    const approach = { id: object.id, x: object.x + (this.creature.x < object.x ? -19 : 19) };
+    const distance = object.radius + 16;
+    const approach = { id: object.id, x: object.x + (this.creature.x < object.x ? -distance : distance) };
     if (Math.abs(approach.x - this.creature.x) < 1) {
       this.creature.direction = object.x < this.creature.x ? -1 : 1;
       this.creature.transition('INSPECT', 4.5, object);

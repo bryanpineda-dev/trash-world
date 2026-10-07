@@ -59,10 +59,10 @@ select { height: 44px; width: 100%; min-width: 0; padding: 0 12px; }
 .palette-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 10px; }
 .swatch { display: flex; align-items: center; gap: 6px; font-size: 10px; font-family: monospace; }
 .swatch > span:first-child { width: 22px; height: 22px; border: 1px solid #233b3720; flex-shrink: 0; }
-.object-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 180px)); gap: 16px; }
+.object-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(188px, 1fr)); gap: 16px; }
 .study-characters { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; margin-bottom: 16px; }
 .study-faces { display: grid; grid-template-columns: repeat(auto-fit, minmax(128px, 1fr)); gap: 16px; }
-.parts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(124px, 1fr)); gap: 16px; }
+.parts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(188px, 1fr)); gap: 16px; }
 figure { display: grid; align-content: start; justify-items: center; background: #e6efeb; padding: 12px; border: 1px solid #d0dcd3; border-radius: 4px; min-width: 0; }
 figure canvas { image-rendering: pixelated; display: block; max-width: 100%; }
 figcaption { text-align: center; font-size: 12px; margin: 4px 0 10px; overflow-wrap: anywhere; }

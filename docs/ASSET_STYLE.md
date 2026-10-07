@@ -62,7 +62,7 @@ El orden de la tabla es el frontal. `drawOrder` en la pose `side` coloca `leftAr
 
 En reposo y caminar, el tubo principal de brazos y piernas mide 4 px por fila: `khbk` o `kbsk`, con dos interiores y dos de contorno. Dibujar el escalonado por filas, no con sellos cuadrados que engorden las diagonales. Cada extremidad conserva dos segmentos y una articulacion central; la mano se une al antebrazo sin un segundo corte negro en la muneca. En perfil, los hombros del brazo cercano y lejano son [30, 27] y [32, 27] antes del rebote del torax. El codo cambia de posicion durante el balanceo; comprobar la direccion real del brazo lejano despues de aplicar su espejo.
 
-Solo Miga y sus siete fuentes (cinco de personaje y dos de objetos) forman el catalogo activo. No hay capa, bolso ni variantes de personajes de los estudios previos.
+Solo Miga y sus nueve fuentes (cinco de personaje y cuatro de objetos) forman el catalogo activo. No hay capa, bolso ni variantes de personajes de los estudios previos.
 
 ## Movimiento
 
@@ -74,7 +74,9 @@ La IA elige el estado; el renderer traduce ese estado al clip y usa `stateElapse
 
 ## Objetos
 
-El farol usa un lienzo de **16 x 24 px**, ancla **[8, 23]** y dos variantes para el parpadeo. La runa usa **24 x 32 px**, ancla **[12, 30]** y dos variantes de luz. Limite inicial por pieza: **64 x 64 px**.
+El farol usa un lienzo de **24 x 40 px**, ancla **[12, 39]** y dos variantes para el parpadeo. La tumba runica usa **36 x 48 px**, ancla **[18, 47]** y dos variantes de luz. El arbusto usa **28 x 28 px**, ancla **[14, 27]**; el roble pequeno usa **64 x 64 px**, ancla **[32, 63]**. Su follaje tiene dos variantes, manteniendo inmoviles las raices. Limite por pieza: **64 x 64 px**.
+
+Miga mide 56 px visibles en reposo. El farol mide 38, la tumba 46, el arbusto 26 y el roble 62. Todos se dibujan a escala 1 en el mundo y a escala 2 en las miniaturas del visor. La hoja `style-kit.png` compara los cinco sobre el mismo suelo a escala 3. Ver [contrato de medidas del entorno](ENVIRONMENT.md).
 
 Mantener un aspecto gastado pero sencillo. La luz del farol y las runas se dibuja con colores de la paleta, no con bloom o efectos que oculten los pixeles.
 

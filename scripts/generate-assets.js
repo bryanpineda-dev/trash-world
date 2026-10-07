@@ -30,18 +30,23 @@ writeFileSync(`${output}/atlas.png`, encodePng(atlas));
 writeFileSync(`${output}/atlas.json`, JSON.stringify({ version: 1, style: catalog.style, width: atlas.width, height: atlas.height,
   palette: catalog.palette, states: catalog.states, characters: catalog.characters, objects: catalog.objects, frames }, null, 2) + '\n');
 
-const preview = createBitmap(1024, 640, rgba('#e6efeb'));
+const preview = createBitmap(1024, 848, rgba('#e6efeb'));
 const poses = ['stand', 'walk-a', 'walk-pass-a', 'walk-b', 'sleep-drowsy', 'sleep-drop', 'sleep-bounce', 'sleep'];
 poses.forEach((pose, index) => {
   paintPixels(preview, catalog.frames[`miga:${pose}`].pixels, catalog.palette,
     32 + index % 4 * 256, 16 + Math.floor(index / 4) * 232, 3);
 });
 writeFileSync(`${output}/animation-review.png`, encodePng({ ...preview, height: 480, data: preview.data.subarray(0, 1024 * 480 * 4) }));
-paintPixels(preview, catalog.frames['object:lantern:rest'].pixels, catalog.palette, 64, 526, 3);
-paintPixels(preview, catalog.frames['object:rune:lit'].pixels, catalog.palette, 162, 506, 3);
+const ground = 708;
+paintPixels(preview, ['g'.repeat(1024)], catalog.palette, 0, ground);
+for (const [id, x] of [['miga:stand', 100], ['object:plant:rest', 250], ['object:lantern:rest', 390],
+  ['object:rune:lit', 560], ['object:tree:rest', 826]]) {
+  const frame = catalog.frames[id];
+  paintPixels(preview, frame.pixels, catalog.palette, x - frame.anchor[0] * 3, ground - frame.anchor[1] * 3, 3);
+}
 Object.keys(catalog.palette).forEach((key, index) => {
-  paintPixels(preview, Array(5).fill(key.repeat(5)), catalog.palette, 302 + index % 8 * 48,
-    534 + Math.floor(index / 8) * 42, 6);
+  paintPixels(preview, Array(5).fill(key.repeat(5)), catalog.palette, 40 + index % 8 * 120,
+    756 + Math.floor(index / 8) * 42, 6);
 });
 writeFileSync(`${output}/style-kit.png`, encodePng(preview));
 const sprite = createBitmap(512, 512);
