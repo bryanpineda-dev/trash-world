@@ -4,9 +4,9 @@ Bioma de fantasia medieval misteriosa: robles antiguos, abedules abiertos, cipre
 
 ## Escala y profundidad
 
-Miga conserva sus 56 px visibles en reposo. El roble usa 176 x 192 px, el abedul 104 x 146, el sauce seco 168 x 176 y el cipres 64 x 168. El roble lejano se dibuja en 56 x 84, con menos detalle por distancia. Se dibujan a escala nativa 1, sin ampliar los pixeles de un sprite pequeno. Las veinte fuentes decorativas admiten lienzos de hasta 192 x 192; el contrato de piezas del personaje y objetos sigue limitado a 64 x 64.
+Miga conserva sus 56 px visibles en reposo. El roble usa 176 x 192 px, el abedul 104 x 146, el sauce seco 168 x 176 y el cipres 64 x 168. El roble lejano se dibuja en 56 x 84, con menos detalle por distancia. Se dibujan a escala nativa 1, sin ampliar los pixeles de un sprite pequeno. Las 28 fuentes decorativas admiten lienzos de hasta 192 x 192; el contrato de piezas del personaje y objetos sigue limitado a 64 x 64.
 
-Familia de piedra: lapida ojival 48 x 72, lapida vencida 48 x 46, cruz anillada 64 x 96 y ruinas 112 x 80. La capilla usa 88 x 112, la verja 96 x 40 y la luna 48 x 48. Tres tramos de sendero de 64 x 32 comparten sus columnas de union y conservan un suelo plano. Helechos, arbustos, setas, flores y rocas completan la biblioteca. Todas las fuentes incluyen ID, nombre, lienzo fijo, ancla y filas de pixeles editables.
+Familia de piedra: lapida ojival 48 x 72, lapida vencida 48 x 46, cruz anillada 64 x 96 y ruinas 112 x 80. La capilla usa 80 x 112, la verja 96 x 40 y la luna 48 x 48. Tres tramos de sendero de 64 x 32 comparten sus columnas de union y conservan un suelo plano. Helechos, arbustos, setas, flores y rocas completan la biblioteca. Todas las fuentes incluyen ID, nombre, lienzo fijo, ancla y filas de pixeles editables.
 
 Los planos lejanos, medios y cercanos usan factores de parallax de 0.16, 0.42 y 0.78. La arquitectura usa 0.24 y profundidad lejana; se dibuja antes de la niebla y los arboles medios. La vegetacion del borde usa 1, igual que Miga y los objetos. Todas las posiciones se redondean a pixeles enteros. El color pierde contraste hacia el fondo; dia, atardecer y noche tienen paletas de 32 tokens con los mismos materiales. Solo el cristal iluminado `D` reduce la mezcla atmosferica para conservar el ambar. No hay blur ni bloom.
 
@@ -19,7 +19,7 @@ La niebla usa franjas escalonadas, sin blur ni gradientes, detras de los arboles
 - `assets/source/biome.json`: indice v2, paletas y colocacion por planos; ya no contiene los dibujos.
 - `assets/source/environment/`: un JSON por dibujo, agrupado por familia.
 - `scripts/biome-source.js` y `src/rendering/BiomeSource.js`: misma validacion para Node y Vite; rechazan rutas externas, duplicados, archivos ausentes e IDs incompatibles.
-- `scripts/generate-biome.js`: atlas determinista de 396 frames de sprite, fase, profundidad y animacion, mas 132 PNG individuales transparentes.
+- `scripts/generate-biome.js`: atlas determinista de 414 frames de sprite, fase, profundidad y animacion, mas 138 PNG individuales transparentes.
 - `src/rendering/BiomeModel.js`: validacion, color y posicionamiento sin dependencias del navegador.
 - `src/rendering/BiomeRenderer.js`: atlas, fallback con las mismas fuentes, capas y sendero.
 
@@ -56,3 +56,7 @@ La nueva referencia del cementerio orienta corteza, follaje agrupado, desgaste d
 La siguiente pasada de 2026-10-07 establece [patrones de material](MATERIAL_STYLE.md) en la ruina y los tres senderos: caras de piedra diferenciadas, juntas irregulares, grietas y musgo localizado. No cambia dimensiones, anclas, capas ni colocaciones. El farol se afina en su kit interactivo; la capilla, los arboles y la vegetacion no se redibujan en esta pasada.
 
 La posterior [biblioteca viva](LIVING_CEMETERY.md) extiende esos materiales al resto del entorno, introduce tres variantes de arbol, dos lapidas y tres arbustos de bayas, y anima grupos de hojas y el cristal de la capilla. Se ajustan colocaciones y desfases para dar variedad; se conservan Miga, paletas, ruina, senderos y farol. La propuesta sigue en sandbox.
+
+La [revision del bosque de 2026-10-08](PREMIUM_FOREST.md) rehace diez dibujos, integra las ramas con el follaje y corrige la estructura de la capilla. Seis arboles interpolan pequenos cambios de tono sin desplazar su silueta; la ventana conserva su luz calida con una variacion continua y tenue. Terreno, objetos y parallax comparten el origen redondeado de la camara para evitar diferencias de seguimiento.
+
+El usuario aprueba esta revision para la entrega local a Desktop, con README y medios actuales, y para preparar la siguiente etiqueta `v0.1.4`. Esa entrega no realiza staging, commit, tag ni push; su comprobacion se registra en [Verificacion](VERIFICATION.md).

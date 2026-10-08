@@ -1,6 +1,6 @@
 {
   "id": "brokenCypress",
-  "label": "Cipres de punta rota",
+  "label": "Cipres vencido por el tiempo",
   "size": [
     72,
     168
@@ -16,167 +16,167 @@
     "........................................................................",
     "........................................................................",
     "........................................................................",
-    "......................................ww................................",
-    ".....................................www................................",
-    ".................................uuwxxw.................................",
-    ".................................uxxww..................................",
-    ".................................uww....................................",
-    ".................................uuu....................................",
-    ".................................uuu....................................",
-    ".................................uuu....................................",
-    ".................................uuuu...................................",
-    ".................................uuuu...................................",
-    "..................................uuu...................................",
-    "..................................uuu...................................",
-    "..................................uuu...................................",
-    "..................................uuu...................................",
-    "..................................uuu...................................",
-    "..................................uuud..................................",
-    "..................................uuud..................................",
-    "..................................uuuid.................................",
-    "..................................uuuid.................................",
-    ".................................guuuid.................................",
-    ".................................guuuuid................................",
-    "................................diuuuuid................................",
-    "................................diguuuiid...............................",
-    "...............................djjiuuuiid...............................",
-    "...............................djjjuuuiid...............................",
-    "..............................diijjuuuiiid..............................",
-    "..............................diiijuuuimmd..............................",
-    ".............................diiiiiuuumnnd..............................",
-    ".............................diiiiiggjjjgid.............................",
-    "..............................diiiigggiiiid.............................",
-    "..............................diiigggggiiiid............................",
-    "..............................diiigggggiiiid............................",
-    "..............................diigggggggiiid............................",
-    "...............................digigggggiiid............................",
-    "...............................dggiiiggggid.............................",
-    "...............................dgggiiigggid.............................",
-    "...............................giggiiiigggd.............................",
-    "..............................diigggiiiiigd.............................",
-    "..............................dijjgggiiiiid.............................",
-    "..............................dijjjggiiiid..............................",
-    ".............................diiijjgggiiid..............................",
-    ".............................diiijjjmmgiid..............................",
-    ".............................diiigjmnnmiiid.............................",
-    "............................diiiggjjjgggiid.............................",
-    "............................diiigggggggggiid............................",
-    "............................diiggggggggggiid............................",
-    "...........................diiigggggggggggiid...........................",
-    "...........................diigggggggggggggid...........................",
-    "..........................diiiggggiggggggggiid..........................",
-    "..........................diigggigiiigggggggid..........................",
-    "..........................diiggiiggiiiigggggiid.........................",
-    ".........................diigiiiggggiiiiiggggid.........................",
-    ".........................diiiiiigggggiiiiiiggiid........................",
-    ".........................diiiiiijjggggiiiiiiiiid........................",
-    "........................diiiiiigjjgggggiiiiiiiiid.......................",
-    "........................diiiiiigjjggggggiiiiiiiid.......................",
-    "........................diiiiigjjmmgggggiiiiiiiiid......................",
-    ".......................diiiiiigjmnnmgggggiiiiiiiid......................",
-    ".......................diiiiiggjjjggggggggiiiiiiid......................",
-    ".......................diiiiiggggggggggggggiiiiid.......................",
-    "........................diiiggggggggggggggggiiiid.......................",
-    "........................diiigggggggggggggggggiid........................",
-    ".........................digggggggggggggggggggid........................",
-    ".........................diggggggiiiggggggggggd.........................",
-    ".........................dgggggiigiiiiggggggggg.........................",
-    "..........................gggiiigggiiiiiiggggggd........................",
-    ".........................ggiiiiiggggiiiiiiiigggg........................",
-    "..........................diiiigggggggiiiiiiiiggd.......................",
-    ".........................diiiiggjjgggggiiiiiiiiid.......................",
-    ".........................diiiggjjjggggggiiiiiiiiid......................",
-    ".........................diiigjjjggggggggiiiiiiiid......................",
-    "........................diiigjmmggggggggggiiiiiiiid.....................",
-    "........................diigjmnnmggggggggggiiiiiiid.....................",
-    "........................diggjjjggggggggggggggiiiiiid....................",
-    ".......................diiggggggggggggggggggggiiiiid....................",
-    ".......................diggggggggggggggggggggggiiiiid...................",
-    ".......................digggggggggggggggggggggggiiiid...................",
-    "......................digggggggggggggggggggggggggiiiid..................",
-    "......................digggggggggiiigggggggggggggiiiid..................",
-    ".....................digggggggiiigiiiiigggggggggggiiiid.................",
-    ".....................diggggiiiiiggggiiiiiiggggggggiiiid.................",
-    ".....................dggiiiiiiiggggggiiiiiiiiigggggiiiid................",
-    "....................diiiiiiiiiggggggggiiiiiiiiiiiggiiiid................",
-    "....................diiiiiiiggggjjggggggiiiiiiiiiiiiiiiid...............",
-    "....................diiiiiigggjjjjgggggggiiiiiiiiiiiiiid................",
-    "...................diiiiiiggjjjjjggggggggggiiiiiiiiiiiid................",
-    "...................diiiiigjmmjjgggggggggggggiiiiiiiiiid.................",
-    "...................diiiigjmnnmggggggggggggggggiiiiiiiid.................",
-    "....................diiggjjjgggggggggggggggggggiiiiiid..................",
-    "....................diigggggggggggggggggggggggggiiiiid..................",
-    ".....................dggggggggggggggggggggggggggggiid...................",
-    ".....................dgggggggggggggggggggggggggggggid...................",
-    ".....................gggggggggggggggggggggggggggggggid..................",
-    ".....................ggggggggggggiiiggggggggggggggggid..................",
-    "....................gggggggggiiiigiiiiiigggggggggggggid.................",
-    "....................gggggiiiiiigggggiiiiiiiigggggggggid.................",
-    "...................ggdiiiiiiiiggggggggiiiiiiiiiiggggggid................",
-    ".....................diiiiiigggggggggggiiiiiiiiiiiiiggid................",
-    "....................diiiiiiggggjjjgggggggiiiiiiiiiiiiiiid...............",
-    "....................diiiiggggjjjjjgggggggggiiiiiiiiiiiiid...............",
-    "...................diiiiggjjjjjjggggggggggggiiiiiiiiiiiiid..............",
-    "...................diiggmmjjjjggggggggggggggggiiiiiiiiiiid..............",
-    "..................diigjmnnmgggggggggggggggggggggiiiiiiiiiid.............",
-    "..................diggjjjggggggggggggggggggggggggiiiiiiiiid.............",
-    "..................digggggggggggggggggggggggggggggggiiiiiiiid............",
-    ".................diggggggggggggggggggggggggggggggggggiiiiiid............",
-    ".................digggggggggggggggggggggggggggggggggggiiiiiid...........",
-    "................digggggggggggggggggggggggggggggggggggggiiiiid...........",
-    "................diggggggggggggggiiiiiggggggggggggggggggiiiiiid..........",
-    "...............digggggggggggiiiiigiiiiiiigggggggggggggggiiiiid..........",
-    "...............diggggggiiiiiiiigggggiiiiiiiiigggggggggggiiiiid..........",
-    "..............digggiiiiiiiiiigggggggggiiiiiiiiiiiigggggggiiid...........",
-    "..............diiiiiiiiiiiigggggggggggggiiiiiiiiiiiiiigggiiid...........",
-    ".............diiiiiiiiiiiigggggjjjggggggggiiiiiiiiiiiiiiiiid............",
-    ".............diiiiiiiiiiggggjjjjjjggggggggggiiiiiiiiiiiiiiid............",
-    "..............diiiiiiigggjjjjjjjgggggggggggggiiiiiiiiiiiiid.............",
-    "..............diiiiiggmmjjjjjggggggggggggggggggiiiiiiiiiiid.............",
-    "...............diiigjmnnmjgggggggggggggggggggggggiiiiiiiid..............",
-    "................diggjjjggggggggggggggggggggggggggggiiiiiid..............",
-    "................digggggggggggggggggggggggggggggggggggiiiiid.............",
-    ".................ggggggggggggggggggggggggggggggggggggggiiid.............",
-    ".................gggggggggggggggggggggggggggggggggggggggiid.............",
-    "................gggggggggggggggggggggggggggggggggggggggggiid............",
-    "................ggggggggggggggggiiiiiggggggggggggggggggggiid............",
-    "...............ggggggggggggiiiiiigiiiiiiiiggggggggggggggggid............",
-    "...............gggggggiiiiiiiiigggggiiiiiiiiiiggggggggggggid............",
-    "..............gggiiiiiiiiiiiigggggggggiiiiiiiiiiiiiggggggggid...........",
-    "................diiiiiiiiiigggggggggggggiiiiiiiiiiiiiiiigggid...........",
-    "...............diiiiiiiiiigggggjjjggggggggiiiiiiiiiiiiiiiiiid...........",
-    "...............diiiiiiiiggggjjjjjjggggggggggiiiiiiiiiiiiiiiiid..........",
-    "..............diiiiiiigggjjjjjjjgggggggggggggiiiiiiiiiiiiiiiid..........",
-    "..............diiiiiggmmjjjjjggggggggggggggggggiiiiiiiiiiiiiid..........",
-    ".............diiiiigjmnnmjgggggggggggggggggggggggiiiiiiiiiiiiid.........",
-    ".............diiiiggjjjggggggggggggggggggggggggggggiiiiiiiiiiid.........",
-    "............diiiiigggggggggggggggggggggggggggggggggggiiiiiiiiid.........",
-    "............diiiiggggggggggggggggggggggggggggggggggggggiiiiiiid.........",
-    "...........diiiiigggggggggggggggggggggggggggggggggggggggiiiiiiid........",
-    "...........ddiiigggggggggggggggggggggggggggggggggggggggggiiiiiid........",
-    ".............ddiggggggggggggggggiiiiiggggggggggggggggggggiiiidd.........",
-    "...............ggggggggggggiiiiiiiiiiiiiiiggggggggggggggggiid...........",
-    "...............gggggggiiiiiiiiiiiiiiiiiiiiiiiiggggggggggggdd............",
-    "..............ggg...ddiiiiiiiiiiiiiiiiiidddiiiiiiiigggggggg.............",
-    "......................dddiiiiiiiiiiiidddwwwddiiiiiiiiiidggg.............",
-    ".........................ddiiiiiiiiddwwwwwwu.dddiiiiiid.................",
-    "...........................ddiiidddwwwwwwwwu....ddiidd..................",
-    ".............................dddwoowwwwwwwwu......dd....................",
-    ".............................uwwwoowwwwwwwwu............................",
-    "............................uwwwwoowwwwwwwwwu...........................",
-    "............................uwwwooowwwwwwwwwu...........................",
-    "............................uwwwoowwwwwwwwwwu...........................",
-    "............................uwwwoowwwwwwwwwwu...........................",
-    "...........................uwwwwoowwwwwwwwwwwu..........................",
-    "..........................uwwwwwxowwwwwwwwwwwwuu........................",
-    "........................uuwwwwwxwwwwwwwwwwwwwwwwu.......................",
-    ".......................uwwwwwxxwwwwwwwwwwwwwwwwwwu......................",
-    "......................uwwwwwxwwwwwwwwwwwwwwwwwwwwwuu....................",
-    ".....................uwwwwwxwwwwwwwwwwwwwwwwwwwwwwwwu...................",
-    "....................uwwwwxxwwwwwwwwwwwwwwwwwwwwwwwwwwu..................",
-    "..................uuwwwwxwwwwwwwwwwwwwwwwwwwwwwwwwwwwwuu................",
-    ".................uwwwwwggggggggggggggggggggggggggwwwwwwwu...............",
-    "................uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu..............",
+    "........................................................................",
+    "........................................................................",
+    "........................................................................",
+    "........................................................................",
+    "........................................................................",
+    ".....................................o..................................",
+    "....................................vou.................................",
+    "..................................jjvvu.................................",
+    "...............................j.jjgggou................................",
+    "..............................jjjjgggjju................................",
+    "..............................gjjgggjggu................................",
+    ".............................ggggggggggu................................",
+    "............................jggggggggggw................................",
+    "............................gggggggggggg................................",
+    "............................ggggggggggiii...............................",
+    "............................gmgggjjggiijj...............................",
+    "............................mmmjjggjiijgg...............................",
+    "...........................mmmjjjjmjjjigg...............................",
+    "..........................mmjjmjjjjjggiig...............................",
+    "..........................mjjmjjjjjgjjjgii..............................",
+    ".........................jjjjjggjggjgggggd..............................",
+    ".........................jjjjjggggggggggg...............................",
+    ".........................jjjjgggggggggggg...............................",
+    ".........................jjggggggggggggggg..............................",
+    "..........................gggggggggggggggii.............................",
+    "..........................ggggggjjjggggijjii............................",
+    "..........................ggmmgjgggggiijggji............................",
+    "...........................mmmjjjgggiijggjii............................",
+    ".........................mmmjjjjjjmmiiigiiii............................",
+    ".........................mjjmmjjjmjjiiiiiiii............................",
+    ".........................jjjjjjjjjjjjiiiiiii............................",
+    "........................jjjjjjjjjjjgggiiiiii............................",
+    ".......................jjjjjjjjjjjggggjgiidg............................",
+    ".......................jjjjjjjgjggjggjggjjd.............................",
+    ".......................jjgjjggjggjgggggggg..............................",
+    "........................ggggggggggggggggggg.............................",
+    "........................gggggggggggggggggiii............................",
+    "........................ggggggggggggggiiiiiii...........................",
+    "........................gmmmmmjjjjjjiiiiiijji...........................",
+    ".......................gmmmjjnnnjjjjjjiiijggj...........................",
+    "........................jmjjjjjjjjjjmiiiiigg............................",
+    ".......................jjjjjjjjjjjjggiiiiiig............................",
+    "......................jjjjjjjjjjgggggjiiiiii............................",
+    "......................jjjjjjjggjjgggjggjggdd............................",
+    "......................jjjjgggggggggggggggggd............................",
+    "......................jggggggggggggggggggggg............................",
+    "......................gggggggggggggggggggggi............................",
+    "......................ggggggggggggggggggiiiii...........................",
+    ".....................ggggjjggggggjjggiimmmiii...........................",
+    "....................ggggmmmmmmjjjjjjiimggiiii...........................",
+    "....................ggnnnmjjjjjmjjjjiiiggiiii...........................",
+    "....................ggjjjjjjjjjjjjgggiiigiii............................",
+    ".....................jjjjjjjjjjggggmmmgiiiii............................",
+    ".....................jjjjjjjjggjggmgggggggji............................",
+    ".....................jggjggggggggggggggggjgg............................",
+    ".....................jggggggggggggggggggggggg...........................",
+    "....................jgggggggggggggggggggggggg...........................",
+    "....................ggggggggggggggggggggggiii...........................",
+    "...................ggggggjjggggmmmgggggjjiiii...........................",
+    "..................ggggggjggjmmmgggggiijggjiij...........................",
+    "..................ggggggggmmmjjjjjjjijggjiiiig..........................",
+    ".................ggggmmmmjjjmmjjjjjjiigiiiiiii..........................",
+    "..................ggmmjjmjjmjjmmjjjmjjiiiiiiii..........................",
+    "..................gjmjjmjjjjjjjjjjjjjjgiiiiii...........................",
+    "..................gjjjjjjjjjjjjjjjjggggggiigg...........................",
+    "..................ijjjjjjmmmjjjggjjggggjjggii...........................",
+    "..................ijjjjjmgggggggjggjggjggjjggd..........................",
+    "...................jgjjggggggggjggjggggggggggg..........................",
+    "...................gggggggggggggggggggggggggggg.........................",
+    "....................gggggggggggggggggggggggiiii.........................",
+    "..................gggggggggmmmmmgggggggiiiiiiii.........................",
+    ".................ggggmmmmmmmmjjjjjjjjiiiiiijjii.........................",
+    ".................gggmmmmmmmjjjjmmmjjjjjiiijggjii........................",
+    ".................ggmmjjjmjjmjjmjjjjjjjiiiiiggiiii.......................",
+    ".................jjjjjjjjjjjjjjjjjjjjggggggggiiii.......................",
+    ".................jjjjjjjjjjjjjjjjjjggggggjjggiii........................",
+    "................ijjjjjjjjjjggjggjggjjgggjggjggdd........................",
+    ".................jjjjjjjjjggjggggggggggggggggggg........................",
+    ".................jjjggggggggggggggggggggggggggggg.......................",
+    "..................gggggggggggggggggggggggggggggggi......................",
+    "..................gggggggggggggggggggggggggggiiiii......................",
+    "............o.....gggggjjgmmmmmggggggjjggiijjjiiii......................",
+    "...........vou....ggggmmmmmmmjjjjjggjggjiijggiiiiij.....................",
+    "...........vou....gggmmmmmmjjjjjmmjjjjjjiiiggiiiijggj...................",
+    "............yuu...jjmjjmjjjjjjjmjjjjjjjjgggggggiiigiii..................",
+    "............vvu.jjjjjjjjjjjjjjjjjjjjjggggjjjggggiiiiii..................",
+    ".............yujjjjjjjjjjjjggjjgggjggjggjgggggggjiiid...................",
+    "..............yjjjjjjjjjjjjggggggggggggggggggggjgddd....................",
+    "..............jjjjjjgjjgggggggggggggggggggggggggggg.....................",
+    "..............xjjjjgggggggggggggggggggggggggggggggggg...................",
+    "...............xogggggggggggggggggggggggggggggggggiiii..................",
+    "................xggggggjjggggggjjggggjjjgggggjjiiiijjii.................",
+    ".................gggggjmgjjgmmjggjggjgggggiijggjiijggjj.................",
+    "..................ggmmmmmmmmjjjjjjgggggiiiijggjiiiigggii................",
+    "...................mmmmjmmjjjjmmjjjjjjnniiiigiiiiiiiigiii...............",
+    ".................jjjjjjmjjmjjmjjmmjjjnjjniiiiiiiiiiiiiiii...............",
+    "...............jjjjjjjmjjmjjjjjjjjjjjjjjjjgiiiiiiiiiiiiii...............",
+    "..............jjjjjjjjjjjjjjjjjjjjjjjjjjggggggiiiggiiiigg...............",
+    ".............jjjjjjjjjjjjjjjjjjjjjgggggjjggggjjggiigidg.................",
+    "............jjjjjjjjjjjjjggjjgjgggggggjggjggjggjjggddd..................",
+    ".............jjjjgggjjjggggggggggggggjggjgggggggggggd...................",
+    "..............gggjgggggggggggggggggggggggggggggggggggggg................",
+    "...............ggggggggggggggggggggggggggggggggggggiiiiiii..............",
+    "................ggggggmgggggggggggggggggggggggiiiiiiiiiiiii.............",
+    ".................ggmmmmmmmmmjjjjjjjjjgggijjiiiiiimmiiiijjji.............",
+    ".................mmmmmjjjjjnnjjjjmmmjjjjjggjjiiimggmiijggii.............",
+    "...............mjjmjjmmjjjnjjnjjjjjjjjjjjjggiiiiiggiiiiggii.............",
+    "..............mjjjjjjjjjjjjjjjjjjjjjjjjjggggiiiiiigiiiiigii.............",
+    "..............jjjjjjjjjjjjjjjjjjjjggjjggggggmmgggiiiiiiiid..............",
+    "............jjjjjjjjjjjgjjjjjjggjggjggjjgggmggmggjggdddd................",
+    "...........jjjjjjjjjjjggggggjggjggggggggggggggggggggggg.................",
+    "...........jjjjjjggggggggggggggggggggggggggggggggggggggg................",
+    "............ggjggggggggggggggggggggggggggggggggggggggggiiii.............",
+    ".............ggggggggggggggggggggggggggggggggggggiiiiiiiiiii............",
+    "..............ggggjjjgggggjjgggmmmggggggmmggiijjjiiiiijjiiii............",
+    "..............gggjmmmmmmmmmmjjjjjjjjjjgmggmiijggiiiiijggjii.............",
+    ".............gmmmmmnnjjjjjjjjjjjjmjjjjjmmjiiiiggiiiijggjiii.............",
+    "............gmmjjjnjjnjjjjjjjjjjjjjjjjjggmiiiiigiiiiigiiii..............",
+    ".............jjjjjjjjjjjjjjjjjjjjjgmmggggjjjgggggiiiiiiiiii.............",
+    "............jjjjjjjjjggjjjjggjjgggmggmggjgggggggjggjggiiiii.............",
+    "..........jjjjjjjjjjggjggggggggggggggggggggggggjggjggggddd..............",
+    "..........jjjjjjjjggggggggggggggggggggggggggggggggggggggd...............",
+    "..........jjjjggggggggggggggggggggggggggggggggggggggggggg...............",
+    "..........ggggggggggggggggggggggggggggggggggggggggggiiiiiii.............",
+    "..........gggggggjjggggjjggggggmmggggjjjgggggjjiiiijjiiiiii.............",
+    "............ggggjggjggjggjjgggmmmmmgjgggggiijggjiijggjjiiij.............",
+    "..........gggggjggjgmmmmmmmmjjjjjjjjjjgiiiijggjiiiigggiiiii.............",
+    ".........gggnnmmmmmmmjjjjjmmjjjjmmjjjjjjmiiigiiiiiiiigiiii..............",
+    "........gggnjjnjjmjjjjjjjmjjmjjmjjmmjjjmjjmiiiiiiiiiiiiiii..............",
+    ".........gjjjjjjjjjjjjjjmjjmjjjjjjjjjjjjjjggiiiiiiiiiiiiii..............",
+    ".........jjjjjjjjjjjjjjjjjjjjjjjjjjggggggjggggiiiggiiiigggi.............",
+    ".........jjjjjjjjjjjjjjjjjjjgggggggggggggggggggggiigiigiiddd............",
+    ".........jjjjjjjjjjjjgggggggggggggggggggggggggggiiiddddiidd.............",
+    "..........jjjjjjjgggggjjggggjjggggggjjggggjjjggdddidddddid..............",
+    ".........ggggjgggggggjggjggjggjjgggjggjggjggiiddddddddddd...............",
+    ".........gggggggggggjggjgggggggggggiggiiiiggiddddddddddd................",
+    "...........gggggggggggggggggiigiiiiiigiiiidddggddddgggd.................",
+    "..............gggggggiiiiiiiiiiiiiiiiiiigdddgiigddgiid..................",
+    "..................ii.iiiiiiiiiiiiiiiiiiiddddd...........................",
+    ".......................didggiiiddddddddidd..............................",
+    ".........................ddddd..xyovduuuu...............................",
+    "................................vyovwuwuu...............................",
+    "................................vxxoowwuu...............................",
+    "................................vxxoowwwu...............................",
+    "................................vxxoowwwu...............................",
+    "................................vxxoowwwu...............................",
+    "................................vxoowwowu...............................",
+    "................................xoowxooww...............................",
+    "...............................voowvxxooww..............................",
+    "..............................oowwwvvxxooow.............................",
+    ".............................xooywvvvvxxooow............................",
+    "............................xooyvuuvvvvxxoooo...........................",
+    "...........................ooyvvuuuvvvyvvuuooww.........................",
+    ".........................xowyvuuuuuuvvvvyvvuooow........................",
+    "........................vooyvuuuuwwwwvxvvyvvuuoow.......................",
+    "........................xyvuuuuuuwxoowxovvxyvuuxxow.....................",
+    "......................xovuuuuuwuvxxoowwwuxxxvyvuuooo....................",
+    "....................xouyvuwwu...vxxoowwwu.xxvvyyuuuxow..................",
+    "....................oouwwwow.....xooowww....oovvvyvuxxoo................",
+    "...................oouuww...........o..........xxxxxxxvooo..............",
+    "..................viiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiou.............",
     "........................................................................"
   ],
   "variants": {
@@ -184,144 +184,272 @@
     "right": [
       {
         "at": [
-          17,
-          54
+          32,
+          60
         ],
         "pixels": [
-          "..........diiiggggiggggggggi",
-          "..........diigggigiiiggggggi",
-          "..........diiggiiggiiiiggggi",
-          ".........diigiiiggggiiiiiggg",
-          ".........diiiiiigggggiiiiiig",
-          ".........diiiiiijjggggiiiiii",
-          "........diiiiiigjjgggggiiiii",
-          "........diiiiiigjjggggggiiii",
-          "........diiiiigjjmmgggggiiii",
-          ".......diiiiiigjmnnmgggggiii",
-          ".......diiiiiggjjjggggggggii",
-          ".......diiiiiggggggggggggggi",
-          "........diiigggggggggggggggi",
-          "........diiigggggggggggggggg",
-          ".........diggggggggggggggggg",
-          ".........diggggggiiigggggggg",
-          ".........dgggggiigiiiigggggg",
-          "..........gggiiigggiiiiiiggg"
+          "gggjggg",
+          "gggjggg",
+          "gggiggg",
+          "igggigg",
+          "mmggggg"
         ]
       },
       {
         "at": [
-          9,
-          105
+          36,
+          76
         ],
         "pixels": [
-          "............diiiiggggjjjjjgggggggggiiiiiiiiii",
-          "...........diiiiggjjjjjjggggggggggggiiiiiiiii",
-          "...........diiggmmjjjjggggggggggggggggiiiiiii",
-          "..........diigjmnnmgggggggggggggggggggggiiiii",
-          "..........diggjjjggggggggggggggggggggggggiiii",
-          "..........digggggggggggggggggggggggggggggggii",
-          ".........digggggggggggggggggggggggggggggggggi",
-          ".........digggggggggggggggggggggggggggggggggg",
-          "........diggggggggggggggggggggggggggggggggggg",
-          "........diggggggggggggggiiiiigggggggggggggggg",
-          ".......digggggggggggiiiiigiiiiiiigggggggggggg",
-          ".......diggggggiiiiiiiigggggiiiiiiiiigggggggg",
-          "......digggiiiiiiiiiigggggggggiiiiiiiiiiiiggg",
-          "......diiiiiiiiiiiigggggggggggggiiiiiiiiiiiii",
-          ".....diiiiiiiiiiiigggggjjjggggggggiiiiiiiiiii",
-          ".....diiiiiiiiiiggggjjjjjjggggggggggiiiiiiiii",
-          "......diiiiiiigggjjjjjjjgggggggggggggiiiiiiii",
-          "......diiiiiggmmjjjjjggggggggggggggggggiiiiii"
+          "ggjiiig",
+          "jigiiig",
+          "jjgiiig",
+          "jjiiiii",
+          "jgggggg"
+        ]
+      },
+      {
+        "at": [
+          18,
+          92
+        ],
+        "pixels": [
+          "jmjjjmj",
+          "jmjjjmj",
+          "jggjjig",
+          "jgigggi",
+          "ggggggg"
+        ]
+      },
+      {
+        "at": [
+          40,
+          92
+        ],
+        "pixels": [
+          "mgggjgg",
+          "jgggjgg",
+          "igggigg",
+          "gigggig",
+          "ggggggg"
+        ]
+      },
+      {
+        "at": [
+          32,
+          108
+        ],
+        "pixels": [
+          "gggjggg",
+          "gggjggg",
+          "jjjgjgg",
+          "gmmmgjj",
+          "jjjjjjj"
+        ]
+      }
+    ],
+    "drift": [
+      {
+        "at": [
+          32,
+          60
+        ],
+        "pixels": [
+          "ggjgggj",
+          "ggjgggj",
+          "ggigggi",
+          "gggiggg",
+          "mmggggg"
+        ]
+      },
+      {
+        "at": [
+          36,
+          76
+        ],
+        "pixels": [
+          "gjgiigi",
+          "jgiiigi",
+          "jgjiiij",
+          "jjiiiii",
+          "jgggggg"
+        ]
+      },
+      {
+        "at": [
+          18,
+          92
+        ],
+        "pixels": [
+          "mjjjmjj",
+          "mjjjmjj",
+          "gjgjggg",
+          "jigggig",
+          "ggggggg"
+        ]
+      },
+      {
+        "at": [
+          40,
+          92
+        ],
+        "pixels": [
+          "jggjggg",
+          "gggjggg",
+          "gggiggg",
+          "igggigg",
+          "ggggggg"
+        ]
+      },
+      {
+        "at": [
+          32,
+          108
+        ],
+        "pixels": [
+          "ggjgggj",
+          "ggjgggj",
+          "jjgjjgi",
+          "jmmjjjj",
+          "jjjjjjj"
         ]
       }
     ],
     "left": [
       {
         "at": [
-          17,
-          54
+          32,
+          60
         ],
         "pixels": [
-          "........diiiggggiggggggggii.",
-          "........diigggigiiigggggggi.",
-          "........diiggiiggiiiigggggi.",
-          ".......diigiiiggggiiiiigggg.",
-          ".......diiiiiigggggiiiiiigg.",
-          ".......diiiiiijjggggiiiiiii.",
-          "......diiiiiigjjgggggiiiiii.",
-          "......diiiiiigjjggggggiiiii.",
-          "......diiiiigjjmmgggggiiiii.",
-          ".....diiiiiigjmnnmgggggiiii.",
-          ".....diiiiiggjjjggggggggiii.",
-          ".....diiiiiggggggggggggggii.",
-          "......diiiggggggggggggggggi.",
-          "......diiiggggggggggggggggg.",
-          ".......digggggggggggggggggg.",
-          ".......diggggggiiiggggggggg.",
-          ".......dgggggiigiiiiggggggg.",
-          "........gggiiigggiiiiiigggg."
+          "gjgggjg",
+          "gjgggjg",
+          "gigggig",
+          "ggigggi",
+          "mmggggg"
         ]
       },
       {
         "at": [
-          9,
-          105
+          36,
+          76
         ],
         "pixels": [
-          "..........diiiiggggjjjjjgggggggggiiiiiiiiiii.",
-          ".........diiiiggjjjjjjggggggggggggiiiiiiiiii.",
-          ".........diiggmmjjjjggggggggggggggggiiiiiiii.",
-          "........diigjmnnmgggggggggggggggggggggiiiiii.",
-          "........diggjjjggggggggggggggggggggggggiiiii.",
-          "........digggggggggggggggggggggggggggggggiii.",
-          ".......diggggggggggggggggggggggggggggggggggi.",
-          ".......diggggggggggggggggggggggggggggggggggg.",
-          "......digggggggggggggggggggggggggggggggggggg.",
-          "......diggggggggggggggiiiiiggggggggggggggggg.",
-          ".....digggggggggggiiiiigiiiiiiiggggggggggggg.",
-          ".....diggggggiiiiiiiigggggiiiiiiiiiggggggggg.",
-          "....digggiiiiiiiiiigggggggggiiiiiiiiiiiigggg.",
-          "....diiiiiiiiiiiigggggggggggggiiiiiiiiiiiiii.",
-          "...diiiiiiiiiiiigggggjjjggggggggiiiiiiiiiiii.",
-          "...diiiiiiiiiiggggjjjjjjggggggggggiiiiiiiiii.",
-          "....diiiiiiigggjjjjjjjgggggggggggggiiiiiiiii.",
-          "....diiiiiggmmjjjjjggggggggggggggggggiiiiiii."
+          "jggigii",
+          "miiigii",
+          "gjjiiij",
+          "jgiiiii",
+          "jgggggg"
+        ]
+      },
+      {
+        "at": [
+          18,
+          92
+        ],
+        "pixels": [
+          "jjjmjjj",
+          "jjjmjjj",
+          "jjggjgg",
+          "ggggigg",
+          "ggggggg"
+        ]
+      },
+      {
+        "at": [
+          40,
+          92
+        ],
+        "pixels": [
+          "jgjgggj",
+          "ggjgggj",
+          "ggigggi",
+          "gggiggg",
+          "ggggggg"
+        ]
+      },
+      {
+        "at": [
+          32,
+          108
+        ],
+        "pixels": [
+          "gjgggjg",
+          "gjgggjg",
+          "jgjjjig",
+          "jmjmjjg",
+          "jjjjjjj"
         ]
       }
     ]
   },
   "animation": {
     "loop": true,
+    "blend": "palette",
     "regions": [
       [
-        17,
-        54,
-        28,
-        18
+        32,
+        60,
+        7,
+        5
       ],
       [
-        9,
-        105,
-        45,
-        18
+        36,
+        76,
+        7,
+        5
+      ],
+      [
+        18,
+        92,
+        7,
+        5
+      ],
+      [
+        40,
+        92,
+        7,
+        5
+      ],
+      [
+        32,
+        108,
+        7,
+        5
       ]
     ],
     "frames": [
       {
         "id": "rest",
-        "duration": 1100
+        "duration": 800
       },
       {
         "id": "right",
-        "duration": 700
+        "duration": 300
       },
       {
-        "id": "rest",
-        "duration": 900
+        "id": "drift",
+        "duration": 400
       },
       {
         "id": "left",
-        "duration": 800
+        "duration": 300
+      },
+      {
+        "id": "rest",
+        "duration": 500
+      },
+      {
+        "id": "left",
+        "duration": 300
+      },
+      {
+        "id": "drift",
+        "duration": 400
+      },
+      {
+        "id": "right",
+        "duration": 300
       }
     ]
   }

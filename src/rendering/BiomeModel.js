@@ -1,4 +1,4 @@
-import { expandPart, frameAt } from './AssetModel.js';
+import { expandPart, frameAt, clipTime } from './AssetModel.js';
 
 const phases = ['DAY', 'EVENING', 'NIGHT'];
 export const BIOME_DEPTHS = { far: 0.62, middle: 0.27, near: 0 };
@@ -11,6 +11,23 @@ export function biomePixels(sprite, variant = 'rest') {
 
 export function sceneryFrameAt(sprite, seconds = 0, offset = 0) {
   return sprite.animation ? frameAt(sprite.animation, seconds + offset).id : 'rest';
+}
+
+export function sceneryBlendAt(sprite, seconds = 0, offset = 0) {
+  const animation = sprite.animation;
+  const from = sceneryFrameAt(sprite, seconds, offset);
+  if (animation?.blend !== 'palette') return { from, to: from, mix: 0 };
+  const frame = frameAt(animation, seconds + offset);
+  const index = animation.frames.indexOf(frame);
+  const start = animation.frames.slice(0, index).reduce((sum, item) => sum + item.duration, 0);
+  const progress = Math.max(0, Math.min(1, (clipTime(animation, seconds + offset) * 1000 - start) / frame.duration));
+  return { from, to: animation.frames[(index + 1) % animation.frames.length].id,
+    mix: progress * progress * (3 - 2 * progress) };
+}
+
+export function candleIntensity(seconds = 0, offset = 0) {
+  const time = seconds + offset;
+  return 0.55 + Math.sin(time * 0.83) * 0.15 + Math.sin(time * 1.73 + 0.8) * 0.1;
 }
 
 export function sceneryFrameId(id, phase, depth, variant = 'rest') {
@@ -78,6 +95,14 @@ export function validateBiome(source) {
       check(typeof row === 'string' && row.length === sprite.size[0], id + ': row width');
       check([...row].every(token => token === '.' || tokens.includes(token)), id + ': palette');
     }
+    if (sprite.candle) {
+      const light = sprite.candle;
+      check(Array.isArray(light.tokens) && light.tokens.length > 0 && new Set(light.tokens).size === light.tokens.length
+        && light.tokens.every(token => typeof token === 'string' && token.length === 1 && tokens.includes(token))
+        && typeof light.color === 'string' && light.color.length === 1 && tokens.includes(light.color)
+        && Number.isFinite(light.amount) && light.amount > 0 && light.amount <= 0.15, id + ': candle light');
+      check(sprite.pixels.some(row => [...row].some(token => light.tokens.includes(token))), id + ': missing lit glass');
+    }
     if (sprite.variants || sprite.animation) {
       check(sprite.variants && Array.isArray(sprite.variants.rest) && sprite.variants.rest.length === 0, id + ': base variant');
       for (const [variant, patches] of Object.entries(sprite.variants)) {
@@ -91,6 +116,7 @@ export function validateBiome(source) {
         }
       }
       const animation = sprite.animation;
+      check(animation?.blend === undefined || animation.blend === 'palette', id + ': animation blend');
       check(animation?.loop === true && Array.isArray(animation.frames) && animation.frames.length >= 2
         && animation.frames.every(frame => Object.hasOwn(sprite.variants, frame.id) && Number.isInteger(frame.duration)
           && frame.duration >= 80 && frame.duration <= 10000), id + ': animation timeline');
@@ -99,6 +125,7 @@ export function validateBiome(source) {
         && region[2] > 0 && region[3] > 0 && region[0] + region[2] <= sprite.size[0]
         && region[1] + region[3] < sprite.anchor[1]), id + ': animation regions');
       for (const variant of biomeVariants(sprite)) biomePixels(sprite, variant).forEach((row, y) => [...row].forEach((pixel, x) => {
+        if (animation.blend === 'palette') check((pixel === '.') === (sprite.pixels[y][x] === '.'), id + ': blended silhouette');
         if (pixel !== sprite.pixels[y][x]) check(animation.regions.some(([left, top, width, height]) =>
           x >= left && x < left + width && y >= top && y < top + height), id + ': animation outside region');
       }));
@@ -119,13 +146,13 @@ export function validateBiome(source) {
 }
 
 export function sceneryPosition(camera, layer, placement, repeat = 0) {
-  return { x: Math.round(placement.at[0] + repeat * layer.period - camera.x * layer.parallax + camera.width / 2),
+  return { x: Math.round(placement.at[0] + repeat * layer.period - (camera.pixelX ?? Math.round(camera.x)) * layer.parallax + camera.width / 2),
     y: Math.round(camera.ground + placement.at[1]) };
 }
 
 export function visibleScenery(source, camera, layer) {
   const output = [];
-  const center = camera.x * layer.parallax - camera.width / 2;
+  const center = (camera.pixelX ?? Math.round(camera.x)) * layer.parallax - camera.width / 2;
   const first = Math.floor((center - 192) / layer.period);
   const last = Math.ceil((center + camera.width + 192) / layer.period);
   for (let repeat = first; repeat <= last; repeat++) for (const placement of layer.placements) {
@@ -141,7 +168,7 @@ export function mistBands(camera, seconds, plane) {
   const period = 164;
   const parallax = plane === 'far' ? 0.16 : 0.42;
   const drift = Math.floor(seconds * (plane === 'far' ? 0.45 : 0.8));
-  const offset = Math.round(camera.x * parallax) - drift;
+  const offset = Math.round((camera.pixelX ?? Math.round(camera.x)) * parallax) - drift;
   const first = Math.floor((offset - camera.width / 2 - period) / period);
   const bands = [];
   for (let i = first; i <= first + Math.ceil(camera.width / period) + 2; i++) {
@@ -153,7 +180,7 @@ export function mistBands(camera, seconds, plane) {
 }
 
 export function fireflyPoints(camera, seconds) {
-  const offset = Math.round(camera.x * 0.78 - camera.width / 2);
+  const offset = Math.round((camera.pixelX ?? Math.round(camera.x)) * 0.78 - camera.width / 2);
   const first = Math.floor(offset / 61) - 1;
   const points = [];
   for (let i = first; i <= first + Math.ceil(camera.width / 61) + 2; i++) {

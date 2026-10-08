@@ -102,3 +102,21 @@ No se ha probado un telefono Android fisico, su autonomia termica o energetica, 
 - Se comprueban 19 referencias y 13 anclas del README. Las imagenes actuales suman 217608 bytes y no dependen de servicios externos. Se genera una vista previa HTML local; no se afirma haber validado su layout en navegador ni el render de GitHub.
 - Entrega aprobada a la carpeta estable con respaldo previo de sandbox y Desktop, preflight de cambios concurrentes y comprobacion SHA-256 de los archivos copiados. Se conservan Git, dependencias y archivos ajenos. Sin staging, commit, tag ni push; tampoco se cambia la version del paquete.
 - No se repiten pruebas de desconexion real, telefono fisico o rendimiento prolongado. Las comprobaciones de navegador de pasadas anteriores no se presentan como evidencia de la nueva interfaz.
+
+## Forma y movimiento del bosque: 2026-10-08
+
+- `npm run check`: 102 pruebas y build de las tres vistas aprobados. 28 fuentes, atlas de 414 frames en 2048 x 3224 y 138 PNG individuales. No cambian dependencias ni version del paquete.
+- Siete regresiones nuevas cubren camara a 30/60/120 Hz, proyeccion compartida y toques, silueta y madera inmovil, continuidad de todos los frames y cierre del loop, vidrio siempre calido, simetria de capilla y rechazo de declaraciones de luz/mezcla invalidas.
+- Auditoria SHA-256: los nueve archivos protegidos del kit y los 246 archivos previos de Desktop permanecen intactos. Doce exports antiguos de vidrio y musgo quedan respaldados y se retiran del sandbox; el inventario de PNG coincide exactamente con las variantes actuales.
+- Renders del bundle de produccion inspeccionados en dia y noche, desktop 384 x 216 y movil 192 x 304, con zoom entero. Los cuatro casos no estan vacios, cambian al avanzar tiempo y quedan identicos al desactivar movimiento ambiental. Se generan ademas una comparativa antes/despues, detalle de capilla y GIF de 96 frames.
+- Vidrio aislado: 180 frames a 60 Hz; diferencia maxima de un nivel por canal de color entre frames consecutivos. No se cambian el marco, tejado, piedra ni silueta. La comprobacion es de canvas fuera del navegador, no de rendimiento real en el dispositivo.
+- La conexion del control de navegador volvio a agotar su tiempo. Quedan pendientes la revision de interfaz y controles CSS en navegador, telefono fisico, desconexion real y consumo prolongado. Los renders y GIF no se presentan como capturas reales de navegador.
+- Propuesta en sandbox, sin transferencia a Desktop, staging, commit, etiquetas ni publicacion. Las fuentes y las imagenes del README corresponden a esta pasada.
+
+## README actualizado y entrega aprobada: 2026-10-08
+
+- El usuario aprueba entregar la revision del bosque a su carpeta estable de Desktop, antes de recibir comandos de GitHub. La version propuesta para la siguiente etiqueta es `v0.1.4`; no se crea ni publica automaticamente.
+- README actualizado con el alcance de los diez dibujos refinados, cuatro imagenes de la revision actual y un GIF de 96 frames. Los cinco medios se verifican por dimensiones y SHA-256; 21 referencias y 14 anclas locales comprobadas. Los renders se identifican como pruebas del renderer fuera del navegador.
+- La transferencia comprueba la base y su respaldo previo, detecta cambios concurrentes y coteja cada archivo copiado. Retira solamente doce exports generados obsoletos cuyas versiones anteriores permanecen respaldadas. Se conservan Git, dependencias, builds y archivos ajenos; sin staging, commit, etiquetas ni push.
+- Se guardan reglas de entrega en el `AGENTS.md` local del sandbox: actualizar README y medios, copiar a Desktop cuando se aprueba publicar y verificar la entrega antes de proporcionar comandos. Ese archivo local no se copia al repositorio.
+- La ultima comprobacion del renderer conserva 102 pruebas y build correcto. La revision real en navegador, telefono fisico y rendimiento prolongado sigue pendiente; la entrega local no resuelve esas limitaciones.

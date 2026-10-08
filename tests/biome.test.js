@@ -353,9 +353,10 @@ test('localized ambient clips preserve anchors, ground contact and nonmoving mat
 test('ambient timeline selection reuses shared looping clips with deterministic independent phases', () => {
   const tree=source.sprites.oak;
   assert.equal(sceneryFrameAt(tree,0),'rest');
-  assert.equal(sceneryFrameAt(tree,1.1),'right');
-  assert.equal(sceneryFrameAt(tree,2.7),'left');
-  assert.equal(sceneryFrameAt(tree,3.5),'rest');
+  assert.equal(sceneryFrameAt(tree,0.8),'right');
+  assert.equal(sceneryFrameAt(tree,1.2),'drift');
+  assert.equal(sceneryFrameAt(tree,1.6),'left');
+  assert.equal(sceneryFrameAt(tree,3.3),'rest');
   assert.equal(sceneryFrameAt(tree,1.1,0.7),sceneryFrameAt(tree,1.8));
   assert.equal(sceneryFrameAt(source.sprites.groundA,900),'rest');
   assert.equal(sceneryFrameId('oak','NIGHT','near','rest'),'NIGHT:near:oak');

@@ -1,5 +1,7 @@
 # Biblioteca viva del cementerio
 
+Este documento conserva la pasada del 2026-10-07. La [revision del bosque del 2026-10-08](PREMIUM_FOREST.md) sustituye el dibujo de arboles y capilla, el viento de bloques y los frames de vidrio. Consulta esa guia para el comportamiento y las cifras actuales.
+
 Pasada visual: 2026-10-07. Continua los patrones de [materiales](MATERIAL_STYLE.md) sin cambiar a Miga, su escala, sus clips ni la paleta del personaje.
 
 ## Familias

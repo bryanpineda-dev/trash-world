@@ -6,7 +6,7 @@ Un pequeno mundo de fantasia que cabe en tu telefono. Miga, una calaverita curio
 
 [Empezar](#empezar) | [Visores](#visores) | [Assets](#biblioteca-de-assets) | [Documentacion](#documentacion)
 
-![Miga en el Bosque de las ruinas: robles con musgo, capilla iluminada, lapidas y niebla bajo la luna.](docs/images/cemetery-night.png)
+![Miga en el Bosque de las ruinas: robles con musgo, capilla iluminada, lapidas y niebla bajo la luna.](docs/images/premium-forest-night.png)
 
 *Render del bosque actual, generado con el renderer de produccion a 384 x 216 pixeles nativos y zoom entero 3. No es una captura de la interfaz del navegador.*
 
@@ -28,28 +28,38 @@ Canvas 2D, JavaScript y Vite. Sin backend, cuentas, analitica ni servicios remot
 ### Dia Y Noche En Formato Movil
 
 <p align="center">
-  <img src="docs/images/cemetery-mobile-day.png" width="224" alt="Render vertical de Miga y las ruinas bajo la luz del dia.">
-  <img src="docs/images/cemetery-mobile-night.png" width="224" alt="Render vertical nocturno con la ventana de la capilla y el farol encendidos.">
+  <img src="docs/images/premium-forest-mobile-day.png" width="224" alt="Render vertical de Miga y las ruinas bajo la luz del dia.">
+  <img src="docs/images/premium-forest-mobile-night.png" width="224" alt="Render vertical nocturno con la ventana de la capilla y el farol encendidos.">
 </p>
 
 *Renders de la escena a 192 x 304 pixeles nativos y zoom entero 2. Muestran el encuadre vertical; la revision actual de CSS y controles en navegador sigue pendiente.*
 
 ### Biblioteca A Escala Comun
 
-![Lamina de la biblioteca actual: variantes de arboles, lapidas y arbustos de bayas junto a Miga como referencia de escala.](docs/images/cemetery-library-day.png)
+![Lamina de la biblioteca actual: variantes de arboles, lapidas y arbustos de bayas junto a Miga como referencia de escala.](docs/images/premium-forest-library-day.png)
 
 *Lamina de las fuentes editables. Arboles y piedra a zoom entero 2; bayas y Miga a zoom entero 3. Cada familia mantiene su escala, lienzo y ancla.*
 
-### Ultima Pasada: Cementerio Vivo
+### Ultima Pasada: Bosque Refinado
 
-- Tres arboles nuevos: roble hueco, roble inclinado y cipres de punta rota.
-- Dos lapidas nuevas: redonda y partida; tres arbustos decorativos de bayas.
-- Siete arboles con movimiento localizado en hojas y musgo; troncos y raices permanecen fijos.
-- Ventanas de la capilla con luz calida de intensidad variable, sin apagar el cristal.
+- Diez dibujos refinados: robles con estructuras propias, abedul, cipreses, arbol seco, roble lejano, matorral y capilla.
+- Ramas curvas de grosor decreciente, integradas detras del follaje; corteza y hojas tienen sombras y luces propias de su material.
+- Lapidas redonda y partida, tres arbustos decorativos de bayas y los tiles de suelo siguen disponibles como assets reutilizables.
+- Seis arboles con transiciones suaves entre tonos de pequenos grupos de hojas; siluetas, troncos y raices permanecen fijos.
+- Capilla redibujada con ventanas alineadas y cristal calido permanente, sin frames de encendido/apagado.
+- Camara mas reactiva y proyeccion de parallax coherente con el sendero y los objetos.
 - Refinamiento del farol, ruinas, suelo y vegetacion, sin cambiar el diseno ni los clips aprobados de Miga.
 - Retiro del arbolito pequeno del suelo: su fuente se conserva en el laboratorio y los guardados antiguos mantienen sus recuerdos.
 
-Los detalles tecnicos estan en [Variantes y animacion ambiental](docs/LIVING_CEMETERY.md).
+Los detalles de la biblioteca anterior estan en [Variantes y animacion ambiental](docs/LIVING_CEMETERY.md).
+
+La [revision visual del bosque](docs/PREMIUM_FOREST.md) detalla la pasada de forma, material y movimiento del 2026-10-08, preparada para versionar como `v0.1.4`. El commit, la etiqueta y el push se realizan por separado; la entrega local no equivale a una publicacion en GitHub.
+
+### Movimiento Del Entorno
+
+![Prueba de movimiento con Miga, follaje suave y cristal de la capilla siempre iluminado.](docs/images/premium-forest-motion.gif)
+
+*Muestra animada del renderer de produccion, con un recorrido controlado para revisar camara, parallax y ambiente. No es una captura de navegador ni una medicion de rendimiento del juego autonomo.*
 
 ## Empezar
 
@@ -92,7 +102,7 @@ La biblioteca distingue el kit del personaje de la escenografia. Todos usan el m
 | Kit | Fuentes | Paleta | Exportacion |
 | --- | --- | --- | --- |
 | Miga y objetos | 5 piezas, 7 slots, 10 clips; 3 objetos activos y 1 archivado | 16 colores | Atlas de 109 frames, personaje y laminas comparativas. |
-| Bosque y cementerio | 28 assets en 8 familias | 32 tonos independientes | Atlas de 396 frames y 132 PNG transparentes, con viento y luz de vela. |
+| Bosque y cementerio | 28 assets en 8 familias | 32 tonos independientes | Atlas de 414 frames y 138 PNG transparentes, con viento y luz continua de vela. |
 
 ```text
 assets/
@@ -133,7 +143,7 @@ Las pruebas comparan cada pixel exportado con su fuente; detectan atlas desactua
 
 ## Verificacion
 
-**Ultima verificacion local: 95 pruebas aprobadas y build correcto.**
+**Ultima verificacion local: 102 pruebas aprobadas y build correcto.**
 
 ```bash
 npm run assets:check  # Validar fuentes del personaje y del bioma
@@ -193,6 +203,7 @@ La conexion entre dispositivos queda para una etapa independiente. No se present
 - [Objetos y escala](docs/ENVIRONMENT.md)
 - [Bosque y biblioteca](docs/BIOME.md)
 - [Variantes y animacion ambiental](docs/LIVING_CEMETERY.md)
+- [Forma, material y movimiento del bosque](docs/PREMIUM_FOREST.md)
 - [Verificacion](docs/VERIFICATION.md)
 - [Roadmap](docs/ROADMAP.md)
 

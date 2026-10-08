@@ -1,6 +1,6 @@
 import { biomeSource as source } from './BiomeSource.js';
 import manifest from '../../assets/generated/biome.json';
-import { biomePalette, biomePixels, sceneryFrameAt, sceneryFrameId, mistBands, visibleScenery, fireflyPoints } from './BiomeModel.js';
+import { biomePalette, biomePixels, sceneryBlendAt, sceneryFrameId, candleIntensity, mistBands, visibleScenery, fireflyPoints } from './BiomeModel.js';
 import { drawPixels } from './Sprites.js';
 
 export const biomeSource = source;
@@ -10,29 +10,49 @@ export class BiomeRenderer {
     this.image = new Image();
     this.ready = false;
     this.fallbacks = new Map();
+    this.lights = new Map();
     this.image.onload = () => { this.ready = true; };
     this.image.src = new URL('../../assets/generated/biome.png', import.meta.url).href;
   }
 
   drawSprite(ctx, id, phase, depth, x, y, mirror = false, seconds = 0, offset = 0) {
-    const variant = sceneryFrameAt(source.sprites[id], seconds, offset);
-    const key = sceneryFrameId(id, phase, depth, variant);
-    const frame = manifest.frames[key];
+    const sprite = source.sprites[id];
+    const sample = sceneryBlendAt(sprite, seconds, offset);
     ctx.save();
     ctx.translate(x, y);
     if (mirror) ctx.scale(-1, 1);
-    const dx = -frame.anchor[0], dy = -frame.anchor[1];
-    if (this.ready) {
-      ctx.drawImage(this.image, frame.x, frame.y, frame.width, frame.height, dx, dy, frame.width, frame.height);
-    } else {
-      if (!this.fallbacks.has(key)) {
-        const tile = document.createElement('canvas');
-        tile.width = frame.width;
-        tile.height = frame.height;
-        drawPixels(tile.getContext('2d'), biomePixels(source.sprites[id], variant), biomePalette(source, phase, depth), 0, 0);
-        this.fallbacks.set(key, tile);
+    const dx = -sprite.anchor[0], dy = -sprite.anchor[1], alpha = ctx.globalAlpha;
+    const draw = variant => {
+      const key = sceneryFrameId(id, phase, depth, variant), frame = manifest.frames[key];
+      if (this.ready) {
+        ctx.drawImage(this.image, frame.x, frame.y, frame.width, frame.height, dx, dy, frame.width, frame.height);
+      } else {
+        if (!this.fallbacks.has(key)) {
+          const tile = document.createElement('canvas');
+          tile.width = frame.width; tile.height = frame.height;
+          drawPixels(tile.getContext('2d'), biomePixels(sprite, variant), biomePalette(source, phase, depth), 0, 0);
+          this.fallbacks.set(key, tile);
+        }
+        ctx.drawImage(this.fallbacks.get(key), dx, dy);
       }
-      ctx.drawImage(this.fallbacks.get(key), dx, dy);
+    };
+    draw(sample.from);
+    // Palette-only blends keep every opaque edge fixed on the native pixel grid.
+    if (sample.mix > 0 && sample.from !== sample.to) {
+      ctx.globalAlpha = alpha * sample.mix;
+      draw(sample.to);
+    }
+    if (sprite.candle) {
+      const key = `${phase}:${depth}:${id}`;
+      if (!this.lights.has(key)) {
+        const mask = document.createElement('canvas');
+        mask.width = sprite.size[0]; mask.height = sprite.size[1];
+        const pixels = sprite.pixels.map(row => [...row].map(token => sprite.candle.tokens.includes(token) ? sprite.candle.color : '.').join(''));
+        drawPixels(mask.getContext('2d'), pixels, biomePalette(source, phase, depth), 0, 0);
+        this.lights.set(key, mask);
+      }
+      ctx.globalAlpha = alpha * sprite.candle.amount * candleIntensity(seconds, offset);
+      ctx.drawImage(this.lights.get(key), dx, dy);
     }
     ctx.restore();
   }
@@ -63,7 +83,7 @@ export class BiomeRenderer {
     const bank = (color, rise, parallax) => {
       ctx.fillStyle = color;
       for (let x = 0; x < camera.width; x += 4) {
-        const worldX = x + camera.x * parallax;
+        const worldX = x + camera.pixelX * parallax;
         const y = camera.ground - rise + Math.round(Math.sin(worldX / 74) * 5 + Math.sin(worldX / 23) * 2);
         ctx.fillRect(x, y, 4, camera.ground - y);
       }
@@ -94,7 +114,7 @@ export class BiomeRenderer {
     ctx.fillRect(0, ground, width, height - ground);
     ctx.fillStyle = p.earth;
     ctx.fillRect(0, ground + 20, width, Math.max(0, height - ground - 20));
-    const left = camera.x - width / 2;
+    const left = camera.left;
     for (let tile = Math.floor(left / 64); tile * 64 < left + width; tile++) {
       const id = ['groundA', 'groundB', 'groundC'][((tile % 3) + 3) % 3];
       this.drawSprite(ctx, id, phase, 'near', Math.round(tile * 64 - left + 32), ground + 31);
@@ -104,7 +124,7 @@ export class BiomeRenderer {
 
   drawGroundGrass(ctx, camera, phase) {
     const p = source.palettes[phase];
-    const start = Math.floor((camera.x - camera.width / 2) / 19) * 19;
+    const start = Math.floor(camera.left / 19) * 19;
     for (let x = start; x < start + camera.width + 19; x += 19) {
       const point = camera.toScreen(x);
       ctx.fillStyle = p.colors.g;
