@@ -6,9 +6,9 @@ Un pequeno mundo de fantasia que cabe en tu telefono. Miga, una calaverita curio
 
 [Empezar](#empezar) | [Visores](#visores) | [Assets](#biblioteca-de-assets) | [Documentacion](#documentacion)
 
-![Miga en el Bosque de las ruinas: robles con musgo, capilla iluminada, lapidas y niebla bajo la luna.](docs/images/premium-forest-night.png)
+![Miga en el Bosque de las ruinas: robles con enredaderas, capilla iluminada, lapidas y niebla bajo la luna.](docs/images/natural-forest-night.jpg)
 
-*Render del bosque actual, generado con el renderer de produccion a 384 x 216 pixeles nativos y zoom entero 3. No es una captura de la interfaz del navegador.*
+*Captura real del visor en navegador a 1280 x 720. La escena usa 384 x 216 pixeles nativos; se muestran tambien el encabezado y los controles.*
 
 ## Un Mundo Con Vida Propia
 
@@ -28,36 +28,37 @@ Canvas 2D, JavaScript y Vite. Sin backend, cuentas, analitica ni servicios remot
 ### Dia Y Noche En Formato Movil
 
 <p align="center">
-  <img src="docs/images/premium-forest-mobile-day.png" width="224" alt="Render vertical de Miga y las ruinas bajo la luz del dia.">
-  <img src="docs/images/premium-forest-mobile-night.png" width="224" alt="Render vertical nocturno con la ventana de la capilla y el farol encendidos.">
+  <img src="docs/images/natural-forest-mobile-day.jpg" width="224" alt="Captura movil diurna: Miga, ruinas y ventanas apagadas de la capilla.">
+  <img src="docs/images/natural-forest-mobile-night.jpg" width="224" alt="Captura movil nocturna con el cristal de la capilla iluminado.">
 </p>
 
-*Renders de la escena a 192 x 304 pixeles nativos y zoom entero 2. Muestran el encuadre vertical; la revision actual de CSS y controles en navegador sigue pendiente.*
+*Capturas reales del navegador a 320 x 720. El canvas de 192 x 304 pixeles nativos queda entre encabezado y controles, sin desbordamiento horizontal. No son pruebas de un telefono fisico.*
 
 ### Biblioteca A Escala Comun
 
-![Lamina de la biblioteca actual: variantes de arboles, lapidas y arbustos de bayas junto a Miga como referencia de escala.](docs/images/premium-forest-library-day.png)
+![Lamina de la biblioteca actual: ramas bifurcadas, enredaderas, lapidas y bayas junto a Miga como referencia de escala.](docs/images/natural-forest-library-day.png)
 
 *Lamina de las fuentes editables. Arboles y piedra a zoom entero 2; bayas y Miga a zoom entero 3. Cada familia mantiene su escala, lienzo y ancla.*
 
-### Ultima Pasada: Bosque Refinado
+### Ultima Pasada: Ramas Y Luz
 
-- Diez dibujos refinados: robles con estructuras propias, abedul, cipreses, arbol seco, roble lejano, matorral y capilla.
-- Ramas curvas de grosor decreciente, integradas detras del follaje; corteza y hojas tienen sombras y luces propias de su material.
+- Tres robles con bifurcaciones que nacen del tronco y suben a la copa, sin la rama transversal que cruzaba el roble antiguo.
+- Enredaderas afinadas en los robles, abedul y arbol seco: puntos de apoyo, caida mas fina y hojas irregulares, sin hileras repetitivas.
 - Lapidas redonda y partida, tres arbustos decorativos de bayas y los tiles de suelo siguen disponibles como assets reutilizables.
 - Seis arboles con transiciones suaves entre tonos de pequenos grupos de hojas; siluetas, troncos y raices permanecen fijos.
-- Capilla redibujada con ventanas alineadas y cristal calido permanente, sin frames de encendido/apagado.
+- Capilla con cristal frio y luz apagada de dia. Al atardecer y de noche conserva luz calida continua, sin parpadeo de interruptor.
+- El farol aporta un tinte suave al sendero y a la vegetacion cercana, sin blur, halos ni alterar a Miga. Ese aporte ambiental desaparece de dia.
 - Camara mas reactiva y proyeccion de parallax coherente con el sendero y los objetos.
 - Refinamiento del farol, ruinas, suelo y vegetacion, sin cambiar el diseno ni los clips aprobados de Miga.
 - Retiro del arbolito pequeno del suelo: su fuente se conserva en el laboratorio y los guardados antiguos mantienen sus recuerdos.
 
 Los detalles de la biblioteca anterior estan en [Variantes y animacion ambiental](docs/LIVING_CEMETERY.md).
 
-La [revision visual del bosque](docs/PREMIUM_FOREST.md) detalla la pasada de forma, material y movimiento del 2026-10-08, preparada para versionar como `v0.1.4`. El commit, la etiqueta y el push se realizan por separado; la entrega local no equivale a una publicacion en GitHub.
+La [revision de ramas y luz](docs/NATURAL_BRANCHES_LIGHT.md) documenta la pasada actual, preparada para versionar como `v0.1.5`. La [revision anterior](docs/PREMIUM_FOREST.md) conserva el contexto de forma y material. El commit, la etiqueta y el push se realizan por separado; la entrega local no equivale a una publicacion en GitHub.
 
 ### Movimiento Del Entorno
 
-![Prueba de movimiento con Miga, follaje suave y cristal de la capilla siempre iluminado.](docs/images/premium-forest-motion.gif)
+![Prueba nocturna de movimiento con Miga, nuevas ramas, enredaderas y luz local del farol.](docs/images/natural-forest-motion.gif)
 
 *Muestra animada del renderer de produccion, con un recorrido controlado para revisar camara, parallax y ambiente. No es una captura de navegador ni una medicion de rendimiento del juego autonomo.*
 
@@ -102,7 +103,7 @@ La biblioteca distingue el kit del personaje de la escenografia. Todos usan el m
 | Kit | Fuentes | Paleta | Exportacion |
 | --- | --- | --- | --- |
 | Miga y objetos | 5 piezas, 7 slots, 10 clips; 3 objetos activos y 1 archivado | 16 colores | Atlas de 109 frames, personaje y laminas comparativas. |
-| Bosque y cementerio | 28 assets en 8 familias | 32 tonos independientes | Atlas de 414 frames y 138 PNG transparentes, con viento y luz continua de vela. |
+| Bosque y cementerio | 28 assets en 8 familias | 32 tonos independientes | Atlas de 414 frames y 138 PNG transparentes; cristal diurno apagado, viento y luz nocturna continua. |
 
 ```text
 assets/
@@ -143,7 +144,7 @@ Las pruebas comparan cada pixel exportado con su fuente; detectan atlas desactua
 
 ## Verificacion
 
-**Ultima verificacion local: 102 pruebas aprobadas y build correcto.**
+**Ultima verificacion local: 105 pruebas aprobadas y build correcto.**
 
 ```bash
 npm run assets:check  # Validar fuentes del personaje y del bioma
@@ -153,9 +154,9 @@ npm run check        # Tests y build de las tres vistas
 
 La cobertura incluye identidad de Miga, animaciones, siluetas conectadas, escala, uniones del terreno, paletas por profundidad, rutas de la biblioteca, toques, autonomia, guardados y progreso offline. Tambien comprueba cada variante ambiental y la carga de partidas dirigidas al arbol retirado.
 
-La galeria actual se reviso con renders fuera del navegador en dia y noche, con lienzos de escritorio y movil. Las pruebas de pixeles confirman que el ambiente cambia al avanzar el reloj y se congela al desactivar el movimiento.
+La galeria de contexto se capturo en navegador, de dia y noche, en escritorio y movil. Se comprobaron la caminata, el filtro de arboles y el cierre de la biblioteca; no hubo errores de consola en la revision final. La lamina de fuentes y el GIF se generan fuera del navegador. Las pruebas del renderer confirman movimiento ambiental y pausa exacta.
 
-**Pendiente:** repetir la revision de interfaz, controles y encuadre CSS en navegador con esta pasada. La herramienta de navegador no respondio; los renders no sustituyen esa comprobacion. Tampoco se han validado un Android fisico ni el funcionamiento prolongado en el hardware de destino. El historial y alcance de cada pasada estan en [Verificacion](docs/VERIFICATION.md).
+**Pendiente:** telefono Android fisico, medicion de framerate y consumo prolongado en el hardware de destino, y repetir la desconexion real. La revision del visor en navegador no sustituye esas pruebas ni certifica todos los flujos del mundo autonomo. El historial y alcance de cada pasada estan en [Verificacion](docs/VERIFICATION.md).
 
 ## Guardado Y Modo Offline
 
@@ -204,6 +205,7 @@ La conexion entre dispositivos queda para una etapa independiente. No se present
 - [Bosque y biblioteca](docs/BIOME.md)
 - [Variantes y animacion ambiental](docs/LIVING_CEMETERY.md)
 - [Forma, material y movimiento del bosque](docs/PREMIUM_FOREST.md)
+- [Ramas, enredaderas y luces por momento](docs/NATURAL_BRANCHES_LIGHT.md)
 - [Verificacion](docs/VERIFICATION.md)
 - [Roadmap](docs/ROADMAP.md)
 

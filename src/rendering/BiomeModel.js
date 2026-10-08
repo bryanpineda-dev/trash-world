@@ -30,6 +30,24 @@ export function candleIntensity(seconds = 0, offset = 0) {
   return 0.55 + Math.sin(time * 0.83) * 0.15 + Math.sin(time * 1.73 + 0.8) * 0.1;
 }
 
+export function candleEnabled(sprite, phase) {
+  return Boolean(sprite?.candle && (sprite.candle.phases ?? phases).includes(phase));
+}
+
+export function lanternLightAt(x, y, phase, lanterns) {
+  const amount = phase === 'NIGHT' ? .3 : phase === 'EVENING' ? .15 : 0;
+  let strength = 0;
+  for (const lantern of lanterns) {
+    const distance = Math.hypot((x - lantern.x) / 48, (y + 24) / 44);
+    strength = Math.max(strength, Math.max(0, Math.round((1 - distance) * 12)) / 12 * amount);
+  }
+  return strength;
+}
+
+export function litSurfaceColor(color, strength) {
+  return blend(color, '#f1bd6b', strength);
+}
+
 export function sceneryFrameId(id, phase, depth, variant = 'rest') {
   return `${phase}:${depth}:${id}` + (variant === 'rest' ? '' : ':' + variant);
 }
@@ -40,11 +58,14 @@ function blend(a, b, amount) {
   return '#' + channels.join('');
 }
 
-export function biomePalette(source, phase, depth) {
+export function biomePalette(source, phase, depth, sprite) {
   const palette = source.palettes[phase];
-  // Candlelit glass retains a little warmth through the atmospheric depth ramp.
-  return Object.fromEntries(Object.entries(palette.colors).map(([token, color]) =>
-    [token, blend(color, palette.sky, BIOME_DEPTHS[depth] * (token === 'D' ? 0.35 : 1))]));
+  const unlit = sprite?.candle && !candleEnabled(sprite, phase) ? sprite.candle.unlit ?? {} : {};
+  // Daytime glass uses its own cool material ramp, including the former amber glints.
+  return Object.fromEntries(Object.keys(palette.colors).map(token => {
+    const material = unlit[token] ?? token;
+    return [token, blend(palette.colors[material], palette.sky, BIOME_DEPTHS[depth] * (material === 'D' ? 0.35 : 1))];
+  }));
 }
 
 export function assembleBiome(index, loadSprite) {
@@ -102,6 +123,13 @@ export function validateBiome(source) {
         && typeof light.color === 'string' && light.color.length === 1 && tokens.includes(light.color)
         && Number.isFinite(light.amount) && light.amount > 0 && light.amount <= 0.15, id + ': candle light');
       check(sprite.pixels.some(row => [...row].some(token => light.tokens.includes(token))), id + ': missing lit glass');
+      if (light.phases !== undefined) {
+        check(Array.isArray(light.phases) && light.phases.length > 0 && new Set(light.phases).size === light.phases.length
+          && light.phases.every(phase => phases.includes(phase)), id + ': candle phases');
+        check(light.unlit && typeof light.unlit === 'object' && !Array.isArray(light.unlit)
+          && Object.keys(light.unlit).sort().join() === [...light.tokens].sort().join()
+          && Object.values(light.unlit).every(token => typeof token === 'string' && token.length === 1 && tokens.includes(token)), id + ': unlit glass');
+      }
     }
     if (sprite.variants || sprite.animation) {
       check(sprite.variants && Array.isArray(sprite.variants.rest) && sprite.variants.rest.length === 0, id + ': base variant');

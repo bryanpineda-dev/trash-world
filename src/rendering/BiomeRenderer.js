@@ -1,6 +1,6 @@
 import { biomeSource as source } from './BiomeSource.js';
 import manifest from '../../assets/generated/biome.json';
-import { biomePalette, biomePixels, sceneryBlendAt, sceneryFrameId, candleIntensity, mistBands, visibleScenery, fireflyPoints } from './BiomeModel.js';
+import { biomePalette, biomePixels, sceneryBlendAt, sceneryFrameId, candleIntensity, candleEnabled, lanternLightAt, litSurfaceColor, mistBands, visibleScenery, fireflyPoints } from './BiomeModel.js';
 import { drawPixels } from './Sprites.js';
 
 export const biomeSource = source;
@@ -11,11 +11,12 @@ export class BiomeRenderer {
     this.ready = false;
     this.fallbacks = new Map();
     this.lights = new Map();
+    this.surfaceLights = new Map();
     this.image.onload = () => { this.ready = true; };
     this.image.src = new URL('../../assets/generated/biome.png', import.meta.url).href;
   }
 
-  drawSprite(ctx, id, phase, depth, x, y, mirror = false, seconds = 0, offset = 0) {
+  drawSprite(ctx, id, phase, depth, x, y, mirror = false, seconds = 0, offset = 0, surfaceLight = null) {
     const sprite = source.sprites[id];
     const sample = sceneryBlendAt(sprite, seconds, offset);
     ctx.save();
@@ -30,7 +31,7 @@ export class BiomeRenderer {
         if (!this.fallbacks.has(key)) {
           const tile = document.createElement('canvas');
           tile.width = frame.width; tile.height = frame.height;
-          drawPixels(tile.getContext('2d'), biomePixels(sprite, variant), biomePalette(source, phase, depth), 0, 0);
+          drawPixels(tile.getContext('2d'), biomePixels(sprite, variant), biomePalette(source, phase, depth, sprite), 0, 0);
           this.fallbacks.set(key, tile);
         }
         ctx.drawImage(this.fallbacks.get(key), dx, dy);
@@ -42,26 +43,47 @@ export class BiomeRenderer {
       ctx.globalAlpha = alpha * sample.mix;
       draw(sample.to);
     }
-    if (sprite.candle) {
+    if (candleEnabled(sprite, phase)) {
       const key = `${phase}:${depth}:${id}`;
       if (!this.lights.has(key)) {
         const mask = document.createElement('canvas');
         mask.width = sprite.size[0]; mask.height = sprite.size[1];
         const pixels = sprite.pixels.map(row => [...row].map(token => sprite.candle.tokens.includes(token) ? sprite.candle.color : '.').join(''));
-        drawPixels(mask.getContext('2d'), pixels, biomePalette(source, phase, depth), 0, 0);
+        drawPixels(mask.getContext('2d'), pixels, biomePalette(source, phase, depth, sprite), 0, 0);
         this.lights.set(key, mask);
       }
       ctx.globalAlpha = alpha * sprite.candle.amount * candleIntensity(seconds, offset);
       ctx.drawImage(this.lights.get(key), dx, dy);
     }
+    if (surfaceLight && phase !== 'DAY' && surfaceLight.lanterns.length) {
+      const { worldX, groundOffset, lanterns } = surfaceLight;
+      const key = `${phase}:${depth}:${id}:${mirror}:${worldX}:${groundOffset}:${lanterns.map(lamp => lamp.x).join(',')}`;
+      if (!this.surfaceLights.has(key)) {
+        const mask = document.createElement('canvas');
+        mask.width = sprite.size[0]; mask.height = sprite.size[1];
+        const lightCtx = mask.getContext('2d'), palette = biomePalette(source, phase, depth, sprite);
+        sprite.pixels.forEach((row, py) => [...row].forEach((token, px) => {
+          if (token === '.') return;
+          const strength = lanternLightAt(worldX + (mirror ? sprite.anchor[0] - px : px - sprite.anchor[0]),
+            groundOffset + py - sprite.anchor[1], phase, lanterns);
+          if (!strength) return;
+          lightCtx.fillStyle = litSurfaceColor(palette[token], strength);
+          lightCtx.fillRect(px, py, 1, 1);
+        }));
+        this.surfaceLights.set(key, mask);
+      }
+      ctx.globalAlpha = alpha;
+      ctx.drawImage(this.surfaceLights.get(key), dx, dy);
+    }
     ctx.restore();
   }
 
-  drawLayer(ctx, camera, phase, id, seconds = 0) {
+  drawLayer(ctx, camera, phase, id, seconds = 0, lanterns = []) {
     const layer = source.layers.find(layer => layer.id === id);
     for (const placement of visibleScenery(source, camera, layer)) {
       this.drawSprite(ctx, placement.sprite, phase, layer.depth, placement.x, placement.y, placement.mirror,
-        seconds, placement.animationOffset ?? 0);
+        seconds, placement.animationOffset ?? 0, id === 'verge'
+          ? { lanterns, worldX:placement.x + camera.left, groundOffset:placement.y - camera.ground } : null);
     }
   }
 
@@ -107,7 +129,7 @@ export class BiomeRenderer {
     }
   }
 
-  drawTerrain(ctx, camera, phase) {
+  drawTerrain(ctx, camera, phase, lanterns = []) {
     const p = source.palettes[phase];
     const { width, height, ground } = camera;
     ctx.fillStyle = p.soil;
@@ -117,20 +139,21 @@ export class BiomeRenderer {
     const left = camera.left;
     for (let tile = Math.floor(left / 64); tile * 64 < left + width; tile++) {
       const id = ['groundA', 'groundB', 'groundC'][((tile % 3) + 3) % 3];
-      this.drawSprite(ctx, id, phase, 'near', Math.round(tile * 64 - left + 32), ground + 31);
+      this.drawSprite(ctx, id, phase, 'near', Math.round(tile * 64 - left + 32), ground + 31, false, 0, 0,
+        { lanterns, worldX:tile * 64 + 32, groundOffset:31 });
     }
-    this.drawLayer(ctx, camera, phase, 'verge');
+    this.drawLayer(ctx, camera, phase, 'verge', 0, lanterns);
   }
 
-  drawGroundGrass(ctx, camera, phase) {
+  drawGroundGrass(ctx, camera, phase, lanterns = []) {
     const p = source.palettes[phase];
     const start = Math.floor(camera.left / 19) * 19;
     for (let x = start; x < start + camera.width + 19; x += 19) {
       const point = camera.toScreen(x);
-      ctx.fillStyle = p.colors.g;
+      ctx.fillStyle = litSurfaceColor(p.colors.g, lanternLightAt(x, -3, phase, lanterns));
       ctx.fillRect(point.x, point.y - 3, 1, 3);
       ctx.fillRect(point.x + 2, point.y - 4, 1, 4);
-      ctx.fillStyle = p.colors.m;
+      ctx.fillStyle = litSurfaceColor(p.colors.m, lanternLightAt(x + 4, -2, phase, lanterns));
       ctx.fillRect(point.x + 4, point.y - 2, 1, 2);
     }
   }

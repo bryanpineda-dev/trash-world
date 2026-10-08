@@ -125,9 +125,18 @@
   ],
   "candle": {
     "tokens": [
-      "D"
+      "D",
+      "f"
     ],
     "color": "f",
-    "amount": 0.1
+    "amount": 0.1,
+    "phases": [
+      "EVENING",
+      "NIGHT"
+    ],
+    "unlit": {
+      "D": "E",
+      "f": "A"
+    }
   }
 }

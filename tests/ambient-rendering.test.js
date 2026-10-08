@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { Camera } from '../src/rendering/Camera.js';
 import { readBiomeSource } from '../scripts/biome-source.js';
-import { biomePixels, biomeVariants, biomePalette, sceneryBlendAt, sceneryPosition, candleIntensity, validateBiome } from '../src/rendering/BiomeModel.js';
+import { biomePixels, biomeVariants, biomePalette, sceneryBlendAt, sceneryPosition, candleIntensity, candleEnabled, lanternLightAt, litSurfaceColor, validateBiome } from '../src/rendering/BiomeModel.js';
 
 const source = readBiomeSource();
 
@@ -73,10 +73,10 @@ test('palette wind transitions are continuous through every frame and loop bound
   }
 });
 
-test('chapel glass remains warm and uses a bounded continuous light, never switched frames', () => {
+test('chapel glass stays warm after dusk with bounded continuous light, never switched frames', () => {
   const chapel=source.sprites.church;
   assert.equal(chapel.animation,undefined);assert.equal(chapel.variants,undefined);
-  assert.deepEqual(chapel.candle,{tokens:['D'],color:'f',amount:.1});
+  assert.deepEqual(chapel.candle,{tokens:['D','f'],color:'f',amount:.1,phases:['EVENING','NIGHT'],unlit:{D:'E',f:'A'}});
   let previous=candleIntensity(0),minimum=1,maximum=0;
   for(let frame=1;frame<=60*30;frame++) {
     const value=candleIntensity(frame/60);
@@ -86,6 +86,49 @@ test('chapel glass remains warm and uses a bounded continuous light, never switc
   assert.ok(minimum>=.3&&maximum<=.8);assert.ok(maximum-minimum>.1);
   const colors=biomePalette(source,'NIGHT','far');
   assert.ok(parseInt(colors.D.slice(1,3),16)>parseInt(colors.D.slice(5,7),16),'warm base glass remains visible');
+});
+
+test('daylight switches off every amber glass token without altering the chapel masonry', () => {
+  const chapel=source.sprites.church;
+  assert.equal(candleEnabled(chapel,'DAY'),false);
+  for(const phase of ['EVENING','NIGHT'])assert.equal(candleEnabled(chapel,phase),true);
+  for(const depth of ['far','middle','near']) {
+    const day=biomePalette(source,'DAY',depth,chapel),base=biomePalette(source,'DAY',depth);
+    assert.equal(day.D,base.E);assert.equal(day.f,base.A);
+    for(const token of Object.keys(day).filter(token=>!['D','f'].includes(token)))assert.equal(day[token],base[token]);
+    for(const phase of ['EVENING','NIGHT'])assert.deepEqual(biomePalette(source,phase,depth,chapel),biomePalette(source,phase,depth));
+  }
+});
+
+test('lantern illumination is local, world anchored, restrained and absent during daylight', () => {
+  const lamps=[{x:164}];
+  for(const point of [[164,-24],[164,0],[180,-5],[220,0]])assert.equal(lanternLightAt(...point,'DAY',lamps),0);
+  assert.equal(lanternLightAt(164,-24,'NIGHT',lamps),.3);
+  assert.equal(lanternLightAt(164,0,'NIGHT',[]),0);
+  assert.equal(lanternLightAt(220,0,'NIGHT',lamps),0);
+  assert.ok(lanternLightAt(164,0,'NIGHT',lamps)>0,'light reaches the actual floor');
+  for(let dx=0;dx<70;dx++) {
+    assert.equal(lanternLightAt(164-dx,0,'NIGHT',lamps),lanternLightAt(164+dx,0,'NIGHT',lamps));
+    assert.equal(lanternLightAt(164+dx,0,'EVENING',lamps),lanternLightAt(164+dx,0,'NIGHT',lamps)/2);
+  }
+  assert.equal(litSurfaceColor('#314b43',0),'#314b43');
+  assert.notEqual(litSurfaceColor('#314b43',.2),'#314b43');
+  assert.equal(lanternLightAt(164,0,'NIGHT',[...lamps,...lamps]),lanternLightAt(164,0,'NIGHT',lamps),'overlapping lamps do not overexpose surfaces');
+});
+
+test('the large oak fork no longer draws a transverse bar across the lower trunk', () => {
+  const oak=source.sprites.oak;
+  for(let y=115;y<=130;y++) {
+    const wood=[...oak.pixels[y]].flatMap((token,x)=>'uvwoxy'.includes(token)?[x]:[]);
+    assert.ok(wood.length>0);
+    assert.ok(Math.max(...wood)-Math.min(...wood)<45,'no crosswise branch at row '+y);
+  }
+  for(const id of ['oak','oakHollow','leaningOak','birch','twistedTree']) {
+    const sprite=source.sprites[id];
+    assert.equal(sprite.pixels.at(-1),'.'.repeat(sprite.size[0]));
+    assert.ok(sprite.pixels.slice(Math.round(sprite.size[1]*.45),Math.round(sprite.size[1]*.78)).some(row=>row.includes('i')),
+      'hanging vegetation remains visible: '+id);
+  }
 });
 
 test('chapel roof, tower, cross and ground contact have a coherent symmetric silhouette', () => {
@@ -101,6 +144,10 @@ test('ambient validation rejects silhouette-changing blends and unsafe light dec
     data=>{data.sprites.church.candle.amount=.9;},
     data=>{data.sprites.church.candle.tokens=['?'];},
     data=>{data.sprites.church.candle.color='?';},
+    data=>{data.sprites.church.candle.phases=['DAY','INVALID'];},
+    data=>{data.sprites.church.candle.phases=['NIGHT','NIGHT'];},
+    data=>{data.sprites.church.candle.unlit.D='?';},
+    data=>{delete data.sprites.church.candle.unlit.f;},
     data=>{data.sprites.oak.animation.blend='position';},
     data=>{const patch=data.sprites.oak.variants.right[0];patch.pixels[0]='.'+patch.pixels[0].slice(1);},
   ]) {const copy=structuredClone(source);edit(copy);assert.throws(()=>validateBiome(copy));}

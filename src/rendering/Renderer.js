@@ -39,13 +39,14 @@ export class Renderer {
     const { width, height } = this.camera;
     const phase = game.world.clock.phase;
     const p = biomeSource.palettes[phase];
+    const lanterns = game.world.objects.filter(object => object.kind === 'lantern');
     ctx.fillStyle = p.sky;
     ctx.fillRect(0, 0, width, height);
     this.drawSky(p, phase);
     this.biome.drawBackground(ctx, this.camera, phase, this.animationTime);
-    this.biome.drawTerrain(ctx, this.camera, phase);
+    this.biome.drawTerrain(ctx, this.camera, phase, lanterns);
     for (const object of game.world.objects) this.drawObject(object, game.world.discoveredObjects.has(object.id));
-    this.biome.drawGroundGrass(ctx, this.camera, phase);
+    this.biome.drawGroundGrass(ctx, this.camera, phase, lanterns);
     this.drawCreature(game.creature);
     if (this.ripple) {
       this.ripple.remaining -= dt;

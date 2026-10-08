@@ -27,7 +27,7 @@ export function generateBiome(checkOnly = false) {
   const bitmap = createBitmap(width, y + shelfHeight + 2);
   const frames = {};
   for (const { id, sprite, variant, phase, depth, x, y } of entries) {
-    paintPixels(bitmap, biomePixels(sprite, variant), biomePalette(source, phase, depth), x, y);
+    paintPixels(bitmap, biomePixels(sprite, variant), biomePalette(source, phase, depth, sprite), x, y);
     frames[sceneryFrameId(id, phase, depth, variant)] = { x, y, width: sprite.size[0], height: sprite.size[1], anchor: sprite.anchor };
   }
   writeFileSync(new URL('../assets/generated/biome.png', import.meta.url), encodePng(bitmap));
@@ -36,7 +36,7 @@ export function generateBiome(checkOnly = false) {
   for (const { id, path } of source.assetFiles) for (const phase of Object.keys(source.palettes)) for (const variant of biomeVariants(source.sprites[id])) {
     const sprite = source.sprites[id];
     const tile = createBitmap(...sprite.size);
-    paintPixels(tile, biomePixels(sprite, variant), biomePalette(source, phase, 'near'), 0, 0);
+    paintPixels(tile, biomePixels(sprite, variant), biomePalette(source, phase, 'near', sprite), 0, 0);
     const filename = phase.toLowerCase() + (variant === 'rest' ? '' : '-' + variant) + '.png';
     const destination = new URL('../assets/generated/environment/' + path.replace(/\.json$/, '/' + filename), import.meta.url);
     mkdirSync(new URL('.', destination), { recursive: true });

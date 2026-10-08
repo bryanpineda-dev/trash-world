@@ -146,7 +146,7 @@ test('every generated scenery pixel agrees with its phase, depth and editable so
     assert.deepEqual([frame.width, frame.height], sprite.size);
     assert.deepEqual(frame.anchor, sprite.anchor);
     const expected = createBitmap(frame.width, frame.height);
-    paintPixels(expected, biomePixels(sprite,variant), biomePalette(source, phase, depth), 0, 0);
+    paintPixels(expected, biomePixels(sprite,variant), biomePalette(source, phase, depth, sprite), 0, 0);
     for (let y = 0; y < frame.height; y++) {
       assert.equal(raw[(frame.y + y) * stride], 0);
       const start = (frame.y + y) * stride + 1 + frame.x * 4;
@@ -318,7 +318,7 @@ test('every per-asset PNG export matches each editable animation frame in all th
       offset+=length+12;
     }
     const sprite=source.sprites[id], expected=createBitmap(...sprite.size);
-    paintPixels(expected,biomePixels(sprite,variant),biomePalette(source,phase,'near'),0,0);
+    paintPixels(expected,biomePixels(sprite,variant),biomePalette(source,phase,'near',sprite),0,0);
     const raw=inflateSync(Buffer.concat(chunks)),stride=sprite.size[0]*4+1;
     assert.equal(raw.length,stride*sprite.size[1]);
     for (let y=0;y<sprite.size[1];y++) {

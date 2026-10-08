@@ -60,3 +60,5 @@ La posterior [biblioteca viva](LIVING_CEMETERY.md) extiende esos materiales al r
 La [revision del bosque de 2026-10-08](PREMIUM_FOREST.md) rehace diez dibujos, integra las ramas con el follaje y corrige la estructura de la capilla. Seis arboles interpolan pequenos cambios de tono sin desplazar su silueta; la ventana conserva su luz calida con una variacion continua y tenue. Terreno, objetos y parallax comparten el origen redondeado de la camara para evitar diferencias de seguimiento.
 
 El usuario aprueba esta revision para la entrega local a Desktop, con README y medios actuales, y para preparar la siguiente etiqueta `v0.1.4`. Esa entrega no realiza staging, commit, tag ni push; su comprobacion se registra en [Verificacion](VERIFICATION.md).
+
+La [pasada de ramas y luz](NATURAL_BRANCHES_LIGHT.md) elimina la rama transversal del roble, afina cinco dibujos de enredaderas y apaga el cristal de la capilla durante el dia. La paleta por sprite mantiene identicos atlas y fallback; el farol aporta un tinte local sobre superficies del primer plano. No cambian resoluciones, anclas, la geometria de la iglesia ni los dibujos de Miga.
