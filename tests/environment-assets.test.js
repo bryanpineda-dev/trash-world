@@ -73,7 +73,7 @@ test('investigation stops beside the larger props from either side instead of in
 
 test('environment animation changes only flame, rune carving and flexible foliage', () => {
   for (const [id, variant, region] of [
-    ['lantern', 'flicker', [7, 19, 4, 7]], ['rune', 'lit', [11, 14, 9, 15]],
+    ['lantern', 'flicker', [9, 19, 5, 8]], ['rune', 'lit', [11, 14, 9, 15]],
     ['plant', 'breeze', [13, 1, 7, 5]], ['tree', 'breeze', [0, 0, 64, 40]],
   ]) {
     const base = expandPart(source.parts[id], 'rest');
@@ -122,8 +122,9 @@ test('each environment variant keeps a connected pixel silhouette', () => {
 test('old discovery identities and world placements survive the new object art', () => {
   assert.deepEqual(WORLD_OBJECTS.map(({ id, kind, x }) => ({ id, kind, x })), [
     { id: 'plant', kind: 'plant', x: 95 }, { id: 'can', kind: 'lantern', x: 164 },
-    { id: 'stone', kind: 'rune', x: 335 }, { id: 'tree', kind: 'tree', x: 458 },
+    { id: 'stone', kind: 'rune', x: 335 },
   ]);
   const saved = { time: 840, discoveredObjects: ['plant', 'can', 'stone', 'tree'], events: [{ type: 'discovery', object: 'stone', at: 20 }] };
   assert.deepEqual(new World(saved).serialize(), saved);
+  assert.equal(new World(saved).objectAt(458,-1),null);
 });

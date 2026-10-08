@@ -1,5 +1,21 @@
+import { expandPart, frameAt } from './AssetModel.js';
+
 const phases = ['DAY', 'EVENING', 'NIGHT'];
 export const BIOME_DEPTHS = { far: 0.62, middle: 0.27, near: 0 };
+
+export function biomeVariants(sprite) { return Object.keys(sprite.variants ?? { rest: [] }); }
+
+export function biomePixels(sprite, variant = 'rest') {
+  return sprite.variants ? expandPart(sprite, variant) : sprite.pixels;
+}
+
+export function sceneryFrameAt(sprite, seconds = 0, offset = 0) {
+  return sprite.animation ? frameAt(sprite.animation, seconds + offset).id : 'rest';
+}
+
+export function sceneryFrameId(id, phase, depth, variant = 'rest') {
+  return `${phase}:${depth}:${id}` + (variant === 'rest' ? '' : ':' + variant);
+}
 
 function blend(a, b, amount) {
   const channels = [1, 3, 5].map(offset => Math.round(parseInt(a.slice(offset, offset + 2), 16) * (1 - amount)
@@ -62,6 +78,31 @@ export function validateBiome(source) {
       check(typeof row === 'string' && row.length === sprite.size[0], id + ': row width');
       check([...row].every(token => token === '.' || tokens.includes(token)), id + ': palette');
     }
+    if (sprite.variants || sprite.animation) {
+      check(sprite.variants && Array.isArray(sprite.variants.rest) && sprite.variants.rest.length === 0, id + ': base variant');
+      for (const [variant, patches] of Object.entries(sprite.variants)) {
+        check(/^[a-z][a-z-]*$/.test(variant) && Array.isArray(patches), id + ': invalid variant');
+        for (const patch of patches) {
+          const width = patch.pixels?.[0]?.length;
+          check(pair(patch.at) && patch.at.every(value => value >= 0) && width > 0 && patch.pixels.length > 0
+            && patch.at[0] + width <= sprite.size[0] && patch.at[1] + patch.pixels.length <= sprite.size[1], id + ': patch bounds');
+          check(patch.pixels.every(row => typeof row === 'string' && row.length === width
+            && [...row].every(token => token === '.' || tokens.includes(token))), id + ': patch pixels');
+        }
+      }
+      const animation = sprite.animation;
+      check(animation?.loop === true && Array.isArray(animation.frames) && animation.frames.length >= 2
+        && animation.frames.every(frame => Object.hasOwn(sprite.variants, frame.id) && Number.isInteger(frame.duration)
+          && frame.duration >= 80 && frame.duration <= 10000), id + ': animation timeline');
+      check(Array.isArray(animation.regions) && animation.regions.length > 0 && animation.regions.every(region =>
+        Array.isArray(region) && region.length === 4 && region.every(Number.isInteger) && region[0] >= 0 && region[1] >= 0
+        && region[2] > 0 && region[3] > 0 && region[0] + region[2] <= sprite.size[0]
+        && region[1] + region[3] < sprite.anchor[1]), id + ': animation regions');
+      for (const variant of biomeVariants(sprite)) biomePixels(sprite, variant).forEach((row, y) => [...row].forEach((pixel, x) => {
+        if (pixel !== sprite.pixels[y][x]) check(animation.regions.some(([left, top, width, height]) =>
+          x >= left && x < left + width && y >= top && y < top + height), id + ': animation outside region');
+      }));
+    }
   }
   for (const layer of source.layers) {
     check(Object.prototype.hasOwnProperty.call(BIOME_DEPTHS, layer.depth) && Number.isFinite(layer.parallax)
@@ -70,6 +111,8 @@ export function validateBiome(source) {
     for (const placement of layer.placements) {
       check(source.sprites[placement.sprite] && pair(placement.at), 'invalid placement');
       check(placement.mirror === undefined || typeof placement.mirror === 'boolean', 'invalid mirror');
+      check(placement.animationOffset === undefined || Number.isFinite(placement.animationOffset)
+        && placement.animationOffset >= 0 && placement.animationOffset <= 60, 'invalid animation offset');
     }
   }
   return true;

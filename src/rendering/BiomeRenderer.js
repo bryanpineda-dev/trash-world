@@ -1,6 +1,6 @@
 import { biomeSource as source } from './BiomeSource.js';
 import manifest from '../../assets/generated/biome.json';
-import { biomePalette, mistBands, visibleScenery, fireflyPoints } from './BiomeModel.js';
+import { biomePalette, biomePixels, sceneryFrameAt, sceneryFrameId, mistBands, visibleScenery, fireflyPoints } from './BiomeModel.js';
 import { drawPixels } from './Sprites.js';
 
 export const biomeSource = source;
@@ -14,8 +14,10 @@ export class BiomeRenderer {
     this.image.src = new URL('../../assets/generated/biome.png', import.meta.url).href;
   }
 
-  drawSprite(ctx, id, phase, depth, x, y, mirror = false) {
-    const frame = manifest.frames[`${phase}:${depth}:${id}`];
+  drawSprite(ctx, id, phase, depth, x, y, mirror = false, seconds = 0, offset = 0) {
+    const variant = sceneryFrameAt(source.sprites[id], seconds, offset);
+    const key = sceneryFrameId(id, phase, depth, variant);
+    const frame = manifest.frames[key];
     ctx.save();
     ctx.translate(x, y);
     if (mirror) ctx.scale(-1, 1);
@@ -23,12 +25,11 @@ export class BiomeRenderer {
     if (this.ready) {
       ctx.drawImage(this.image, frame.x, frame.y, frame.width, frame.height, dx, dy, frame.width, frame.height);
     } else {
-      const key = `${phase}:${depth}:${id}`;
       if (!this.fallbacks.has(key)) {
         const tile = document.createElement('canvas');
         tile.width = frame.width;
         tile.height = frame.height;
-        drawPixels(tile.getContext('2d'), source.sprites[id].pixels, biomePalette(source, phase, depth), 0, 0);
+        drawPixels(tile.getContext('2d'), biomePixels(source.sprites[id], variant), biomePalette(source, phase, depth), 0, 0);
         this.fallbacks.set(key, tile);
       }
       ctx.drawImage(this.fallbacks.get(key), dx, dy);
@@ -36,10 +37,11 @@ export class BiomeRenderer {
     ctx.restore();
   }
 
-  drawLayer(ctx, camera, phase, id) {
+  drawLayer(ctx, camera, phase, id, seconds = 0) {
     const layer = source.layers.find(layer => layer.id === id);
     for (const placement of visibleScenery(source, camera, layer)) {
-      this.drawSprite(ctx, placement.sprite, phase, layer.depth, placement.x, placement.y, placement.mirror);
+      this.drawSprite(ctx, placement.sprite, phase, layer.depth, placement.x, placement.y, placement.mirror,
+        seconds, placement.animationOffset ?? 0);
     }
   }
 
@@ -67,15 +69,15 @@ export class BiomeRenderer {
       }
     };
     bank(p.horizon, 72, 0.08);
-    this.drawLayer(ctx, camera, phase, 'far-wood');
+    this.drawLayer(ctx, camera, phase, 'far-wood', seconds);
     bank(biomePalette(source, phase, 'far').g, 46, 0.16);
-    this.drawLayer(ctx, camera, phase, 'architecture');
+    this.drawLayer(ctx, camera, phase, 'architecture', seconds);
     this.drawMist(ctx, camera, phase, seconds, 'far');
-    this.drawLayer(ctx, camera, phase, 'middle-wood');
+    this.drawLayer(ctx, camera, phase, 'middle-wood', seconds);
     ctx.fillStyle = biomePalette(source, phase, 'middle').t;
     ctx.fillRect(0, camera.ground - 12, camera.width, 12);
     this.drawMist(ctx, camera, phase, seconds, 'middle');
-    this.drawLayer(ctx, camera, phase, 'near-wood');
+    this.drawLayer(ctx, camera, phase, 'near-wood', seconds);
     if (phase !== 'DAY') for (const point of fireflyPoints(camera, seconds)) {
       ctx.fillStyle = p.colors.c;
       ctx.fillRect(point.x - 1, point.y, 3, 1);

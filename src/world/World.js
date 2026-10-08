@@ -6,8 +6,9 @@ export const WORLD_OBJECTS = Object.freeze([
   // Persistent IDs stay unchanged so existing discoveries survive the art update.
   { id: 'can', kind: 'lantern', x: 164, radius: 9, height: 38 },
   { id: 'stone', kind: 'rune', x: 335, radius: 18, height: 46 },
-  { id: 'tree', kind: 'tree', x: 458, radius: 28, height: 62 },
 ]);
+
+export const RETIRED_OBJECT_IDS = Object.freeze(['tree']);
 
 export class World {
   constructor(data = {}) {

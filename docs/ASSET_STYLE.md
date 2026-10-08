@@ -80,7 +80,7 @@ Miga mide 56 px visibles en reposo. El farol mide 38, la tumba 46, el arbusto 26
 
 Mantener un aspecto gastado pero sencillo. La luz del farol y las runas se dibuja con colores de la paleta, no con bloom o efectos que oculten los pixeles.
 
-Los cuatro objetos ya usan contornos por material. El recolor conserva sus mascaras de transparencia, geometria, anclas, zonas de toque y variantes animadas. El token `k` permanece disponible para el personaje, no se usa en objetos ni escenografia. La biblioteca del bioma suma veinte dibujos originales con escala nativa comun.
+Los cuatro objetos ya usan contornos por material. La correccion inicial conservo sus mascaras de transparencia, geometria, anclas, zonas de toque y variantes animadas. La revision de materiales de 2026-10-07 redibuja solo el farol dentro de su lienzo y medidas anteriores; sus tiempos y apoyo no cambian. El token `k` permanece disponible para el personaje, no se usa en objetos ni escenografia. La biblioteca del bioma suma veinte dibujos originales con escala nativa comun. Ver [patrones de material](MATERIAL_STYLE.md).
 
 ## Revision
 

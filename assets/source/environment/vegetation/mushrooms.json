@@ -1,6 +1,6 @@
 {
   "id": "mushrooms",
-  "label": "Setas coral y ambar",
+  "label": "Hongos moteados",
   "size": [
     28,
     18
@@ -13,20 +13,20 @@
     "............................",
     "............................",
     "............................",
-    "............................",
-    "............................",
-    "............................",
-    "............................",
-    "..........pppppp............",
-    "........pphpphpppp..........",
-    ".......ppphpphppppo.........",
-    "..oooopppppppppppppo........",
-    "offfffoooossssoooooo........",
-    "ohfffoo...sbhss.............",
-    "ooooooo...sbhss.............",
-    "..sbss....sbhss.............",
-    "..sbss...ssbbssss...........",
-    "..aaaa..aattaaaaaa..........",
+    "................wwwwww......",
+    "..............wpppppppww....",
+    ".............wphhpppppppw...",
+    ".............wppbpppphppw...",
+    ".............wpppppphbppw...",
+    "............wppppppppppppw..",
+    "......w.....wppppppppppppw..",
+    "....wppww...wssssssssssssw..",
+    "...wphhppw.......bss........",
+    "...wppbpppw......bss........",
+    "..wsssssssw......bss........",
+    ".....bss.........bss........",
+    ".....bss.........bss........",
+    "iiiiiiiiiiiiiiiiiiiiiiiiiiii",
     "............................"
   ]
 }

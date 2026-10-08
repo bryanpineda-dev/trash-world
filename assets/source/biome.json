@@ -219,6 +219,38 @@
     {
       "id": "groundC",
       "path": "terrain/ground-c.json"
+    },
+    {
+      "id": "oakHollow",
+      "path": "trees/oak-hollow.json"
+    },
+    {
+      "id": "leaningOak",
+      "path": "trees/leaning-oak.json"
+    },
+    {
+      "id": "brokenCypress",
+      "path": "trees/broken-cypress.json"
+    },
+    {
+      "id": "roundedGrave",
+      "path": "gravestones/rounded-grave.json"
+    },
+    {
+      "id": "brokenGrave",
+      "path": "gravestones/broken-grave.json"
+    },
+    {
+      "id": "berryLow",
+      "path": "vegetation/berries/berry-low.json"
+    },
+    {
+      "id": "berryTall",
+      "path": "vegetation/berries/berry-tall.json"
+    },
+    {
+      "id": "berryArch",
+      "path": "vegetation/berries/berry-arch.json"
     }
   ],
   "layers": [
@@ -308,7 +340,8 @@
           "at": [
             16,
             -34
-          ]
+          ],
+          "animationOffset": 3.2
         }
       ]
     },
@@ -323,43 +356,49 @@
           "at": [
             -5,
             -24
-          ]
+          ],
+          "animationOffset": 2.4
         },
         {
           "sprite": "cypress",
           "at": [
             15,
             -26
-          ]
+          ],
+          "animationOffset": 3
         },
         {
-          "sprite": "birch",
+          "sprite": "leaningOak",
           "at": [
             412,
             -28
           ],
-          "mirror": true
+          "mirror": true,
+          "animationOffset": 0.8
         },
         {
           "sprite": "cypress",
           "at": [
             465,
             -24
-          ]
+          ],
+          "animationOffset": 1.2
         },
         {
           "sprite": "birch",
           "at": [
             512,
             -22
-          ]
+          ],
+          "animationOffset": 0.4
         },
         {
-          "sprite": "cypress",
+          "sprite": "brokenCypress",
           "at": [
             625,
             -28
-          ]
+          ],
+          "animationOffset": 2.6
         },
         {
           "sprite": "ruins",
@@ -412,14 +451,14 @@
           ]
         },
         {
-          "sprite": "wornGrave",
+          "sprite": "brokenGrave",
           "at": [
             262,
             -17
           ]
         },
         {
-          "sprite": "pointedGrave",
+          "sprite": "roundedGrave",
           "at": [
             532,
             -19
@@ -459,23 +498,26 @@
           "at": [
             12,
             -6
-          ]
+          ],
+          "animationOffset": 2.4
         },
         {
-          "sprite": "oak",
+          "sprite": "oakHollow",
           "at": [
             431,
             -7
           ],
-          "mirror": true
+          "mirror": true,
+          "animationOffset": 1.2
         },
         {
-          "sprite": "oak",
+          "sprite": "leaningOak",
           "at": [
             713,
             -8
           ],
-          "mirror": true
+          "mirror": true,
+          "animationOffset": 3.2
         },
         {
           "sprite": "ringCross",
@@ -492,7 +534,7 @@
           ]
         },
         {
-          "sprite": "wornGrave",
+          "sprite": "roundedGrave",
           "at": [
             271,
             -12
@@ -603,6 +645,27 @@
           "sprite": "rocks",
           "at": [
             539,
+            0
+          ]
+        },
+        {
+          "sprite": "berryLow",
+          "at": [
+            56,
+            0
+          ]
+        },
+        {
+          "sprite": "berryTall",
+          "at": [
+            446,
+            0
+          ]
+        },
+        {
+          "sprite": "berryArch",
+          "at": [
+            511,
             0
           ]
         }

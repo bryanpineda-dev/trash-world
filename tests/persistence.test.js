@@ -9,6 +9,20 @@ function storage() {
   return { values, getItem: key => values.get(key) ?? null, setItem: (key, value) => values.set(key, value), removeItem: key => values.delete(key) };
 }
 
+test('retired tree discoveries survive while stale inspection and walking targets are cleared', () => {
+  for(const name of ['WALK','INSPECT']) {
+    const data=newSave(1000,()=>0.25);
+    data.world.discoveredObjects=['tree','can'];
+    data.world.events=[{type:'discovery',object:'tree',at:10}];
+    data.creature.memory.lastObject='tree';
+    data.creature.state={name,elapsed:1,duration:10,targetObject:'tree',targetX:415};
+    const restored=normalizeSave(data,2000);
+    assert.deepEqual(restored.world,data.world);
+    assert.equal(restored.creature.memory.lastObject,'tree');
+    assert.deepEqual(restored.creature.state,{name:'IDLE',elapsed:0,duration:3,targetX:null,targetObject:null});
+  }
+});
+
 test('save and load preserve needs, personality, sleep, position and discoveries', () => {
   const store = storage(); const manager = new SaveManager(store, () => 2000);
   const data = newSave(1000, () => 0.25);

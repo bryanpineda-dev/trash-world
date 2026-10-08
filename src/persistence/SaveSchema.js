@@ -1,9 +1,10 @@
 import { SAVE_VERSION, clamp, finite } from '../core/Config.js';
 import { Creature } from '../creature/Creature.js';
-import { World, WORLD_OBJECTS } from '../world/World.js';
+import { World, WORLD_OBJECTS, RETIRED_OBJECT_IDS } from '../world/World.js';
 
 const isRecord = value => value !== null && typeof value === 'object' && !Array.isArray(value);
-const objectIds = new Set(WORLD_OBJECTS.map(object => object.id));
+const activeObjectIds = new Set(WORLD_OBJECTS.map(object => object.id));
+const objectIds = new Set([...activeObjectIds, ...RETIRED_OBJECT_IDS]);
 
 export function normalizeSave(raw, now = Date.now()) {
   if (!isRecord(raw) || !Number.isInteger(raw.version)) throw new Error('Invalid save format');
@@ -24,7 +25,11 @@ export function normalizeSave(raw, now = Date.now()) {
   creature.memory.lastObject = objectIds.has(creature.memory.lastObject) ? creature.memory.lastObject : null;
   creature.state.duration = clamp(creature.state.duration, 0.1, 3600);
   creature.state.elapsed = clamp(creature.state.elapsed, 0, 3600);
-  creature.state.targetObject = objectIds.has(creature.state.targetObject) ? creature.state.targetObject : null;
+  const retiredTarget = RETIRED_OBJECT_IDS.includes(creature.state.targetObject);
+  creature.state.targetObject = activeObjectIds.has(creature.state.targetObject) ? creature.state.targetObject : null;
+  if (retiredTarget && ['WALK', 'INSPECT'].includes(creature.state.name)) {
+    creature.state = { name: 'IDLE', elapsed: 0, duration: 3, targetX: null, targetObject: null };
+  }
   if (creature.state.name === 'WALK' && creature.state.targetX === null) {
     creature.state = { name: 'IDLE', elapsed: 0, duration: 3, targetX: null, targetObject: null };
   }

@@ -73,3 +73,32 @@ No se ha probado un telefono Android fisico, su autonomia termica o energetica, 
 - Vista previa revisada a 1280 x 720 y 320 x 720: las cuatro imagenes cargan, la galeria movil se ajusta y el documento no desborda horizontalmente.
 - Bioma aprobado y documentacion copiados desde sandbox a la carpeta estable con respaldo previo, comprobacion de cambios concurrentes y hashes SHA-256. Git, dependencias y archivos ajenos se conservan; sin staging, commit, tag ni push.
 - No se repitieron pruebas en telefono fisico ni desconexion real. La vista previa local no sustituye una revision posterior del render de GitHub.
+
+## Patrones de materiales: 2026-10-07
+
+- `npm run check`: 90 pruebas y build de las tres vistas aprobados. Se regeneraron los 109 frames del kit, 180 variantes del bioma y 60 PNG individuales.
+- Fuentes afinadas: arco roto, las tres variantes del sendero y farol. Se conservan resoluciones nativas, anclas, posiciones, paletas y tiempos. Las juntas del suelo siguen conectando en cualquier combinacion de tiles.
+- Regresiones nuevas: dos secciones de ruina conectadas al suelo y una silueta de farol conectada. La llama cambia solo dentro de [9,19,5,8]; el resto del farol conserva los mismos pixeles entre sus dos frames.
+- Auditoria SHA-256: las piezas y animaciones de Miga, los otros tres objetos y la composicion del bioma no cambian. Los 160 archivos de la carpeta estable mantienen los hashes del respaldo previo.
+- Laminas comparativas de dia y noche revisadas a zoom entero. Capturas reales del visor guardadas en `outputs/` del espacio de trabajo, tanto en escritorio como en movil; farol y ruina mantienen su escala junto al personaje.
+- Escritorio: 1280 x 720 CSS y canvas nativo 384 x 216. Movil: 320 x 720 CSS y canvas nativo 192 x 304, en [0,61,320,506]; documento sin desbordamiento horizontal. Encabezado y controles quedan fuera del canvas movil.
+- Esta pasada permanece en sandbox, sin transferencias a Desktop, staging, commits, etiquetas ni publicacion. No se repitieron desconexion real, telefono fisico o rendimiento prolongado.
+
+## Biblioteca viva: 2026-10-07
+
+- `npm run check`: 95 pruebas y build de las tres vistas aprobados. Atlas de 396 frames en 2048 x 2940, 28 fuentes decorativas y 132 PNG individuales de fase/variante. El precache sigue incluyendo 19 archivos.
+- Se verifican todos los pixeles exportados, parches y tiempos; siluetas conectadas en cada frame de viento; soporte, suelo y materiales estaticos. Siete arboles y el vidrio de la capilla incorporan clips ambientales compartidos con el reproductor del kit.
+- Las tres variantes de bayas, dos lapidas nuevas y tres arboles nuevos se colocan en el bioma sin cambiar zonas de toque. El roble pequeno se retira de objetos activos, manteniendo fuente, ID historico, recuerdos y descubrimientos. Guardados dirigidos al arbol retirado vuelven a reposo sin perder el resto de datos.
+- Auditoria contra el respaldo: los 160 archivos de Desktop no cambian. Miga, paletas, clips del kit, arbusto original, farol, roble archivado, ruina y senderos mantienen sus fuentes aprobadas. La tumba runica recibe solo desgaste de color dentro de la mascara existente.
+- Laminas de biblioteca inspeccionadas a zoom entero; bayas y Miga comparten escala 3. Renders fuera del navegador ejecutan el bundle de produccion del renderer con canvas nativo: escritorio 384 x 216 y movil 192 x 304, en dia y noche, con 93/100 y 74/81 colores respectivamente. Se revisaron las cuatro imagenes: escena no vacia, assets cargados y Miga y suelo legibles.
+- Prueba de pixeles del renderer: avanzar 1.2 segundos cambia el ambiente; desactivar movimiento y avanzar otros dos segundos conserva exactamente la imagen en los cuatro casos. Estas imagenes no son capturas del navegador ni verifican CSS, controles, eventos DOM o rendimiento del navegador.
+- La herramienta de navegador no respondio al conectar pestanas o crear una nueva vista de produccion. Queda pendiente repetir la revision real de interfaz y encuadre CSS de escritorio/movil. El servidor local responde HTTP 200; eso confirma disponibilidad, no la revision de interfaz.
+- Propuesta exclusivamente en sandbox. Sin transferencias a Desktop, staging, commits, etiquetas, cambios de dependencias o publicacion. No se probaron desconexion real, telefono fisico o consumo prolongado.
+
+## README del cementerio vivo y entrega: 2026-10-07
+
+- Nueva pasada completa de `npm run check`: 95 pruebas aprobadas y build de las tres vistas correcto.
+- Galeria actualizada con tres renders de contexto y una lamina de fuentes en `docs/images/`. Los cuatro PNG se decodifican y se cotejan por dimensiones y SHA-256 con los renders revisados. No son capturas de navegador; el README indica su origen y la revision de interfaz pendiente.
+- Se comprueban 19 referencias y 13 anclas del README. Las imagenes actuales suman 217608 bytes y no dependen de servicios externos. Se genera una vista previa HTML local; no se afirma haber validado su layout en navegador ni el render de GitHub.
+- Entrega aprobada a la carpeta estable con respaldo previo de sandbox y Desktop, preflight de cambios concurrentes y comprobacion SHA-256 de los archivos copiados. Se conservan Git, dependencias y archivos ajenos. Sin staging, commit, tag ni push; tampoco se cambia la version del paquete.
+- No se repiten pruebas de desconexion real, telefono fisico o rendimiento prolongado. Las comprobaciones de navegador de pasadas anteriores no se presentan como evidencia de la nueva interfaz.

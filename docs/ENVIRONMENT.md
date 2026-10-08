@@ -1,6 +1,6 @@
 # Entorno: familia de assets a escala estable
 
-Los cuatro objetos se dibujan pixel a pixel con bordes de 1 px propios de cada material, paleta de 16 colores y luz superior izquierda. Miga mantiene su contorno aprobado. Aumentar detalle no significa cambiar el tamano de un pixel. Ningun objeto recibe una ampliacion individual en el mundo.
+El kit conserva cuatro fuentes de objetos: tres activos en el mundo y el roble pequeno archivado. Se dibujan pixel a pixel con bordes de 1 px propios de cada material, paleta de 16 colores y luz superior izquierda. Miga mantiene su contorno aprobado. Aumentar detalle no significa cambiar el tamano de un pixel. Ningun objeto recibe una ampliacion individual en el mundo.
 
 ## Medidas nativas
 
@@ -22,6 +22,12 @@ El alto visible excluye margenes transparentes. Todos los frames terminan exacta
 - Roble: tronco curvado, corteza agrupada, ramas conectadas, copa por grupos y raices con musgo. `breeze` desplaza la copa 1 px sin mover la base. Tiempos: 3000/1800 ms.
 
 Las fuentes y variantes viven en `assets/source/parts.json`; anclas, etiquetas y secuencias viven en `characters.json`. Los cuatro usan el atlas y el mismo fallback de fuentes que Miga. Plantas y arboles ya no se dibujan como rectangulos independientes en el renderer.
+
+## Revision de materiales: 2026-10-07
+
+El farol gana marco de hierro frio, cristal ambar mas abierto, biseles y base escalonada. Conserva lienzo 24 x 40, ancla [12,39], altura visible 38, zona de toque y tiempos. Solo la llama cambia dentro de [9,19,5,8]; la geometria del marco es la nueva propuesta, no la mascara anterior. Los otros tres objetos y todos los frames de Miga permanecen intactos. La ruina decorativa y los tres senderos tambien se afinan como primera [familia de materiales](MATERIAL_STYLE.md); todavia no se aplica el nuevo acabado a toda la biblioteca.
+
+La pasada posterior de [biblioteca viva](LIVING_CEMETERY.md) retira el roble pequeno del mundo, conservando su fuente y descubrimientos historicos. La tumba runica recibe desgaste localizado sin alterar su mascara, ancla, grabado animado o zonas de toque. Arbusto original y farol conservan exactamente sus fuentes; las nuevas bayas son escenografia independiente.
 
 ## Integracion
 
