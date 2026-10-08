@@ -5,6 +5,7 @@ import { AssetLibrary, assetManifest } from './AssetLibrary.js';
 import { containsPoint } from './AssetModel.js';
 import { BiomeRenderer, biomeSource } from './BiomeRenderer.js';
 import { LanternResponse, lanternFlameAlpha } from '../world/LanternInteraction.js';
+import { RuneResponse, runeTrace, runePixelAlpha } from '../world/RuneInteraction.js';
 
 export class Renderer {
   constructor(canvas, x) {
@@ -18,6 +19,8 @@ export class Renderer {
     this.ripple = null;
     this.lanternResponses = new Map();
     this.lanternGlass = null;
+    this.runeResponses = new Map();
+    this.runePixels = null;
     this.observer = new ResizeObserver(() => this.resize());
     this.observer.observe(canvas);
     this.resize();
@@ -94,10 +97,11 @@ export class Renderer {
     const { ctx } = this;
     const { x, y } = this.camera.toScreen(object.x);
     if (assetManifest.objects[object.kind]) {
-      // Stable native glass with continuous color light avoids alternating flame silhouettes.
-      const seconds = object.kind === 'lantern' ? 0 : this.animationTime;
+      // Keep material and silhouette stable while inspection light changes continuously.
+      const seconds = ['lantern', 'rune'].includes(object.kind) ? 0 : this.animationTime;
       this.assets.drawObject(ctx, object.kind, seconds, x, y);
       if (object.kind === 'lantern') this.drawLanternResponse(object, x, y, context);
+      if (object.kind === 'rune') this.drawRuneResponse(object, x, y, context);
     } else {
       ctx.fillStyle = '#858e85'; ctx.fillRect(x - 9, y - 7, 18, 6); ctx.fillRect(x - 5, y - 10, 9, 3);
       ctx.fillStyle = '#b4bab0'; ctx.fillRect(x - 5, y - 8, 8, 2);
@@ -127,6 +131,21 @@ export class Renderer {
     this.ctx.save();
     this.ctx.globalAlpha = alpha;
     this.ctx.drawImage(this.lanternGlass, x - frame.anchor[0], y - frame.anchor[1]);
+    this.ctx.restore();
+  }
+
+  drawRuneResponse(object, x, y, { phase, creature, dt, motion } = {}) {
+    if (!this.runeResponses.has(object.id)) this.runeResponses.set(object.id, new RuneResponse());
+    const response = this.runeResponses.get(object.id).update(creature, object, dt, motion);
+    if (response.strength < 0.001) return;
+    this.runePixels ??= runeTrace(this.assets.pixelsFor('object:rune:rest'), this.assets.pixelsFor('object:rune:lit'));
+    const frame = assetManifest.frames['object:rune:rest'];
+    this.ctx.save();
+    this.ctx.fillStyle = assetManifest.palette.h;
+    for (const pixel of this.runePixels) {
+      this.ctx.globalAlpha = runePixelAlpha(response, pixel.progress, phase);
+      this.ctx.fillRect(Math.round(x) - frame.anchor[0] + pixel.x, Math.round(y) - frame.anchor[1] + pixel.y, 1, 1);
+    }
     this.ctx.restore();
   }
 

@@ -1,4 +1,4 @@
-import { createIcons, Earth, Grid2x2, Shapes, X, Pause, Play, Flame } from 'lucide';
+import { createIcons, Earth, Grid2x2, Shapes, X, Pause, Play, Flame, Gem } from 'lucide';
 import { Renderer } from './rendering/Renderer.js';
 import { biomeSource } from './rendering/BiomeRenderer.js';
 import { Creature } from './creature/Creature.js';
@@ -6,7 +6,7 @@ import { CreatureAI } from './creature/CreatureAI.js';
 import { World } from './world/World.js';
 import './biome-lab.css';
 
-const icons = { Earth, Grid2x2, Shapes, X, Pause, Play, Flame };
+const icons = { Earth, Grid2x2, Shapes, X, Pause, Play, Flame, Gem };
 const refreshIcons = () => createIcons({ icons, attrs: { 'aria-hidden': 'true', 'stroke-width': 1.7 } });
 refreshIcons();
 const phase = document.querySelector('#biome-phase');
@@ -18,9 +18,12 @@ document.querySelector('#app').dataset.phase = phase.value.toLowerCase();
 const creature = new Creature({ position: { x: Number(position.value) }, state: { name: 'IDLE' } });
 const world = new World();
 const ai = new CreatureAI(creature, world, () => 0.5);
-const lanternInspect = document.querySelector('#lantern-inspect');
-let inspectingLantern = false;
-let lanternReturnPose = 'IDLE';
+const inspectionButtons = new Map([
+  ['can', document.querySelector('#lantern-inspect')],
+  ['stone', document.querySelector('#rune-inspect')],
+]);
+let inspectionTarget = null;
+let inspectionReturnPose = 'IDLE';
 const renderer = new Renderer(document.querySelector('#world'), creature.x);
 const preview = { creature, world, settings: { ambientMotion: true } };
 const library = document.querySelector('#biome-library');
@@ -84,22 +87,23 @@ function refreshPlay() {
 phase.addEventListener('change', () => {
   document.querySelector('#app').dataset.phase = phase.value.toLowerCase();
 });
-function endLanternPreview(restore = false) {
-  if (restore) { pose.value = lanternReturnPose; creature.transition(lanternReturnPose); }
-  inspectingLantern = false;
-  lanternInspect.disabled = false;
+function endInspectionPreview(restore = false) {
+  if (restore) { pose.value = inspectionReturnPose; creature.transition(inspectionReturnPose); }
+  inspectionTarget = null;
+  for (const button of inspectionButtons.values()) button.disabled = false;
 }
-pose.addEventListener('change', () => { endLanternPreview(); creature.transition(pose.value); });
-lanternInspect.addEventListener('click', () => {
-  lanternReturnPose = pose.value === 'INSPECT' ? 'IDLE' : pose.value;
+pose.addEventListener('change', () => { endInspectionPreview(); creature.transition(pose.value); });
+for (const [id, button] of inspectionButtons) button.addEventListener('click', () => {
+  if (inspectionTarget) endInspectionPreview(true);
+  inspectionReturnPose = pose.value === 'INSPECT' ? 'IDLE' : pose.value;
   world.clock.elapsed = { DAY: 120, EVENING: 600, NIGHT: 840 }[phase.value];
-  ai.investigate('can');
-  inspectingLantern = true;
-  lanternInspect.disabled = true;
+  ai.investigate(id);
+  inspectionTarget = id;
+  button.disabled = true;
   pose.value = creature.state;
 });
 function syncPosition() {
-  if (inspectingLantern) endLanternPreview(true);
+  if (inspectionTarget) endInspectionPreview(true);
   creature.x = Number(position.value);
   renderer.camera.x = creature.x;
   renderer.camera.resize(renderer.camera.width, renderer.camera.height);
@@ -119,14 +123,14 @@ function frame(now) {
   const dt = document.hidden || library.open || !playing ? 0 : Math.min((now - previous) / 1000, 0.05);
   previous = now;
   world.clock.elapsed = { DAY: 120, EVENING: 600, NIGHT: 840 }[phase.value];
-  if (inspectingLantern) {
+  if (inspectionTarget) {
     ai.update(dt);
-    if (creature.targetObject !== 'can') endLanternPreview(true);
+    if (creature.targetObject !== inspectionTarget) endInspectionPreview(true);
     else pose.value = creature.state;
     position.value = String(Math.round(creature.x));
     output.value = position.value;
   } else creature.stateElapsed += dt;
-  if (!inspectingLantern && creature.state === 'WALK') {
+  if (!inspectionTarget && creature.state === 'WALK') {
     creature.x += creature.direction * dt * 18;
     if (creature.x >= 490) { creature.x = 490; creature.direction = -1; }
     if (creature.x <= 70) { creature.x = 70; creature.direction = 1; }

@@ -6,7 +6,7 @@ Un pequeno mundo de fantasia que cabe en tu telefono. Miga, una calaverita curio
 
 [Empezar](#empezar) | [Visores](#visores) | [Assets](#biblioteca-de-assets) | [Documentacion](#documentacion)
 
-![Miga observando el farol de noche en el Bosque de las ruinas.](docs/images/lantern-interaction-night.jpg)
+![Miga observa el grabado iluminado de la lapida runica de noche.](docs/images/rune-interaction-night.jpg)
 
 *Captura real del visor en navegador a 1280 x 720. La escena usa 384 x 216 pixeles nativos; se muestran tambien el encabezado y los controles.*
 
@@ -18,6 +18,7 @@ Trash World es un prototipo de mundo de bolsillo inspirado en los cubitos fisico
 - **Tiene memoria:** conserva descubrimientos y su vida se guarda en el navegador.
 - **Responde al tacto:** tocar a Miga, mantener el toque o tocar el entorno produce distintas reacciones.
 - **El farol responde:** una observacion nocturna mas pausada aumenta suavemente el brillo del vidrio, sin cambiar la silueta ni los sprites de Miga.
+- **La runa despierta:** la luz sube por el grabado cuando Miga investiga la lapida, con una respuesta discreta de dia y mas visible de noche.
 - **El bosque cambia:** dia, atardecer y noche; ruinas, niebla baja, luciernagas, viento suave y luz de vela en la capilla.
 - **El cementerio tiene variedad:** arboles adultos de distintas siluetas, lapidas desgastadas y arbustos de bayas, con contornos propios de cada material.
 - **Los huesitos tienen personalidad:** caminar de perfil, gestos, saludo y descanso en piezas que se reconstruyen al despertar.
@@ -29,8 +30,8 @@ Canvas 2D, JavaScript y Vite. Sin backend, cuentas, analitica ni servicios remot
 ### Dia Y Noche En Formato Movil
 
 <p align="center">
-  <img src="docs/images/lantern-interaction-mobile-day.jpg" width="224" alt="Observacion diurna del farol sin respuesta adicional de luz y capilla apagada.">
-  <img src="docs/images/lantern-interaction-mobile-night.jpg" width="224" alt="Miga observa el farol durante la respuesta nocturna del vidrio.">
+  <img src="docs/images/rune-interaction-mobile-day.jpg" width="224" alt="Miga observa la runa desde la derecha, con luz diurna tenue y capilla apagada.">
+  <img src="docs/images/rune-interaction-mobile-night.jpg" width="224" alt="Miga observa desde la izquierda mientras la luz empieza a recorrer la runa de noche.">
 </p>
 
 *Capturas reales del navegador a 320 x 720. El canvas de 192 x 304 pixeles nativos queda entre encabezado y controles, sin desbordamiento horizontal. No son pruebas de un telefono fisico.*
@@ -41,15 +42,16 @@ Canvas 2D, JavaScript y Vite. Sin backend, cuentas, analitica ni servicios remot
 
 *Lamina de las fuentes editables de la revision visual anterior, que permanecen intactas en esta pasada. Arboles y piedra a zoom entero 2; bayas y Miga a zoom entero 3. Cada familia mantiene su escala, lienzo y ancla.*
 
-### Ultima Pasada: Miga Y El Farol
+### Ultima Pasada: La Lapida Runica
 
-- Llegada desde ambos lados y parada a una distancia estable, orientada hacia el farol.
-- Observacion nocturna de 6.5 segundos usando el clip aprobado; los demas objetos y momentos conservan 4.5 segundos.
-- Brillo continuo limitado al vidrio existente: entrada gradual, respiracion suave y salida sin interruptor. La llama del mundo usa una silueta estable.
-- El farol se puede descubrir autonomamente o al tocarlo. No cambian recompensas, guardados, necesidades ni prioridades de descanso.
-- Boton de llama en el visor para ensayar la misma IA, con pausa y selector sincronizado, sin modificar la partida.
+- Miga llega desde cualquiera de los dos lados, se detiene y mira la lapida, conservando su inspeccion de 4.5 segundos.
+- La luz nace en el extremo inferior del grabado, sube por el tallo y recorre las dos ramas del rombo hasta la punta.
+- Respuesta limitada a los 23 pixeles de la runa original: piedra, desgaste, musgo y contornos permanecen quietos. La entrada y la salida son continuas, incluso si la visita se interrumpe.
+- De dia es sutil, al atardecer aumenta y de noche se lee con mayor claridad. No hay halos, particulas ni cambios de escala o de dibujo.
+- Boton de gema en el visor para ensayar la misma IA; pausa, cambio de objetivo y selector sincronizado, sin acceder a la partida.
+- Miga, los assets, la interaccion del farol, las recompensas y los guardados siguen intactos. Las variantes originales de la runa siguen disponibles en el laboratorio.
 
-El alcance y pruebas de la revision local actual estan en [Miga y el farol](docs/LANTERN_INTERACTION.md). No se crea ni publica una etiqueta automaticamente.
+El alcance y pruebas de la revision local actual estan en [La lapida runica](docs/RUNE_INTERACTION.md). La [interaccion del farol](docs/LANTERN_INTERACTION.md) conserva su comportamiento de `v0.1.6`. No se crea ni publica una etiqueta automaticamente.
 
 ### Base Visual: Ramas Y Luz
 
@@ -67,11 +69,11 @@ Los detalles de la biblioteca anterior estan en [Variantes y animacion ambiental
 
 La [revision de ramas y luz](docs/NATURAL_BRANCHES_LIGHT.md) documenta la base visual de `v0.1.5`. La [revision anterior](docs/PREMIUM_FOREST.md) conserva el contexto de forma y material. El commit, la etiqueta y el push se realizan por separado; la entrega local no equivale a una publicacion en GitHub.
 
-### Una Visita Al Farol
+### Una Visita A La Runa
 
-![Secuencia nocturna de Miga: llegada, observacion del farol y vuelta a explorar.](docs/images/lantern-interaction-motion.gif)
+![Secuencia nocturna: Miga llega a la lapida, observa el recorrido de luz y vuelve a explorar.](docs/images/rune-interaction-motion.gif)
 
-*180 fotogramas de la IA y el renderer de produccion fuera del navegador, con el farol como objetivo inicial. No es una captura de navegador ni una medicion de rendimiento del juego autonomo.*
+*180 fotogramas de la IA y el renderer de produccion fuera del navegador, con la lapida como objetivo inicial. No es una captura de navegador ni una medicion de rendimiento del juego autonomo.*
 
 ## Empezar
 
@@ -105,7 +107,7 @@ Las tres vistas estan disponibles en desarrollo y en el build, bajo el mismo ori
 | `/asset-lab.html` | Personaje y objetos | Revisar piezas, clips, direccion y objetos animados. |
 | `/biome-lab.html` | Composicion del bosque | Comparar luz, posicion, poses y familias de assets. |
 
-El visor del bioma comparte el renderer del juego, pero no lee ni escribe su partida. El boton de llama ensaya la visita al farol con la misma IA; el selector refleja caminar u observar. La biblioteca se abre desde el boton de cuadricula y mantiene a Miga como referencia de escala.
+El visor del bioma comparte el renderer del juego, pero no lee ni escribe su partida. Los botones de llama y gema ensayan las visitas al farol y a la runa con la misma IA; el selector refleja caminar u observar. La biblioteca se abre desde el boton de cuadricula y mantiene a Miga como referencia de escala.
 
 ## Biblioteca De Assets
 
@@ -155,7 +157,7 @@ Las pruebas comparan cada pixel exportado con su fuente; detectan atlas desactua
 
 ## Verificacion
 
-**Ultima verificacion local: 117 pruebas aprobadas y build correcto.**
+**Ultima verificacion local: 127 pruebas aprobadas y build correcto.**
 
 ```bash
 npm run assets:check  # Validar fuentes del personaje y del bioma
@@ -165,9 +167,9 @@ npm run check        # Tests y build de las tres vistas
 
 La cobertura incluye identidad de Miga, animaciones, siluetas conectadas, escala, uniones del terreno, paletas por profundidad, rutas de la biblioteca, toques, autonomia, guardados y progreso offline. Tambien comprueba cada variante ambiental y la carga de partidas dirigidas al arbol retirado.
 
-Las capturas actuales muestran la observacion del farol en navegador, de dia y noche, en escritorio y movil. Se comprobaron llegada desde la izquierda, pausa, selector sincronizado y final de inspeccion, ademas del toque diurno en el mundo autonomo. La lamina conserva las fuentes visuales anteriores; el GIF se genera fuera del navegador. Las pruebas del renderer confirman respuesta restringida al vidrio, continuidad de color, paridad atlas/fallback y pausa exacta. Los 178 archivos previos de assets conservan sus hashes.
+Las capturas actuales muestran la inspeccion de la runa en navegador, de dia y noche, en escritorio y movil. Se comprobaron llegada desde ambos lados, pausa, cancelacion por pose, cambio de objetivo y final de inspeccion, ademas del toque diurno en el mundo autonomo. La lamina conserva las fuentes visuales anteriores; el GIF se genera fuera del navegador. Las pruebas del renderer confirman que solo cambian 23 pixeles del grabado, con un maximo de cinco niveles RGB por fotograma a 60 Hz, paridad atlas/fallback y pausa exacta. Los 178 archivos previos de assets conservan sus hashes.
 
-**Pendiente:** telefono Android fisico, medicion de framerate y consumo prolongado en el hardware de destino, y repetir la desconexion real. La revision del visor en navegador no sustituye esas pruebas ni certifica todos los flujos del mundo autonomo. El historial y alcance de cada pasada estan en [Verificacion](docs/VERIFICATION.md).
+**Pendiente:** telefono Android fisico, medicion de framerate y consumo prolongado en el hardware de destino, comportamiento nocturno prolongado en una partida autonoma y repetir la desconexion real. La revision del visor en navegador no sustituye esas pruebas ni certifica todos los flujos del mundo autonomo. El historial y alcance de cada pasada estan en [Verificacion](docs/VERIFICATION.md).
 
 ## Guardado Y Modo Offline
 
@@ -218,6 +220,7 @@ La conexion entre dispositivos queda para una etapa independiente. No se present
 - [Forma, material y movimiento del bosque](docs/PREMIUM_FOREST.md)
 - [Ramas, enredaderas y luces por momento](docs/NATURAL_BRANCHES_LIGHT.md)
 - [Miga y el farol](docs/LANTERN_INTERACTION.md)
+- [La lapida runica](docs/RUNE_INTERACTION.md)
 - [Verificacion](docs/VERIFICATION.md)
 - [Roadmap](docs/ROADMAP.md)
 

@@ -142,3 +142,15 @@ No se ha probado un telefono Android fisico, su autonomia termica o energetica, 
 - El mundo autonomo diurno responde al toque sobre el farol y conserva el guardado local. Logs finales del visor y del mundo sin errores o advertencias. Una espera de finalizacion del visor agoto el plazo; la observacion posterior confirmo finalizacion, reposo y boton habilitado.
 - README y medios corresponden a esta revision. La lamina antigua se identifica como biblioteca visual sin cambios; no se usa como prueba de la nueva interaccion. La entrega estable verifica respaldo, cambios concurrentes y hashes; sin staging, commit, tag ni push.
 - Pendientes: comportamiento nocturno prolongado en partida autonoma, Android fisico, medicion real de framerate y consumo y nueva desconexion completa. La continuidad de color a 60 Hz es una prueba offline, no un certificado de rendimiento en hardware.
+
+## La lapida runica: 2026-10-08
+
+- 127 pruebas y build de las tres vistas aprobados. Diez pruebas nuevas cubren la inspeccion de 4.5 segundos sin cambios de IA, llegada desde ambos lados, direccion, activacion, mascara de 23 pixeles, recorrido simetrico desde la base, intensidad por fase, easing, pausa, interrupcion y guardados.
+- Renderer de produccion offline: solo los 23 pixeles originales del grabado cambian. El aporte diurno es menor que el vespertino y nocturno. Salto maximo de cinco niveles RGB a 60 Hz; atlas y fallback identicos; movimiento ambiental desactivado congela la imagen exacta.
+- Se inspecciona un detalle de seis momentos a zoom entero y un storyboard de llegada, inspeccion y salida. GIF de 180 frames a 15 fps con IA real, descubrimiento y nueva decision. No son capturas del navegador ni mediciones de rendimiento.
+- Navegador real: capturas actuales de escritorio 1280 x 720 y movil 320 x 720, dia y noche. Canvas 384 x 216 y 192 x 304. Ancho de documento igual al viewport; labels y botones de 40 px no se solapan.
+- Llegadas desde x=275 a 301 y desde x=405 a 369 comprobadas, junto con pausa, selector sincronizado, cancelacion por pose, cambio al farol y final de inspeccion con regreso a reposo y boton habilitado.
+- Mundo vivo diurno: el toque sobre la lapida lleva a Miga a investigar; consola del mundo y visor sin errores ni avisos. Una accion de control de navegador agota el plazo y se recupera desde el estado actualizado, sin modificar la app.
+- Los 178 archivos previos de assets conservan SHA-256. Miga, fuentes, exports, paletas, duraciones originales y el farol permanecen intactos. No cambian dependencias, necesidades, recompensas, zonas de toque ni esquema de guardado.
+- README y medios de esta pasada actualizados. La lamina anterior se identifica como biblioteca sin cambios; no se usa como prueba de la interaccion. Entrega local con respaldo, preflight, hashes e inventario; no se ejecutan staging, commit, tag ni push.
+- Pendientes: partida autonoma nocturna prolongada, Android fisico, framerate y consumo prolongados y nueva desconexion completa. La lectura de pixeles corresponde al renderer offline, no al canvas vivo del navegador.
