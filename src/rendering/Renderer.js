@@ -4,6 +4,7 @@ import { drawPixels } from './Sprites.js';
 import { AssetLibrary, assetManifest } from './AssetLibrary.js';
 import { containsPoint } from './AssetModel.js';
 import { BiomeRenderer, biomeSource } from './BiomeRenderer.js';
+import { LanternResponse, lanternFlameAlpha } from '../world/LanternInteraction.js';
 
 export class Renderer {
   constructor(canvas, x) {
@@ -15,6 +16,8 @@ export class Renderer {
     this.biome = new BiomeRenderer();
     this.animationTime = 0;
     this.ripple = null;
+    this.lanternResponses = new Map();
+    this.lanternGlass = null;
     this.observer = new ResizeObserver(() => this.resize());
     this.observer.observe(canvas);
     this.resize();
@@ -45,7 +48,8 @@ export class Renderer {
     this.drawSky(p, phase);
     this.biome.drawBackground(ctx, this.camera, phase, this.animationTime);
     this.biome.drawTerrain(ctx, this.camera, phase, lanterns);
-    for (const object of game.world.objects) this.drawObject(object, game.world.discoveredObjects.has(object.id));
+    for (const object of game.world.objects) this.drawObject(object, game.world.discoveredObjects.has(object.id),
+      { phase, creature: game.creature, dt, motion: game.settings.ambientMotion });
     this.biome.drawGroundGrass(ctx, this.camera, phase, lanterns);
     this.drawCreature(game.creature);
     if (this.ripple) {
@@ -86,11 +90,14 @@ export class Renderer {
     }
   }
 
-  drawObject(object, discovered) {
+  drawObject(object, discovered, context = {}) {
     const { ctx } = this;
     const { x, y } = this.camera.toScreen(object.x);
     if (assetManifest.objects[object.kind]) {
-      this.assets.drawObject(ctx, object.kind, this.animationTime, x, y);
+      // Stable native glass with continuous color light avoids alternating flame silhouettes.
+      const seconds = object.kind === 'lantern' ? 0 : this.animationTime;
+      this.assets.drawObject(ctx, object.kind, seconds, x, y);
+      if (object.kind === 'lantern') this.drawLanternResponse(object, x, y, context);
     } else {
       ctx.fillStyle = '#858e85'; ctx.fillRect(x - 9, y - 7, 18, 6); ctx.fillRect(x - 5, y - 10, 9, 3);
       ctx.fillStyle = '#b4bab0'; ctx.fillRect(x - 5, y - 8, 8, 2);
@@ -100,6 +107,27 @@ export class Renderer {
       ctx.fillStyle = '#f2d787';
       ctx.fillRect(x + object.radius - 2, y - 3, 2, 2);
     }
+  }
+
+  drawLanternResponse(object, x, y, { phase, creature, dt, motion } = {}) {
+    if (!this.lanternResponses.has(object.id)) this.lanternResponses.set(object.id, new LanternResponse());
+    const response = this.lanternResponses.get(object.id);
+    const strength = response.update(creature, object, phase, dt, motion);
+    const alpha = lanternFlameAlpha(strength, this.animationTime, phase);
+    if (alpha <= 0) return;
+    const frame = assetManifest.frames['object:lantern:rest'];
+    if (!this.lanternGlass) {
+      const mask = document.createElement('canvas');
+      mask.width = frame.width; mask.height = frame.height;
+      const rows = this.assets.pixelsFor('object:lantern:rest')
+        .map(row => [...row].map(token => token === 'f' || token === 'h' ? 'h' : '.').join(''));
+      drawPixels(mask.getContext('2d'), rows, assetManifest.palette, 0, 0);
+      this.lanternGlass = mask;
+    }
+    this.ctx.save();
+    this.ctx.globalAlpha = alpha;
+    this.ctx.drawImage(this.lanternGlass, x - frame.anchor[0], y - frame.anchor[1]);
+    this.ctx.restore();
   }
 
   creatureBounds(c) {

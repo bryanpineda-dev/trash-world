@@ -34,6 +34,7 @@
   .biome-controls select { width: 100%; min-width: 0; }
   .position-control { width: auto; grid-column: 1 / 3; grid-row: 2; }
   .biome-controls .icon-button { grid-column: 3; grid-row: 2; }
+  .biome-controls #lantern-inspect { grid-column: 3; grid-row: 1; }
   #library-grid { grid-template-columns: minmax(240px,1fr); padding: 12px; }
   .library-toolbar h2 { font-size: 14px; }
   .library-toolbar { flex-wrap: wrap; gap: 8px; padding: 12px; }

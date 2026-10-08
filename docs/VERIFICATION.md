@@ -131,3 +131,14 @@ No se ha probado un telefono Android fisico, su autonomia termica o energetica, 
 - Comprobacion adicional del renderer: atlas y fallback identicos en dia y noche; overlay de suelo ausente de dia. De noche cambian 1139 pixeles de superficies dentro del alcance local. Un desplazamiento de camara conserva el color en la misma coordenada mundial y reutiliza las mascaras cacheadas.
 - README y medios actualizados para esta revision. La entrega local conserva Git, dependencias y archivos ajenos; no se hace staging, commit, tag ni push. La siguiente etiqueta propuesta es `v0.1.5`.
 - Sin medicion de framerate real, telefono fisico, consumo prolongado ni nueva desconexion completa. La API DOM del navegador no expuso lectura de pixeles del canvas; la verificacion pixel a pixel corresponde al renderer offline y a los tests, no al canvas vivo.
+
+## Miga y el farol: 2026-10-08
+
+- 117 pruebas aprobadas y build de las tres vistas. Doce pruebas nuevas cubren la observacion diferenciada del farol, distancias y orientacion, duracion nocturna, activacion, continuidad, pausa, interrupciones, guardados y recompensas sin cambios.
+- Los 178 archivos previos de assets conservan SHA-256: Miga, clips, farol, paletas, fuentes y exports ambientales intactos. No hay cambios de dependencias, IDs, posiciones, toques o esquema de guardado.
+- Renderer de produccion offline: respuesta de luz restringida a 53 pixeles existentes del vidrio. Diferencia maxima de dos niveles RGB a 60 Hz, paridad atlas/fallback, ausencia de respuesta adicional diurna y vespertina y congelacion exacta con movimiento ambiental desactivado.
+- GIF de 180 fotogramas con IA real y objetivo inicial farol: llegada, inspeccion y nueva decision, incluyendo registro de descubrimiento. No se presenta como captura del navegador o medida de rendimiento.
+- Navegador real: visor 1280 x 720 y 320 x 720, canvas 384 x 216 y 192 x 304 respectivamente. Documento sin desbordamiento horizontal. Capturas nocturnas y diurna actuales, selector sincronizado, pausa y llegada desde la izquierda comprobados; al completar la visita vuelve a reposo y se habilita el boton.
+- El mundo autonomo diurno responde al toque sobre el farol y conserva el guardado local. Logs finales del visor y del mundo sin errores o advertencias. Una espera de finalizacion del visor agoto el plazo; la observacion posterior confirmo finalizacion, reposo y boton habilitado.
+- README y medios corresponden a esta revision. La lamina antigua se identifica como biblioteca visual sin cambios; no se usa como prueba de la nueva interaccion. La entrega estable verifica respaldo, cambios concurrentes y hashes; sin staging, commit, tag ni push.
+- Pendientes: comportamiento nocturno prolongado en partida autonoma, Android fisico, medicion real de framerate y consumo y nueva desconexion completa. La continuidad de color a 60 Hz es una prueba offline, no un certificado de rendimiento en hardware.

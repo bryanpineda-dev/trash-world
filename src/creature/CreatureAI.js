@@ -1,4 +1,5 @@
 import { moveToward } from '../physics/Collision.js';
+import { inspectionDuration } from '../world/LanternInteraction.js';
 
 export class CreatureAI {
   constructor(creature, world, random = Math.random) {
@@ -28,7 +29,7 @@ export class CreatureAI {
         const object = this.world.objects.find(item => item.id === c.targetObject);
         if (object) {
           c.direction = object.x < c.x ? -1 : 1;
-          c.transition('INSPECT', 4.5, object);
+          c.transition('INSPECT', inspectionDuration(object, this.world.clock.phase), object);
         }
         else c.transition('LOOK_AROUND', 2.5);
       }
@@ -71,7 +72,7 @@ export class CreatureAI {
     const approach = { id: object.id, x: object.x + (this.creature.x < object.x ? -distance : distance) };
     if (Math.abs(approach.x - this.creature.x) < 1) {
       this.creature.direction = object.x < this.creature.x ? -1 : 1;
-      this.creature.transition('INSPECT', 4.5, object);
+      this.creature.transition('INSPECT', inspectionDuration(object, this.world.clock.phase), object);
     }
     else this.creature.transition('WALK', 12, approach);
   }

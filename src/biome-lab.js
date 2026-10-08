@@ -1,11 +1,12 @@
-import { createIcons, Earth, Grid2x2, Shapes, X, Pause, Play } from 'lucide';
+import { createIcons, Earth, Grid2x2, Shapes, X, Pause, Play, Flame } from 'lucide';
 import { Renderer } from './rendering/Renderer.js';
 import { biomeSource } from './rendering/BiomeRenderer.js';
 import { Creature } from './creature/Creature.js';
+import { CreatureAI } from './creature/CreatureAI.js';
 import { World } from './world/World.js';
 import './biome-lab.css';
 
-const icons = { Earth, Grid2x2, Shapes, X, Pause, Play };
+const icons = { Earth, Grid2x2, Shapes, X, Pause, Play, Flame };
 const refreshIcons = () => createIcons({ icons, attrs: { 'aria-hidden': 'true', 'stroke-width': 1.7 } });
 refreshIcons();
 const phase = document.querySelector('#biome-phase');
@@ -16,6 +17,10 @@ const play = document.querySelector('#biome-play');
 document.querySelector('#app').dataset.phase = phase.value.toLowerCase();
 const creature = new Creature({ position: { x: Number(position.value) }, state: { name: 'IDLE' } });
 const world = new World();
+const ai = new CreatureAI(creature, world, () => 0.5);
+const lanternInspect = document.querySelector('#lantern-inspect');
+let inspectingLantern = false;
+let lanternReturnPose = 'IDLE';
 const renderer = new Renderer(document.querySelector('#world'), creature.x);
 const preview = { creature, world, settings: { ambientMotion: true } };
 const library = document.querySelector('#biome-library');
@@ -79,8 +84,22 @@ function refreshPlay() {
 phase.addEventListener('change', () => {
   document.querySelector('#app').dataset.phase = phase.value.toLowerCase();
 });
-pose.addEventListener('change', () => creature.transition(pose.value));
+function endLanternPreview(restore = false) {
+  if (restore) { pose.value = lanternReturnPose; creature.transition(lanternReturnPose); }
+  inspectingLantern = false;
+  lanternInspect.disabled = false;
+}
+pose.addEventListener('change', () => { endLanternPreview(); creature.transition(pose.value); });
+lanternInspect.addEventListener('click', () => {
+  lanternReturnPose = pose.value === 'INSPECT' ? 'IDLE' : pose.value;
+  world.clock.elapsed = { DAY: 120, EVENING: 600, NIGHT: 840 }[phase.value];
+  ai.investigate('can');
+  inspectingLantern = true;
+  lanternInspect.disabled = true;
+  pose.value = creature.state;
+});
 function syncPosition() {
+  if (inspectingLantern) endLanternPreview(true);
   creature.x = Number(position.value);
   renderer.camera.x = creature.x;
   renderer.camera.resize(renderer.camera.width, renderer.camera.height);
@@ -99,8 +118,15 @@ document.querySelector('form').addEventListener('submit', event => event.prevent
 function frame(now) {
   const dt = document.hidden || library.open || !playing ? 0 : Math.min((now - previous) / 1000, 0.05);
   previous = now;
-  creature.stateElapsed += dt;
-  if (creature.state === 'WALK') {
+  world.clock.elapsed = { DAY: 120, EVENING: 600, NIGHT: 840 }[phase.value];
+  if (inspectingLantern) {
+    ai.update(dt);
+    if (creature.targetObject !== 'can') endLanternPreview(true);
+    else pose.value = creature.state;
+    position.value = String(Math.round(creature.x));
+    output.value = position.value;
+  } else creature.stateElapsed += dt;
+  if (!inspectingLantern && creature.state === 'WALK') {
     creature.x += creature.direction * dt * 18;
     if (creature.x >= 490) { creature.x = 490; creature.direction = -1; }
     if (creature.x <= 70) { creature.x = 70; creature.direction = 1; }
@@ -108,7 +134,6 @@ function frame(now) {
     output.value = position.value;
   }
   // The preview uses the production renderer but never reads or writes a saved life.
-  world.clock.elapsed = { DAY: 120, EVENING: 600, NIGHT: 840 }[phase.value];
   renderer.render(preview, dt);
   request = requestAnimationFrame(frame);
 }
