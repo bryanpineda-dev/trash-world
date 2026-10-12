@@ -12,41 +12,41 @@
         "t": "#314b43",
         "c": "#5b7d73",
         "e": "#9ead7b",
-        "g": "#4b6650",
-        "m": "#7f9461",
+        "g": "#405f42",
+        "m": "#73865b",
         "a": "#5b6a69",
         "r": "#83958d",
         "l": "#a5b2a0",
-        "w": "#71584b",
-        "o": "#97754f",
+        "w": "#625343",
+        "o": "#897052",
         "f": "#efc278",
         "p": "#cf8685",
-        "d": "#1d3d38",
-        "i": "#2e4f42",
-        "j": "#4b6d46",
-        "n": "#94a967",
-        "q": "#b3b374",
-        "u": "#303334",
-        "v": "#504642",
-        "x": "#b89a67",
-        "y": "#d1bc87",
-        "z": "#3f555e",
-        "A": "#65757c",
-        "B": "#899693",
-        "C": "#bdc1a6",
+        "d": "#183630",
+        "i": "#294a38",
+        "j": "#536e45",
+        "n": "#95a16c",
+        "q": "#b1b479",
+        "u": "#263536",
+        "v": "#44433c",
+        "x": "#a78c65",
+        "y": "#c3ad82",
+        "z": "#3d505a",
+        "A": "#60737b",
+        "B": "#83928e",
+        "C": "#b0b9a3",
         "D": "#f1bd6b",
         "E": "#30454f",
         "F": "#746c60"
       },
-      "sky": "#a6b9b5",
-      "horizon": "#adbeb1",
+      "sky": "#78909a",
+      "horizon": "#98afb3",
       "grass": "#506c50",
       "soil": "#625b58",
-      "earth": "#414b45",
+      "earth": "#263d3e",
       "path": "#96977c",
       "pathShadow": "#737c66",
       "light": "#d6d3ae",
-      "mist": "#b2c4bb"
+      "mist": "#a7bcc0"
     },
     "EVENING": {
       "colors": {
@@ -57,41 +57,41 @@
         "t": "#314c44",
         "c": "#597a78",
         "e": "#abc0a5",
-        "g": "#4b6d59",
-        "m": "#879c79",
+        "g": "#3b5640",
+        "m": "#758060",
         "a": "#586d69",
         "r": "#82938b",
         "l": "#b1b7a7",
-        "w": "#695149",
-        "o": "#957656",
+        "w": "#5d4e43",
+        "o": "#846a51",
         "f": "#efc278",
         "p": "#cf8685",
-        "d": "#243d38",
-        "i": "#365446",
-        "j": "#53734f",
-        "n": "#97aa75",
-        "q": "#bcb07b",
-        "u": "#30303d",
-        "v": "#4b4049",
-        "x": "#b09a72",
-        "y": "#c8b88c",
-        "z": "#4a5963",
-        "A": "#70808a",
-        "B": "#929e97",
-        "C": "#bfc3ae",
+        "d": "#16332f",
+        "i": "#274337",
+        "j": "#526745",
+        "n": "#96a073",
+        "q": "#b5b07b",
+        "u": "#253132",
+        "v": "#423e3d",
+        "x": "#a58b69",
+        "y": "#c1aa83",
+        "z": "#394b56",
+        "A": "#5a6d77",
+        "B": "#7a8c8a",
+        "C": "#a8b4a3",
         "D": "#f1b16c",
         "E": "#374b52",
         "F": "#77706b"
       },
-      "sky": "#a59eaa",
-      "horizon": "#b5b0b0",
+      "sky": "#687e8c",
+      "horizon": "#8da3ac",
       "grass": "#536e58",
       "soil": "#615758",
-      "earth": "#3e4945",
+      "earth": "#23383c",
       "path": "#959587",
       "pathShadow": "#6b7b70",
       "light": "#dfc9aa",
-      "mist": "#b9c6bd"
+      "mist": "#a3b8bb"
     },
     "NIGHT": {
       "colors": {
@@ -102,41 +102,41 @@
         "t": "#294844",
         "c": "#588e86",
         "e": "#94d0bc",
-        "g": "#3e6555",
-        "m": "#6e9374",
+        "g": "#34503c",
+        "m": "#657853",
         "a": "#4d686f",
         "r": "#718e91",
         "l": "#a6bdaf",
-        "w": "#63514d",
-        "o": "#8f7258",
+        "w": "#574b40",
+        "o": "#7c654e",
         "f": "#d3c58d",
         "p": "#b4808e",
-        "d": "#193633",
-        "i": "#2b4b40",
-        "j": "#4b7050",
-        "n": "#839b68",
-        "q": "#a4a16a",
-        "u": "#252f35",
-        "v": "#414047",
-        "x": "#b08a61",
-        "y": "#cbb17c",
-        "z": "#3a535e",
-        "A": "#60777f",
-        "B": "#82968e",
-        "C": "#b1bd9f",
+        "d": "#122e2c",
+        "i": "#233f35",
+        "j": "#465f42",
+        "n": "#869262",
+        "q": "#a6a472",
+        "u": "#202f32",
+        "v": "#3b3c39",
+        "x": "#a08460",
+        "y": "#bba47b",
+        "z": "#334752",
+        "A": "#526a75",
+        "B": "#73898a",
+        "C": "#a2b2a0",
         "D": "#e8ac5e",
         "E": "#263f49",
         "F": "#606861"
       },
-      "sky": "#263a46",
-      "horizon": "#526b7e",
+      "sky": "#314c5b",
+      "horizon": "#607e90",
       "grass": "#446754",
       "soil": "#535856",
-      "earth": "#344448",
+      "earth": "#203338",
       "path": "#87968a",
       "pathShadow": "#5c736b",
       "light": "#eee4c9",
-      "mist": "#7d9caa"
+      "mist": "#8faab6"
     }
   },
   "assetFiles": [
@@ -251,9 +251,50 @@
     {
       "id": "berryArch",
       "path": "vegetation/berries/berry-arch.json"
+    },
+    {
+      "id": "forestBackdrop",
+      "path": "trees/forest-backdrop.json"
+    },
+    {
+      "id": "sun",
+      "path": "sky/sun.json"
+    },
+    {
+      "id": "forestBackdropEast",
+      "path": "trees/forest-backdrop-east.json"
     }
   ],
   "layers": [
+    {
+      "id": "forest-horizon",
+      "depth": "far",
+      "parallax": 0.09,
+      "period": 576,
+      "placements": [
+        {
+          "sprite": "forestBackdrop",
+          "at": [
+            0,
+            -38
+          ]
+        },
+        {
+          "sprite": "forestBackdropEast",
+          "at": [
+            192,
+            -39
+          ]
+        },
+        {
+          "sprite": "forestBackdrop",
+          "at": [
+            384,
+            -37
+          ]
+        }
+      ]
+    },
     {
       "id": "far-wood",
       "depth": "far",
@@ -263,69 +304,62 @@
         {
           "sprite": "distantOak",
           "at": [
-            -32,
-            -26
+            -45,
+            -35
           ]
         },
         {
           "sprite": "distantOak",
           "at": [
-            36,
-            -22
+            29,
+            -40
           ],
           "mirror": true
         },
         {
           "sprite": "distantOak",
           "at": [
-            103,
-            -30
+            115,
+            -31
           ]
         },
         {
           "sprite": "distantOak",
           "at": [
-            186,
-            -25
+            211,
+            -39
           ],
           "mirror": true
         },
         {
           "sprite": "distantOak",
           "at": [
-            269,
-            -21
+            302,
+            -34
           ]
         },
         {
           "sprite": "distantOak",
           "at": [
-            339,
-            -28
+            400,
+            -41
           ],
           "mirror": true
         },
         {
           "sprite": "distantOak",
           "at": [
-            429,
-            -26
+            489,
+            -33
           ]
-        },
-        {
-          "sprite": "distantOak",
-          "at": [
-            504,
-            -22
-          ],
-          "mirror": true
         },
         {
           "sprite": "distantOak",
           "at": [
             562,
-            -26
-          ]
+            -39
+          ],
+          "mirror": true
         }
       ]
     },
@@ -338,7 +372,7 @@
         {
           "sprite": "church",
           "at": [
-            0,
+            21,
             -34
           ],
           "animationOffset": 0
@@ -354,18 +388,18 @@
         {
           "sprite": "birch",
           "at": [
-            -5,
-            -24
+            -78,
+            -23
           ],
-          "animationOffset": 2.8
+          "animationOffset": 3.4
         },
         {
           "sprite": "cypress",
           "at": [
-            15,
-            -26
+            -25,
+            -31
           ],
-          "animationOffset": 3
+          "animationOffset": 2.6
         },
         {
           "sprite": "leaningOak",
@@ -496,19 +530,19 @@
         {
           "sprite": "oak",
           "at": [
-            12,
+            60,
             -6
           ],
-          "animationOffset": 2.4
+          "animationOffset": 0.6
         },
         {
           "sprite": "oakHollow",
           "at": [
-            431,
+            397,
             -7
           ],
           "mirror": true,
-          "animationOffset": 2.6
+          "animationOffset": 3.4
         },
         {
           "sprite": "leaningOak",
@@ -536,7 +570,7 @@
         {
           "sprite": "roundedGrave",
           "at": [
-            271,
+            80,
             -12
           ]
         },
@@ -668,6 +702,59 @@
             511,
             0
           ]
+        }
+      ]
+    },
+    {
+      "id": "undergrowth",
+      "depth": "near",
+      "parallax": 1,
+      "period": 560,
+      "placements": [
+        {
+          "sprite": "fern",
+          "at": [
+            30,
+            37
+          ]
+        },
+        {
+          "sprite": "fern",
+          "at": [
+            121,
+            41
+          ],
+          "mirror": true
+        },
+        {
+          "sprite": "fern",
+          "at": [
+            221,
+            39
+          ]
+        },
+        {
+          "sprite": "fern",
+          "at": [
+            328,
+            42
+          ],
+          "mirror": true
+        },
+        {
+          "sprite": "fern",
+          "at": [
+            418,
+            39
+          ]
+        },
+        {
+          "sprite": "fern",
+          "at": [
+            525,
+            40
+          ],
+          "mirror": true
         }
       ]
     }

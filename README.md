@@ -4,11 +4,13 @@ Un pequeno mundo de fantasia que cabe en tu telefono. Miga, una calaverita curio
 
 **Pixel art original | Vida autonoma | Bosque encantado | Guardado local**
 
+**Encuadre amplio aprobado:** mas mundo visible, Miga mas pequena y correccion de la niebla y luz de la iglesia. Se conserva el personaje y su vida autonoma; el acabado de arquitectura y fuentes secundarias sigue en refinamiento.
+
 [Empezar](#empezar) | [Visores](#visores) | [Assets](#biblioteca-de-assets) | [Documentacion](#documentacion)
 
-![Miga observa el grabado iluminado de la lapida runica de noche.](docs/images/rune-interaction-night.jpg)
+![Encuadre amplio: Miga mas pequena, capilla completa y luz nocturna entre los arboles.](docs/images/world-view-night.jpg)
 
-*Captura real del visor en navegador a 1280 x 720. La escena usa 384 x 216 pixeles nativos; se muestran tambien el encabezado y los controles.*
+*Captura real del visor a 1280 x 720. Canvas de 560 x 246 pixeles nativos en su area de 1280 x 563; encabezado y controles quedan fuera de la escena. Miga conserva su sprite original y se ve aproximadamente un 31% mas pequena que antes.*
 
 ## Un Mundo Con Vida Propia
 
@@ -27,22 +29,46 @@ Canvas 2D, JavaScript y Vite. Sin backend, cuentas, analitica ni servicios remot
 
 ## Galeria
 
+### Mundo Autonomo
+
+![Miga explorando en el mundo real de la aplicacion, con el encuadre amplio.](docs/images/world-view-live-day.jpg)
+
+*Captura actual del juego autonomo en navegador a 1280 x 720, durante una caminata diurna. No es una pose dirigida desde el laboratorio.*
+
 ### Dia Y Noche En Formato Movil
 
 <p align="center">
-  <img src="docs/images/rune-interaction-mobile-day.jpg" width="224" alt="Miga observa la runa desde la derecha, con luz diurna tenue y capilla apagada.">
-  <img src="docs/images/rune-interaction-mobile-night.jpg" width="224" alt="Miga observa desde la izquierda mientras la luz empieza a recorrer la runa de noche.">
+  <img src="docs/images/world-view-mobile-day.jpg" width="224" alt="Encuadre amplio diurno, con luz apagada en la capilla.">
+  <img src="docs/images/world-view-mobile-night.jpg" width="224" alt="Encuadre amplio nocturno, con ventanas calidas.">
 </p>
 
-*Capturas reales del navegador a 320 x 720. El canvas de 192 x 304 pixeles nativos queda entre encabezado y controles, sin desbordamiento horizontal. No son pruebas de un telefono fisico.*
+*Capturas reales del navegador a 320 x 720. El canvas de 288 x 455 pixeles nativos queda entre encabezado y controles. Miga se ve un 33% mas pequena. No son pruebas de un telefono fisico.*
 
 ### Biblioteca A Escala Comun
 
-![Lamina de la biblioteca actual: ramas bifurcadas, enredaderas, lapidas y bayas junto a Miga como referencia de escala.](docs/images/natural-forest-library-day.png)
+![Fuentes del estudio: robles, abedul, arbol seco, cipreses, bosque lejano, capilla y ruina junto a Miga.](docs/images/style-master-library.png)
 
-*Lamina de las fuentes editables de la revision visual anterior, que permanecen intactas en esta pasada. Arboles y piedra a zoom entero 2; bayas y Miga a zoom entero 3. Cada familia mantiene su escala, lienzo y ancla.*
+*Lamina del estudio anterior, a zoom entero 2, incluyendo Miga como referencia. Se conserva como historial: el borde inferior de los dos fondos de bosque se reviso despues. No es una captura actual de navegador ni representa toda la biblioteca.*
 
-### Ultima Pasada: La Lapida Runica
+[Comparativa detallada de los tres robles](docs/images/style-master-trees-comparison.png).
+
+### Ultima Pasada: Observar El Mundo
+
+- Camara mas abierta: 288 pixeles de ancho minimo en movil, 560 en escritorio habitual y mas espacio horizontal en ventanas muy bajas. No se encogen ni redibujan sprites individualmente.
+- Cuando cabe el tramo jugable completo, la camara queda centrada en el mundo de 560 pixeles, no sigue cada paso de Miga. Las vistas estrechas conservan seguimiento y parallax.
+- Encabezado y controles fuera del canvas en todas las vistas del mundo. La cruz de la iglesia queda completa, tambien en formato apaisado.
+- Retiro de las superficies azules solidas y del borde recto de los fondos. El suelo lejano usa tierra, vegetacion baja y una silueta irregular.
+- Niebla mucho mas tenue en manchas separadas, sin una banda que cubra todo el ancho. Sigue detras de Miga y se congela al desactivar movimiento.
+- Ventanas nocturnas con su ambar propio, sin mezclarlo con la niebla azulada. De dia el cristal sigue frio y apagado. Luna recolocada para el encuadre amplio.
+- Miga, sus clips aprobados, reglas, objetos activos, dependencias y guardados permanecen intactos. El acabado de ruinas, lapidas y vegetacion sigue pendiente; esta pasada no declara logrado el arte de la referencia.
+
+![El mismo encuadre amplio de dia, con las ventanas apagadas.](docs/images/world-view-day.jpg)
+
+*Captura diurna actual del navegador. La [comparativa del estudio anterior](docs/images/style-master-comparison.png) se conserva como historial de una propuesta rechazada, no como evidencia del encuadre actual.*
+
+La [revision de encuadre y atmosfera](docs/WORLD_VIEW.md) documenta esta correccion. La [guia del estudio](docs/STYLE_MASTER.md) y su [QA](docs/STYLE_MASTER_QA.md) conservan el contexto anterior, sin presentarlo como arte aprobado. La aprobacion visual precede a nuevas familias de assets y funciones.
+
+### Interaccion Conservada: La Lapida Runica
 
 - Miga llega desde cualquiera de los dos lados, se detiene y mira la lapida, conservando su inspeccion de 4.5 segundos.
 - La luz nace en el extremo inferior del grabado, sube por el tallo y recorre las dos ramas del rombo hasta la punta.
@@ -51,7 +77,7 @@ Canvas 2D, JavaScript y Vite. Sin backend, cuentas, analitica ni servicios remot
 - Boton de gema en el visor para ensayar la misma IA; pausa, cambio de objetivo y selector sincronizado, sin acceder a la partida.
 - Miga, los assets, la interaccion del farol, las recompensas y los guardados siguen intactos. Las variantes originales de la runa siguen disponibles en el laboratorio.
 
-El alcance y pruebas de la revision local actual estan en [La lapida runica](docs/RUNE_INTERACTION.md). La [interaccion del farol](docs/LANTERN_INTERACTION.md) conserva su comportamiento de `v0.1.6`. No se crea ni publica una etiqueta automaticamente.
+La [lapida runica](docs/RUNE_INTERACTION.md) conserva su comportamiento de `v0.1.7`. La [interaccion del farol](docs/LANTERN_INTERACTION.md) mantiene la revision anterior. No se crea ni publica una etiqueta automaticamente.
 
 ### Base Visual: Ramas Y Luz
 
@@ -71,9 +97,9 @@ La [revision de ramas y luz](docs/NATURAL_BRANCHES_LIGHT.md) documenta la base v
 
 ### Una Visita A La Runa
 
-![Secuencia nocturna: Miga llega a la lapida, observa el recorrido de luz y vuelve a explorar.](docs/images/rune-interaction-motion.gif)
+![Miga camina hacia la lapida en el encuadre amplio, con ambiente y animaciones aprobadas.](docs/images/world-view-motion.gif)
 
-*180 fotogramas de la IA y el renderer de produccion fuera del navegador, con la lapida como objetivo inicial. No es una captura de navegador ni una medicion de rendimiento del juego autonomo.*
+*90 fotogramas a 15 fps de la IA y el renderer de produccion fuera del navegador, con la lapida como objetivo inicial. No es una captura de navegador ni una medicion de rendimiento. La [secuencia del estudio anterior](docs/images/style-master-motion.gif) y la [secuencia de la runa](docs/images/rune-interaction-motion.gif) se conservan como historial.*
 
 ## Empezar
 
@@ -116,7 +142,7 @@ La biblioteca distingue el kit del personaje de la escenografia. Todos usan el m
 | Kit | Fuentes | Paleta | Exportacion |
 | --- | --- | --- | --- |
 | Miga y objetos | 5 piezas, 7 slots, 10 clips; 3 objetos activos y 1 archivado | 16 colores | Atlas de 109 frames, personaje y laminas comparativas. |
-| Bosque y cementerio | 28 assets en 8 familias | 32 tonos independientes | Atlas de 414 frames y 138 PNG transparentes; cristal diurno apagado, viento y luz nocturna continua. |
+| Bosque y cementerio | 31 assets en 8 familias | 32 tokens de material | Atlas de 441 frames y 147 PNG transparentes; cristal diurno apagado, viento y luz nocturna continua. |
 
 ```text
 assets/
@@ -128,6 +154,7 @@ assets/
     biome.json                 # Indice del entorno, paletas y capas
     environment/
       trees/
+        forest-backdrop.json / forest-backdrop-east.json
       vegetation/              # Helechos, hongos, flores y matorrales
         berries/               # Variantes decorativas de bayas
       gravestones/
@@ -135,6 +162,7 @@ assets/
       fences/
       terrain/
       sky/
+        moon.json / sun.json
       architecture/churches/
   generated/
     atlas.png / atlas.json     # Kit animado
@@ -157,7 +185,7 @@ Las pruebas comparan cada pixel exportado con su fuente; detectan atlas desactua
 
 ## Verificacion
 
-**Ultima verificacion local: 127 pruebas aprobadas y build correcto.**
+**Ultima verificacion local: 144 pruebas aprobadas y build correcto.** Alcance y limites en [Encuadre amplio](docs/WORLD_VIEW.md).
 
 ```bash
 npm run assets:check  # Validar fuentes del personaje y del bioma
@@ -167,7 +195,9 @@ npm run check        # Tests y build de las tres vistas
 
 La cobertura incluye identidad de Miga, animaciones, siluetas conectadas, escala, uniones del terreno, paletas por profundidad, rutas de la biblioteca, toques, autonomia, guardados y progreso offline. Tambien comprueba cada variante ambiental y la carga de partidas dirigidas al arbol retirado.
 
-Las capturas actuales muestran la inspeccion de la runa en navegador, de dia y noche, en escritorio y movil. Se comprobaron llegada desde ambos lados, pausa, cancelacion por pose, cambio de objetivo y final de inspeccion, ademas del toque diurno en el mundo autonomo. La lamina conserva las fuentes visuales anteriores; el GIF se genera fuera del navegador. Las pruebas del renderer confirman que solo cambian 23 pixeles del grabado, con un maximo de cinco niveles RGB por fotograma a 60 Hz, paridad atlas/fallback y pausa exacta. Los 178 archivos previos de assets conservan sus hashes.
+Las capturas actuales muestran el encuadre amplio en navegador, de dia y noche, en escritorio y movil. Las pruebas nuevas cubren resolucion, limites de camara, proyeccion de toques, cruz completa, cristal nocturno y base irregular del bosque. Los tests de animaciones aprobadas siguen activos. Los resultados del renderer offline se distinguen de las pruebas reales de navegador y no se presentan como medidas de FPS. La entrega local coteja archivos y medios por SHA-256 antes del versionado; una copia no equivale a una publicacion en GitHub.
+
+El renderer actual se coteja en 64 casos de pose/direccion, cuatro proporciones de viewport y dia/noche: atlas y fallback identicos, 42960 pixeles opacos de Miga sin tintes ni recorte y congelacion exacta del ambiente. SHA-256 conserva 33 archivos de logica, dependencias y kit protegidos. Estas pruebas no certifican la calidad artistica.
 
 **Pendiente:** telefono Android fisico, medicion de framerate y consumo prolongado en el hardware de destino, comportamiento nocturno prolongado en una partida autonoma y repetir la desconexion real. La revision del visor en navegador no sustituye esas pruebas ni certifica todos los flujos del mundo autonomo. El historial y alcance de cada pasada estan en [Verificacion](docs/VERIFICATION.md).
 
@@ -221,6 +251,8 @@ La conexion entre dispositivos queda para una etapa independiente. No se present
 - [Ramas, enredaderas y luces por momento](docs/NATURAL_BRANCHES_LIGHT.md)
 - [Miga y el farol](docs/LANTERN_INTERACTION.md)
 - [La lapida runica](docs/RUNE_INTERACTION.md)
+- [Escena patron y reglas de estilo](docs/STYLE_MASTER.md)
+- [QA de arte y escena](docs/STYLE_MASTER_QA.md)
 - [Verificacion](docs/VERIFICATION.md)
 - [Roadmap](docs/ROADMAP.md)
 

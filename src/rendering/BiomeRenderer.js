@@ -1,6 +1,6 @@
 import { biomeSource as source } from './BiomeSource.js';
 import manifest from '../../assets/generated/biome.json';
-import { biomePalette, biomePixels, sceneryBlendAt, sceneryFrameId, candleIntensity, candleEnabled, lanternLightAt, litSurfaceColor, mistBands, visibleScenery, fireflyPoints } from './BiomeModel.js';
+import { biomePalette, biomePixels, sceneryBlendAt, sceneryFrameId, candleIntensity, candleEnabled, lanternLightAt, litSurfaceColor, mistBands, mistSpeed, mistPixelAlpha, mistBlendAlpha, visibleScenery, fireflyPoints } from './BiomeModel.js';
 import { drawPixels } from './Sprites.js';
 
 export const biomeSource = source;
@@ -12,6 +12,7 @@ export class BiomeRenderer {
     this.fallbacks = new Map();
     this.lights = new Map();
     this.surfaceLights = new Map();
+    this.mists = new Map();
     this.image.onload = () => { this.ready = true; };
     this.image.src = new URL('../../assets/generated/biome.png', import.meta.url).href;
   }
@@ -89,35 +90,59 @@ export class BiomeRenderer {
 
   drawMist(ctx, camera, phase, seconds, plane) {
     ctx.save();
-    ctx.fillStyle = source.palettes[phase].mist;
-    ctx.globalAlpha = plane === 'far' ? 0.48 : 0.32;
+    const drift = seconds * mistSpeed(plane), mix = drift - Math.floor(drift);
+    const amount = (plane === 'far' ? .38 : .22) * ctx.globalAlpha;
+    ctx.globalAlpha = 1;
     for (const band of mistBands(camera, seconds, plane)) {
-      ctx.fillRect(band.x + 23, band.y, band.width - 42, 1);
-      ctx.fillRect(band.x + 8, band.y + 1, band.width - 18, 2);
-      ctx.fillRect(band.x, band.y + 3, band.width, 2);
-      ctx.fillRect(band.x + 14, band.y + 5, band.width - 28, 2);
+      if(band.x>=camera.width||band.x+band.width+1<=0)continue;
+      const seed = band.seed, key = `${phase}:${plane}:${seed}`;
+      if (!this.mists.has(key)) {
+        const mask = document.createElement('canvas');
+        mask.width = band.width+1; mask.height = band.height;
+        const maskCtx = mask.getContext('2d'), bitmap = maskCtx.createImageData(mask.width, band.height);
+        const opacity = new Uint8Array(band.width*band.height);
+        const rgb = [1,3,5].map(offset => parseInt(source.palettes[phase].mist.slice(offset,offset+2),16));
+        for(let y=0;y<band.height;y++)for(let x=0;x<mask.width;x++) {
+          bitmap.data.set(rgb,(y*mask.width+x)*4);
+          if(x<band.width)opacity[y*band.width+x]=Math.round(mistPixelAlpha(x,y,band.width,band.height,seed)*255);
+        }
+        this.mists.set(key,{mask,maskCtx,bitmap,opacity});
+      }
+      // Interpolate alpha before one composite; overlapping translucent passes can pulse.
+      const cached=this.mists.get(key),{mask,maskCtx,bitmap,opacity}=cached;
+      if(cached.mix!==mix||cached.amount!==amount) {
+        for(let y=0;y<band.height;y++)for(let x=0;x<mask.width;x++) {
+          const left=x<band.width?opacity[y*band.width+x]:0,right=x>0?opacity[y*band.width+x-1]:0;
+          bitmap.data[(y*mask.width+x)*4+3]=mistBlendAlpha(left,right,mix,amount);
+        }
+        maskCtx.putImageData(bitmap,0,0);cached.mix=mix;cached.amount=amount;
+      }
+      ctx.drawImage(mask,band.x,band.y);
     }
     ctx.restore();
   }
 
   drawBackground(ctx, camera, phase, seconds = 0) {
     const p = source.palettes[phase];
-    const bank = (color, rise, parallax) => {
-      ctx.fillStyle = color;
-      for (let x = 0; x < camera.width; x += 4) {
-        const worldX = x + camera.pixelX * parallax;
-        const y = camera.ground - rise + Math.round(Math.sin(worldX / 74) * 5 + Math.sin(worldX / 23) * 2);
-        ctx.fillRect(x, y, 4, camera.ground - y);
+    // Dry forest floor: varied litter and scrub, not a flat horizon-colored surface.
+    const floor = biomePalette(source, phase, 'middle');
+    for (let x = 0; x < camera.width; x += 2) {
+      const worldX = x + camera.pixelX * .42;
+      const rise = 66 + Math.round(Math.sin(worldX / 19) * 7 + Math.sin(worldX / 7) * 4);
+      ctx.fillStyle = floor.i;
+      ctx.fillRect(x, camera.ground - rise, 2, rise);
+      ctx.fillStyle = floor.g;
+      ctx.fillRect(x, camera.ground - rise + 2, 1, 3);
+      ctx.fillStyle = floor.t;
+      for (let y = camera.ground - rise + 6; y < camera.ground; y += 7) {
+        if ((Math.floor(worldX / 2) + y) % 3 === 0) ctx.fillRect(x, y, 2, 1);
       }
-    };
-    bank(p.horizon, 72, 0.08);
+    }
+    this.drawLayer(ctx, camera, phase, 'forest-horizon', seconds);
     this.drawLayer(ctx, camera, phase, 'far-wood', seconds);
-    bank(biomePalette(source, phase, 'far').g, 46, 0.16);
-    this.drawLayer(ctx, camera, phase, 'architecture', seconds);
     this.drawMist(ctx, camera, phase, seconds, 'far');
+    this.drawLayer(ctx, camera, phase, 'architecture', seconds);
     this.drawLayer(ctx, camera, phase, 'middle-wood', seconds);
-    ctx.fillStyle = biomePalette(source, phase, 'middle').t;
-    ctx.fillRect(0, camera.ground - 12, camera.width, 12);
     this.drawMist(ctx, camera, phase, seconds, 'middle');
     this.drawLayer(ctx, camera, phase, 'near-wood', seconds);
     if (phase !== 'DAY') for (const point of fireflyPoints(camera, seconds)) {
@@ -143,6 +168,7 @@ export class BiomeRenderer {
         { lanterns, worldX:tile * 64 + 32, groundOffset:31 });
     }
     this.drawLayer(ctx, camera, phase, 'verge', 0, lanterns);
+    this.drawLayer(ctx, camera, phase, 'undergrowth');
   }
 
   drawGroundGrass(ctx, camera, phase, lanterns = []) {

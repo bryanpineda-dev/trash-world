@@ -1,0 +1,38 @@
+{
+  "id": "sun",
+  "label": "Sol velado del claro",
+  "size": [
+    24,
+    24
+  ],
+  "anchor": [
+    12,
+    23
+  ],
+  "pixels": [
+    "........................",
+    ".........bbbbbb.........",
+    "......bbbbbbbbbbbb......",
+    ".....bbbbbbbbbbbbbb.....",
+    "....bbbbbbbbbbbbbbbs....",
+    "...bbbbbbbbbbbbbbbbss...",
+    "..bbbbbbbbbbbbbbbbbbss..",
+    "..bbbbbbbbbbbbbbbbbbss..",
+    "..bbbbbbbbbbbbbbbbbbbs..",
+    ".bbbbbbbbbbbbbbbbbbbbss.",
+    ".bbbbbbbbbbbbbbbbbbbbss.",
+    ".bbbbbbbbbbbbbbbbbbbbss.",
+    ".bbbbbbbbbbbbbbbbbbbbss.",
+    ".bbbbbbbbbbbbbbbbbbbbss.",
+    ".bbbbbbbbbbbbbbbbbbbbss.",
+    "..bbbbbbbbbbbbbbbbbbbs..",
+    "..bbbbbbbbbbbbbbbbbbss..",
+    "..bbbbbbbbbbbbbbbbbbss..",
+    "...bbbbbbbbbbbbbbbbss...",
+    "....ssbbbbbbbbbbbbss....",
+    ".....sssbbbbbbbbsss.....",
+    "......ssssssssssss......",
+    ".........ssssss.........",
+    "........................"
+  ]
+}

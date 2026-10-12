@@ -18,6 +18,8 @@
 #library-grid figcaption { display: grid; gap: 4px; text-align: center; padding: 10px 0 4px; font-size: 12px; }
 #library-grid figcaption span { font-size: 11px; color: #586d69; overflow-wrap: anywhere; }
 .biome-controls { position: absolute; inset: auto 0 0; display: flex; justify-content: center; align-items: end; gap: 18px; padding: 12px 20px; background: #f1f5edea; border-top: 1px solid #b8cbbd; color: #233b37; }
+.biome-toolbar { position: relative; grid-row: 1; }
+.biome-controls { position: relative; grid-row: 3; }
 .biome-controls label { display: grid; gap: 6px; font-size: 11px; min-width: 0; }
 .biome-controls select { min-width: 120px; height: 40px; padding: 0 8px; border: 1px solid #a1b9ab; border-radius: 4px; background: #fff; color: inherit; font: inherit; }
 .position-control { width: 200px; }

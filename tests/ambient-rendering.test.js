@@ -96,7 +96,10 @@ test('daylight switches off every amber glass token without altering the chapel 
     const day=biomePalette(source,'DAY',depth,chapel),base=biomePalette(source,'DAY',depth);
     assert.equal(day.D,base.E);assert.equal(day.f,base.A);
     for(const token of Object.keys(day).filter(token=>!['D','f'].includes(token)))assert.equal(day[token],base[token]);
-    for(const phase of ['EVENING','NIGHT'])assert.deepEqual(biomePalette(source,phase,depth,chapel),biomePalette(source,phase,depth));
+    for(const phase of ['EVENING','NIGHT']) {
+      const lit=biomePalette(source,phase,depth,chapel),ambient=biomePalette(source,phase,depth);
+      for(const token of Object.keys(lit))assert.equal(lit[token],['D','f'].includes(token)?source.palettes[phase].colors[token]:ambient[token]);
+    }
   }
 });
 

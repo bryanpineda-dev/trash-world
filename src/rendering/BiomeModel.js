@@ -1,7 +1,7 @@
 import { expandPart, frameAt, clipTime } from './AssetModel.js';
 
 const phases = ['DAY', 'EVENING', 'NIGHT'];
-export const BIOME_DEPTHS = { far: 0.62, middle: 0.27, near: 0 };
+export const BIOME_DEPTHS = { far: 0.5, middle: 0.27, near: 0 };
 
 export function biomeVariants(sprite) { return Object.keys(sprite.variants ?? { rest: [] }); }
 
@@ -64,7 +64,9 @@ export function biomePalette(source, phase, depth, sprite) {
   // Daytime glass uses its own cool material ramp, including the former amber glints.
   return Object.fromEntries(Object.keys(palette.colors).map(token => {
     const material = unlit[token] ?? token;
-    return [token, blend(palette.colors[material], palette.sky, BIOME_DEPTHS[depth] * (material === 'D' ? 0.35 : 1))];
+    const atmosphere = BIOME_DEPTHS[depth] + (depth === 'far' ? sprite?.haze ?? 0 : 0);
+    const emissive = candleEnabled(sprite, phase) && sprite.candle.tokens.includes(token);
+    return [token, blend(palette.colors[material], palette.mist, emissive ? 0 : atmosphere)];
   }));
 }
 
@@ -111,10 +113,35 @@ export function validateBiome(source) {
     check(sprite.id === id && typeof sprite.label === 'string', id + ': identity');
     check(pair(sprite.size) && sprite.size.every(size => size > 0 && size <= 192), id + ': dimensions');
     check(pair(sprite.anchor) && sprite.anchor.every((value, i) => value >= 0 && value <= sprite.size[i]), id + ': anchor');
+    check(sprite.haze === undefined || Number.isFinite(sprite.haze) && sprite.haze >= 0 && sprite.haze <= .25, id + ': haze');
     check(sprite.pixels.length === sprite.size[1], id + ': height');
     for (const row of sprite.pixels) {
       check(typeof row === 'string' && row.length === sprite.size[0], id + ': row width');
       check([...row].every(token => token === '.' || tokens.includes(token)), id + ': palette');
+    }
+    if (sprite.woodStructure) {
+      check(Array.isArray(sprite.woodStructure) && sprite.woodStructure.length > 0, id + ': wood structure');
+      const branches = new Map();
+      for (const branch of sprite.woodStructure) {
+        check(typeof branch.id === 'string' && !branches.has(branch.id)
+          && Array.isArray(branch.points) && branch.points.length === 4 && branch.points.every(point =>
+            Array.isArray(point) && point.length === 2 && point.every(Number.isFinite))
+          && Array.isArray(branch.radii) && branch.radii.length === 2 && branch.radii.every(value => Number.isFinite(value) && value > 0)
+          && branch.radii[0] > branch.radii[1], id + ': branch geometry');
+        check(branch.id === 'stem' ? branch.parent === undefined
+          : typeof branch.parent === 'string' && branch.parent.length > 0, id + ': missing branch parent');
+        if (branch.parent) {
+          const parent = branches.get(branch.parent), t = branch.at;
+          check(parent && Number.isFinite(t) && t > 0 && t < 1, id + ': branch parent');
+          const weights = [(1-t)**3,3*t*(1-t)**2,3*t*t*(1-t),t**3];
+          const origin = parent.points.reduce((point, p, i) => [point[0]+p[0]*weights[i],point[1]+p[1]*weights[i]], [0,0]);
+          check(origin.every((value, axis) => Math.abs(value-branch.points[0][axis]) < 1e-8)
+            && branch.radii[0] <= parent.radii[0]*(1-t)+parent.radii[1]*t, id + ': detached or oversized fork');
+          if (!branch.id.startsWith('root')) check(branch.points[3][1] < origin[1], id + ': descending branch');
+        }
+        branches.set(branch.id,branch);
+      }
+      check(branches.has('stem'), id + ': missing supporting trunk');
     }
     if (sprite.candle) {
       const light = sprite.candle;
@@ -193,18 +220,36 @@ export function visibleScenery(source, camera, layer) {
 }
 
 export function mistBands(camera, seconds, plane) {
-  const period = 164;
+  const period = 240;
   const parallax = plane === 'far' ? 0.16 : 0.42;
-  const drift = Math.floor(seconds * (plane === 'far' ? 0.45 : 0.8));
+  const drift = Math.floor(seconds * mistSpeed(plane));
   const offset = Math.round((camera.pixelX ?? Math.round(camera.x)) * parallax) - drift;
   const first = Math.floor((offset - camera.width / 2 - period) / period);
   const bands = [];
   for (let i = first; i <= first + Math.ceil(camera.width / period) + 2; i++) {
     const x = i * period - offset + Math.round(camera.width / 2);
-    const y = camera.ground - (plane === 'far' ? 61 : 32) - ((i % 3 + 3) % 3) * 4;
-    bands.push({ x, y, width: 118, height: 7 });
+    const seed = (i % 3 + 3) % 3;
+    const y = camera.ground - (plane === 'far' ? 124 : 77) - seed * 5;
+    bands.push({ x, y, width: plane === 'far' ? 196 : 176, height: plane === 'far' ? 64 : 48, seed });
   }
   return bands;
+}
+
+export function mistSpeed(plane) { return plane === 'far' ? 0.35 : 0.55; }
+
+export function mistPixelAlpha(x, y, width, height, seed = 0) {
+  if(x<=0||y<=0||x>=width-1||y>=height-1)return 0;
+  let density = 0;
+  for (const [cx, cy, rx, ry] of [[.28,.51,.27,.34],[.54,.43,.3,.36],[.75,.59,.22,.29]]) {
+    const distance = ((x / width - cx) / rx) ** 2
+      + ((y / height - cy - Math.sin(seed + cx * 8) * .05) / ry) ** 2;
+    density = Math.max(density, Math.max(0, 1 - distance));
+  }
+  return Math.round(density * density * 9) * .02;
+}
+
+export function mistBlendAlpha(left, right, mix, amount) {
+  return Math.round((left * (1-mix) + right * mix) * amount);
 }
 
 export function fireflyPoints(camera, seconds) {

@@ -154,3 +154,34 @@ No se ha probado un telefono Android fisico, su autonomia termica o energetica, 
 - Los 178 archivos previos de assets conservan SHA-256. Miga, fuentes, exports, paletas, duraciones originales y el farol permanecen intactos. No cambian dependencias, necesidades, recompensas, zonas de toque ni esquema de guardado.
 - README y medios de esta pasada actualizados. La lamina anterior se identifica como biblioteca sin cambios; no se usa como prueba de la interaccion. Entrega local con respaldo, preflight, hashes e inventario; no se ejecutan staging, commit, tag ni push.
 - Pendientes: partida autonoma nocturna prolongada, Android fisico, framerate y consumo prolongados y nueva desconexion completa. La lectura de pixeles corresponde al renderer offline, no al canvas vivo del navegador.
+
+## Escena patron y QA de estilo: 2026-10-12
+
+- 138 pruebas y build correctos. Once regresiones nuevas verifican ramas con padre, taper, superficie independiente del orden, rechazos de metadatos, contraste por distancia, alpha y movimiento de niebla, composicion y escala. Inventario actual: 31 fuentes, 441 frames en 2048 x 3440 y 147 PNG.
+- Renderer offline: 27 combinaciones de encuadre, fase y posicion; 216 casos de pose/direccion. Atlas y fallback identicos; 144990 pixeles opacos de Miga cotejados sin tintes, recortes u oclusion. Desactivar movimiento congela exactamente la imagen.
+- El QA temporal detecta un pulso en la primera niebla: salto RGB maximo de 4 a 60 Hz. Interpolar su alpha antes de una unica composicion reduce el maximo a 2. La luna queda 100% visible y 87.97% del cristal calido de las lancetas permanece legible en el encuadre nocturno patron.
+- Capturas nuevas y comparativas antes/despues; contacto de fuentes y GIF de 180 frames a 15 fps de IA real. Los renders y GIF se identifican como offline, no como capturas ni medidas de FPS del navegador.
+- Visor real revisado en 1280 x 720 y 320 x 720, con dia, atardecer, noche, biblioteca, caminar, descanso, pausa y extremos. Se rehacen capturas de fase/pose con el visor visible tras detectar imagenes transitorias sin actualizar. Una demora de control se recupera desde accesibilidad.
+- SHA-256: nueve archivos protegidos del kit, 23 de logica y los 279 archivos anteriores de Desktop conservados. Sin cambios de dependencias, reglas, objetos activos o guardado. README y guia corresponden al estudio; la entrega estable espera aprobacion de la escena, sin staging, commit, tag ni push.
+- Pendientes: aprobacion artistica, unificar fuentes secundarias, Android fisico, framerate/consumo prolongados, desconexion real y partida nocturna prolongada. Los tests no certifican el acabado visual ni el rendimiento en hardware.
+
+## Encuadre Amplio Tras El Rechazo: 2026-10-12
+
+- El usuario rechaza la primera propuesta de estilo. Sus resultados tecnicos anteriores no implican aprobacion artistica. Esta revision corrige zoom, recorte de iglesia, luz y lectura de agua en el fondo.
+- `npm run check`: 144 pruebas aprobadas y build de las tres vistas; cache offline de 19 recursos. Se conservan 31 fuentes, 441 frames y 147 PNG individuales. Se ajustan solo las dos bases de bosque y sus anclas, no las fuentes de Miga.
+- Seis pruebas nuevas verifican mas espacio nativo y escala proporcional en seis proporciones habituales, limites de camara sin rangos invertidos, cruz completa, proyeccion de toques, emision nocturna y fondo sin corte horizontal. La conectividad y apoyo de las fuentes siguen bajo test.
+- Renderer offline actual: 64 poses/direcciones, cuatro encuadres y dos fases; atlas y fallback identicos, 42960 pixeles opacos de Miga sin recorte ni tinte, ambiente congelado exactamente. GIF nuevo de 90 frames a 15 fps y 6000 ms totales, IA real con lapida como objetivo inicial. No es captura ni medicion de FPS.
+- Navegador real: visor de dia/noche a 1280 x 720 y 320 x 720. Cruz completa, luz fria/caliente y escala revisadas. Juego autonomo diurno observado caminando en escritorio y descansando en vista movil; no se fuerza una pose desde el visor. Consolas finales sin errores ni avisos.
+- Mediciones DOM: visor de escritorio 560 x 246 en un rectangulo 1280 x 563; mundo autonomo 560 x 255 en 1280 x 583. En vista movil del juego: 288 x 528 en 320 x 587. Encabezado y footer no se solapan con el canvas; ancho de documento coincide con viewport. Se restaura el viewport normal al terminar.
+- Algunas acciones de automatizacion agotan su plazo y se recuperan desde el estado actualizado. Una pulsacion de extremo no se confirma tras una recarga del visor; no se presenta como prueba completa de ese flujo. La proyeccion y limites se comprueban en tests. Tampoco se afirma una nueva validacion completa del toque sobre objetos en navegador.
+- Seis medios actuales del README: cinco capturas reales y un GIF offline. Dimensiones, hashes, 33 referencias y 17 anclas verificados. La lamina y comparativas anteriores quedan identificadas como historial.
+- SHA-256: 33 archivos protegidos de logica, kit y dependencias, y los 279 archivos previos de Desktop sin cambios. Git estable limpio en `main...origin/main`. Sin copia, staging, commit, tag ni push: falta aprobacion visual de esta propuesta.
+- Pendientes: acabado de arquitectura y fuentes secundarias, aprobacion del encuadre, Android fisico, rendimiento/consumo y partida nocturna prolongados, desconexion real y flujos de toque completos. El QA tecnico no certifica semejanza con la referencia.
+
+## Entrega Aprobada Del Encuadre: 2026-10-12
+
+- El usuario aprueba el encuadre amplio y pide los comandos para publicarlo. Se actualiza README y estado de la documentacion, manteniendo las seis capturas/medios de esta revision.
+- La entrega verifica primero `main`, remoto `bryanpineda-dev/trash-world`, HEAD `759f981`, indice sin staging y etiqueta mas reciente `v0.1.7`. Se propone `v0.1.8`, sin crearla ni modificar etiquetas anteriores.
+- El procedimiento respalda y coteja la base, preserva archivos locales y comprueba cambios concurrentes antes de copiar. Git, dependencias, caches y el `dist/` existente no se copian ni eliminan. No hay una copia espejo ni retirada de exports desconocidos.
+- Las comprobaciones de la entrega incluyen hashes de todos los archivos, README y seis medios, 31 fuentes, 441 frames, 147 PNG, archivos protegidos, tests desde la carpeta estable y build desde esa carpeta en un directorio independiente. El reporte local de la entrega distingue estas comprobaciones de los renders y pruebas de navegador anteriores.
+- No se ejecutan staging, commit, tag, push ni releases. La transferencia local no equivale a una publicacion. Permanecen las limitaciones de hardware y acabado artistico indicadas arriba.

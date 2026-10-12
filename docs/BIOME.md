@@ -4,22 +4,22 @@ Bioma de fantasia medieval misteriosa: robles antiguos, abedules abiertos, cipre
 
 ## Escala y profundidad
 
-Miga conserva sus 56 px visibles en reposo. El roble usa 176 x 192 px, el abedul 104 x 146, el sauce seco 168 x 176 y el cipres 64 x 168. El roble lejano se dibuja en 56 x 84, con menos detalle por distancia. Se dibujan a escala nativa 1, sin ampliar los pixeles de un sprite pequeno. Las 28 fuentes decorativas admiten lienzos de hasta 192 x 192; el contrato de piezas del personaje y objetos sigue limitado a 64 x 64.
+Miga conserva sus 56 px visibles en reposo. El roble usa 176 x 192 px, el abedul 104 x 146, el sauce seco 168 x 176 y el cipres 64 x 168. El roble lejano se dibuja en 56 x 84, con menos detalle por distancia. Se dibujan a escala nativa 1, sin ampliar los pixeles de un sprite pequeno. El estudio actual registra 31 fuentes decorativas de hasta 192 x 192; el contrato de piezas del personaje y objetos sigue limitado a 64 x 64.
 
-Familia de piedra: lapida ojival 48 x 72, lapida vencida 48 x 46, cruz anillada 64 x 96 y ruinas 112 x 80. La capilla usa 80 x 112, la verja 96 x 40 y la luna 48 x 48. Tres tramos de sendero de 64 x 32 comparten sus columnas de union y conservan un suelo plano. Helechos, arbustos, setas, flores y rocas completan la biblioteca. Todas las fuentes incluyen ID, nombre, lienzo fijo, ancla y filas de pixeles editables.
+Familia de piedra: lapida ojival 48 x 72, lapida vencida 48 x 46, cruz anillada 64 x 96 y ruinas 112 x 80. La capilla usa 80 x 112, la verja 96 x 40, la luna 32 x 32 y el sol 24 x 24. Dos fondos de bosque de 192 x 112 completan el plano lejano. Tres tramos de sendero de 64 x 32 comparten sus columnas de union y conservan un suelo plano. Helechos, arbustos, setas, flores y rocas completan la biblioteca. Todas las fuentes incluyen ID, nombre, lienzo fijo, ancla y filas de pixeles editables.
 
 Los planos lejanos, medios y cercanos usan factores de parallax de 0.16, 0.42 y 0.78. La arquitectura usa 0.24 y profundidad lejana; se dibuja antes de la niebla y los arboles medios. La vegetacion del borde usa 1, igual que Miga y los objetos. Todas las posiciones se redondean a pixeles enteros. El color pierde contraste hacia el fondo; dia, atardecer y noche tienen paletas de 32 tokens con los mismos materiales. Solo el cristal iluminado `D` reduce la mezcla atmosferica para conservar el ambar. No hay blur ni bloom.
 
 El roble pequeno se retira del mundo y permanece archivado en el laboratorio de objetos. Su ID se conserva en descubrimientos antiguos. Arboles adultos, tumbas decorativas, bayas adicionales y verja pertenecen exclusivamente a la escenografia: no tienen descubrimientos, colisiones, zonas de toque ni estado persistente. Arbusto, farol y tumba runica siguen activos en sus posiciones y con sus tiempos y zonas de toque originales.
 
-La niebla usa franjas escalonadas, sin blur ni gradientes, detras de los arboles cercanos y de Miga. Las luciernagas son pequenos grupos de 1-3 px, sin bloom, siempre detras del personaje. Ambos movimientos son deterministas, redondeados a pixeles enteros y se congelan con el movimiento ambiental desactivado.
+El estudio de estilo incorpora un horizonte a parallax 0.09 y mezcla atmosferica hacia el color de niebla. La niebla tiene densidad escalonada y bordes transparentes; interpola alpha antes de una sola composicion sobre la grilla nativa. No usa blur y se dibuja entre planos, detras de Miga. Las luciernagas son pequenos grupos de 1-3 px, sin bloom. Ambos efectos son deterministas y se congelan con el movimiento ambiental desactivado. La vegetacion bajo el sendero usa parallax 1 sin alcanzar el suelo del personaje.
 
 ## Fuentes
 
 - `assets/source/biome.json`: indice v2, paletas y colocacion por planos; ya no contiene los dibujos.
 - `assets/source/environment/`: un JSON por dibujo, agrupado por familia.
 - `scripts/biome-source.js` y `src/rendering/BiomeSource.js`: misma validacion para Node y Vite; rechazan rutas externas, duplicados, archivos ausentes e IDs incompatibles.
-- `scripts/generate-biome.js`: atlas determinista de 414 frames de sprite, fase, profundidad y animacion, mas 138 PNG individuales transparentes.
+- `scripts/generate-biome.js`: atlas determinista actual de 441 frames de sprite, fase, profundidad y animacion, mas 147 PNG individuales transparentes.
 - `src/rendering/BiomeModel.js`: validacion, color y posicionamiento sin dependencias del navegador.
 - `src/rendering/BiomeRenderer.js`: atlas, fallback con las mismas fuentes, capas y sendero.
 
@@ -45,7 +45,7 @@ Para un asset nuevo, crear su JSON en la familia correspondiente, registrar `{id
 
 Abrir `/biome-lab.html`. Selectores de momento y pose, posicion y pausa. No lee ni escribe `localStorage`; tampoco modifica el reloj, necesidades o memoria del mundo vivo. El sprite puede caminar en el visor y su estado de dormir reproduce el clip aprobado completo.
 
-El boton de cuadricula abre la biblioteca: Miga y los 28 assets completos, sobre un mismo suelo, a escala nativa 1 y con la luz seleccionada en la escena. Lienzos fijos de 208 x 208 evitan recortar el roble. Un selector filtra por familia; Miga sigue visible como referencia de escala. La biblioteca pausa el visor mientras esta abierta y se cierra con su boton o Escape. En movil, el canvas ocupa el espacio entre encabezado y controles: ambos dejan de tapar la composicion.
+El boton de cuadricula abre la biblioteca: Miga y los 31 assets completos, sobre un mismo suelo, a escala nativa 1 y con la luz seleccionada en la escena. Lienzos fijos de 208 x 208 evitan recortar el roble. Un selector filtra por familia; Miga sigue visible como referencia de escala. La biblioteca pausa el visor mientras esta abierta y se cierra con su boton o Escape. En movil, el canvas ocupa el espacio entre encabezado y controles: ambos dejan de tapar la composicion.
 
 ## Inspiracion y autoria
 
@@ -62,3 +62,5 @@ La [revision del bosque de 2026-10-08](PREMIUM_FOREST.md) rehace diez dibujos, i
 El usuario aprueba esta revision para la entrega local a Desktop, con README y medios actuales, y para preparar la siguiente etiqueta `v0.1.4`. Esa entrega no realiza staging, commit, tag ni push; su comprobacion se registra en [Verificacion](VERIFICATION.md).
 
 La [pasada de ramas y luz](NATURAL_BRANCHES_LIGHT.md) elimina la rama transversal del roble, afina cinco dibujos de enredaderas y apaga el cristal de la capilla durante el dia. La paleta por sprite mantiene identicos atlas y fallback; el farol aporta un tinte local sobre superficies del primer plano. No cambian resoluciones, anclas, la geometria de la iglesia ni los dibujos de Miga.
+
+El [estudio de estilo de 2026-10-12](STYLE_MASTER.md) rehace los arboles, afina capilla y ruina, incorpora dos fondos nativos y un sol reutilizable, reduce la luna y separa las distancias con contraste y niebla. Su [QA](STYLE_MASTER_QA.md) documenta hallazgos, correcciones y limites. La propuesta actual permanece en sandbox y la carpeta estable conserva `v0.1.7` hasta aprobar su composicion.

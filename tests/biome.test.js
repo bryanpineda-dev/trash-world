@@ -91,7 +91,7 @@ test('the cemetery library uses material tones, not a universal dark outline', (
   assert.deepEqual(Object.keys(source.sprites).sort(), ['oak','birch','distantOak','twistedTree','cypress',
     'ruins','shrub','fern','mushrooms','flowers','rocks','pointedGrave','wornGrave','ringCross','fence','moon',
     'church','groundA','groundB','groundC','oakHollow','leaningOak','brokenCypress','roundedGrave','brokenGrave',
-    'berryLow','berryTall','berryArch'].sort());
+    'berryLow','berryTall','berryArch','forestBackdrop','forestBackdropEast','sun'].sort());
   for(const sprite of Object.values(source.sprites)) assert.ok(sprite.pixels.every(row=>!row.includes('k')),sprite.label);
   assert.equal(source.sprites.ringCross.pixels[30][23],'.','ring apertures show the scenery behind');
   assert.ok(source.sprites.pointedGrave.pixels.some(row=>row.includes('C')&&row.includes('A')));
@@ -99,7 +99,7 @@ test('the cemetery library uses material tones, not a universal dark outline', (
 
 test('adult forest trees are drawn at native scale and scenery uses fixed grounded anchors', () => {
   assert.equal(validateBiome(source), true);
-  assert.equal(Object.keys(source.sprites).length, 28);
+  assert.equal(Object.keys(source.sprites).length, 31);
   const adult = pixelBounds(source.sprites.oak.pixels);
   assert.ok(adult.height / 56 >= 3 && adult.height / 56 <= 3.5);
   assert.ok(pixelBounds(source.sprites.birch.pixels).height / 56 > 2.4);

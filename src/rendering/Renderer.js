@@ -1,5 +1,4 @@
-import { clamp } from '../core/Config.js';
-import { Camera } from './Camera.js';
+import { Camera, worldViewSize } from './Camera.js';
 import { drawPixels } from './Sprites.js';
 import { AssetLibrary, assetManifest } from './AssetLibrary.js';
 import { containsPoint } from './AssetModel.js';
@@ -28,8 +27,8 @@ export class Renderer {
 
   resize() {
     const bounds = this.canvas.getBoundingClientRect();
-    const width = clamp(Math.round(bounds.width / 3), 192, 384);
-    const height = Math.max(100, Math.round(bounds.height / Math.max(1, bounds.width) * width));
+    if (bounds.width <= 0 || bounds.height <= 0) return;
+    const { width, height } = worldViewSize(bounds.width, bounds.height);
     this.canvas.width = width;
     this.canvas.height = height;
     this.ctx.imageSmoothingEnabled = false;
@@ -70,18 +69,16 @@ export class Renderer {
   drawSky(p, phase) {
     const { ctx } = this;
     const { width, ground } = this.camera;
-    const sunX = Math.round(width * (phase === 'NIGHT' ? 0.56 : 0.76));
-    const sunY = Math.max(36, Math.round(ground * 0.27));
+    const sunX = Math.round(width / 2 + 64);
+    const sunY = Math.max(36, Math.round(ground * .27));
     if (phase === 'NIGHT') {
-      this.biome.drawSprite(ctx, 'moon', phase, 'near', sunX, sunY + 24);
+      this.biome.drawSprite(ctx, 'moon', phase, 'near', sunX, sunY + 16);
       ctx.fillStyle = p.colors.e;
       for (let i = 0; i < 12; i++) {
         ctx.fillRect((i * 47 + 19) % width, 32 + ((i * 23) % Math.max(40, ground * 0.52)), 1, 1);
       }
     } else {
-      ctx.fillStyle = p.light;
-      ctx.fillRect(sunX - 7, sunY - 10, 14, 20);
-      ctx.fillRect(sunX - 10, sunY - 7, 20, 14);
+      this.biome.drawSprite(ctx, 'sun', phase, 'near', sunX, sunY + 12);
       ctx.fillStyle = p.horizon;
       for (let i = 0; i < 3; i++) {
         const x = Math.round((i * 151 + this.animationTime * 0.45) % (width + 80)) - 40;
