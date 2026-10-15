@@ -4,7 +4,7 @@
 
 - Mundo responsive, criatura original, camara suave y limites.
 - Reposo, caminar, observar, investigar, dormir, despertar, sorpresa y felicidad.
-- Necesidades, personalidad, descubrimientos y alimentacion autonoma en la planta.
+- Necesidades y personalidad; recuerdos de descubrimientos. La propuesta visual del 2026-10-15 retira la planta y su alimentacion ambiental automatica.
 - Toque y toque sostenido; guardado, migracion y progreso offline.
 - Depuracion, pruebas de simulacion y persistencia, build PWA sin backend.
 

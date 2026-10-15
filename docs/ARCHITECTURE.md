@@ -15,6 +15,9 @@ La simulacion usa coordenadas del mundo independientes del canvas. El eje X reco
 - `rendering`: camara, sprites por pixeles y escena; no decide el comportamiento.
 - `rendering/AssetModel`: valida piezas y compone poses para compartirlas entre personajes; funcion pura usada por el generador y los tests.
 - `rendering/AssetLibrary`: reproduce clips del atlas con anclas comunes y fallback desde las fuentes.
+- `rendering/ReferenceScenery`: carga los 14 PNG del escenario actual y guarda superficies por fase/profundidad. No carga el atlas ambiental anterior.
+- `rendering/ReferenceScene`: composicion, planos de parallax, graduacion cromatica y mascara de luz de la capilla. El personaje se dibuja despues, sin tintes ambientales.
+- `assets/reference-biome`: originales raster, PNG nativos y manifiesto con anclas y hashes. Los JSON ambientales anteriores y los modulos de interacciones retiradas son archivo historico, no el mundo activo.
 - `assets/source`: paleta, rig, piezas, poses y tiempos originales. `scripts/generate-assets` exporta el PNG y la metadata.
 - `asset-lab`: visor independiente que usa exactamente el mismo renderer de assets que la escena.
 - `persistence`: esquema v1, migracion desde v0, respaldo de datos danados y calculo offline acotado.
@@ -23,3 +26,5 @@ La simulacion usa coordenadas del mundo independientes del canvas. El eje X reco
 El build genera el atlas y los iconos PNG a partir de las piezas originales y un service worker con los nombres reales de los archivos del build. El juego y el visor tienen entradas HTML propias; su cache de navegacion usa claves separadas. Los recursos y el estado viven en el dispositivo. La unica dependencia de interfaz es Lucide, cuyos iconos se incluyen en el bundle. Vite solo participa en el desarrollo y la compilacion.
 
 La IA depende de un generador aleatorio inyectable para reproducir decisiones en tests. La simulacion, el esquema, el reloj, las necesidades y los limites se prueban con el runner nativo de Node, sin navegador ni libreria de tests.
+
+El escenario actual no tiene objetos interactivos: el farol, la runa y la planta se retiraron por peticion del usuario. `SaveSchema` conserva sus descubrimientos historicos y cancela objetivos pendientes hacia esos IDs. La IA pasea cuando no encuentra candidatos; no se introduce una fuente invisible de comida. Ver `docs/REFERENCE_BIOME.md`.

@@ -2,12 +2,12 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { Creature } from '../src/creature/Creature.js';
 import { CreatureAI } from '../src/creature/CreatureAI.js';
-import { World } from '../src/world/World.js';
+import { legacyWorld } from './fixtures/legacy-world.js';
 import { inspectionDuration, lanternAttention, LanternResponse, lanternFlameAlpha } from '../src/world/LanternInteraction.js';
 import { readAssetSource } from '../scripts/asset-source.js';
 import { expandPart } from '../src/rendering/AssetModel.js';
 
-const world = new World({ time: 840 });
+const world = legacyWorld({ time: 840 });
 const lantern = world.objects.find(object => object.kind === 'lantern');
 function inspecting(x = 189, elapsed = 2) {
   const creature = new Creature({ position: { x }, needs: { energy: 100 } }, () => 0.5);
@@ -28,7 +28,7 @@ test('only the lantern gets a longer inspection at night', () => {
 test('Miga approaches from either side, stops clear of the lantern and faces it', () => {
   for (const [x, target, direction] of [[115, 139, 1], [235, 189, -1]]) {
     const creature = new Creature({ position: { x }, needs: { energy: 100 } }, () => 0.5);
-    const ai = new CreatureAI(creature, new World({ time: 840 }), () => 0.5);
+    const ai = new CreatureAI(creature, legacyWorld({ time: 840 }), () => 0.5);
     ai.investigate(lantern.id);
     assert.equal(creature.state, 'WALK'); assert.equal(creature.targetX, target);
     for (let frame = 0; frame < 600 && creature.state === 'WALK'; frame++) ai.update(1 / 60);
@@ -148,7 +148,7 @@ test('existing save fields resume the inspection without a schema change or dupl
   const creature = inspecting();
   const restored = new Creature(creature.serialize(), () => 0.5);
   assert.equal(lanternAttention(restored, lantern, 'NIGHT'), lanternAttention(creature, lantern, 'NIGHT'));
-  const localWorld = new World({ time: 840 }); const ai = new CreatureAI(restored, localWorld);
+  const localWorld = legacyWorld({ time: 840 }); const ai = new CreatureAI(restored, localWorld);
   const happiness = restored.needs.happiness, boredom = restored.needs.boredom;
   ai.finishInspection(); localWorld.discover(lantern.id);
   assert.equal(localWorld.events.filter(event => event.object === lantern.id).length, 1);

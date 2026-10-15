@@ -2,9 +2,7 @@ import { Camera, worldViewSize } from './Camera.js';
 import { drawPixels } from './Sprites.js';
 import { AssetLibrary, assetManifest } from './AssetLibrary.js';
 import { containsPoint } from './AssetModel.js';
-import { BiomeRenderer, biomeSource } from './BiomeRenderer.js';
-import { LanternResponse, lanternFlameAlpha } from '../world/LanternInteraction.js';
-import { RuneResponse, runeTrace, runePixelAlpha } from '../world/RuneInteraction.js';
+import { ReferenceScenery } from './ReferenceScenery.js';
 
 export class Renderer {
   constructor(canvas, x) {
@@ -13,13 +11,9 @@ export class Renderer {
     if (!this.ctx) throw new Error('Canvas 2D unavailable');
     this.camera = new Camera(x);
     this.assets = new AssetLibrary();
-    this.biome = new BiomeRenderer();
+    this.scenery = new ReferenceScenery();
     this.animationTime = 0;
     this.ripple = null;
-    this.lanternResponses = new Map();
-    this.lanternGlass = null;
-    this.runeResponses = new Map();
-    this.runePixels = null;
     this.observer = new ResizeObserver(() => this.resize());
     this.observer.observe(canvas);
     this.resize();
@@ -41,109 +35,19 @@ export class Renderer {
     this.animationTime += game.settings.ambientMotion ? dt : 0;
     this.camera.update(game.creature.x, dt);
     const ctx = this.ctx;
-    const { width, height } = this.camera;
     const phase = game.world.clock.phase;
-    const p = biomeSource.palettes[phase];
-    const lanterns = game.world.objects.filter(object => object.kind === 'lantern');
-    ctx.fillStyle = p.sky;
-    ctx.fillRect(0, 0, width, height);
-    this.drawSky(p, phase);
-    this.biome.drawBackground(ctx, this.camera, phase, this.animationTime);
-    this.biome.drawTerrain(ctx, this.camera, phase, lanterns);
-    for (const object of game.world.objects) this.drawObject(object, game.world.discoveredObjects.has(object.id),
-      { phase, creature: game.creature, dt, motion: game.settings.ambientMotion });
-    this.biome.drawGroundGrass(ctx, this.camera, phase, lanterns);
+    this.scenery.draw(ctx,this.camera,phase,this.animationTime);
     this.drawCreature(game.creature);
     if (this.ripple) {
       this.ripple.remaining -= dt;
       const point = this.camera.toScreen(this.ripple.x, this.ripple.y);
       ctx.globalAlpha = Math.max(0, this.ripple.remaining / 0.65);
-      ctx.strokeStyle = p.colors.h;
+      ctx.strokeStyle = assetManifest.palette.h;
       const size = Math.round(6 + (0.65 - this.ripple.remaining) * 22);
       ctx.strokeRect(point.x - size / 2, point.y - size / 2, size, size);
       ctx.globalAlpha = 1;
       if (this.ripple.remaining <= 0) this.ripple = null;
     }
-  }
-
-  drawSky(p, phase) {
-    const { ctx } = this;
-    const { width, ground } = this.camera;
-    const sunX = Math.round(width / 2 + 64);
-    const sunY = Math.max(36, Math.round(ground * .27));
-    if (phase === 'NIGHT') {
-      this.biome.drawSprite(ctx, 'moon', phase, 'near', sunX, sunY + 16);
-      ctx.fillStyle = p.colors.e;
-      for (let i = 0; i < 12; i++) {
-        ctx.fillRect((i * 47 + 19) % width, 32 + ((i * 23) % Math.max(40, ground * 0.52)), 1, 1);
-      }
-    } else {
-      this.biome.drawSprite(ctx, 'sun', phase, 'near', sunX, sunY + 12);
-      ctx.fillStyle = p.horizon;
-      for (let i = 0; i < 3; i++) {
-        const x = Math.round((i * 151 + this.animationTime * 0.45) % (width + 80)) - 40;
-        const y = Math.round(ground * (0.23 + i * 0.13));
-        ctx.fillRect(x + 7, y - 3, 18, 5);
-        ctx.fillRect(x, y + 2, 40, 4);
-        ctx.fillRect(x + 3, y + 6, 32, 2);
-      }
-    }
-  }
-
-  drawObject(object, discovered, context = {}) {
-    const { ctx } = this;
-    const { x, y } = this.camera.toScreen(object.x);
-    if (assetManifest.objects[object.kind]) {
-      // Keep material and silhouette stable while inspection light changes continuously.
-      const seconds = ['lantern', 'rune'].includes(object.kind) ? 0 : this.animationTime;
-      this.assets.drawObject(ctx, object.kind, seconds, x, y);
-      if (object.kind === 'lantern') this.drawLanternResponse(object, x, y, context);
-      if (object.kind === 'rune') this.drawRuneResponse(object, x, y, context);
-    } else {
-      ctx.fillStyle = '#858e85'; ctx.fillRect(x - 9, y - 7, 18, 6); ctx.fillRect(x - 5, y - 10, 9, 3);
-      ctx.fillStyle = '#b4bab0'; ctx.fillRect(x - 5, y - 8, 8, 2);
-      ctx.fillStyle = '#5e7266'; ctx.fillRect(x + 4, y - 5, 4, 3);
-    }
-    if (discovered) {
-      ctx.fillStyle = '#f2d787';
-      ctx.fillRect(x + object.radius - 2, y - 3, 2, 2);
-    }
-  }
-
-  drawLanternResponse(object, x, y, { phase, creature, dt, motion } = {}) {
-    if (!this.lanternResponses.has(object.id)) this.lanternResponses.set(object.id, new LanternResponse());
-    const response = this.lanternResponses.get(object.id);
-    const strength = response.update(creature, object, phase, dt, motion);
-    const alpha = lanternFlameAlpha(strength, this.animationTime, phase);
-    if (alpha <= 0) return;
-    const frame = assetManifest.frames['object:lantern:rest'];
-    if (!this.lanternGlass) {
-      const mask = document.createElement('canvas');
-      mask.width = frame.width; mask.height = frame.height;
-      const rows = this.assets.pixelsFor('object:lantern:rest')
-        .map(row => [...row].map(token => token === 'f' || token === 'h' ? 'h' : '.').join(''));
-      drawPixels(mask.getContext('2d'), rows, assetManifest.palette, 0, 0);
-      this.lanternGlass = mask;
-    }
-    this.ctx.save();
-    this.ctx.globalAlpha = alpha;
-    this.ctx.drawImage(this.lanternGlass, x - frame.anchor[0], y - frame.anchor[1]);
-    this.ctx.restore();
-  }
-
-  drawRuneResponse(object, x, y, { phase, creature, dt, motion } = {}) {
-    if (!this.runeResponses.has(object.id)) this.runeResponses.set(object.id, new RuneResponse());
-    const response = this.runeResponses.get(object.id).update(creature, object, dt, motion);
-    if (response.strength < 0.001) return;
-    this.runePixels ??= runeTrace(this.assets.pixelsFor('object:rune:rest'), this.assets.pixelsFor('object:rune:lit'));
-    const frame = assetManifest.frames['object:rune:rest'];
-    this.ctx.save();
-    this.ctx.fillStyle = assetManifest.palette.h;
-    for (const pixel of this.runePixels) {
-      this.ctx.globalAlpha = runePixelAlpha(response, pixel.progress, phase);
-      this.ctx.fillRect(Math.round(x) - frame.anchor[0] + pixel.x, Math.round(y) - frame.anchor[1] + pixel.y, 1, 1);
-    }
-    this.ctx.restore();
   }
 
   creatureBounds(c) {

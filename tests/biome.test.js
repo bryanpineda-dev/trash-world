@@ -174,7 +174,7 @@ test('parallax moves scenery less than the walking plane and only returns visibl
   }
 });
 
-test('the forest covers mobile and desktop at both camera limits without changing world interactions', () => {
+test('the archived forest covers camera limits while retired discoveries remain readable', () => {
   const world = new World({ discoveredObjects: ['can','tree'] });
   const saved = world.serialize();
   for (const [width,height] of [[192,432],[384,216],[384,108]]) {
@@ -186,7 +186,7 @@ test('the forest covers mobile and desktop at both camera limits without changin
       for (const layer of source.layers.filter(layer=>layer.id!=='architecture')) assert.ok(visibleScenery(source,camera,layer).length > 0, layer.id);
     }
   }
-  assert.equal(world.objects.length,3);
+  assert.equal(world.objects.length,0);
   assert.equal(world.objectAt(280,-100),null);
   assert.deepEqual(world.serialize(),saved);
 });

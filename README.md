@@ -1,109 +1,46 @@
 # Trash World
 
-Un pequeno mundo de fantasia que cabe en tu telefono. Miga, una calaverita curiosa, explora, descubre, descansa y vuelve a armarse para seguir su aventura.
+Un mundo de bolsillo habitado por Miga, una calaverita autonoma que pasea, observa, descansa en huesitos y vuelve a armarse.
 
-**Pixel art original | Vida autonoma | Bosque encantado | Guardado local**
+**Canvas 2D | Vida autonoma | Cementerio del bosque | Guardado local**
 
-**Encuadre amplio aprobado:** mas mundo visible, Miga mas pequena y correccion de la niebla y luz de la iglesia. Se conserva el personaje y su vida autonoma; el acabado de arquitectura y fuentes secundarias sigue en refinamiento.
+![El cementerio de noche: Miga, robles de encuadre, capilla iluminada y ruinas.](docs/images/reference-biome-night.jpg)
 
-[Empezar](#empezar) | [Visores](#visores) | [Assets](#biblioteca-de-assets) | [Documentacion](#documentacion)
+*Captura real del visor en navegador a 1280 x 720. Escenario y personaje se dibujan por separado, no son una ilustracion aplanada.*
 
-![Encuadre amplio: Miga mas pequena, capilla completa y luz nocturna entre los arboles.](docs/images/world-view-night.jpg)
+**Revision del 2026-10-15, preparada para versionar.** Se conservan la escala amplia aprobada y los sprites de Miga. Esta revision reemplaza el entorno visible y retira el farol, la lapida runica y las plantas interactivas. La entrega local, el commit, la etiqueta y la publicacion en GitHub son pasos separados.
 
-*Captura real del visor a 1280 x 720. Canvas de 560 x 246 pixeles nativos en su area de 1280 x 563; encabezado y controles quedan fuera de la escena. Miga conserva su sprite original y se ve aproximadamente un 31% mas pequena que antes.*
+## El Cementerio
 
-## Un Mundo Con Vida Propia
+- Dos robles distintos con troncos curvos, raices, copas e hiedra integrados en cada dibujo.
+- Dos planos de bosque con parallax: fondos frios y claros; primer plano con verdes oliva y madera calida.
+- Capilla con cruz completa y cristal frio de dia, ambar al atardecer y de noche. Variacion de vela continua y limitada al cristal.
+- Tres monumentos: lapida a dos aguas, lapida arqueada y cruz anular. Ruina de dintel roto y verja entre pilares.
+- Sendero, helechos con flores, hongos y luna independientes. Sin banda de niebla sobre el suelo ni deformacion de ramas.
+- Miga mantiene su rig, paleta y clips aprobados. El ambiente se pinta antes del personaje, sin tintarlo.
 
-Trash World es un prototipo de mundo de bolsillo inspirado en los cubitos fisicos con personajes autonomos. La idea es observar a Miga viviendo a su ritmo, acompanarla e interactuar con su entorno, sin convertir cada momento en una orden.
+![El mismo escenario de dia, con el cristal de la capilla apagado.](docs/images/reference-biome-day.jpg)
 
-- **Miga decide:** necesidades y personalidad influyen en explorar, investigar, comer y dormir.
-- **Tiene memoria:** conserva descubrimientos y su vida se guarda en el navegador.
-- **Responde al tacto:** tocar a Miga, mantener el toque o tocar el entorno produce distintas reacciones.
-- **El farol responde:** una observacion nocturna mas pausada aumenta suavemente el brillo del vidrio, sin cambiar la silueta ni los sprites de Miga.
-- **La runa despierta:** la luz sube por el grabado cuando Miga investiga la lapida, con una respuesta discreta de dia y mas visible de noche.
-- **El bosque cambia:** dia, atardecer y noche; ruinas, niebla baja, luciernagas, viento suave y luz de vela en la capilla.
-- **El cementerio tiene variedad:** arboles adultos de distintas siluetas, lapidas desgastadas y arbustos de bayas, con contornos propios de cada material.
-- **Los huesitos tienen personalidad:** caminar de perfil, gestos, saludo y descanso en piezas que se reconstruyen al despertar.
+*Captura real del mismo visor diurno. Edificios y arboles mantienen su dibujo entre fases.*
 
-Canvas 2D, JavaScript y Vite. Sin backend, cuentas, analitica ni servicios remotos para jugar.
-
-## Galeria
-
-### Mundo Autonomo
-
-![Miga explorando en el mundo real de la aplicacion, con el encuadre amplio.](docs/images/world-view-live-day.jpg)
-
-*Captura actual del juego autonomo en navegador a 1280 x 720, durante una caminata diurna. No es una pose dirigida desde el laboratorio.*
-
-### Dia Y Noche En Formato Movil
+### En Movil
 
 <p align="center">
-  <img src="docs/images/world-view-mobile-day.jpg" width="224" alt="Encuadre amplio diurno, con luz apagada en la capilla.">
-  <img src="docs/images/world-view-mobile-night.jpg" width="224" alt="Encuadre amplio nocturno, con ventanas calidas.">
+  <img src="docs/images/reference-biome-mobile-day.jpg" width="224" alt="Escena diurna en viewport de 320 x 720.">
+  <img src="docs/images/reference-biome-mobile-night.jpg" width="224" alt="Escena nocturna en viewport de 320 x 720.">
 </p>
 
-*Capturas reales del navegador a 320 x 720. El canvas de 288 x 455 pixeles nativos queda entre encabezado y controles. Miga se ve un 33% mas pequena. No son pruebas de un telefono fisico.*
+*Capturas reales con viewport emulado, no de un telefono fisico. La vista estrecha muestra una seccion del mundo; no comprime el cementerio entero para que quepa.*
 
-### Biblioteca A Escala Comun
+## Miga
 
-![Fuentes del estudio: robles, abedul, arbol seco, cipreses, bosque lejano, capilla y ruina junto a Miga.](docs/images/style-master-library.png)
+Personalidad y necesidades influyen en sus paseos, observacion y descanso. Responde al toque y al toque sostenido, duerme desarmandose y se reconstruye al despertar. La partida vive en el navegador, sin cuentas ni backend.
 
-*Lamina del estudio anterior, a zoom entero 2, incluyendo Miga como referencia. Se conserva como historial: el borde inferior de los dos fondos de bosque se reviso despues. No es una captura actual de navegador ni representa toda la biblioteca.*
-
-[Comparativa detallada de los tres robles](docs/images/style-master-trees-comparison.png).
-
-### Ultima Pasada: Observar El Mundo
-
-- Camara mas abierta: 288 pixeles de ancho minimo en movil, 560 en escritorio habitual y mas espacio horizontal en ventanas muy bajas. No se encogen ni redibujan sprites individualmente.
-- Cuando cabe el tramo jugable completo, la camara queda centrada en el mundo de 560 pixeles, no sigue cada paso de Miga. Las vistas estrechas conservan seguimiento y parallax.
-- Encabezado y controles fuera del canvas en todas las vistas del mundo. La cruz de la iglesia queda completa, tambien en formato apaisado.
-- Retiro de las superficies azules solidas y del borde recto de los fondos. El suelo lejano usa tierra, vegetacion baja y una silueta irregular.
-- Niebla mucho mas tenue en manchas separadas, sin una banda que cubra todo el ancho. Sigue detras de Miga y se congela al desactivar movimiento.
-- Ventanas nocturnas con su ambar propio, sin mezclarlo con la niebla azulada. De dia el cristal sigue frio y apagado. Luna recolocada para el encuadre amplio.
-- Miga, sus clips aprobados, reglas, objetos activos, dependencias y guardados permanecen intactos. El acabado de ruinas, lapidas y vegetacion sigue pendiente; esta pasada no declara logrado el arte de la referencia.
-
-![El mismo encuadre amplio de dia, con las ventanas apagadas.](docs/images/world-view-day.jpg)
-
-*Captura diurna actual del navegador. La [comparativa del estudio anterior](docs/images/style-master-comparison.png) se conserva como historial de una propuesta rechazada, no como evidencia del encuadre actual.*
-
-La [revision de encuadre y atmosfera](docs/WORLD_VIEW.md) documenta esta correccion. La [guia del estudio](docs/STYLE_MASTER.md) y su [QA](docs/STYLE_MASTER_QA.md) conservan el contexto anterior, sin presentarlo como arte aprobado. La aprobacion visual precede a nuevas familias de assets y funciones.
-
-### Interaccion Conservada: La Lapida Runica
-
-- Miga llega desde cualquiera de los dos lados, se detiene y mira la lapida, conservando su inspeccion de 4.5 segundos.
-- La luz nace en el extremo inferior del grabado, sube por el tallo y recorre las dos ramas del rombo hasta la punta.
-- Respuesta limitada a los 23 pixeles de la runa original: piedra, desgaste, musgo y contornos permanecen quietos. La entrada y la salida son continuas, incluso si la visita se interrumpe.
-- De dia es sutil, al atardecer aumenta y de noche se lee con mayor claridad. No hay halos, particulas ni cambios de escala o de dibujo.
-- Boton de gema en el visor para ensayar la misma IA; pausa, cambio de objetivo y selector sincronizado, sin acceder a la partida.
-- Miga, los assets, la interaccion del farol, las recompensas y los guardados siguen intactos. Las variantes originales de la runa siguen disponibles en el laboratorio.
-
-La [lapida runica](docs/RUNE_INTERACTION.md) conserva su comportamiento de `v0.1.7`. La [interaccion del farol](docs/LANTERN_INTERACTION.md) mantiene la revision anterior. No se crea ni publica una etiqueta automaticamente.
-
-### Base Visual: Ramas Y Luz
-
-- Tres robles con bifurcaciones que nacen del tronco y suben a la copa, sin la rama transversal que cruzaba el roble antiguo.
-- Enredaderas afinadas en los robles, abedul y arbol seco: puntos de apoyo, caida mas fina y hojas irregulares, sin hileras repetitivas.
-- Lapidas redonda y partida, tres arbustos decorativos de bayas y los tiles de suelo siguen disponibles como assets reutilizables.
-- Seis arboles con transiciones suaves entre tonos de pequenos grupos de hojas; siluetas, troncos y raices permanecen fijos.
-- Capilla con cristal frio y luz apagada de dia. Al atardecer y de noche conserva luz calida continua, sin parpadeo de interruptor.
-- El farol aporta un tinte suave al sendero y a la vegetacion cercana, sin blur, halos ni alterar a Miga. Ese aporte ambiental desaparece de dia.
-- Camara mas reactiva y proyeccion de parallax coherente con el sendero y los objetos.
-- Refinamiento del farol, ruinas, suelo y vegetacion, sin cambiar el diseno ni los clips aprobados de Miga.
-- Retiro del arbolito pequeno del suelo: su fuente se conserva en el laboratorio y los guardados antiguos mantienen sus recuerdos.
-
-Los detalles de la biblioteca anterior estan en [Variantes y animacion ambiental](docs/LIVING_CEMETERY.md).
-
-La [revision de ramas y luz](docs/NATURAL_BRANCHES_LIGHT.md) documenta la base visual de `v0.1.5`. La [revision anterior](docs/PREMIUM_FOREST.md) conserva el contexto de forma y material. El commit, la etiqueta y el push se realizan por separado; la entrega local no equivale a una publicacion en GitHub.
-
-### Una Visita A La Runa
-
-![Miga camina hacia la lapida en el encuadre amplio, con ambiente y animaciones aprobadas.](docs/images/world-view-motion.gif)
-
-*90 fotogramas a 15 fps de la IA y el renderer de produccion fuera del navegador, con la lapida como objetivo inicial. No es una captura de navegador ni una medicion de rendimiento. La [secuencia del estudio anterior](docs/images/style-master-motion.gif) y la [secuencia de la runa](docs/images/rune-interaction-motion.gif) se conservan como historial.*
+La escena actual no tiene objetos interactivos. Conserva los descubrimientos antiguos como historia, pero cancela al cargar las caminatas e inspecciones dirigidas a objetos retirados. Sin la planta ya no hay alimentacion ambiental automatica: no se inventa una planta invisible. El panel de diagnostico conserva el control de comida.
 
 ## Empezar
 
-Requisito: **Node.js 22.12 o posterior**, con npm.
+Requisito: Node.js 22.12 o posterior, con npm.
 
 ```bash
 git clone https://github.com/bryanpineda-dev/trash-world.git
@@ -112,148 +49,79 @@ npm ci
 npm run dev
 ```
 
-Abre la URL que muestre Vite, normalmente `http://127.0.0.1:5173`. Si el puerto esta ocupado, la terminal indica otro disponible.
-
-Para compilar y revisar la version de produccion:
+Abre la URL que muestre Vite. Para comprobar la version compilada:
 
 ```bash
-npm run build
+npm run check
 npm run preview
 ```
 
-`dist/` contiene la aplicacion estatica lista para servir. `node_modules/` y `dist/` no se versionan.
+`dist/` contiene la aplicacion estatica. Dependencias, builds y caches no se versionan.
 
 ## Visores
 
-Las tres vistas estan disponibles en desarrollo y en el build, bajo el mismo origen:
-
-| Ruta | Vista | Uso |
-| --- | --- | --- |
-| `/` | Mundo vivo | Observar e interactuar con la vida autonoma de Miga. |
-| `/asset-lab.html` | Personaje y objetos | Revisar piezas, clips, direccion y objetos animados. |
-| `/biome-lab.html` | Composicion del bosque | Comparar luz, posicion, poses y familias de assets. |
-
-El visor del bioma comparte el renderer del juego, pero no lee ni escribe su partida. Los botones de llama y gema ensayan las visitas al farol y a la runa con la misma IA; el selector refleja caminar u observar. La biblioteca se abre desde el boton de cuadricula y mantiene a Miga como referencia de escala.
+| Ruta | Vista |
+| --- | --- |
+| `/` | Mundo autonomo, tacto y guardado local. |
+| `/biome-lab.html` | Escenario actual, fases, poses, posicion, pausa y biblioteca por familias. No toca la partida. |
+| `/asset-lab.html` | Kit original de Miga y objetos historicos. Sus props no se activan en el mundo. |
 
 ## Biblioteca De Assets
 
-La biblioteca distingue el kit del personaje de la escenografia. Todos usan el mismo pixel nativo: un arbol adulto tiene un dibujo mayor, no una ampliacion individual de un sprite pequeno. Los bordes del entorno usan tonos propios del material.
+![Inventario de los catorce assets del escenario.](docs/images/reference-biome-library.png)
 
-| Kit | Fuentes | Paleta | Exportacion |
-| --- | --- | --- | --- |
-| Miga y objetos | 5 piezas, 7 slots, 10 clips; 3 objetos activos y 1 archivado | 16 colores | Atlas de 109 frames, personaje y laminas comparativas. |
-| Bosque y cementerio | 31 assets en 8 familias | 32 tokens de material | Atlas de 441 frames y 147 PNG transparentes; cristal diurno apagado, viento y luz nocturna continua. |
+*Lamina offline de los PNG nativos, no captura de navegador. Panoramicas y dibujos grandes se ajustan para caber; el manifiesto conserva su tamano y ancla reales.*
 
 ```text
 assets/
-  source/
-    parts.json                 # Miga, tres objetos activos y el roble archivado
-    characters.json            # Rigs, anclas y secuencias de objetos
-    animations.json            # Poses y clips compartidos
-    style.json                 # Paleta y contrato del personaje
-    biome.json                 # Indice del entorno, paletas y capas
-    environment/
-      trees/
-        forest-backdrop.json / forest-backdrop-east.json
-      vegetation/              # Helechos, hongos, flores y matorrales
-        berries/               # Variantes decorativas de bayas
-      gravestones/
-      ruins/
-      fences/
-      terrain/
-      sky/
-        moon.json / sun.json
-      architecture/churches/
-  generated/
-    atlas.png / atlas.json     # Kit animado
-    biome.png / biome.json     # Escenografia compartida
-    environment/               # PNG individuales por familia, asset y fase
+  reference-biome/
+    manifest.json             # 14 assets, dimensiones, anclas y SHA-256
+    GENERATION.md             # Procedencia y briefs de regeneracion
+    source/                   # Originales raster sin modificar
+    native/                   # PNG del juego, alpha binario
+      trees/                  # 2 robles
+      gravestones/            # 3 monumentos
+      architecture/           # Capilla, dintel y verja
+      backgrounds/            # 2 planos de bosque
+      terrain/                # Sendero
+      vegetation/             # Helechos/flores y hongos decorativos
+      sky/                    # Luna
+  source/                     # Rig, piezas y clips originales de Miga
+  generated/                  # Atlas original; entorno anterior archivado
 ```
 
-Los JSON son las fuentes editables. Los PNG y sus metadatos se generan de forma determinista y se incluyen en Git junto a ellas.
+Los nuevos dibujos son **raster generados individualmente con ImageGen**, guiados por la referencia del usuario; no son dibujos hechos a mano pixel por pixel. Se guardan originales y versiones recortadas, ajustadas con vecino mas cercano y alpha 0/255. El ambiente no usa el limite anterior de 32 tokens. Miga mantiene sus 16 colores.
 
-El suelo usa tres tiles reutilizables con uniones compatibles. Hongos, flores, helechos, bayas, arboles y lapidas tambien son assets independientes, no partes de una imagen de fondo aplanada. Cada exportacion vive en `assets/generated/environment/<familia>/<asset>/`: `day.png`, `evening.png` y `night.png`, mas archivos `<fase>-<variante>.png` cuando hay animacion. Las subfamilias, como `vegetation/berries/`, conservan sus carpetas.
+Los PNG se reutilizan por su ancla. El sendero cubre el tramo actual de 560 unidades: extenderlo a un tileset con uniones certificadas queda pendiente. Los fondos son panoramicas reutilizables, no un mapa aplanado. Ver [composicion y limites](docs/REFERENCE_BIOME.md).
 
-Despues de modificar un dibujo, pose o paleta:
-
-```bash
-npm run assets
-npm run check
-```
-
-Las pruebas comparan cada pixel exportado con su fuente; detectan atlas desactualizados, anclas incorrectas y cambios en las animaciones aprobadas. Para agregar assets, consulta el [flujo de trabajo](docs/ASSET_WORKFLOW.md) y el [contrato del bioma](docs/BIOME.md).
+`npm run assets` regenera el kit JSON original, no los nuevos originales raster. Cambiar estos ultimos requiere actualizar PNG nativo, manifiesto y hashes, y pasar sus pruebas.
 
 ## Verificacion
 
-**Ultima verificacion local: 144 pruebas aprobadas y build correcto.** Alcance y limites en [Encuadre amplio](docs/WORLD_VIEW.md).
+Revision del 2026-10-15:
 
-```bash
-npm run assets:check  # Validar fuentes del personaje y del bioma
-npm test             # Simulacion, assets, persistencia y cache offline
-npm run check        # Tests y build de las tres vistas
-```
+- **158 pruebas aprobadas**, incluidas 10 de la nueva biblioteca y retirada de objetos. Las pruebas historicas no certifican el acabado del nuevo dibujo.
+- Renderer de produccion offline: **96 casos**, tres luces y cuatro proporciones; **64 440 pixeles opacos de Miga** cotejados, atlas/fallback iguales y pausa ambiental exacta.
+- **483 668 pixeles de assets** revisados para alpha binario; **208 archivos protegidos** sin cambios por SHA-256.
+- Capturas de navegador separadas de los renders offline. Detalle y limites en [Verificacion](docs/VERIFICATION.md).
 
-La cobertura incluye identidad de Miga, animaciones, siluetas conectadas, escala, uniones del terreno, paletas por profundidad, rutas de la biblioteca, toques, autonomia, guardados y progreso offline. Tambien comprueba cada variante ambiental y la carga de partidas dirigidas al arbol retirado.
+Pendientes: Android fisico, rendimiento y consumo prolongados, desconexion real del nuevo build, partida nocturna prolongada y refinamientos visuales futuros. Una prueba tecnica no demuestra semejanza artistica con la referencia.
 
-Las capturas actuales muestran el encuadre amplio en navegador, de dia y noche, en escritorio y movil. Las pruebas nuevas cubren resolucion, limites de camara, proyeccion de toques, cruz completa, cristal nocturno y base irregular del bosque. Los tests de animaciones aprobadas siguen activos. Los resultados del renderer offline se distinguen de las pruebas reales de navegador y no se presentan como medidas de FPS. La entrega local coteja archivos y medios por SHA-256 antes del versionado; una copia no equivale a una publicacion en GitHub.
+## Guardado Y Offline
 
-El renderer actual se coteja en 64 casos de pose/direccion, cuatro proporciones de viewport y dia/noche: atlas y fallback identicos, 42960 pixeles opacos de Miga sin tintes ni recorte y congelacion exacta del ambiente. SHA-256 conserva 33 archivos de logica, dependencias y kit protegidos. Estas pruebas no certifican la calidad artistica.
+Guardado cada cinco segundos, al interactuar y al ocultar la app. Datos danados se respaldan; versiones futuras se protegen contra sobrescritura. Al regresar se resume un maximo de ocho horas de necesidades, descanso y reloj, sin inventar descubrimientos.
 
-**Pendiente:** telefono Android fisico, medicion de framerate y consumo prolongado en el hardware de destino, comportamiento nocturno prolongado en una partida autonoma y repetir la desconexion real. La revision del visor en navegador no sustituye esas pruebas ni certifica todos los flujos del mundo autonomo. El historial y alcance de cada pasada estan en [Verificacion](docs/VERIFICATION.md).
-
-## Guardado Y Modo Offline
-
-- La partida se guarda cada cinco segundos, al interactuar y al ocultar la app, bajo `localStorage["trash-world.save"]`.
-- Los datos incluyen necesidades, personalidad, posicion, descanso y descubrimientos. Los guardados danados se respaldan antes de reemplazarlos; versiones futuras se protegen contra sobrescritura.
-- Al volver se resume un maximo de ocho horas de necesidades, descanso y reloj. No se reproducen todos los fotogramas ni se inventan descubrimientos.
-- Si el almacenamiento falla, la escena sigue funcionando y avisa que no esta guardando. El reinicio del panel requiere confirmacion y borra la vida de ese origen.
-- El cache de la PWA se genera con el build y el service worker se registra solo en produccion. Requiere HTTPS o localhost y una primera carga completa con conexion.
-
-**Cada origen tiene su propia vida:** cambiar el puerto, dominio, navegador o perfil no transporta la partida anterior.
-
-<details>
-<summary>Probar la escena desde Android en la misma red</summary>
-
-```bash
-npm run dev -- --host 0.0.0.0
-```
-
-Abre `http://IP-DE-LA-PC:PUERTO` en el telefono, usando la IP local de la PC y el puerto que indique Vite. Windows puede solicitar acceso a la red local.
-
-HTTP en una IP local permite revisar la escena, pero no ofrece instalacion PWA ni cache offline. Para una prueba completa, sirve `dist/` desde HTTPS o usa un tunel localhost con depuracion USB. En un Android antiguo, prueba el build de produccion, no solo el servidor de desarrollo.
-
-</details>
-
-## Estado Y Roadmap
-
-Trash World sigue en desarrollo. La base de vida autonoma y el personaje estan construidos; el primer bioma permite afinar la identidad visual y ampliar la biblioteca.
-
-| Etapa | Enfoque | Estado |
-| --- | --- | --- |
-| V0.1 - The Creature | Miga, autonomia, interaccion, guardados y PWA | Base implementada; refinamiento visual en curso. |
-| V0.2 - The Phone | Inclinacion, sacudidas, rotacion, calibracion y vibracion | Pendiente; el adaptador actual entrega valores neutros. |
-| V0.3 - The World | Eventos, mas objetos, audio y pruebas prolongadas | Planeado. |
-| V1.0 - The Toy | Estabilidad, instalacion y posible APK o carcasa fisica | Planeado. |
-
-La conexion entre dispositivos queda para una etapa independiente. No se presenta como funcionalidad disponible.
+El service worker se genera con el build y se registra solo en produccion. Requiere localhost o HTTPS y una primera carga completa con conexion. Cada origen, puerto y perfil tiene su propia partida.
 
 ## Documentacion
 
+- [Escenario actual y direccion visual](docs/REFERENCE_BIOME.md)
 - [Arquitectura](docs/ARCHITECTURE.md)
-- [Personaje: Miga](docs/CHARACTER.md)
-- [Guia de estilo](docs/ASSET_STYLE.md)
-- [Patrones de materiales](docs/MATERIAL_STYLE.md)
-- [Flujo de trabajo de assets](docs/ASSET_WORKFLOW.md)
-- [Objetos y escala](docs/ENVIRONMENT.md)
-- [Bosque y biblioteca](docs/BIOME.md)
-- [Variantes y animacion ambiental](docs/LIVING_CEMETERY.md)
-- [Forma, material y movimiento del bosque](docs/PREMIUM_FOREST.md)
-- [Ramas, enredaderas y luces por momento](docs/NATURAL_BRANCHES_LIGHT.md)
-- [Miga y el farol](docs/LANTERN_INTERACTION.md)
-- [La lapida runica](docs/RUNE_INTERACTION.md)
-- [Escena patron y reglas de estilo](docs/STYLE_MASTER.md)
-- [QA de arte y escena](docs/STYLE_MASTER_QA.md)
-- [Verificacion](docs/VERIFICATION.md)
+- [Miga](docs/CHARACTER.md)
+- [Flujo del kit original](docs/ASSET_WORKFLOW.md)
+- [Verificacion e historial](docs/VERIFICATION.md)
 - [Roadmap](docs/ROADMAP.md)
+
+Las guias de bioma, estilo e interacciones anteriores se conservan como historial, no como descripcion del entorno activo de esta propuesta. Las propuestas artisticas rechazadas no son una base visual aprobada.
 
 Proyecto de [bryanpineda-dev](https://github.com/bryanpineda-dev).

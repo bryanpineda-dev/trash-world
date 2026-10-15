@@ -181,9 +181,8 @@ test('every exported atlas pixel and clip agrees with the editable sources', () 
   }
 });
 
-test('fantasy props retain saved discovery identities', () => {
-  assert.equal(WORLD_OBJECTS.find(object => object.id === 'can').kind, 'lantern');
-  assert.equal(WORLD_OBJECTS.find(object => object.id === 'stone').kind, 'rune');
+test('retiring fantasy props retains saved discovery identities', () => {
+  assert.deepEqual(WORLD_OBJECTS, []);
   const world = new World({ discoveredObjects: ['can', 'stone'] });
   world.discover('can');
   assert.deepEqual(world.serialize().discoveredObjects, ['can', 'stone']);
@@ -199,7 +198,7 @@ test('composition stays stable across repeated calls and does not mutate source 
 });
 
 
-test('only the approved skeleton and current prop sources remain active', () => {
+test('the approved skeleton and archived prop sources remain intact', () => {
   const source = readAssetSource();
   assert.deepEqual(Object.keys(source.characters.characters), ['miga']);
   assert.deepEqual(Object.keys(source.parts).sort(), ['arm', 'leg', 'skull', 'ribs', 'pelvis', 'lantern', 'rune', 'plant', 'tree'].sort());

@@ -1,0 +1,344 @@
+{
+  "version": 1,
+  "id": "reference-cemetery-2026-10-15",
+  "worldWidth": 560,
+  "interactiveObjects": [],
+  "sprites": [
+    {
+      "id": "oakLeft",
+      "label": "Roble de encuadre izquierdo",
+      "family": "trees",
+      "file": "native/trees/oak-left.png",
+      "source": "source/trees/oak-left.png",
+      "size": [
+        215,
+        236
+      ],
+      "anchor": [
+        65,
+        236
+      ],
+      "sourceRect": {
+        "left": 14,
+        "top": 11,
+        "width": 1180,
+        "height": 1299
+      },
+      "generator": "image_gen built-in",
+      "sourceSha256": "8fbb785b4bacdca6e6cc0409f4cbfb2f89d25b0967fd2586b9d4183f14afacdc",
+      "sha256": "cb0a9c246a8877025e4bbb782783fe90e37d3c79ee2fcd0deeb75fab73dcb16a"
+    },
+    {
+      "id": "oakRight",
+      "label": "Roble de encuadre derecho",
+      "family": "trees",
+      "file": "native/trees/oak-right.png",
+      "source": "source/trees/oak-right.png",
+      "size": [
+        208,
+        244
+      ],
+      "anchor": [
+        157,
+        244
+      ],
+      "sourceRect": {
+        "left": 9,
+        "top": 5,
+        "width": 1146,
+        "height": 1344
+      },
+      "generator": "image_gen built-in",
+      "sourceSha256": "5902a77543f3bee0d76923f731b84d28a2a70982b38ca22b93bff4d06c618a9b",
+      "sha256": "4af9bc9bd3ccbada5ff137ad87ac449a067289e25bc8266cb43295eab2955e75"
+    },
+    {
+      "id": "gabledGrave",
+      "label": "Lapida de remate a dos aguas",
+      "family": "gravestones",
+      "file": "native/gravestones/gabled.png",
+      "source": "source/gravestones/gabled.png",
+      "size": [
+        50,
+        78
+      ],
+      "anchor": [
+        25,
+        78
+      ],
+      "sourceRect": {
+        "left": 137,
+        "top": 178,
+        "width": 768,
+        "height": 1214
+      },
+      "generator": "image_gen built-in",
+      "sourceSha256": "335ffa74286a9d72c0d63a8d61e723b59ef3656a7f86850035230c75025312e4",
+      "sha256": "8f37160e108cbd86ad685e3b4403a4f279b84009af0b2836de0e0526c4be9e6a"
+    },
+    {
+      "id": "roundGrave",
+      "label": "Lapida arqueada",
+      "family": "gravestones",
+      "file": "native/gravestones/round.png",
+      "source": "source/gravestones/round.png",
+      "size": [
+        44,
+        53
+      ],
+      "anchor": [
+        22,
+        53
+      ],
+      "sourceRect": {
+        "left": 147,
+        "top": 231,
+        "width": 862,
+        "height": 992
+      },
+      "generator": "image_gen built-in",
+      "sourceSha256": "f83a484ecd1bfb767448fdbf328530d0ce47960826fe37981cc9a9eba9371537",
+      "sha256": "60c358dce3c4c8e9adadee11b7e15d5b555cbc17917e6c8d5369c50c95f65f95"
+    },
+    {
+      "id": "ringCross",
+      "label": "Cruz anular erosionada",
+      "family": "gravestones",
+      "file": "native/gravestones/ring-cross.png",
+      "source": "source/gravestones/ring-cross.png",
+      "size": [
+        64,
+        112
+      ],
+      "anchor": [
+        32,
+        112
+      ],
+      "sourceRect": {
+        "left": 90,
+        "top": 18,
+        "width": 820,
+        "height": 1523
+      },
+      "generator": "image_gen built-in",
+      "sourceSha256": "8bbab093e5a1f6fd174b2bbe35fbf71f74ed8a5489828cc8c3d3c1296dbefc24",
+      "sha256": "a1ffeda68a2cde02691593ef0852a14ecb223e1605cd48c1e515f31183da76e6"
+    },
+    {
+      "id": "chapel",
+      "label": "Capilla del bosque",
+      "family": "architecture",
+      "file": "native/architecture/chapel.png",
+      "source": "source/architecture/chapel.png",
+      "size": [
+        102,
+        154
+      ],
+      "anchor": [
+        48,
+        154
+      ],
+      "sourceRect": {
+        "left": 113,
+        "top": 122,
+        "width": 837,
+        "height": 1269
+      },
+      "generator": "image_gen built-in",
+      "sourceSha256": "310fe42cffff2f08c273b099e7dd5d606faf5ff768414107ae2eed63ca009ab3",
+      "sha256": "d817377dbdb3c4ff677496586bebbbb3eeb5d75cfd922ecf74df091c76b5c2e6"
+    },
+    {
+      "id": "ruin",
+      "label": "Pilar de dintel roto",
+      "family": "architecture",
+      "file": "native/architecture/broken-lintel.png",
+      "source": "source/architecture/broken-lintel.png",
+      "size": [
+        72,
+        142
+      ],
+      "anchor": [
+        26,
+        142
+      ],
+      "sourceRect": {
+        "left": 96,
+        "top": 146,
+        "width": 809,
+        "height": 1347
+      },
+      "generator": "image_gen built-in",
+      "sourceSha256": "4f038bc59ab528e0c809ab8e80f53f79adfbf80e833437b9d3966dc0d1ce2c4a",
+      "sha256": "058bb0259f39930aad5283184c3aaa126c5cfa10d2914e9a592046cc6a5d888b"
+    },
+    {
+      "id": "forestMiddle",
+      "label": "Bosque intermedio",
+      "family": "backgrounds",
+      "file": "native/backgrounds/forest-middle.png",
+      "source": "source/backgrounds/forest-middle.png",
+      "size": [
+        720,
+        190
+      ],
+      "anchor": [
+        360,
+        190
+      ],
+      "sourceRect": {
+        "left": 0,
+        "top": 118,
+        "width": 2172,
+        "height": 577
+      },
+      "generator": "image_gen built-in",
+      "sourceSha256": "425eaef8e2ed9b3428e310d9b7b1ceae121d7dec81088bedb0850d67a1b2bd61",
+      "sha256": "7a1170385d9c71e2c0579a7dfc4729d17e03798eee162b3bc88e47dca9dfdf1c"
+    },
+    {
+      "id": "forestFar",
+      "label": "Bosque lejano",
+      "family": "backgrounds",
+      "file": "native/backgrounds/forest-far.png",
+      "source": "source/backgrounds/forest-far.png",
+      "size": [
+        800,
+        204
+      ],
+      "anchor": [
+        400,
+        204
+      ],
+      "sourceRect": {
+        "left": 0,
+        "top": 98,
+        "width": 2172,
+        "height": 619
+      },
+      "generator": "image_gen built-in",
+      "sourceSha256": "e1b20630999b5e753f89d3e211e6d621e822d1a984828c2c91bfa2ee812938cb",
+      "sha256": "5e01b067ef6c7882f3a1346d18355c339dcfb95700cdfe51f90a1bd24b876d29"
+    },
+    {
+      "id": "ground",
+      "label": "Sendero de piedra y raices",
+      "family": "terrain",
+      "file": "native/terrain/path.png",
+      "source": "source/terrain/path.png",
+      "size": [
+        560,
+        52
+      ],
+      "anchor": [
+        0,
+        8
+      ],
+      "sourceRect": {
+        "left": 0,
+        "top": 295,
+        "width": 2125,
+        "height": 210
+      },
+      "generator": "image_gen built-in",
+      "sourceSha256": "2a2ddc1eb5f65578d2f8a201f5ff2065a0330fbf1b311679fe822c6672aa099b",
+      "sha256": "c1fdbbdc4925afbb24043a3106c35acfffaed5170c5efa4e9f5bc9d2d94e4d9f"
+    },
+    {
+      "id": "fence",
+      "label": "Verja entre pilares",
+      "family": "architecture",
+      "file": "native/architecture/fence.png",
+      "source": "source/architecture/fence.png",
+      "size": [
+        144,
+        62
+      ],
+      "anchor": [
+        72,
+        62
+      ],
+      "sourceRect": {
+        "left": 79,
+        "top": 102,
+        "width": 1615,
+        "height": 698
+      },
+      "generator": "image_gen built-in",
+      "sourceSha256": "b8fbd2aba2cfc34b5d4b7215815b806952aaad724651b406e8552cbb988d7b0c",
+      "sha256": "72fcfb8a0898eecc1bc5645d71985a72323c7bd4535b19c8ad10faf6e71db087"
+    },
+    {
+      "id": "undergrowth",
+      "label": "Helechos, musgo y flores",
+      "family": "vegetation",
+      "file": "native/vegetation/ferns-and-flowers.png",
+      "source": "source/vegetation/ferns-and-flowers.png",
+      "size": [
+        70,
+        42
+      ],
+      "anchor": [
+        35,
+        42
+      ],
+      "sourceRect": {
+        "left": 66,
+        "top": 172,
+        "width": 1413,
+        "height": 751
+      },
+      "generator": "image_gen built-in",
+      "sourceSha256": "3ea41d899546302c86c2305c6ba0d3ebb8f9f90541c7c415b156203c85635255",
+      "sha256": "c4271b7f1a8ec95836ba08e0c6f5af068f1d0bcc76d1c880c468ff73676d834f"
+    },
+    {
+      "id": "mushrooms",
+      "label": "Hongos decorativos",
+      "family": "vegetation",
+      "file": "native/vegetation/mushrooms.png",
+      "source": "source/vegetation/mushrooms.png",
+      "size": [
+        28,
+        20
+      ],
+      "anchor": [
+        14,
+        20
+      ],
+      "sourceRect": {
+        "left": 382,
+        "top": 338,
+        "width": 707,
+        "height": 497
+      },
+      "generator": "image_gen built-in",
+      "sourceSha256": "5abacb762f8591563fd63d60f24cfeda0dc9a046205e4ce3961dc70fb62c92bf",
+      "sha256": "3779d87bdd5d4a3bc3b9cb90d7a8ed69589c0ca76afb18d4bc2e43afec15bcc0"
+    },
+    {
+      "id": "moon",
+      "label": "Luna de crateres",
+      "family": "sky",
+      "file": "native/sky/moon.png",
+      "source": "source/sky/moon.png",
+      "size": [
+        36,
+        36
+      ],
+      "anchor": [
+        18,
+        18
+      ],
+      "sourceRect": {
+        "left": 336,
+        "top": 332,
+        "width": 594,
+        "height": 575
+      },
+      "generator": "image_gen built-in",
+      "sourceSha256": "740928c9cf5f9977bd78f27873a8800359120c6667094c235475b46c963632ea",
+      "sha256": "ddb6942324c3722d072b5fd8add35e0c731a1afc3ad47cc95829cdce2e4fe6b8"
+    }
+  ]
+}

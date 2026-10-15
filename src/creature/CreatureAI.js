@@ -46,13 +46,17 @@ export class CreatureAI {
       c.transition('SLEEP', 0);
       return;
     }
-    if (c.needs.hunger < 38) {
+    if (c.needs.hunger < 38 && this.world.objects.some(object=>object.id==='plant')) {
       this.investigate('plant');
       return;
     }
     const interest = c.needs.curiosity / 100 * c.personality.curiosity;
     if (c.needs.boredom > 25 || this.random() < 0.25 + interest * 0.65) {
       const candidates = this.world.objects.filter(object => object.id !== c.memory.lastObject);
+      if(!candidates.length) {
+        c.transition('WALK',10,{x:30+this.random()*(this.world.width-60)});
+        return;
+      }
       candidates.sort((a, b) => {
         const score = object => Math.abs(c.x - object.x) + (this.world.discoveredObjects.has(object.id) ? 100 : 0);
         return score(a) - score(b);
@@ -79,7 +83,7 @@ export class CreatureAI {
 
   finishInspection() {
     const c = this.creature;
-    if (!c.targetObject) return;
+    if (!c.targetObject || !this.world.objects.some(object=>object.id===c.targetObject)) return;
     this.world.discover(c.targetObject);
     c.memory.lastObject = c.targetObject;
     c.needs.change('happiness', 5);

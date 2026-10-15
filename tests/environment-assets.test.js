@@ -6,6 +6,7 @@ import { compileCatalog, expandPart, frameBounds, pixelBounds } from '../src/ren
 import { WORLD_OBJECTS, World } from '../src/world/World.js';
 import { Creature } from '../src/creature/Creature.js';
 import { CreatureAI } from '../src/creature/CreatureAI.js';
+import { legacyWorld, LEGACY_OBJECTS } from './fixtures/legacy-world.js';
 
 const source = readAssetSource();
 const catalog = compileCatalog(source);
@@ -34,9 +35,9 @@ test('four environment sprites share native pixels and fixed grounded proportion
   }
 });
 
-test('environment hit bounds cover every visible animated pixel without catching distant sky or soil', () => {
-  const world = new World();
-  for (const object of WORLD_OBJECTS) {
+test('archived environment hit bounds cover visible pixels without catching sky or soil', () => {
+  const world = legacyWorld();
+  for (const object of LEGACY_OBJECTS) {
     const frames = catalog.objects[object.kind].frames.map(({ id }) => catalog.frames[id]);
     const bounds = frames.map(frame => frameBounds(frame));
     assert.equal(object.height, Math.max(...bounds.map(bound => -bound.top)));
@@ -51,10 +52,10 @@ test('environment hit bounds cover every visible animated pixel without catching
   }
 });
 
-test('investigation stops beside the larger props from either side instead of inside their silhouettes', () => {
-  const world = new World();
+test('archived investigation stops beside props from either side instead of inside their silhouettes', () => {
+  const world = legacyWorld();
   const standing = frameBounds(catalog.frames['miga:stand']);
-  for (const object of WORLD_OBJECTS) {
+  for (const object of LEGACY_OBJECTS) {
     for (const side of [-1, 1]) {
       const creature = new Creature({ position: { x: object.x + side * 90 }, needs: { energy: 100 } }, () => 0.2);
       const ai = new CreatureAI(creature, world, () => 0.2);
@@ -119,11 +120,8 @@ test('each environment variant keeps a connected pixel silhouette', () => {
   }
 });
 
-test('old discovery identities and world placements survive the new object art', () => {
-  assert.deepEqual(WORLD_OBJECTS.map(({ id, kind, x }) => ({ id, kind, x })), [
-    { id: 'plant', kind: 'plant', x: 95 }, { id: 'can', kind: 'lantern', x: 164 },
-    { id: 'stone', kind: 'rune', x: 335 },
-  ]);
+test('retired objects are absent while old discovery history survives', () => {
+  assert.deepEqual(WORLD_OBJECTS, []);
   const saved = { time: 840, discoveredObjects: ['plant', 'can', 'stone', 'tree'], events: [{ type: 'discovery', object: 'stone', at: 20 }] };
   assert.deepEqual(new World(saved).serialize(), saved);
   assert.equal(new World(saved).objectAt(458,-1),null);

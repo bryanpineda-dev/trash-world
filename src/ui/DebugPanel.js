@@ -55,7 +55,7 @@ export class DebugPanel {
     let result = null;
     if (action === 'sleep') c.transition('SLEEP', 0);
     if (action === 'wake') c.transition('WAKE', 2.5);
-    if (action === 'inspect') game.ai.investigate('can');
+    if (action === 'inspect') c.transition('LOOK_AROUND',2.5);
     if (action === 'surprise') { c.needs.change('fear', 12); c.transition('SURPRISED', 2.5); }
     if (action === 'feed') c.needs.change('hunger', 20);
     if (action === 'save') result = game.save() ? 'Guardado.' : 'Guardado no disponible.';

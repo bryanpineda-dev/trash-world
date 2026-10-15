@@ -1,14 +1,9 @@
 import { WORLD_WIDTH } from '../core/Config.js';
 import { WorldTime } from '../core/Time.js';
 
-export const WORLD_OBJECTS = Object.freeze([
-  { id: 'plant', kind: 'plant', x: 95, radius: 12, height: 26 },
-  // Persistent IDs stay unchanged so existing discoveries survive the art update.
-  { id: 'can', kind: 'lantern', x: 164, radius: 9, height: 38 },
-  { id: 'stone', kind: 'rune', x: 335, radius: 18, height: 46 },
-]);
+export const WORLD_OBJECTS = Object.freeze([]);
 
-export const RETIRED_OBJECT_IDS = Object.freeze(['tree']);
+export const RETIRED_OBJECT_IDS = Object.freeze(['tree','plant','can','stone']);
 
 export class World {
   constructor(data = {}) {

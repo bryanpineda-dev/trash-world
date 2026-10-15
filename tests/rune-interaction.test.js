@@ -2,12 +2,12 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { Creature } from '../src/creature/Creature.js';
 import { CreatureAI } from '../src/creature/CreatureAI.js';
-import { World } from '../src/world/World.js';
+import { legacyWorld } from './fixtures/legacy-world.js';
 import { RuneResponse, runeAttention, runeTrace, runePixelAlpha } from '../src/world/RuneInteraction.js';
 import { readAssetSource } from '../scripts/asset-source.js';
 import { expandPart } from '../src/rendering/AssetModel.js';
 
-const world = new World({ time: 840 });
+const world = legacyWorld({ time: 840 });
 const rune = world.objects.find(object => object.kind === 'rune');
 const part = readAssetSource().parts.rune;
 const rest = expandPart(part, 'rest'), lit = expandPart(part, 'lit');
@@ -21,7 +21,7 @@ function inspecting(x = 301, elapsed = 2) {
 
 test('rune inspection preserves the existing duration, approach and direction in every phase', () => {
   for (const time of [120, 600, 840]) for (const [x, target, direction] of [[275, 301, 1], [405, 369, -1]]) {
-    const creature = inspecting(x); const ai = new CreatureAI(creature, new World({ time }), () => 0.5);
+    const creature = inspecting(x); const ai = new CreatureAI(creature, legacyWorld({ time }), () => 0.5);
     ai.investigate(rune.id);
     assert.equal(creature.state, 'WALK'); assert.equal(creature.targetX, target);
     for (let frame = 0; frame < 600 && creature.state === 'WALK'; frame++) ai.update(1 / 60);
@@ -134,7 +134,7 @@ test('the complete inspection draws one continuous pass and releases all carved 
 test('save restoration resumes the same inspection and retains the original discovery reward', () => {
   const creature = inspecting(); const restored = new Creature(creature.serialize(), () => 0.5);
   assert.equal(runeAttention(restored, rune), runeAttention(creature, rune));
-  const local = new World({ time: 840 }), ai = new CreatureAI(restored, local);
+  const local = legacyWorld({ time: 840 }), ai = new CreatureAI(restored, local);
   const happiness = restored.needs.happiness, boredom = restored.needs.boredom;
   ai.finishInspection(); local.discover(rune.id);
   assert.equal(local.events.filter(event => event.object === rune.id).length, 1);

@@ -19,7 +19,7 @@ function simulate(scene, seconds) {
   for (let frame = 0; frame < seconds * 30; frame++) { scene.world.clock.update(1 / 30); scene.ai.update(1 / 30); }
 }
 
-test('the creature explores, discovers, rests and wakes during an autonomous life', () => {
+test('the creature explores, rests and wakes without inventing retired discoveries', () => {
   const s = scene();
   const seen = new Set();
   for (let frame = 0; frame < 900 * 30; frame++) {
@@ -28,8 +28,9 @@ test('the creature explores, discovers, rests and wakes during an autonomous lif
     assert.ok(s.creature.x >= 16 && s.creature.x <= 544);
     for (const value of Object.values(s.creature.needs.serialize())) assert.ok(value >= 0 && value <= 100);
   }
-  for (const state of ['WALK', 'INSPECT', 'SLEEP', 'WAKE']) assert.ok(seen.has(state), `missing ${state}`);
-  assert.ok(s.world.discoveredObjects.size >= 2);
+  for (const state of ['WALK', 'SLEEP', 'WAKE']) assert.ok(seen.has(state), `missing ${state}`);
+  assert.equal(seen.has('INSPECT'),false);
+  assert.equal(s.world.discoveredObjects.size,0);
 });
 
 test('low energy overrides exploration and a rested creature wakes', () => {
@@ -53,18 +54,18 @@ test('curiosity changes decisions under identical random input', () => {
   assert.notEqual(reserved.creature.state, 'WALK');
 });
 
-test('investigating an object records a discovery and prevents duplicate events', () => {
+test('investigating a retired object has no effect or discovery reward', () => {
   const s = scene();
-  s.ai.investigate('can'); simulate(s, 10);
-  assert.ok(s.world.discoveredObjects.has('can'));
-  s.world.discover('can');
-  assert.equal(s.world.events.filter(event => event.object === 'can').length, 1);
+  const before=s.creature.serialize();s.ai.investigate('can');
+  assert.deepEqual(s.creature.serialize(),before);
+  simulate(s,10);assert.equal(s.world.discoveredObjects.size,0);
 });
 
-test('a hungry creature finds the plant and feeds itself', () => {
+test('a hungry creature does not target the removed plant or crash with no candidates', () => {
   const s = scene({ needs: { hunger: 20 } });
-  s.ai.chooseGoal(); assert.equal(s.creature.targetObject, 'plant');
-  simulate(s, 20); assert.ok(s.creature.needs.hunger > 40);
+  s.ai.chooseGoal(); assert.equal(s.creature.targetObject,null);
+  simulate(s,20);assert.ok(s.creature.needs.hunger>=0&&s.creature.needs.hunger<=20);
+  assert.equal(s.world.events.length,0);
 });
 
 test('petting changes happiness; touching a sleeping creature wakes it', () => {

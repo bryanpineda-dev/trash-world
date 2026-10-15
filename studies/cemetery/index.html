@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1d3439">
+  <title>Trash World | Estudio del cementerio</title>
+</head>
+<body>
+  <header>
+    <div><a href="../../index.html" aria-label="Volver a Trash World" title="Volver a Trash World"><i data-lucide="arrow-left"></i></a><h1>Estudio del cementerio</h1></div>
+    <span class="status">Propuesta 01</span>
+  </header>
+  <main>
+    <nav class="toolbar" aria-label="Vista del estudio">
+      <div class="segments" role="group" aria-label="Momento">
+        <button type="button" data-phase="DAY" aria-pressed="false"><i data-lucide="sun"></i>Dia</button>
+        <button type="button" data-phase="NIGHT" aria-pressed="true"><i data-lucide="moon"></i>Noche</button>
+      </div>
+      <div class="segments" role="group" aria-label="Contenido">
+        <button type="button" data-view="scene" aria-pressed="true"><i data-lucide="trees"></i>Escena</button>
+        <button type="button" data-view="sheet" aria-pressed="false"><i data-lucide="layout-grid"></i>Assets</button>
+        <button type="button" data-view="silhouette" aria-pressed="false"><i data-lucide="scan"></i>Siluetas</button>
+      </div>
+      <div class="segments zoom" role="group" aria-label="Zoom">
+        <button type="button" data-zoom="fit" aria-pressed="true" title="Ajustar a la ventana" aria-label="Ajustar a la ventana"><i data-lucide="maximize"></i></button>
+        <button type="button" data-zoom="1" aria-pressed="false">1x</button>
+        <button type="button" data-zoom="2" aria-pressed="false">2x</button>
+        <button type="button" data-zoom="3" aria-pressed="false">3x</button>
+      </div>
+      <button id="download" type="button" class="icon" title="Descargar PNG nativo" aria-label="Descargar PNG nativo"><i data-lucide="download"></i></button>
+    </nav>
+    <figure class="stage">
+      <div class="viewport" tabindex="0" aria-label="Lienzo del estudio"><canvas id="study" width="560" height="248" role="img" aria-label="Muestra nocturna del cementerio"></canvas></div>
+      <figcaption><span id="caption">Escena / Noche</span><span>560 x 248 px</span></figcaption>
+    </figure>
+    <section class="inventory" aria-labelledby="inventory-title">
+      <h2 id="inventory-title">Fuentes de la muestra</h2>
+      <dl>
+        <div><dt>Roble de ramas abiertas</dt><dd>176 x 192 px</dd></div>
+        <div><dt>Lapida a dos aguas</dt><dd>48 x 72 px</dd></div>
+        <div><dt>Lapida baja inclinada</dt><dd>48 x 48 px</dd></div>
+        <div><dt>Losa gruesa rota</dt><dd>52 x 64 px</dd></div>
+      </dl>
+    </section>
+  </main>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

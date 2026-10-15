@@ -1,12 +1,11 @@
-import { createIcons, Earth, Grid2x2, Shapes, X, Pause, Play, Flame, Gem } from 'lucide';
+import { createIcons, Earth, Grid2x2, Shapes, X, Pause, Play } from 'lucide';
 import { Renderer } from './rendering/Renderer.js';
-import { biomeSource } from './rendering/BiomeRenderer.js';
+import { referenceManifest } from './rendering/ReferenceScenery.js';
 import { Creature } from './creature/Creature.js';
-import { CreatureAI } from './creature/CreatureAI.js';
 import { World } from './world/World.js';
 import './biome-lab.css';
 
-const icons = { Earth, Grid2x2, Shapes, X, Pause, Play, Flame, Gem };
+const icons = { Earth, Grid2x2, Shapes, X, Pause, Play };
 const refreshIcons = () => createIcons({ icons, attrs: { 'aria-hidden': 'true', 'stroke-width': 1.7 } });
 refreshIcons();
 const phase = document.querySelector('#biome-phase');
@@ -17,26 +16,19 @@ const play = document.querySelector('#biome-play');
 document.querySelector('#app').dataset.phase = phase.value.toLowerCase();
 const creature = new Creature({ position: { x: Number(position.value) }, state: { name: 'IDLE' } });
 const world = new World();
-const ai = new CreatureAI(creature, world, () => 0.5);
-const inspectionButtons = new Map([
-  ['can', document.querySelector('#lantern-inspect')],
-  ['stone', document.querySelector('#rune-inspect')],
-]);
-let inspectionTarget = null;
-let inspectionReturnPose = 'IDLE';
 const renderer = new Renderer(document.querySelector('#world'), creature.x);
 const preview = { creature, world, settings: { ambientMotion: true } };
 const library = document.querySelector('#biome-library');
 const family = document.querySelector('#library-family');
-const families = { trees:'Arboles', vegetation:'Vegetacion', gravestones:'Lapidas', ruins:'Ruinas',
-  fences:'Verjas', terrain:'Terreno', sky:'Cielo', architecture:'Arquitectura' };
+const families = { trees:'Arboles', vegetation:'Vegetacion', gravestones:'Lapidas', backgrounds:'Fondos',
+  terrain:'Terreno', sky:'Cielo', architecture:'Arquitectura' };
 for (const [id,label] of Object.entries(families)) {
   const option = document.createElement('option');
   option.value = id; option.textContent = label; family.append(option);
 }
-const paths = Object.fromEntries(biomeSource.assetFiles.map(({id,path})=>[id,path]));
+const paths = Object.fromEntries(referenceManifest.sprites.map(({id,file})=>[id,file.replace('native/','')]));
 const tiles = [];
-for (const [id, sprite] of [['miga',{label:'Miga',size:[64,64]}],...Object.entries(biomeSource.sprites)]) {
+for (const [id, sprite] of [['miga',{label:'Miga',size:[64,64]}],...referenceManifest.sprites.map(sprite=>[sprite.id,sprite])]) {
   const figure = document.createElement('figure');
   const canvas = document.createElement('canvas');
   canvas.width = canvas.height = 208;
@@ -60,19 +52,26 @@ function syncFamily() {
 }
 family.addEventListener('change',syncFamily);
 function drawLibrary() {
-  const palette = biomeSource.palettes[phase.value];
   for(const {id,canvas} of tiles) {
     const ctx = canvas.getContext('2d');
     ctx.imageSmoothingEnabled = false;
-    ctx.fillStyle = palette.sky;
+    ctx.fillStyle = phase.value==='DAY'?'#819a88':'#2c4a4d';
     ctx.fillRect(0,0,208,208);
-    ctx.fillStyle = palette.grass;
+    ctx.fillStyle = '#395b47';
     ctx.fillRect(0,200,208,8);
     if(id === 'miga') renderer.assets.drawCharacter(ctx,'miga','idle',0,104,200,1);
-    else renderer.biome.drawSprite(ctx,id,phase.value,'near',104,200);
+    else {
+      const item=renderer.scenery.surface(id,phase.value);
+      if(item) {
+        const scale=Math.min(1,192/item.size[0],176/item.size[1]);
+        const width=Math.round(item.size[0]*scale),height=Math.round(item.size[1]*scale);
+        ctx.drawImage(item.surface,Math.round((208-width)/2),200-height,width,height);
+      }
+    }
   }
 }
 document.querySelector('#library-open').addEventListener('click',()=>{ drawLibrary(); library.showModal(); });
+renderer.scenery.loading.then(()=>{if(library.open)drawLibrary();});
 document.querySelector('#library-close').addEventListener('click',()=>library.close());
 let playing = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 let previous = performance.now();
@@ -87,23 +86,8 @@ function refreshPlay() {
 phase.addEventListener('change', () => {
   document.querySelector('#app').dataset.phase = phase.value.toLowerCase();
 });
-function endInspectionPreview(restore = false) {
-  if (restore) { pose.value = inspectionReturnPose; creature.transition(inspectionReturnPose); }
-  inspectionTarget = null;
-  for (const button of inspectionButtons.values()) button.disabled = false;
-}
-pose.addEventListener('change', () => { endInspectionPreview(); creature.transition(pose.value); });
-for (const [id, button] of inspectionButtons) button.addEventListener('click', () => {
-  if (inspectionTarget) endInspectionPreview(true);
-  inspectionReturnPose = pose.value === 'INSPECT' ? 'IDLE' : pose.value;
-  world.clock.elapsed = { DAY: 120, EVENING: 600, NIGHT: 840 }[phase.value];
-  ai.investigate(id);
-  inspectionTarget = id;
-  button.disabled = true;
-  pose.value = creature.state;
-});
+pose.addEventListener('change', () => creature.transition(pose.value));
 function syncPosition() {
-  if (inspectionTarget) endInspectionPreview(true);
   creature.x = Number(position.value);
   renderer.camera.x = creature.x;
   renderer.camera.resize(renderer.camera.width, renderer.camera.height);
@@ -123,14 +107,8 @@ function frame(now) {
   const dt = document.hidden || library.open || !playing ? 0 : Math.min((now - previous) / 1000, 0.05);
   previous = now;
   world.clock.elapsed = { DAY: 120, EVENING: 600, NIGHT: 840 }[phase.value];
-  if (inspectionTarget) {
-    ai.update(dt);
-    if (creature.targetObject !== inspectionTarget) endInspectionPreview(true);
-    else pose.value = creature.state;
-    position.value = String(Math.round(creature.x));
-    output.value = position.value;
-  } else creature.stateElapsed += dt;
-  if (!inspectionTarget && creature.state === 'WALK') {
+  creature.stateElapsed += dt;
+  if (creature.state === 'WALK') {
     creature.x += creature.direction * dt * 18;
     if (creature.x >= 490) { creature.x = 490; creature.direction = -1; }
     if (creature.x <= 70) { creature.x = 70; creature.direction = 1; }
