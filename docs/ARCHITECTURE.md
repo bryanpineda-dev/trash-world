@@ -22,6 +22,8 @@ La simulacion usa coordenadas del mundo independientes del canvas. El eje X reco
 - `asset-lab`: visor independiente que usa exactamente el mismo renderer de assets que la escena.
 - `persistence`: esquema v1, migracion desde v0, respaldo de datos danados y calculo offline acotado.
 - `ui/DebugPanel`: diagnostico y controles de pruebas fuera de la interfaz habitual.
+- `ui/WorldHUD`: presentacion de estados, reservas y reloj orbital. Lee la simulacion sin modificarla; la rotacion sigue WorldTime y los medidores se refrescan de forma acotada.
+- `rendering/GroundContact`: sombras nativas desde los tramos de la pose que llegan al suelo. No modifica los pixeles ni las anclas del personaje.
 
 El build genera el atlas y los iconos PNG a partir de las piezas originales y un service worker con los nombres reales de los archivos del build. El juego y el visor tienen entradas HTML propias; su cache de navegacion usa claves separadas. Los recursos y el estado viven en el dispositivo. La unica dependencia de interfaz es Lucide, cuyos iconos se incluyen en el bundle. Vite solo participa en el desarrollo y la compilacion.
 

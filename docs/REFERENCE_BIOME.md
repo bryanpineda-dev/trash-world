@@ -2,6 +2,8 @@
 
 Estado: revision implementada en sandbox el 2026-10-15 y preparada para entrega local y versionado por solicitud del usuario. Transferencia, commit, etiqueta y publicacion son pasos separados; no se ejecutan acciones de escritura de Git automaticamente.
 
+El usuario aprueba despues el estilo del cementerio. La siguiente pasada se limita a [interfaz y contacto](GLASS_HUD.md): dibujos ambientales intactos y ancla del sendero corregida de `[0,8]` a `[0,12]`, para usar una fila de piedra opaca. Tras revisarla, solicita su entrega local y los comandos de GitHub; se prepara por separado como `v0.1.10`, sin ejecutar acciones de escritura de Git.
+
 ## Alcance
 
 El usuario pide reconstruir el ambiente a partir de su referencia y retirar la lapida runica, el farol y las plantas de interaccion. Personaje, animaciones y encuadre amplio aprobado no se redibujan.

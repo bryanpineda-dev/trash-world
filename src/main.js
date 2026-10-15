@@ -1,35 +1,28 @@
-import { createIcons, Apple, Bug, Maximize, Minimize, Moon, Sun, Search, Sparkles, Save, RotateCcw, Trash2, X } from 'lucide';
+import { createIcons, Apple, Bug, Maximize, Minimize, Moon, Sun, Search, Sparkles, Save, RotateCcw, Trash2, X, BatteryMedium, Heart, Footprints, Eye, Sunrise, CirclePause, Check, TriangleAlert } from 'lucide';
 import { Game } from './core/Game.js';
 import { DebugPanel } from './ui/DebugPanel.js';
+import { WorldHUD } from './ui/WorldHUD.js';
 import { registerWorker } from './persistence/RegisterWorker.js';
 import './style.css';
 
-const icons = { Apple, Bug, Maximize, Minimize, Moon, Sun, Search, Sparkles, Save, RotateCcw, Trash2, X };
+const icons = { Apple, Bug, Maximize, Minimize, Moon, Sun, Search, Sparkles, Save, RotateCcw, Trash2, X, BatteryMedium, Heart, Footprints, Eye, Sunrise, CirclePause, Check, TriangleAlert };
 createIcons({ icons, attrs: { 'stroke-width': 1.7, 'aria-hidden': 'true' } });
 
 let storage;
 try { storage = window.localStorage; } catch { storage = null; }
 const game = new Game(document.querySelector('#world'), storage);
 const debug = new DebugPanel(game);
-const activity = document.querySelector('#activity');
-const phase = document.querySelector('#phase');
-const saveStatus = document.querySelector('#save-status');
+const hud = new WorldHUD(game);
 const fullscreen = document.querySelector('#fullscreen');
-const STATE_LABELS = { IDLE: 'Descansando', WALK: 'Explorando', LOOK_AROUND: 'Observando', INSPECT: 'Investigando', SLEEP: 'Durmiendo', WAKE: 'Despertando', SURPRISED: 'Sorprendida', HAPPY: 'Contenta' };
-const PHASE_LABELS = { DAY: 'D\u00eda', EVENING: 'Atardecer', NIGHT: 'Noche' };
-const SAVE_LABELS = { local: 'Guardado local', memory: 'Sin guardar', future: 'Guardado incompatible', recovered: 'Mundo recuperado' };
 
 let uiElapsed = 0;
 const render = game.loop.render;
 game.loop.render = dt => {
   render(dt);
+  hud.update(dt);
   uiElapsed += dt;
   if (uiElapsed < 0.25) return;
   uiElapsed = 0;
-  activity.textContent = STATE_LABELS[game.creature.state];
-  phase.textContent = PHASE_LABELS[game.world.clock.phase];
-  saveStatus.textContent = SAVE_LABELS[game.saves.status];
-  document.querySelector('#app').dataset.phase = game.world.clock.phase.toLowerCase();
   if (!debug.panel.hidden) debug.update();
 };
 

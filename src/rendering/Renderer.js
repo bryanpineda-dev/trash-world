@@ -1,8 +1,9 @@
 import { Camera, worldViewSize } from './Camera.js';
 import { drawPixels } from './Sprites.js';
 import { AssetLibrary, assetManifest } from './AssetLibrary.js';
-import { containsPoint } from './AssetModel.js';
+import { containsPoint, frameAt } from './AssetModel.js';
 import { ReferenceScenery } from './ReferenceScenery.js';
+import { groundContacts, drawContactShadow } from './GroundContact.js';
 
 export class Renderer {
   constructor(canvas, x) {
@@ -14,6 +15,7 @@ export class Renderer {
     this.scenery = new ReferenceScenery();
     this.animationTime = 0;
     this.ripple = null;
+    this.contacts = new Map();
     this.observer = new ResizeObserver(() => this.resize());
     this.observer.observe(canvas);
     this.resize();
@@ -63,9 +65,11 @@ export class Renderer {
     const point = this.camera.toScreen(c.x);
     const t = c.stateElapsed;
     const bounds = this.creatureBounds(c);
-    ctx.fillStyle = '#496650';
-    ctx.fillRect(point.x + bounds.left, point.y - 1, bounds.width, 2);
-    this.assets.drawCharacter(ctx, 'miga', assetManifest.states[c.state] ?? 'idle', t, point.x, point.y, c.direction);
+    const clip=assetManifest.states[c.state]??'idle';
+    const {id}=frameAt(assetManifest.characters.miga.clips[clip],t);
+    if(!this.contacts.has(id))this.contacts.set(id,groundContacts(this.assets.pixelsFor(id),assetManifest.frames[id].anchor));
+    drawContactShadow(ctx,this.contacts.get(id),point.x,point.y,c.direction);
+    this.assets.drawCharacter(ctx, 'miga', clip, t, point.x, point.y, c.direction);
     if (c.state === 'SLEEP') {
       const z = Math.floor(t * 0.5) % 3;
       this.drawSymbol('z', point.x + c.direction * 20, point.y + bounds.top - 8 - z * 3);

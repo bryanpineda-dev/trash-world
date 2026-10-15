@@ -35,6 +35,10 @@ test('the three grave silhouettes are distinct assets, not recolors of a single 
   assert.equal(new Set(graves.map(s=>s.sha256)).size,3);
 });
 
+test('the walking anchor uses the stone surface instead of the transparent fringe above it',()=>{
+  assert.deepEqual(manifest.sprites.find(s=>s.id==='ground').anchor,[0,12]);
+});
+
 test('near materials retain their chroma while distant layers receive limited atmospheric grading',()=>{
   const pixel=new Uint8ClampedArray([70,113,58,255,0,0,0,0]);
   const near=shadeReferencePixels(pixel,'oakLeft',1,2,'DAY');

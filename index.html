@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="theme-color" content="#214c43" />
+    <meta name="theme-color" content="#172022" />
     <meta name="description" content="Un diminuto mundo vivo dentro de tu telefono." />
     <link rel="icon" type="image/png" href="./icons/icon-192.png" />
     <link rel="apple-touch-icon" href="./icons/icon-192.png" />
@@ -11,18 +11,29 @@
     <title>Trash World</title>
   </head>
   <body>
-    <main id="app">
+    <main id="app" data-ui="world">
       <canvas id="world" aria-label="Mundo de Miga, una pequena criatura autonoma" role="img"></canvas>
       <header class="world-header">
-        <div class="brand"><span class="brand-mark" aria-hidden="true"></span><h1>Trash World</h1></div>
-        <nav class="toolbar" aria-label="Controles del mundo">
+        <div class="brand glass-surface"><span class="brand-mark" aria-hidden="true"></span><h1>Trash World</h1></div>
+        <nav class="toolbar glass-surface" aria-label="Controles del mundo">
           <button id="fullscreen" class="icon-button" aria-label="Pantalla completa" data-tooltip="Pantalla completa"><i data-lucide="maximize"></i></button>
           <button id="debug-toggle" class="icon-button" aria-label="Abrir depuracion" aria-expanded="false" aria-controls="debug-panel" data-tooltip="Depuracion"><i data-lucide="bug"></i></button>
         </nav>
       </header>
       <footer class="world-footer">
-        <div class="creature-status"><span class="status-dot" aria-hidden="true"></span><span>Miga</span><span class="separator" aria-hidden="true">/</span><span id="activity">Observando</span></div>
-        <div class="world-status"><span id="phase">Dia</span><span id="save-status" aria-live="polite">Guardado local</span></div>
+        <section id="creature-hud" class="creature-hud glass-surface" aria-label="Estado de Miga">
+          <div class="creature-status"><strong>Miga</strong><span class="separator" aria-hidden="true">/</span><span class="activity-symbol" aria-hidden="true"><span data-state-symbol="IDLE" hidden><i data-lucide="circle-pause"></i></span><span data-state-symbol="WALK" hidden><i data-lucide="footprints"></i></span><span data-state-symbol="LOOK_AROUND"><i data-lucide="eye"></i></span><span data-state-symbol="INSPECT" hidden><i data-lucide="search"></i></span><span data-state-symbol="SLEEP" hidden><i data-lucide="moon"></i></span><span data-state-symbol="WAKE" hidden><i data-lucide="sunrise"></i></span><span data-state-symbol="SURPRISED" hidden><i data-lucide="sparkles"></i></span><span data-state-symbol="HAPPY" hidden><i data-lucide="heart"></i></span></span><span id="activity">Observando</span></div>
+          <div class="needs-row">
+            <div class="need" data-need="energy" role="meter" aria-label="Energia" aria-valuemin="0" aria-valuemax="100" aria-valuenow="84" title="Energia"><span class="need-heading"><i data-lucide="battery-medium"></i><span class="need-name">Energ&iacute;a</span><span data-need-value="energy">84</span></span><span class="need-track" aria-hidden="true"><span></span></span></div>
+            <div class="need" data-need="hunger" role="meter" aria-label="Saciedad" aria-valuemin="0" aria-valuemax="100" aria-valuenow="82" title="Saciedad"><span class="need-heading"><i data-lucide="apple"></i><span class="need-name">Saciedad</span><span data-need-value="hunger">82</span></span><span class="need-track" aria-hidden="true"><span></span></span></div>
+            <div class="need" data-need="happiness" role="meter" aria-label="Animo" aria-valuemin="0" aria-valuemax="100" aria-valuenow="70" title="Animo"><span class="need-heading"><i data-lucide="heart"></i><span class="need-name">&Aacute;nimo</span><span data-need-value="happiness">70</span></span><span class="need-track" aria-hidden="true"><span></span></span></div>
+          </div>
+          <div id="hud-save" class="hud-save" data-save="local" title="Guardado local"><span class="save-check" aria-hidden="true"><i data-lucide="check"></i></span><span class="save-alert" aria-hidden="true"><i data-lucide="triangle-alert"></i></span><span id="save-status" role="status">Guardado local</span></div>
+        </section>
+        <div class="world-status"><div id="world-clock" class="world-clock" role="img" aria-label="Hora del mundo">
+          <div class="clock-dial glass-surface"><span class="clock-ring" aria-hidden="true"></span><span class="clock-ticks" aria-hidden="true"></span><div class="clock-face"><time id="world-time" datetime="08:00">08:00</time><span id="phase">D&iacute;a</span></div><span class="clock-orbit clock-orbit-sun" aria-hidden="true"><span class="clock-marker"><i data-lucide="sun"></i></span></span><span class="clock-orbit clock-orbit-moon" aria-hidden="true"><span class="clock-marker"><i data-lucide="moon"></i></span></span></div>
+          <span id="world-day" class="world-day">D&iacute;a 1</span>
+        </div></div>
       </footer>
       <aside id="debug-panel" class="debug-panel" aria-label="Depuracion" hidden>
         <div class="panel-heading"><h2>Depuracion</h2><button id="debug-close" class="icon-button" aria-label="Cerrar depuracion" data-tooltip="Cerrar"><i data-lucide="x"></i></button></div>
