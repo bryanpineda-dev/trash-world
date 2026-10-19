@@ -145,13 +145,13 @@
         "height": 1348
       },
       "generator": "image_gen built-in",
-      "sourceSha256": "cde47bc0bfaeb88851108bd3bd939c359ca6c9a453065618dbcd4d696befa379",
-      "sha256": "c4a103f2989ce24c38e557f16db717d204a5249577ddb76b2bcc584f29985f77",
+      "sourceSha256": "05fee3211dba3e69b6fd70f8c2a2523afec306a5919286606f3255d0769fbb54",
+      "sha256": "cb1cc37d59db175185e78d637fc89f9c90dfda2e14958f972ee077041e5b130f",
       "sourceSize": [
         1013,
         1552
       ],
-      "provenance": "Architecture study revision 6; generated raster, see ARCHITECTURE_GENERATION.md."
+      "provenance": "Built-in image_gen targeted ivy edit, 2026-10-19; original framing and 173x256 native scale retained. Fine sparse vegetation, see docs/DEPTH_VEGETATION.md."
     },
     {
       "id": "ruin",

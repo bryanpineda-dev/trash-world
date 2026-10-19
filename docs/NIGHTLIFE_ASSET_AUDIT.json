@@ -1,0 +1,154 @@
+{
+  "date": "2026-10-19",
+  "removedDuplicateFiles": 17,
+  "duplicateBytes": 4565725,
+  "retired": [
+    {
+      "path": "studies/architecture/assets/native/church-rose.png",
+      "canonical": "assets/reference-biome/native/architecture/church-rose.png",
+      "sha256": "c4a103f2989ce24c38e557f16db717d204a5249577ddb76b2bcc584f29985f77"
+    },
+    {
+      "path": "studies/architecture/assets/source/church-rose.png",
+      "canonical": "assets/reference-biome/source/architecture/church-rose.png",
+      "sha256": "cde47bc0bfaeb88851108bd3bd939c359ca6c9a453065618dbcd4d696befa379"
+    },
+    {
+      "path": "studies/architecture/assets/native/open-oratory.png",
+      "canonical": "assets/reference-biome/native/architecture/open-oratory.png",
+      "sha256": "ad06434530ab01f0a045eec4512cbbe819ad92a08adc00aa887536281a672e35"
+    },
+    {
+      "path": "studies/architecture/assets/source/open-oratory.png",
+      "canonical": "assets/reference-biome/source/architecture/open-oratory.png",
+      "sha256": "b32588249d745a7fbd6345bd478f81fc93c3b8f283ae6b09261f4ad09113c247"
+    },
+    {
+      "path": "studies/architecture/assets/native/relief-cross-tomb.png",
+      "canonical": "assets/reference-biome/native/gravestones/relief-cross-tomb.png",
+      "sha256": "57ab9133acc54b0af2c1be89c1ecc9c0ef4f20d8e898c3d904cc630710a1fc0b"
+    },
+    {
+      "path": "studies/architecture/assets/source/relief-cross-tomb.png",
+      "canonical": "assets/reference-biome/source/gravestones/relief-cross-tomb.png",
+      "sha256": "78d0d5bb0aa163947ad0b0449906af84d95a1329a878624702139912c9f2d94b"
+    },
+    {
+      "path": "studies/architecture/assets/native/cemetery/crosses-back-1.png",
+      "canonical": "assets/reference-biome/native/gravestones/crosses-back-1.png",
+      "sha256": "0e9e1353b64d7e4f93028ba003df026d9913480e0849c9672640b3b6d39c9bff"
+    },
+    {
+      "path": "studies/architecture/assets/source/cemetery/crosses-back.png",
+      "canonical": "assets/reference-biome/source/gravestones/cemetery-crosses-back.png",
+      "sha256": "71907b900e9525376083437580ed5f0872a4558dd8cc81bfa1dbb95c042e96ad"
+    },
+    {
+      "path": "studies/architecture/assets/native/cemetery/crosses-back-2.png",
+      "canonical": "assets/reference-biome/native/gravestones/crosses-back-2.png",
+      "sha256": "e3dd5874e1ffc65dca8b49e30accda6bcf70f3e9ffc24ec1208ed36aa409f319"
+    },
+    {
+      "path": "studies/architecture/assets/native/cemetery/crosses-back-3.png",
+      "canonical": "assets/reference-biome/native/gravestones/crosses-back-3.png",
+      "sha256": "0cb0b50e93ee8fbcac3374b1174c17fc88d98f2bfc5724323e2f96f5b3cf5edb"
+    },
+    {
+      "path": "studies/architecture/assets/native/cemetery/crosses-back-4.png",
+      "canonical": "assets/reference-biome/native/gravestones/crosses-back-4.png",
+      "sha256": "dfc4fcb039c1d45ac8f2adb79786c4ad1679aab4ea7a3065f3abc509a52382c9"
+    },
+    {
+      "path": "studies/architecture/assets/native/cemetery/crosses-back-5.png",
+      "canonical": "assets/reference-biome/native/gravestones/crosses-back-5.png",
+      "sha256": "7fdd398772202220368151339e559cde9cff7bedfcb1c446b042251363dd1904"
+    },
+    {
+      "path": "studies/architecture/assets/native/cemetery/crosses-front-1.png",
+      "canonical": "assets/reference-biome/native/gravestones/crosses-front-1.png",
+      "sha256": "f58956c510d4771630598cd887bdeeafcb9198a5d28527fc70878e780ee85f45"
+    },
+    {
+      "path": "studies/architecture/assets/source/cemetery/crosses-front.png",
+      "canonical": "assets/reference-biome/source/gravestones/cemetery-crosses-front.png",
+      "sha256": "e61ec97e6fb325e4de988a5acdbdae43af34b798cb68416de223613fb13a3bdf"
+    },
+    {
+      "path": "studies/architecture/assets/native/cemetery/crosses-front-2.png",
+      "canonical": "assets/reference-biome/native/gravestones/crosses-front-2.png",
+      "sha256": "7ebd3c7599a270c546b0878ac94ab8e7e1a70ab4d98ca33d83546275e8289c36"
+    },
+    {
+      "path": "studies/architecture/assets/native/cemetery/crosses-front-3.png",
+      "canonical": "assets/reference-biome/native/gravestones/crosses-front-3.png",
+      "sha256": "2883ff802638dfa42a7058f672b6aa883de0b3789c86749607a3d4c15ee3f013"
+    },
+    {
+      "path": "studies/architecture/assets/native/cemetery/crosses-front-4.png",
+      "canonical": "assets/reference-biome/native/gravestones/crosses-front-4.png",
+      "sha256": "6e8855d5c800ef5884b375b78448c8ba902f965eae212658e27079c684a2a46f"
+    }
+  ],
+  "removedEmptyDirectories": [
+    "assets/generated/environment/architecture/churches/forest-chapel",
+    "assets/generated/environment/architecture/churches",
+    "assets/generated/environment/architecture",
+    "assets/generated/environment/fences/iron-fence",
+    "assets/generated/environment/fences",
+    "assets/generated/environment/gravestones/broken-grave",
+    "assets/generated/environment/gravestones/pointed-grave",
+    "assets/generated/environment/gravestones/ring-cross",
+    "assets/generated/environment/gravestones/rounded-grave",
+    "assets/generated/environment/gravestones/worn-grave",
+    "assets/generated/environment/gravestones",
+    "assets/generated/environment/ruins/broken-arch",
+    "assets/generated/environment/ruins",
+    "assets/generated/environment/sky/moon",
+    "assets/generated/environment/sky/sun",
+    "assets/generated/environment/sky",
+    "assets/generated/environment/terrain/ground-a",
+    "assets/generated/environment/terrain/ground-b",
+    "assets/generated/environment/terrain/ground-c",
+    "assets/generated/environment/terrain/mossy-rock",
+    "assets/generated/environment/terrain",
+    "assets/generated/environment/trees/birch",
+    "assets/generated/environment/trees/broken-cypress",
+    "assets/generated/environment/trees/cypress",
+    "assets/generated/environment/trees/distant-oak",
+    "assets/generated/environment/trees/forest-backdrop",
+    "assets/generated/environment/trees/forest-backdrop-east",
+    "assets/generated/environment/trees/leaning-oak",
+    "assets/generated/environment/trees/oak",
+    "assets/generated/environment/trees/oak-hollow",
+    "assets/generated/environment/trees/twisted-tree",
+    "assets/generated/environment/trees",
+    "assets/generated/environment/vegetation/berries/berry-arch",
+    "assets/generated/environment/vegetation/berries/berry-low",
+    "assets/generated/environment/vegetation/berries/berry-tall",
+    "assets/generated/environment/vegetation/berries",
+    "assets/generated/environment/vegetation/fern",
+    "assets/generated/environment/vegetation/flowers",
+    "assets/generated/environment/vegetation/mushrooms",
+    "assets/generated/environment/vegetation/shrub",
+    "assets/generated/environment/vegetation",
+    "assets/generated/environment",
+    "assets/studies/cemetery/gravestones",
+    "assets/studies/cemetery/trees",
+    "assets/studies/cemetery",
+    "assets/studies",
+    "studies/architecture/assets/native/cemetery",
+    "studies/architecture/assets/native",
+    "studies/architecture/assets/source/cemetery",
+    "studies/architecture/assets/source",
+    "studies/architecture/assets"
+  ],
+  "preserved": [
+    "Originales editables",
+    "Dos originales forestales de procedencia",
+    "Fuentes y atlas historicos usados por tests y Asset Lab",
+    "Estudios funcionales",
+    "Dependencias, builds y caches"
+  ],
+  "mainScenerySprites": 39,
+  "uncataloguedNativePNGs": 0
+}

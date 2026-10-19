@@ -1,5 +1,7 @@
 # Architecture Candidates: Provenance
 
+Storage update, 2026-10-19: these selected assets are now integrated. This study shares the canonical files in `../../assets/reference-biome/`; its 17 identical PNG copies were backed up and removed. The historical generation record below is unchanged. See `../../docs/NIGHTLIFE.md` for the current audit.
+
 Date: 2026-10-19. Tool: built-in `image_gen`, transparent background, one edit per object. These are generated raster candidates, not hand-pixelled sprites. No CLI generator, new dependency or API key was used.
 
 ## Current Candidate: Revision 6
@@ -55,3 +57,7 @@ The oratory source intentionally has no flames. Runtime flame marks and a tiny r
 ## Status
 
 Candidate study only. The production church, mausoleum and reclining angel remain used, so deleting them now would break the active scene. Replacement and retirement happen only after the new sample is approved and integrated, using the existing backup/hash workflow.
+# Actualizacion De Hiedra, 2026-10-19
+
+La iglesia compartida usa la revision de hiedra fina y discreta aprobada por el usuario. Se conserva el encuadre y el export de 173 x 256. El manifiesto del estudio referencia el mismo original y nativo canonicos, con sus hashes actualizados; no se crean copias. Procedencia y prompt: [ajuste actual](../../docs/DEPTH_VEGETATION.md).
+

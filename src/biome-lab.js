@@ -6,6 +6,7 @@ import { World } from './world/World.js';
 import { WORLD_LEFT, WORLD_RIGHT, CREATURE_MARGIN, DAY_SECONDS } from './core/Config.js';
 import { cemeteryZones } from './rendering/ReferenceLayout.js';
 import { sampleDaylight } from './rendering/Daylight.js';
+import { batSprite,drawBat } from './rendering/AmbientSprites.js';
 import './biome-lab.css';
 
 const icons = { Earth, Grid2x2, Shapes, X, Pause, Play, ChevronLeft, ChevronRight };
@@ -40,14 +41,15 @@ const preview = { creature, world, settings: { ambientMotion: true } };
 const library = document.querySelector('#biome-library');
 const family = document.querySelector('#library-family');
 const families = { trees:'Arboles', vegetation:'Vegetacion', gravestones:'Lapidas', backgrounds:'Fondos',
-  terrain:'Terreno', sky:'Cielo', architecture:'Arquitectura' };
+  terrain:'Terreno', sky:'Cielo', architecture:'Arquitectura',fauna:'Fauna' };
 for (const [id,label] of Object.entries(families)) {
   const option = document.createElement('option');
   option.value = id; option.textContent = label; family.append(option);
 }
 const paths = Object.fromEntries(referenceManifest.sprites.map(({id,file})=>[id,file.replace('native/','')]));
+paths.bat='fauna/woodland-bat';
 const tiles = [];
-for (const [id, sprite] of [['miga',{label:'Miga',size:[64,64]}],...referenceManifest.sprites.map(sprite=>[sprite.id,sprite])]) {
+for (const [id, sprite] of [['miga',{label:'Miga',size:[64,64]}],['bat',{label:'Murcielago del bosque',size:batSprite.size}],...referenceManifest.sprites.map(sprite=>[sprite.id,sprite])]) {
   const figure = document.createElement('figure');
   const canvas = document.createElement('canvas');
   canvas.width = canvas.height = 208;
@@ -79,6 +81,7 @@ function drawLibrary() {
     ctx.fillStyle = '#395b47';
     ctx.fillRect(0,200,208,8);
     if(id === 'miga') renderer.assets.drawCharacter(ctx,'miga','idle',0,104,200,1);
+    else if(id==='bat')drawBat(ctx,104,104,0,8);
     else {
       const lighting=sampleDaylight(Number(hour.value));
       const item=renderer.scenery.surface(id,lighting.from);

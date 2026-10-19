@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-19T18:39:20.971Z",
+  "kind": "depth-and-church-vegetation",
+  "tests": 266,
+  "assetsCheck": "passed",
+  "build": "passed",
+  "offline": {
+    "productionRenderer": true,
+    "cases": 24,
+    "viewports": [
+      [
+        1280,
+        720
+      ],
+      [
+        390,
+        844
+      ],
+      [
+        844,
+        390
+      ],
+      [
+        3440,
+        360
+      ]
+    ],
+    "zones": 3,
+    "hours": [
+      12,
+      22
+    ],
+    "binaryAlphaPixels": 1022908,
+    "protectedFiles": 164
+  },
+  "church": {
+    "size": [
+      173,
+      256
+    ],
+    "anchor": [
+      86,
+      256
+    ],
+    "sourceRect": {
+      "left": 70,
+      "top": 80,
+      "width": 910,
+      "height": 1348
+    },
+    "greenBefore": 3571,
+    "greenAfter": 1815,
+    "greenCoverageReduction": 0.4917390086810417,
+    "silhouetteOverlap": 0.9802000408246581,
+    "glassPixels": 198
+  },
+  "browser": "See DEPTH_VEGETATION_BROWSER.json; offline renders are not browser captures or FPS evidence."
+}

@@ -103,6 +103,7 @@ export function drawReferenceScene(ctx,camera,time,seconds,get) {
   for(const placement of referencePlacements.filter(p=>p.depth==='landmark'&&p.parallax<middleParallax))place(placement);
   drawWoodlandSoil(ctx,camera,lighting);
   for(const placement of panoramaPlacements.filter(p=>p.depth==='middle'))place(placement);
+  drawAmbientLife(ctx,camera,lighting,seconds,'distant');
   for(const placement of referencePlacements.filter(p=>p.depth==='landmark'&&p.parallax>=middleParallax))place(placement);
   // A planted understory joins the far woodland to the fence, with no opaque mist band.
   for(let x=WORLD_LEFT-40;x<WORLD_RIGHT+60;x+=43) {
@@ -126,5 +127,5 @@ export function drawReferenceScene(ctx,camera,time,seconds,get) {
   for(const placement of referencePlacements.filter(p=>p.depth==='groundcover'))place(placement);
   // A quieter layer below the path avoids a bare cut-out platform in tall viewports.
   for(const x of [34,185,345,510])draw('undergrowth',x-left,Math.max(ground+76,height+12),'near',1.18);
-  drawAmbientLife(ctx,camera,lighting,seconds);
+  drawAmbientLife(ctx,camera,lighting,seconds,'near');
 }

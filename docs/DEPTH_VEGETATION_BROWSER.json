@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-19T18:46:34.848Z",
+  "browser": "in-app browser",
+  "origin": "http://127.0.0.1:5185",
+  "observedViewport": [
+    495,
+    452
+  ],
+  "captures": [
+    {
+      "scope": "Sandbox biome lab, east, 12:00",
+      "file": "docs/images/depth-browser-east-day.png",
+      "captureSize": [
+        495,
+        452
+      ],
+      "sha256": "1f53cb95a77a3851425fa72223e02eb765674fe0255e7f9e5381fa4ac08f0e13"
+    },
+    {
+      "scope": "Sandbox biome lab, clearing, 22:00",
+      "file": "docs/images/depth-browser-church-night.png",
+      "captureSize": [
+        495,
+        452
+      ],
+      "sha256": "ea81d9b45284ad22d85515925620823239d8fa2be02acc888bb477af935def3e"
+    },
+    {
+      "scope": "Sandbox live world after loading completed",
+      "file": "docs/images/depth-browser-world.png",
+      "captureSize": [
+        495,
+        452
+      ],
+      "sha256": "72890acded09a16dfc92bb2a10be3dc67f87559ba58c923d93e504c3eaaee6b4"
+    }
+  ],
+  "checks": [
+    "East lab showed corrected tower placement and loaded scenery",
+    "Clearing lab showed night lighting and rose window",
+    "Main world finished loading and rendered HUD, Miga and scenery"
+  ],
+  "limitations": [
+    "1280x900 viewport override did not change the observed 495x452 DOM viewport; desktop framing validated offline only",
+    "Native URL navigation and screenshots worked; Playwright selectOption timed out",
+    "Initial main-world capture was incompletely loaded; replaced only after a later screenshot visibly showed the game",
+    "No FPS, extended autonomy, physical device or offline-disconnect test"
+  ]
+}

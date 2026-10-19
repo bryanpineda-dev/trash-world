@@ -8,7 +8,7 @@ export const cemeteryZones = Object.freeze([
 
 export const lateralPlacements = [
   { id: 'distantCitadel', x: -390, offset: -71, depth: 'landmark', parallax: .22, fitHeadroom: true },
-  { id: 'watchtower', x: 1010, offset: -35, depth: 'landmark', parallax: .56, fitHeadroom: true },
+  { id: 'watchtower', x: 1010, offset: -71, depth: 'landmark', parallax: .22, fitHeadroom: true },
   { id: 'cypressGrove', x: 705, offset: -24, depth: 'grove', scale: .9, parallax: .68, fitHeadroom: true },
   { id: 'mausoleum', x: 810, offset: -12, depth: 'near', parallax: .86, fitHeadroom: true },
   { id: 'bareOak', x: -545, offset: 0, depth: 'near' },

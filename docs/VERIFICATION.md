@@ -1,5 +1,20 @@
 # Verificacion de V0.1
 
+## Profundidad E Hiedra, 2026-10-19
+
+- Las dos torres comparten parallax 0.22, apoyo -71 y plano `landmark` detras del bosque intermedio. La torre oriental no cambia de dibujo ni de escala nativa.
+- Iglesia de 173 x 256 con hiedra mas fina aprobada; misma ancla, recorte y mascara de roseton. Miga, arboles, fauna, zoom y reglas sin cambios.
+- Sandbox: 266 pruebas, `assets:check` y build aprobados. 24 renders offline del renderer principal: tres zonas, dia/noche y cuatro proporciones. Se validan hashes, 39 exports, alpha binario y 164 archivos protegidos.
+- Navegador: visor diurno del este, claro nocturno y carga del mundo principal comprobados a 495 x 452. La carga inicial incompleta del mundo termino correctamente. No se afirma QA de escritorio real, rendimiento ni dispositivo fisico.
+- [Alcance](DEPTH_VEGETATION.md), [mediciones nuevas](DEPTH_VEGETATION_QA.json), [navegador](DEPTH_VEGETATION_BROWSER.json) y [entrega estable](DEPTH_VEGETATION_DELIVERY.json). Sin staging, commit, tag ni push.
+
+## Vida Nocturna Y Orden, 2026-10-19
+
+- Luciernagas con pausas y destellos independientes, un murcielago ocasional de cuatro poses y estrellas con coordenadas descorrelacionadas. Mismo reloj ambiental, desaparicion diurna y oclusion por la arquitectura cercana. Miga, sus clips y las reglas permanecen intactos.
+- Se retiran 17 PNG duplicados del estudio de arquitectura y 51 directorios vacios, con respaldo y hashes. El estudio usa ahora los archivos canonicos de `assets/reference-biome/`; originales, caches y fuentes usadas por pruebas se conservan.
+- Medios nuevos `nightlife-`: renders offline, comparacion del cielo y WebP lossless de 12 segundos. No se presentan como capturas de navegador ni como FPS medidos.
+- [Alcance y limites](NIGHTLIFE.md), [QA del sandbox](NIGHTLIFE_QA.json), [auditoria](NIGHTLIFE_ASSET_AUDIT.json) y [entrega estable](NIGHTLIFE_DELIVERY.json). La evidencia anterior queda como historial. Sin staging, commit, tag ni push.
+
 ## Bosque, Torre Y Verja, 2026-10-19
 
 - Revision actual: copas reparadas, torre occidental con estatua alada y verja continua con un pilar cada 252 unidades. Catalogo: 39 nativos y 33 originales distintos; la ciudadela y catarata dejan de estar activas.

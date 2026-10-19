@@ -1,7 +1,7 @@
 {
   "version": 6,
   "date": "2026-10-19",
-  "status": "candidate-not-integrated",
+  "status": "integrated-shared-library",
   "generator": "Built-in image_gen",
   "export": "Alpha crop, aspect-preserving nearest-neighbor, binary alpha threshold 128. No hand-pixel cleanup.",
   "scale": {
@@ -20,8 +20,8 @@
       "label": "Iglesia",
       "oldId": "chapel",
       "depth": "architecture",
-      "file": "assets/native/church-rose.png",
-      "source": "assets/source/church-rose.png",
+      "file": "../../assets/reference-biome/native/architecture/church-rose.png",
+      "source": "../../assets/reference-biome/source/architecture/church-rose.png",
       "size": [
         173,
         256
@@ -40,16 +40,16 @@
         910,
         1348
       ],
-      "sourceSha256": "cde47bc0bfaeb88851108bd3bd939c359ca6c9a453065618dbcd4d696befa379",
-      "sha256": "c4a103f2989ce24c38e557f16db717d204a5249577ddb76b2bcc584f29985f77"
+      "sourceSha256": "05fee3211dba3e69b6fd70f8c2a2523afec306a5919286606f3255d0769fbb54",
+      "sha256": "cb1cc37d59db175185e78d637fc89f9c90dfda2e14958f972ee077041e5b130f"
     },
     {
       "id": "oratory",
       "label": "Oratorio",
       "oldId": "mausoleum",
       "depth": "near",
-      "file": "assets/native/open-oratory.png",
-      "source": "assets/source/open-oratory.png",
+      "file": "../../assets/reference-biome/native/architecture/open-oratory.png",
+      "source": "../../assets/reference-biome/source/architecture/open-oratory.png",
       "size": [
         116,
         144
@@ -74,8 +74,8 @@
     {
       "id": "tomb",
       "label": "Tumba",
-      "file": "assets/native/relief-cross-tomb.png",
-      "source": "assets/source/relief-cross-tomb.png",
+      "file": "../../assets/reference-biome/native/gravestones/relief-cross-tomb.png",
+      "source": "../../assets/reference-biome/source/gravestones/relief-cross-tomb.png",
       "size": [
         120,
         49
@@ -104,8 +104,8 @@
     {
       "id": "crosses-back-1",
       "label": "Cruz sencilla",
-      "file": "assets/native/cemetery/crosses-back-1.png",
-      "source": "assets/source/cemetery/crosses-back.png",
+      "file": "../../assets/reference-biome/native/gravestones/crosses-back-1.png",
+      "source": "../../assets/reference-biome/source/gravestones/cemetery-crosses-back.png",
       "size": [
         22,
         32
@@ -132,8 +132,8 @@
     {
       "id": "crosses-back-2",
       "label": "Cruz anillada",
-      "file": "assets/native/cemetery/crosses-back-2.png",
-      "source": "assets/source/cemetery/crosses-back.png",
+      "file": "../../assets/reference-biome/native/gravestones/crosses-back-2.png",
+      "source": "../../assets/reference-biome/source/gravestones/cemetery-crosses-back.png",
       "size": [
         27,
         40
@@ -160,8 +160,8 @@
     {
       "id": "crosses-back-3",
       "label": "Cruz delgada",
-      "file": "assets/native/cemetery/crosses-back-3.png",
-      "source": "assets/source/cemetery/crosses-back.png",
+      "file": "../../assets/reference-biome/native/gravestones/crosses-back-3.png",
+      "source": "../../assets/reference-biome/source/gravestones/cemetery-crosses-back.png",
       "size": [
         19,
         32
@@ -188,8 +188,8 @@
     {
       "id": "crosses-back-4",
       "label": "Cruz erosionada",
-      "file": "assets/native/cemetery/crosses-back-4.png",
-      "source": "assets/source/cemetery/crosses-back.png",
+      "file": "../../assets/reference-biome/native/gravestones/crosses-back-4.png",
+      "source": "../../assets/reference-biome/source/gravestones/cemetery-crosses-back.png",
       "size": [
         26,
         34
@@ -216,8 +216,8 @@
     {
       "id": "crosses-back-5",
       "label": "Cruz baja",
-      "file": "assets/native/cemetery/crosses-back-5.png",
-      "source": "assets/source/cemetery/crosses-back.png",
+      "file": "../../assets/reference-biome/native/gravestones/crosses-back-5.png",
+      "source": "../../assets/reference-biome/source/gravestones/cemetery-crosses-back.png",
       "size": [
         24,
         30
@@ -244,8 +244,8 @@
     {
       "id": "crosses-front-1",
       "label": "Cruz alta",
-      "file": "assets/native/cemetery/crosses-front-1.png",
-      "source": "assets/source/cemetery/crosses-front.png",
+      "file": "../../assets/reference-biome/native/gravestones/crosses-front-1.png",
+      "source": "../../assets/reference-biome/source/gravestones/cemetery-crosses-front.png",
       "size": [
         30,
         56
@@ -272,8 +272,8 @@
     {
       "id": "crosses-front-2",
       "label": "Cruz de madera",
-      "file": "assets/native/cemetery/crosses-front-2.png",
-      "source": "assets/source/cemetery/crosses-front.png",
+      "file": "../../assets/reference-biome/native/gravestones/crosses-front-2.png",
+      "source": "../../assets/reference-biome/source/gravestones/cemetery-crosses-front.png",
       "size": [
         26,
         36
@@ -300,8 +300,8 @@
     {
       "id": "crosses-front-3",
       "label": "Cruz redondeada",
-      "file": "assets/native/cemetery/crosses-front-3.png",
-      "source": "assets/source/cemetery/crosses-front.png",
+      "file": "../../assets/reference-biome/native/gravestones/crosses-front-3.png",
+      "source": "../../assets/reference-biome/source/gravestones/cemetery-crosses-front.png",
       "size": [
         27,
         42
@@ -328,8 +328,8 @@
     {
       "id": "crosses-front-4",
       "label": "Lapida pequena",
-      "file": "assets/native/cemetery/crosses-front-4.png",
-      "source": "assets/source/cemetery/crosses-front.png",
+      "file": "../../assets/reference-biome/native/gravestones/crosses-front-4.png",
+      "source": "../../assets/reference-biome/source/gravestones/cemetery-crosses-front.png",
       "size": [
         28,
         26

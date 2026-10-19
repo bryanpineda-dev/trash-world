@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-19",
+  "tool": "built-in image_gen",
+  "mode": "precise-object-edit",
+  "prompt": "Use case: precise-object-edit. Edit target: the supplied existing transparent Gothic cemetery church sprite. Change ONLY the scale and amount of ivy/vegetation on the church. Redraw the creeping ivy as much finer, smaller leaves, thin sparse winding stems with occasional tiny clusters; individual leaves about ONE THIRD their present size. Reduce vegetation coverage approximately by half, leave stone edges and roof tile detail visible, especially beside the door, the buttresses, the base, and the steeple. Keep EXACTLY the same church architecture, overall silhouette, image framing, cross, roof shape, bell, rose window design, dark double wooden doors, small side window, stairs, stone colors, shading and low-angle perspective. Do not make a new church, do not change the size of doors/windows, no additional vegetation around it. Premium detailed pixel art matching this exact sprite, same cool grey stone with subdued olive ivy, same pixel density, no smooth painterly strokes. Isolated on a genuinely transparent background, no cast shadow, no text, entire cross and base visible. Architectural structure must stay unchanged; only make the ivy more finely scaled so this looks like a full-sized church, not a miniature covered in giant leaves.",
+  "source": "assets/reference-biome/source/architecture/church-rose.png",
+  "native": "assets/reference-biome/native/architecture/church-rose.png",
+  "sourceSha256": "05fee3211dba3e69b6fd70f8c2a2523afec306a5919286606f3255d0769fbb54",
+  "nativeSha256": "cb1cc37d59db175185e78d637fc89f9c90dfda2e14958f972ee077041e5b130f"
+}

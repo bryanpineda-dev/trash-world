@@ -7,7 +7,7 @@ import { groundContacts, drawContactShadow } from '../../src/rendering/GroundCon
 import { terrainSegments } from '../../src/rendering/ReferenceLayout.js';
 import { placements, cemeteryPlacements, cemeteryFence, studyCamera, studyPosition, shadeStudyPixels, candleState, wicks, roseGlass } from './model.js';
 
-const urls=import.meta.glob('./assets/native/**/*.png',{eager:true,query:'?url',import:'default'});
+const urls=import.meta.glob('../../assets/reference-biome/native/**/*.png',{eager:true,query:'?url',import:'default'});
 const candidates=[...manifest.sprites,...manifest.graveyard];
 export class ArchitectureStudy {
   constructor() {
@@ -16,7 +16,7 @@ export class ArchitectureStudy {
   }
   async load() {
     for(const item of candidates) {
-      const image=new Image();image.src=urls['./'+item.file];
+      const image=new Image();image.src=urls[item.file];
       await image.decode();this.images.set(item.id,image);
     }
     await this.scenery.loading;

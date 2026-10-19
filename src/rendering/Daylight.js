@@ -36,18 +36,35 @@ export function sampleDaylight(value='DAY') {
 
 export const rgb = color => 'rgb('+color.map(value=>Math.round(value)).join(',')+')';
 
+const starNoise = seed => {
+  let n=seed>>>0;
+  n=Math.imul(n^(n>>>16),0x7feb352d);
+  n=Math.imul(n^(n>>>15),0x846ca68b);
+  return ((n^(n>>>16))>>>0)/4294967296;
+};
+
+// Independent hashed channels avoid the diagonal bands of the former linear seeds.
+const starField=[];
+for(let id=0;id<840;id++) {
+  const x=-800+starNoise(id+0x31a7)*2200,y=starNoise(id+0x81d3);
+  if(starField.some(p=>(p.worldX-x)**2+((p.elevation-y)*240)**2<12.25))continue;
+  starField.push({id,worldX:x,elevation:y,brightness:.26+.7*starNoise(id+0xb537)**2,
+    rate:.15+starNoise(id+0xeaf1)*.22,phase:starNoise(id+0x177d)*Math.PI*2,warm:starNoise(id+0x4c89)>.82});
+}
+
 export function skyStars(camera,seconds,lighting) {
   const light=sampleDaylight(lighting),stars=[];
   if(light.stars<=0)return stars;
   const time=Number.isFinite(seconds)?Math.max(0,seconds):0;
-  // Fixed world-space cells keep the sky stable as the camera pans or time advances.
-  for(let i=0;i<840;i++) {
-    const seed=(i*16807+71)%2147483647;
-    const x=Math.round((seed*131%4093)/4093*2200-800-camera.pixelX*.035+camera.width/2);
-    const y=Math.round(5+(seed*47%997)/997*Math.max(1,camera.ground-55));
-    const brightness=.34+(seed%17)/25;
-    const alpha=light.stars*brightness*(.91+.09*Math.sin(time*.35+i*2.3));
-    if(x>=0&&x<camera.width&&y<camera.ground-42)stars.push({id:i,x,y,alpha,size:1});
+  const occupied=new Set();
+  for(const star of starField) {
+    const x=Math.round(star.worldX-camera.pixelX*.035+camera.width/2);
+    const y=Math.round(5+star.elevation*Math.max(1,camera.ground-55)),key=x+':'+y;
+    const shimmer=.95+.035*Math.sin(time*star.rate+star.phase)+.015*Math.sin(time*.11+star.phase*1.7);
+    const alpha=light.stars*star.brightness*shimmer;
+    if(x>=0&&x<camera.width&&y<camera.ground-42&&!occupied.has(key)) {
+      occupied.add(key);stars.push({id:star.id,x,y,alpha,size:1,warm:star.warm,worldX:star.worldX});
+    }
   }
   return stars;
 }
@@ -55,7 +72,7 @@ export function skyStars(camera,seconds,lighting) {
 export function drawSkyStars(ctx,camera,seconds,lighting) {
   ctx.save();
   for(const star of skyStars(camera,seconds,lighting)) {
-    ctx.globalAlpha=star.alpha;ctx.fillStyle=star.id%7?'#d7e5dc':'#ead5aa';ctx.fillRect(star.x,star.y,1,1);
+    ctx.globalAlpha=star.alpha;ctx.fillStyle=star.warm?'#eadbb9':'#c5d9df';ctx.fillRect(star.x,star.y,1,1);
   }
   ctx.restore();
 }

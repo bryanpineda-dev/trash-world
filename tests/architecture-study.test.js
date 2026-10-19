@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync, readdirSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { placements, cemeteryPlacements, cemeteryFence, studyCamera, studyPosition, candleState, wicks, roseGlass, shadeStudyPixels } from '../studies/architecture/model.js';
 
@@ -8,8 +8,8 @@ const root=new URL('../studies/architecture/',import.meta.url);
 const manifest=JSON.parse(readFileSync(new URL('manifest.json',root)));
 const sha=bytes=>createHash('sha256').update(bytes).digest('hex');
 
-test('architecture candidates preserve their originals, aspect and native exports outside the active catalog',()=>{
-  assert.equal(manifest.status,'candidate-not-integrated');
+test('architecture study shares the integrated originals and native exports without duplicate PNGs',()=>{
+  assert.equal(manifest.status,'integrated-shared-library');
   assert.deepEqual(manifest.sprites.map(s=>s.id),['church','oratory','tomb']);
   for(const item of manifest.sprites) {
     const native=readFileSync(new URL(item.file,root)),source=readFileSync(new URL(item.source,root));
@@ -22,8 +22,11 @@ test('architecture candidates preserve their originals, aspect and native export
     assert.ok(Math.min(roundedWidth,roundedHeight)<=.5,item.id+' distorted beyond native-pixel rounding');
     assert.deepEqual(item.anchor,[Math.floor(item.size[0]/2),item.size[1]]);
   }
-  assert.equal(readdirSync(new URL('assets/native/',root)).filter(f=>f.endsWith('.png')).length,3);
-  assert.equal(readdirSync(new URL('assets/source/',root)).filter(f=>f.endsWith('.png')).length,3);
+  assert.ok(!existsSync(new URL('assets/',root)));
+  for(const item of manifest.sprites) {
+    assert.match(item.file,/^\.\.\/\.\.\/assets\/reference-biome\/native\//);
+    assert.match(item.source,/^\.\.\/\.\.\/assets\/reference-biome\/source\//);
+  }
 });
 
 test('the camera changes the crop, never individual candidate sizes, and keeps the church cross in frame',()=>{
@@ -44,8 +47,7 @@ test('nine cemetery markers are separate consumed PNGs with exact sheet crops an
   assert.deepEqual(manifest.graveyard.map(a=>a.id).sort(),cemeteryPlacements.map(p=>p.id).sort());
   assert.equal(new Set(manifest.graveyard.map(a=>a.sha256)).size,9);
   assert.equal(new Set(manifest.graveyard.map(a=>a.source)).size,2);
-  const files=readdirSync(new URL('assets/native/cemetery/',root));
-  assert.deepEqual(files.sort(),manifest.graveyard.map(a=>a.file.split('/').at(-1)).sort());
+  assert.ok(!existsSync(new URL('assets/native/cemetery/',root)));
   for(const item of manifest.graveyard) {
     const native=readFileSync(new URL(item.file,root)),source=readFileSync(new URL(item.source,root));
     assert.equal(sha(native),item.sha256);assert.equal(sha(source),item.sourceSha256);

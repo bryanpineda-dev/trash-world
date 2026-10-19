@@ -106,14 +106,18 @@ test('chapel emission is off in daylight and fully warm during nighttime',()=>{
   assert.ok(scene(0).calls.some(c=>c.id==='chapel-glass'));
 });
 
-test('guardian tower uses native scale and sits behind the intermediate woodland',()=>{
+test('both towers share the distant landmark plane at native scale',()=>{
   const citadel=lateralPlacements.find(p=>p.id==='distantCitadel'),middle=panoramaPlacements.find(p=>p.depth==='middle');
+  const watchtower=lateralPlacements.find(p=>p.id==='watchtower');
+  for(const key of ['parallax','offset','depth','fitHeadroom'])assert.equal(watchtower[key],citadel[key],key);
+  assert.equal(watchtower.scale??1,1);
   assert.equal(citadel.scale??1,1);assert.ok(citadel.parallax<middle.parallax);assert.ok(citadel.offset<-60);
   const calls=scene(12).calls.map(c=>c.id);
   assert.ok(calls.indexOf('uniqueForestFar')<calls.indexOf('distantCitadel'));
   assert.ok(calls.indexOf('distantCitadel')<calls.indexOf('uniqueForestMiddle'));
   const east=scene(12,840).calls.map(c=>c.id);
-  assert.ok(east.indexOf('uniqueForestMiddle')<east.indexOf('watchtower'));
+  assert.ok(east.indexOf('uniqueForestFar')<east.indexOf('watchtower'));
+  assert.ok(east.indexOf('watchtower')<east.indexOf('uniqueForestMiddle'));
   const before=referencePosition(camera,citadel);camera.x+=10;
   assert.ok(Math.abs(referencePosition(camera,citadel).x-before.x)<=3);camera.x-=10;
 });

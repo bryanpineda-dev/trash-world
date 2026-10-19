@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-19",
+  "kind": "offline-production-renderer-not-browser-benchmark",
+  "tests": 266,
+  "build": "passed",
+  "assetsCheck": "passed",
+  "assets": 39,
+  "originals": 33,
+  "cases": 882,
+  "bodyPixels": 562422,
+  "binaryPixels": 1022908,
+  "protectedFiles": 157,
+  "precacheFiles": 45,
+  "animation": {
+    "seconds": 12,
+    "sampleFrames": 144,
+    "encodedPages": 144,
+    "firstFrameLossless": true
+  },
+  "mediaRecovery": "Latest matrix and engine stages completed; media stage resumed after a preview-file lock. Body pixel count retained from the identical approved glyph/case set.",
+  "cleanup": {
+    "duplicates": 17,
+    "bytes": 4565725,
+    "emptyDirectories": 51
+  },
+  "deliveryReport": "NIGHTLIFE_DELIVERY.json",
+  "gitWriteActions": false,
+  "browser": "Current-revision interactive QA pending: browser control timed out, including an idle retry. New media are offline production renders, not browser captures."
+}
