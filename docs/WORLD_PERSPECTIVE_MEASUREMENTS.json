@@ -1,0 +1,261 @@
+{
+  "studyDate": "2026-10-19",
+  "kind": "offline-scale-study-not-redesign",
+  "referenceHeight": 56,
+  "items": [
+    {
+      "id": "miga",
+      "visible": [
+        28,
+        56
+      ],
+      "heightInMiga": 1,
+      "kind": "opaque-body-bounds"
+    },
+    {
+      "id": "roundGrave",
+      "export": [
+        44,
+        53
+      ],
+      "heightInMiga": 0.9464285714285714,
+      "kind": "export-size-not-human-dimensions"
+    },
+    {
+      "id": "gabledGrave",
+      "export": [
+        50,
+        78
+      ],
+      "heightInMiga": 1.3928571428571428,
+      "kind": "export-size-not-human-dimensions"
+    },
+    {
+      "id": "chapel",
+      "export": [
+        102,
+        154
+      ],
+      "heightInMiga": 2.75,
+      "kind": "export-size-not-human-dimensions"
+    },
+    {
+      "id": "mausoleum",
+      "export": [
+        114,
+        170
+      ],
+      "heightInMiga": 3.0357142857142856,
+      "kind": "export-size-not-human-dimensions"
+    },
+    {
+      "id": "watchtower",
+      "export": [
+        57,
+        148
+      ],
+      "heightInMiga": 2.642857142857143,
+      "kind": "export-size-not-human-dimensions"
+    }
+  ],
+  "fitting": [
+    {
+      "inputCSS": [
+        1280,
+        720
+      ],
+      "logical": [
+        560,
+        315
+      ],
+      "ground": 249,
+      "structures": [
+        {
+          "id": "chapel",
+          "parallax": 1,
+          "offset": -25,
+          "scale": 1,
+          "drawSize": [
+            102,
+            154
+          ],
+          "nominalTop": 70
+        },
+        {
+          "id": "mausoleum",
+          "parallax": 0.86,
+          "offset": -12,
+          "scale": 1,
+          "drawSize": [
+            114,
+            170
+          ],
+          "nominalTop": 67
+        },
+        {
+          "id": "watchtower",
+          "parallax": 0.56,
+          "offset": -35,
+          "scale": 1,
+          "drawSize": [
+            57,
+            148
+          ],
+          "nominalTop": 66
+        }
+      ]
+    },
+    {
+      "inputCSS": [
+        320,
+        720
+      ],
+      "logical": [
+        288,
+        648
+      ],
+      "ground": 512,
+      "structures": [
+        {
+          "id": "chapel",
+          "parallax": 1,
+          "offset": -25,
+          "scale": 1,
+          "drawSize": [
+            102,
+            154
+          ],
+          "nominalTop": 333
+        },
+        {
+          "id": "mausoleum",
+          "parallax": 0.86,
+          "offset": -12,
+          "scale": 1,
+          "drawSize": [
+            114,
+            170
+          ],
+          "nominalTop": 330
+        },
+        {
+          "id": "watchtower",
+          "parallax": 0.56,
+          "offset": -35,
+          "scale": 1,
+          "drawSize": [
+            57,
+            148
+          ],
+          "nominalTop": 329
+        }
+      ]
+    },
+    {
+      "inputCSS": [
+        1920,
+        260
+      ],
+      "logical": [
+        1772,
+        240
+      ],
+      "ground": 190,
+      "structures": [
+        {
+          "id": "chapel",
+          "parallax": 1,
+          "offset": -25,
+          "scale": 1,
+          "drawSize": [
+            102,
+            154
+          ],
+          "nominalTop": 11
+        },
+        {
+          "id": "mausoleum",
+          "parallax": 0.86,
+          "offset": -12,
+          "scale": 1,
+          "drawSize": [
+            114,
+            170
+          ],
+          "nominalTop": 8
+        },
+        {
+          "id": "watchtower",
+          "parallax": 0.56,
+          "offset": -35,
+          "scale": 0.994535519125683,
+          "drawSize": [
+            57,
+            147
+          ],
+          "nominalTop": 8
+        }
+      ]
+    },
+    {
+      "inputCSS": [
+        3440,
+        360
+      ],
+      "logical": [
+        2048,
+        214
+      ],
+      "ground": 190,
+      "structures": [
+        {
+          "id": "chapel",
+          "parallax": 1,
+          "offset": -25,
+          "scale": 1,
+          "drawSize": [
+            102,
+            154
+          ],
+          "nominalTop": 11
+        },
+        {
+          "id": "mausoleum",
+          "parallax": 0.86,
+          "offset": -12,
+          "scale": 1,
+          "drawSize": [
+            114,
+            170
+          ],
+          "nominalTop": 8
+        },
+        {
+          "id": "watchtower",
+          "parallax": 0.56,
+          "offset": -35,
+          "scale": 0.994535519125683,
+          "drawSize": [
+            57,
+            147
+          ],
+          "nominalTop": 8
+        }
+      ]
+    }
+  ],
+  "caveats": [
+    "Miga is measured by visible bounds; other entries use full export dimensions.",
+    "No physical height, door measurement, 3D distance or CSS/DPR measurement is inferred.",
+    "Scale proposals in the report are art-direction hypotheses, not measured game ratios."
+  ],
+  "image": {
+    "file": "docs/images/world-perspective-scale.png",
+    "size": [
+      1440,
+      470
+    ],
+    "sha256": "c93094d2e0b2acf415263b9bb7586a74c12bffb3e36c0a7b50ee2df36121892a"
+  },
+  "protectedFilesUnchanged": 311
+}

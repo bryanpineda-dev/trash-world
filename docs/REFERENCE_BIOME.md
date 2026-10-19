@@ -1,6 +1,8 @@
 # Cementerio De Referencia
 
-Estado: revision implementada en sandbox el 2026-10-15 y preparada para entrega local y versionado por solicitud del usuario. Transferencia, commit, etiqueta y publicacion son pasos separados; no se ejecutan acciones de escritura de Git automaticamente.
+Inventario posterior: la [limpieza del 2026-10-19](ASSET_CLEANUP.md) deja 29 exports activos y dos registros solo de procedencia. Las cifras de 31 de la base artistica siguiente pertenecen a la revision del 15; sus dibujos activos no cambian con esta limpieza.
+
+Estado: base ambiental implementada y entregada localmente el 2026-10-15. La [extension lateral](LATERAL_WORLD.md) anade el recorrido; la revision actual de [identidad y vida](LIVING_WORLD.md) sustituye sus copias por hitos unicos y suma doce dibujos, para una biblioteca de 31. La propuesta actual permanece en sandbox. Transferencia, commit, etiqueta y publicacion son pasos distintos.
 
 El usuario aprueba despues el estilo del cementerio. La siguiente pasada se limita a [interfaz y contacto](GLASS_HUD.md): dibujos ambientales intactos y ancla del sendero corregida de `[0,8]` a `[0,12]`, para usar una fila de piedra opaca. Tras revisarla, solicita su entrega local y los comandos de GitHub; se prepara por separado como `v0.1.10`, sin ejecutar acciones de escritura de Git.
 
@@ -8,7 +10,7 @@ El usuario aprueba despues el estilo del cementerio. La siguiente pasada se limi
 
 El usuario pide reconstruir el ambiente a partir de su referencia y retirar la lapida runica, el farol y las plantas de interaccion. Personaje, animaciones y encuadre amplio aprobado no se redibujan.
 
-La propuesta anterior basada en formas y texturas generadas por codigo no se considera aprobada. Esta revision usa catorce dibujos raster independientes, generados con la referencia visual como guia y almacenados en `assets/reference-biome/`. Procedencia y briefs en `GENERATION.md`; no se afirma que sean pixel art manual.
+La propuesta anterior basada en formas y texturas generadas por codigo no se considera aprobada. Esta base usa catorce dibujos raster independientes, generados con la referencia visual como guia y almacenados en `assets/reference-biome/`. Procedencia y briefs en `GENERATION.md`; no se afirma que sean pixel art manual. La extension suma otros cinco, para una biblioteca de 19; no modifica estos originales.
 
 ## Composicion
 
@@ -24,7 +26,7 @@ El suelo oscuro enlaza las bases con el camino. No hay una lamina azul/gris sobr
 
 ## Escala Y Color
 
-- Mundo de 560 unidades. Ancho nativo y camara mantienen el encuadre aprobado.
+- Claro original de 560 unidades. La extension lleva el recorrido total a 1680 sin ampliar el zoom; conserva las coordenadas originales.
 - Miga: lienzo 64 x 64, altura visible de reposo 56, paleta de 16 colores.
 - Robles: 215 x 236 y 208 x 244. Capilla: 102 x 154. Monumentos: 50 x 78, 44 x 53 y 64 x 112.
 - PNG nativos con alpha binario y vecino mas cercano. Originales grandes sin modificar.
@@ -49,6 +51,6 @@ Modulos y dibujos antiguos quedan archivados, con fixtures explicitas para sus p
 
 El manifiesto registra familia, archivos, dimensiones, anclas, recortes y hashes. Siete familias: trees, gravestones, architecture, backgrounds, terrain, vegetation y sky.
 
-No se usa un fondo completo con Miga incrustada. El sendero de 560 pixeles cubre esta composicion; sus uniones con tramos nuevos requieren revision. Los fondos son panoramicas; sus repeticiones no equivalen a arboles individuales editables.
+No se usa un fondo completo con Miga incrustada. El sendero original de 560 pixeles se reutiliza con reflejos alternos en la extension; sus bordes enfrentados coinciden pixel a pixel. No es un tileset arbitrario de pendientes o esquinas. Los fondos son panoramicas; sus repeticiones no equivalen a arboles individuales editables.
 
 Las pruebas verifican integridad, escala, renderizado y compatibilidad, no calidad artistica ni aprobacion. La semejanza se revisa visualmente con el mismo encuadre diurno/nocturno y los PNG aislados.

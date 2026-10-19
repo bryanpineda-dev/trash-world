@@ -1,0 +1,990 @@
+{
+  "researchDate": "2026-10-19",
+  "kind": "read-only-project-measurement-and-offline-pixel-inspection",
+  "assetFacts": [
+    {
+      "id": "distantCitadel",
+      "sourceSize": [
+        1905,
+        826
+      ],
+      "sourceRect": {
+        "left": 15,
+        "top": 16,
+        "width": 1880,
+        "height": 794
+      },
+      "native": [
+        420,
+        177
+      ],
+      "anchor": [
+        210,
+        177
+      ],
+      "sourceToNative": [
+        0.22340425531914893,
+        0.22292191435768263
+      ],
+      "opaquePixels": 32730,
+      "uniqueOpaqueRGB": 19002,
+      "placements": [
+        {
+          "scale": 0.58,
+          "depth": "landmark",
+          "parallax": 0.22,
+          "fitHeadroom": true
+        }
+      ],
+      "sha256": "f4ea783287f4b1f574e9a7a2cd5e60a29feac1ef3877a54a440caab8187be316"
+    },
+    {
+      "id": "uniqueForestFar",
+      "sourceSize": [
+        2094,
+        751
+      ],
+      "sourceRect": {
+        "left": 7,
+        "top": 260,
+        "width": 2086,
+        "height": 287
+      },
+      "native": [
+        1600,
+        220
+      ],
+      "anchor": [
+        800,
+        220
+      ],
+      "sourceToNative": [
+        0.7670182166826462,
+        0.7665505226480837
+      ],
+      "opaquePixels": 184569,
+      "uniqueOpaqueRGB": 31984,
+      "placements": [
+        {
+          "scale": 1,
+          "depth": "far",
+          "parallax": 0.12,
+          "fitHeadroom": false
+        }
+      ],
+      "sha256": "8889d80dd137960dd5fceff69ef721d9f3a243f251c328009e5df9cb20bf112b"
+    },
+    {
+      "id": "uniqueForestMiddle",
+      "sourceSize": [
+        2188,
+        718
+      ],
+      "sourceRect": {
+        "left": 0,
+        "top": 110,
+        "width": 2180,
+        "height": 516
+      },
+      "native": [
+        900,
+        213
+      ],
+      "anchor": [
+        450,
+        213
+      ],
+      "sourceToNative": [
+        0.41284403669724773,
+        0.4127906976744186
+      ],
+      "opaquePixels": 81635,
+      "uniqueOpaqueRGB": 45175,
+      "placements": [
+        {
+          "scale": 1,
+          "depth": "middle",
+          "parallax": 0.34,
+          "fitHeadroom": false
+        }
+      ],
+      "sha256": "ff451d51aa1b7e05b289798518861e4de402253dc132e2a8963e16a64acdc105"
+    },
+    {
+      "id": "oakLeft",
+      "sourceSize": [
+        1199,
+        1312
+      ],
+      "sourceRect": {
+        "left": 14,
+        "top": 11,
+        "width": 1180,
+        "height": 1299
+      },
+      "native": [
+        215,
+        236
+      ],
+      "anchor": [
+        65,
+        236
+      ],
+      "sourceToNative": [
+        0.18220338983050846,
+        0.18167821401077752
+      ],
+      "opaquePixels": 24609,
+      "uniqueOpaqueRGB": 16075,
+      "placements": [
+        {
+          "scale": 1,
+          "depth": "near",
+          "parallax": 1,
+          "fitHeadroom": false
+        }
+      ],
+      "sha256": "cb0a9c246a8877025e4bbb782783fe90e37d3c79ee2fcd0deeb75fab73dcb16a"
+    },
+    {
+      "id": "oakRight",
+      "sourceSize": [
+        1161,
+        1355
+      ],
+      "sourceRect": {
+        "left": 9,
+        "top": 5,
+        "width": 1146,
+        "height": 1344
+      },
+      "native": [
+        208,
+        244
+      ],
+      "anchor": [
+        157,
+        244
+      ],
+      "sourceToNative": [
+        0.18150087260034903,
+        0.18154761904761904
+      ],
+      "opaquePixels": 22649,
+      "uniqueOpaqueRGB": 15632,
+      "placements": [
+        {
+          "scale": 1,
+          "depth": "near",
+          "parallax": 1,
+          "fitHeadroom": false
+        }
+      ],
+      "sha256": "4af9bc9bd3ccbada5ff137ad87ac449a067289e25bc8266cb43295eab2955e75"
+    },
+    {
+      "id": "cypressGrove",
+      "sourceSize": [
+        1142,
+        1378
+      ],
+      "sourceRect": {
+        "left": 162,
+        "top": 29,
+        "width": 819,
+        "height": 1328
+      },
+      "native": [
+        126,
+        205
+      ],
+      "anchor": [
+        63,
+        205
+      ],
+      "sourceToNative": [
+        0.15384615384615385,
+        0.15436746987951808
+      ],
+      "opaquePixels": 11978,
+      "uniqueOpaqueRGB": 6805,
+      "placements": [
+        {
+          "scale": 0.9,
+          "depth": "grove",
+          "parallax": 0.68,
+          "fitHeadroom": true
+        }
+      ],
+      "sha256": "4756a9ca6b7cf9d3c726545ebc5d10a007f154767ce9ba854af72e36c3f556d9"
+    },
+    {
+      "id": "undergrowth",
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "sourceRect": {
+        "left": 66,
+        "top": 172,
+        "width": 1413,
+        "height": 751
+      },
+      "native": [
+        79,
+        42
+      ],
+      "anchor": [
+        40,
+        42
+      ],
+      "sourceToNative": [
+        0.055909412597310686,
+        0.0559254327563249
+      ],
+      "opaquePixels": 1701,
+      "uniqueOpaqueRGB": 1577,
+      "placements": [
+        {
+          "scale": 1,
+          "depth": "near",
+          "parallax": 1,
+          "fitHeadroom": false
+        },
+        {
+          "scale": 0.63,
+          "depth": "near",
+          "parallax": 1,
+          "fitHeadroom": false
+        },
+        {
+          "scale": 0.68,
+          "depth": "near",
+          "parallax": 1,
+          "fitHeadroom": false
+        },
+        {
+          "scale": 0.76,
+          "depth": "near",
+          "parallax": 1,
+          "fitHeadroom": false
+        }
+      ],
+      "sha256": "14d22968d74de52f3775f22de759b59e61654d009312fe0915e030a8efefe283"
+    },
+    {
+      "id": "westWildflowers",
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "sourceRect": {
+        "left": 25,
+        "top": 649,
+        "width": 1489,
+        "height": 123
+      },
+      "native": [
+        540,
+        45
+      ],
+      "anchor": [
+        270,
+        45
+      ],
+      "sourceToNative": [
+        0.36265950302216254,
+        0.36585365853658536
+      ],
+      "opaquePixels": 4342,
+      "uniqueOpaqueRGB": 4148,
+      "placements": [
+        {
+          "scale": 0.8,
+          "depth": "groundcover",
+          "parallax": 1,
+          "fitHeadroom": false
+        }
+      ],
+      "sha256": "299b45a6d0bf9d05f22199b93d916c6fc7109d0f1205d799012eda998ee4aa4b"
+    },
+    {
+      "id": "eastFungi",
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "sourceRect": {
+        "left": 20,
+        "top": 511,
+        "width": 1490,
+        "height": 132
+      },
+      "native": [
+        540,
+        48
+      ],
+      "anchor": [
+        270,
+        48
+      ],
+      "sourceToNative": [
+        0.3624161073825503,
+        0.36363636363636365
+      ],
+      "opaquePixels": 3905,
+      "uniqueOpaqueRGB": 3735,
+      "placements": [
+        {
+          "scale": 0.8,
+          "depth": "groundcover",
+          "parallax": 1,
+          "fitHeadroom": false
+        }
+      ],
+      "sha256": "580d07fa32284a64f129a8f7eac8f63d0bfdd8a2f695f36cbbdd5108e8a2c7c6"
+    }
+  ],
+  "cameraFacts": [
+    {
+      "inputCSS": [
+        1280,
+        720
+      ],
+      "native": [
+        560,
+        315
+      ],
+      "ground": 249,
+      "cssScale": [
+        2.2857142857142856,
+        2.2857142857142856
+      ],
+      "fitted": [
+        {
+          "id": "chapel",
+          "scale": 1,
+          "position": [
+            388,
+            224
+          ],
+          "drawSize": [
+            102,
+            154
+          ]
+        },
+        {
+          "id": "distantCitadel",
+          "scale": 0.58,
+          "position": [
+            177,
+            178
+          ],
+          "drawSize": [
+            244,
+            103
+          ]
+        },
+        {
+          "id": "mausoleum",
+          "scale": 1,
+          "position": [
+            908,
+            237
+          ],
+          "drawSize": [
+            114,
+            170
+          ]
+        },
+        {
+          "id": "uniqueForestFar",
+          "scale": 1,
+          "position": [
+            304,
+            226
+          ],
+          "drawSize": [
+            1600,
+            220
+          ]
+        },
+        {
+          "id": "uniqueForestMiddle",
+          "scale": 1,
+          "position": [
+            348,
+            232
+          ],
+          "drawSize": [
+            900,
+            213
+          ]
+        }
+      ]
+    },
+    {
+      "inputCSS": [
+        1920,
+        1080
+      ],
+      "native": [
+        560,
+        315
+      ],
+      "ground": 249,
+      "cssScale": [
+        3.4285714285714284,
+        3.4285714285714284
+      ],
+      "fitted": [
+        {
+          "id": "chapel",
+          "scale": 1,
+          "position": [
+            388,
+            224
+          ],
+          "drawSize": [
+            102,
+            154
+          ]
+        },
+        {
+          "id": "distantCitadel",
+          "scale": 0.58,
+          "position": [
+            177,
+            178
+          ],
+          "drawSize": [
+            244,
+            103
+          ]
+        },
+        {
+          "id": "mausoleum",
+          "scale": 1,
+          "position": [
+            908,
+            237
+          ],
+          "drawSize": [
+            114,
+            170
+          ]
+        },
+        {
+          "id": "uniqueForestFar",
+          "scale": 1,
+          "position": [
+            304,
+            226
+          ],
+          "drawSize": [
+            1600,
+            220
+          ]
+        },
+        {
+          "id": "uniqueForestMiddle",
+          "scale": 1,
+          "position": [
+            348,
+            232
+          ],
+          "drawSize": [
+            900,
+            213
+          ]
+        }
+      ]
+    },
+    {
+      "inputCSS": [
+        1324,
+        612
+      ],
+      "native": [
+        560,
+        259
+      ],
+      "ground": 205,
+      "cssScale": [
+        2.3642857142857143,
+        2.362934362934363
+      ],
+      "fitted": [
+        {
+          "id": "chapel",
+          "scale": 1,
+          "position": [
+            388,
+            180
+          ],
+          "drawSize": [
+            102,
+            154
+          ]
+        },
+        {
+          "id": "distantCitadel",
+          "scale": 0.58,
+          "position": [
+            177,
+            134
+          ],
+          "drawSize": [
+            244,
+            103
+          ]
+        },
+        {
+          "id": "mausoleum",
+          "scale": 1,
+          "position": [
+            908,
+            193
+          ],
+          "drawSize": [
+            114,
+            170
+          ]
+        },
+        {
+          "id": "uniqueForestFar",
+          "scale": 1,
+          "position": [
+            304,
+            182
+          ],
+          "drawSize": [
+            1600,
+            220
+          ]
+        },
+        {
+          "id": "uniqueForestMiddle",
+          "scale": 1,
+          "position": [
+            348,
+            188
+          ],
+          "drawSize": [
+            900,
+            213
+          ]
+        }
+      ]
+    },
+    {
+      "inputCSS": [
+        320,
+        720
+      ],
+      "native": [
+        288,
+        648
+      ],
+      "ground": 512,
+      "cssScale": [
+        1.1111111111111112,
+        1.1111111111111112
+      ],
+      "fitted": [
+        {
+          "id": "chapel",
+          "scale": 1,
+          "position": [
+            252,
+            487
+          ],
+          "drawSize": [
+            102,
+            154
+          ]
+        },
+        {
+          "id": "distantCitadel",
+          "scale": 0.58,
+          "position": [
+            41,
+            441
+          ],
+          "drawSize": [
+            244,
+            103
+          ]
+        },
+        {
+          "id": "mausoleum",
+          "scale": 1,
+          "position": [
+            772,
+            500
+          ],
+          "drawSize": [
+            114,
+            170
+          ]
+        },
+        {
+          "id": "uniqueForestFar",
+          "scale": 1,
+          "position": [
+            168,
+            489
+          ],
+          "drawSize": [
+            1600,
+            220
+          ]
+        },
+        {
+          "id": "uniqueForestMiddle",
+          "scale": 1,
+          "position": [
+            212,
+            495
+          ],
+          "drawSize": [
+            900,
+            213
+          ]
+        }
+      ]
+    },
+    {
+      "inputCSS": [
+        390,
+        844
+      ],
+      "native": [
+        288,
+        623
+      ],
+      "ground": 492,
+      "cssScale": [
+        1.3541666666666667,
+        1.3547351524879614
+      ],
+      "fitted": [
+        {
+          "id": "chapel",
+          "scale": 1,
+          "position": [
+            252,
+            467
+          ],
+          "drawSize": [
+            102,
+            154
+          ]
+        },
+        {
+          "id": "distantCitadel",
+          "scale": 0.58,
+          "position": [
+            41,
+            421
+          ],
+          "drawSize": [
+            244,
+            103
+          ]
+        },
+        {
+          "id": "mausoleum",
+          "scale": 1,
+          "position": [
+            772,
+            480
+          ],
+          "drawSize": [
+            114,
+            170
+          ]
+        },
+        {
+          "id": "uniqueForestFar",
+          "scale": 1,
+          "position": [
+            168,
+            469
+          ],
+          "drawSize": [
+            1600,
+            220
+          ]
+        },
+        {
+          "id": "uniqueForestMiddle",
+          "scale": 1,
+          "position": [
+            212,
+            475
+          ],
+          "drawSize": [
+            900,
+            213
+          ]
+        }
+      ]
+    },
+    {
+      "inputCSS": [
+        844,
+        390
+      ],
+      "native": [
+        519,
+        240
+      ],
+      "ground": 190,
+      "cssScale": [
+        1.6262042389210019,
+        1.625
+      ],
+      "fitted": [
+        {
+          "id": "chapel",
+          "scale": 1,
+          "position": [
+            368,
+            165
+          ],
+          "drawSize": [
+            102,
+            154
+          ]
+        },
+        {
+          "id": "distantCitadel",
+          "scale": 0.58,
+          "position": [
+            156,
+            119
+          ],
+          "drawSize": [
+            244,
+            103
+          ]
+        },
+        {
+          "id": "mausoleum",
+          "scale": 1,
+          "position": [
+            887,
+            178
+          ],
+          "drawSize": [
+            114,
+            170
+          ]
+        },
+        {
+          "id": "uniqueForestFar",
+          "scale": 1,
+          "position": [
+            284,
+            167
+          ],
+          "drawSize": [
+            1600,
+            220
+          ]
+        },
+        {
+          "id": "uniqueForestMiddle",
+          "scale": 1,
+          "position": [
+            328,
+            173
+          ],
+          "drawSize": [
+            900,
+            213
+          ]
+        }
+      ]
+    },
+    {
+      "inputCSS": [
+        1920,
+        260
+      ],
+      "native": [
+        1772,
+        240
+      ],
+      "ground": 190,
+      "cssScale": [
+        1.0835214446952597,
+        1.0833333333333333
+      ],
+      "fitted": [
+        {
+          "id": "chapel",
+          "scale": 1,
+          "position": [
+            794,
+            165
+          ],
+          "drawSize": [
+            102,
+            154
+          ]
+        },
+        {
+          "id": "distantCitadel",
+          "scale": 0.58,
+          "position": [
+            739,
+            119
+          ],
+          "drawSize": [
+            244,
+            103
+          ]
+        },
+        {
+          "id": "mausoleum",
+          "scale": 1,
+          "position": [
+            1342,
+            178
+          ],
+          "drawSize": [
+            114,
+            170
+          ]
+        },
+        {
+          "id": "uniqueForestFar",
+          "scale": 1,
+          "position": [
+            886,
+            167
+          ],
+          "drawSize": [
+            1600,
+            220
+          ]
+        },
+        {
+          "id": "uniqueForestMiddle",
+          "scale": 1,
+          "position": [
+            886,
+            173
+          ],
+          "drawSize": [
+            900,
+            213
+          ]
+        }
+      ]
+    }
+  ],
+  "cacheFacts": [
+    {
+      "label": "west-noon",
+      "requestedSurfaceKeys": 29,
+      "paintedSurfaceKeys": 14,
+      "estimatedRGBABytes": 4158272,
+      "unpaintedKeys": [
+        "watchtower:DAY:landmark",
+        "cypressGrove:DAY:grove",
+        "chapel:DAY:architecture",
+        "mausoleum:DAY:architecture",
+        "ruin:DAY:near",
+        "ringCross:DAY:near",
+        "gabledGrave:DAY:near",
+        "roundGrave:DAY:near",
+        "oakRight:DAY:near",
+        "mushrooms:DAY:near",
+        "flowerLedger:DAY:near",
+        "recliningAngel:DAY:near",
+        "urnMemorial:DAY:near",
+        "silverAsh:DAY:near",
+        "eastFungi:DAY:groundcover"
+      ],
+      "note": "Static call trace of the production scene, not a browser timing or GPU measurement"
+    },
+    {
+      "label": "center-noon",
+      "requestedSurfaceKeys": 29,
+      "paintedSurfaceKeys": 16,
+      "estimatedRGBABytes": 4158272,
+      "unpaintedKeys": [
+        "watchtower:DAY:landmark",
+        "mausoleum:DAY:architecture",
+        "bareOak:DAY:near",
+        "prayingAngel:DAY:near",
+        "roseGrave:DAY:near",
+        "graniteObelisk:DAY:near",
+        "brokenCross:DAY:near",
+        "flowerLedger:DAY:near",
+        "recliningAngel:DAY:near",
+        "urnMemorial:DAY:near",
+        "silverAsh:DAY:near",
+        "westWildflowers:DAY:groundcover",
+        "eastFungi:DAY:groundcover"
+      ],
+      "note": "Static call trace of the production scene, not a browser timing or GPU measurement"
+    },
+    {
+      "label": "east-noon",
+      "requestedSurfaceKeys": 29,
+      "paintedSurfaceKeys": 16,
+      "estimatedRGBABytes": 4158272,
+      "unpaintedKeys": [
+        "chapel:DAY:architecture",
+        "ruin:DAY:near",
+        "ringCross:DAY:near",
+        "gabledGrave:DAY:near",
+        "roundGrave:DAY:near",
+        "oakLeft:DAY:near",
+        "mushrooms:DAY:near",
+        "bareOak:DAY:near",
+        "prayingAngel:DAY:near",
+        "roseGrave:DAY:near",
+        "graniteObelisk:DAY:near",
+        "brokenCross:DAY:near",
+        "westWildflowers:DAY:groundcover"
+      ],
+      "note": "Static call trace of the production scene, not a browser timing or GPU measurement"
+    },
+    {
+      "label": "center-dusk",
+      "requestedSurfaceKeys": 31,
+      "paintedSurfaceKeys": 18,
+      "estimatedRGBABytes": 4226288,
+      "unpaintedKeys": [
+        "watchtower:DUSK:landmark",
+        "mausoleum:DUSK:architecture",
+        "bareOak:DUSK:near",
+        "prayingAngel:DUSK:near",
+        "roseGrave:DUSK:near",
+        "graniteObelisk:DUSK:near",
+        "brokenCross:DUSK:near",
+        "flowerLedger:DUSK:near",
+        "recliningAngel:DUSK:near",
+        "urnMemorial:DUSK:near",
+        "silverAsh:DUSK:near",
+        "westWildflowers:DUSK:groundcover",
+        "eastFungi:DUSK:groundcover"
+      ],
+      "note": "Static call trace of the production scene, not a browser timing or GPU measurement"
+    }
+  ],
+  "decodedNativeRGBABytes": 5350184,
+  "reserveRGBABytes": 1200000,
+  "protectedFiles": 311,
+  "limitations": [
+    "No CSS size or DPR inferred as fact from the uploaded screenshot",
+    "RGB counts are descriptive, not an art-quality metric",
+    "No browser or device performance benchmark",
+    "Diagnostic images are offline studies, not redesigned or approved assets"
+  ]
+}

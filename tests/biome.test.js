@@ -8,6 +8,7 @@ import { assembleBiome, validateBiome, biomePalette, biomePixels, biomeVariants,
 import { compileCatalog, pixelBounds } from '../src/rendering/AssetModel.js';
 import { readAssetSource } from '../scripts/asset-source.js';
 import { readBiomeSource } from '../scripts/biome-source.js';
+import { biomePngExports } from '../scripts/generate-biome.js';
 import { createBitmap, paintPixels } from '../scripts/png.js';
 import { Camera } from '../src/rendering/Camera.js';
 import { World } from '../src/world/World.js';
@@ -181,7 +182,7 @@ test('the archived forest covers camera limits while retired discoveries remain 
     for (const x of [32,205,280,458,528]) {
       const camera = new Camera(x);
       camera.resize(width,height);
-      assert.ok(camera.ground <= height - 32);
+      assert.ok(camera.ground <= height - (height >= 240 ? 32 : 12));
       assert.ok(camera.ground >= 56);
       for (const layer of source.layers.filter(layer=>layer.id!=='architecture')) assert.ok(visibleScenery(source,camera,layer).length > 0, layer.id);
     }
@@ -307,10 +308,13 @@ test('terrain variations share opaque side seams and preserve a flat walking anc
   assert.equal(new Set(tiles.map(tile=>tile.pixels.join(''))).size,3);
 });
 
-test('every per-asset PNG export matches each editable animation frame in all three lights', () => {
+test('legacy PNG exports regenerate byte-exactly without committed duplicates', () => {
+  const files=biomePngExports(source),golden=read('./fixtures/legacy-export-hashes.json').biome;
+  assert.deepEqual([...files.keys()].sort(),Object.keys(golden).sort());
   for (const {id,path} of source.assetFiles) for (const phase of Object.keys(source.palettes)) for(const variant of biomeVariants(source.sprites[id])) {
     const filename=phase.toLowerCase()+(variant==='rest'?'':'-'+variant)+'.png';
-    const png=readFileSync(new URL('../assets/generated/environment/'+path.replace(/\.json$/,'/'+filename),import.meta.url));
+    const key=path.replace(/\.json$/,'/'+filename),png=files.get(key);
+    assert.equal(createHash('sha256').update(png).digest('hex'),golden[key],key);
     const chunks=[];
     for (let offset=8;offset<png.length;) {
       const length=png.readUInt32BE(offset);

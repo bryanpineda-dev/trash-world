@@ -6,7 +6,7 @@ import { Needs } from '../src/creature/Needs.js';
 import { World } from '../src/world/World.js';
 import { WorldTime, offlineSeconds } from '../src/core/Time.js';
 import { advanceOffline } from '../src/persistence/OfflineProgress.js';
-import { MAX_OFFLINE_SECONDS } from '../src/core/Config.js';
+import { MAX_OFFLINE_SECONDS, WORLD_LEFT, WORLD_RIGHT, CREATURE_MARGIN } from '../src/core/Config.js';
 import { Camera } from '../src/rendering/Camera.js';
 import { SensorManager } from '../src/sensors/SensorManager.js';
 
@@ -25,7 +25,7 @@ test('the creature explores, rests and wakes without inventing retired discoveri
   for (let frame = 0; frame < 900 * 30; frame++) {
     s.world.clock.update(1 / 30); s.ai.update(1 / 30); seen.add(s.creature.state);
     assert.ok(STATES.includes(s.creature.state));
-    assert.ok(s.creature.x >= 16 && s.creature.x <= 544);
+    assert.ok(s.creature.x >= WORLD_LEFT+CREATURE_MARGIN && s.creature.x <= WORLD_RIGHT-CREATURE_MARGIN);
     for (const value of Object.values(s.creature.needs.serialize())) assert.ok(value >= 0 && value <= 100);
   }
   for (const state of ['WALK', 'SLEEP', 'WAKE']) assert.ok(seen.has(state), `missing ${state}`);
@@ -80,7 +80,7 @@ test('petting changes happiness; touching a sleeping creature wakes it', () => {
 test('world boundaries constrain even an out-of-range walk target', () => {
   const s = scene();
   s.creature.transition('WALK', 10, { x: -1000 });
-  simulate(s, 30); assert.ok(s.creature.x >= 16);
+  simulate(s, 80); assert.ok(s.creature.x >= WORLD_LEFT+CREATURE_MARGIN);
   assert.notEqual(s.creature.state, 'WALK');
 });
 

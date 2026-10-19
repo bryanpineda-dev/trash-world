@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-19",
+  "mode": "Built-in image_gen precise-object-edit",
+  "status": "candidate-not-integrated",
+  "prompt": "Use case: precise-object-edit.\nAsset type: transparent pixel-art sarcophagus for Trash World.\nImage 1 is the EDIT TARGET. Image 2 is a geometry/construction diagram ONLY: its gold cross shows the REQUIRED flat footprint and alignment on this exact lid. It is not an art/style reference.\n\nChange ONLY the cross on image 1. Preserve the entire stone box, complete square right corner, ivy on the left, slab edges, front panel, base, colors, texture, silhouette and low viewpoint EXACTLY.\n\nThe current cross is WRONG because its transverse bar is nearly SCREEN VERTICAL. Remove that cross and its heavy black shadow. Replace it with a small, SHALLOW stone relief with the exact planar shape of the gold cross in image 2, at the same left-half position. The transverse bar MUST now sweep clearly DIAGONALLY from LOWER LEFT to UPPER RIGHT, around 45 degrees, NOT remain nearly vertical. The long stem is horizontal, parallel to the lid long front edge. Both directions are projections of the same stone lid plane. It should look visibly flatter and laid down, not a plus sign standing up.\nGeometry guide in source-image coordinates: lid front edge (180,500) to (1340,500), rear edge (380,350) to (1435,350). At the cross position, the depth runs roughly +165 pixels right for -150 pixels up. The crossbar direction must follow this diagonal, with its ends about (550,474) and (655,378), NOT the old narrow vertical direction. Follow the guide's gold polygon silhouette, not the target's old crossbar. Preserve the small cross length around 250 source pixels (~23 game pixels) and overall location in the LEFT half. Head short to the left, long foot to the right. Restrained stone bevel just 1 native pixel deep, contact shadow minimal. The bevel must not imply a floating separate statue. Same material as the lid.\n\nThis edit must clearly change the transverse bar angle; simply moving or scaling the old cross is not acceptable.\nDo not copy any guide lines, blue outlines, gold color, dark guide background or text. Do not change the slab shape or move the box. Match the existing pixel-art stone style; no smoothing. Output ONLY the complete edited sarcophagus on true transparent background, centered with transparent margins. No ground, labels, extra props or external cast shadow.",
+  "selectedOutput": "exec-6f11a091-d8ac-492e-bd47-919b8e3bc40c.png",
+  "editTarget": "exec-b7dcd474-0c31-40a6-9a91-6989684757f7.png",
+  "support": "Independent construction diagram at outputs/tomb-lid-projection-guide.png; not a paint-over or final art.",
+  "references": [
+    {
+      "url": "https://www.turbosquid.com/3d-models/3d-gravestone-model-2347649",
+      "role": "Creator's multi-angle model; inspected image g11 in browser. No asset purchased or copied."
+    },
+    {
+      "url": "https://wsaw.weebly.com/bradford-on-tone.html",
+      "role": "Photograph crimean.jpg inspected in browser; relief and common lid plane."
+    },
+    {
+      "url": "https://historicengland.org.uk/images-books/publications/dlsg-commemorative-structures/heag110-commemorative-structures-lsg/",
+      "role": "Chest tomb construction: box with slab; not a technical projection specification."
+    }
+  ]
+}

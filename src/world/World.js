@@ -1,4 +1,4 @@
-import { WORLD_WIDTH } from '../core/Config.js';
+import { WORLD_WIDTH, WORLD_LEFT, WORLD_RIGHT } from '../core/Config.js';
 import { WorldTime } from '../core/Time.js';
 
 export const WORLD_OBJECTS = Object.freeze([]);
@@ -8,6 +8,8 @@ export const RETIRED_OBJECT_IDS = Object.freeze(['tree','plant','can','stone']);
 export class World {
   constructor(data = {}) {
     this.width = WORLD_WIDTH;
+    this.left = WORLD_LEFT;
+    this.right = WORLD_RIGHT;
     this.objects = WORLD_OBJECTS;
     this.clock = new WorldTime(data.time ?? 0);
     this.discoveredObjects = new Set(data.discoveredObjects ?? []);

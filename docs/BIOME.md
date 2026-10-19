@@ -1,5 +1,7 @@
 # Bosque de las ruinas: biblioteca del cementerio
 
+Guia historica del entorno procedural, no del renderer raster actual. Tras la [limpieza del 2026-10-19](ASSET_CLEANUP.md), sus PNG individuales se obtienen bajo demanda en `.cache/legacy-assets/environment/`; las rutas de exportacion y cifras antiguas de esta guia se conservan como historia. Sus fuentes y atlas siguen siendo usados por estudios/tests.
+
 Bioma de fantasia medieval misteriosa: robles antiguos, abedules abiertos, cipreses y sauces secos retorcidos. Lapidas biseladas, cruces anilladas, verja envejecida y ruinas con musgo rodean el claro. Una capilla gotica se situa a la izquierda de Miga, tras las ruinas y la niebla. Niebla baja, luciernagas turquesa y luna con crateres completan la noche. Es una propuesta visual para aprobar el entorno, no un cambio del personaje ni una expansion de sus reglas.
 
 ## Escala y profundidad

@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Trash World | Arquitectura</title></head>
+<body>
+  <main>
+    <header><a href="../../biome-lab.html" title="Volver al bioma" aria-label="Volver al bioma"><i data-lucide="arrow-left"></i></a><h1>Arquitectura</h1><span id="status" role="status">Cargando</span></header>
+    <form class="toolbar" aria-label="Vista de arquitectura" onsubmit="return false">
+      <div class="segments" aria-label="Vista"><button type="button" data-view="scene" aria-pressed="true" title="Escena" aria-label="Escena"><i data-lucide="trees"></i></button><button type="button" data-view="pieces" aria-pressed="false" title="Piezas" aria-label="Piezas"><i data-lucide="layout-grid"></i></button></div>
+      <label>Pieza<select id="focus"><option value="all">Conjunto</option><option value="church">Iglesia</option><option value="oratory">Oratorio</option><option value="tomb">Tumba</option></select></label>
+      <label>Revision<select id="revision"><option value="candidate">Propuesta</option><option value="original">Actual</option></select></label>
+      <label><input id="cemetery" type="checkbox" checked>Cementerio</label>
+      <button type="button" id="day" title="Dia" aria-label="Dia"><i data-lucide="sun"></i></button><button type="button" id="night" title="Noche" aria-label="Noche"><i data-lucide="moon"></i></button>
+      <label class="hour"><input id="hour" type="range" min="0" max="23.99" step="0.01" value="12" aria-label="Hora"><output id="time" for="hour">12:00</output></label>
+      <button type="button" id="play" title="Reproducir" aria-label="Reproducir"><i data-lucide="play"></i></button>
+      <button type="button" id="download" title="Descargar captura" aria-label="Descargar captura"><i data-lucide="download"></i></button>
+    </form>
+    <div class="viewport"><canvas id="study" width="640" height="360" role="img" aria-label="Estudio de arquitectura"></canvas></div>
+    <footer><label>Camara<input id="pan" type="range" min="-110" max="110" step="1" value="0" aria-label="Desplazamiento de camara"></label><output id="caption">Propuesta</output><output id="dimensions">640 x 360</output></footer>
+    <p id="error" role="alert" hidden></p>
+  </main>
+  <script type="module" src="./app.js"></script>
+</body></html>

@@ -3,7 +3,7 @@ import { fileURLToPath } from 'node:url';
 import { compileCatalog, validateCatalog } from '../src/rendering/AssetModel.js';
 import { readAssetSource } from './asset-source.js';
 import { createBitmap, paintPixels, rgba, encodePng } from './png.js';
-import { generateBiome } from './generate-biome.js';
+import { generateBiome, exportLegacyBiome } from './generate-biome.js';
 
 const source = readAssetSource();
 validateCatalog(source);
@@ -56,3 +56,4 @@ paintPixels(sprite, catalog.frames['miga:wave-a'].pixels, catalog.palette, 0, 0,
 writeFileSync(`${output}/miga.png`, encodePng(sprite));
 console.log(`Generated ${entries.length} atlas frames, ${Object.keys(catalog.characters).length} character, ${Object.keys(source.animations.clips).length} animation clips.`);
 generateBiome();
+if (process.argv.includes('--legacy-exports')) exportLegacyBiome();

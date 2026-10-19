@@ -37,8 +37,7 @@ export class Renderer {
     this.animationTime += game.settings.ambientMotion ? dt : 0;
     this.camera.update(game.creature.x, dt);
     const ctx = this.ctx;
-    const phase = game.world.clock.phase;
-    this.scenery.draw(ctx,this.camera,phase,this.animationTime);
+    this.scenery.draw(ctx,this.camera,game.world.clock.hour,this.animationTime);
     this.drawCreature(game.creature);
     if (this.ripple) {
       this.ripple.remaining -= dt;

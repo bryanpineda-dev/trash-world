@@ -1,0 +1,384 @@
+{
+  "version": 6,
+  "date": "2026-10-19",
+  "status": "candidate-not-integrated",
+  "generator": "Built-in image_gen",
+  "export": "Alpha crop, aspect-preserving nearest-neighbor, binary alpha threshold 128. No hand-pixel cleanup.",
+  "scale": {
+    "migaVisibleHeight": 56,
+    "scene": [
+      640,
+      400
+    ],
+    "churchDoorTarget": 64,
+    "oratoryOpeningTarget": 84,
+    "churchEnlarged": true
+  },
+  "sprites": [
+    {
+      "id": "church",
+      "label": "Iglesia",
+      "oldId": "chapel",
+      "depth": "architecture",
+      "file": "assets/native/church-rose.png",
+      "source": "assets/source/church-rose.png",
+      "size": [
+        173,
+        256
+      ],
+      "anchor": [
+        86,
+        256
+      ],
+      "sourceSize": [
+        1013,
+        1552
+      ],
+      "sourceRect": [
+        70,
+        80,
+        910,
+        1348
+      ],
+      "sourceSha256": "cde47bc0bfaeb88851108bd3bd939c359ca6c9a453065618dbcd4d696befa379",
+      "sha256": "c4a103f2989ce24c38e557f16db717d204a5249577ddb76b2bcc584f29985f77"
+    },
+    {
+      "id": "oratory",
+      "label": "Oratorio",
+      "oldId": "mausoleum",
+      "depth": "near",
+      "file": "assets/native/open-oratory.png",
+      "source": "assets/source/open-oratory.png",
+      "size": [
+        116,
+        144
+      ],
+      "anchor": [
+        58,
+        144
+      ],
+      "sourceSize": [
+        1312,
+        1199
+      ],
+      "sourceRect": [
+        233,
+        47,
+        881,
+        1089
+      ],
+      "sourceSha256": "b32588249d745a7fbd6345bd478f81fc93c3b8f283ae6b09261f4ad09113c247",
+      "sha256": "ad06434530ab01f0a045eec4512cbbe819ad92a08adc00aa887536281a672e35"
+    },
+    {
+      "id": "tomb",
+      "label": "Tumba",
+      "file": "assets/native/relief-cross-tomb.png",
+      "source": "assets/source/relief-cross-tomb.png",
+      "size": [
+        120,
+        49
+      ],
+      "anchor": [
+        60,
+        49
+      ],
+      "sourceSize": [
+        1599,
+        984
+      ],
+      "sourceRect": [
+        152,
+        339,
+        1298,
+        525
+      ],
+      "sourceSha256": "78d0d5bb0aa163947ad0b0449906af84d95a1329a878624702139912c9f2d94b",
+      "sha256": "57ab9133acc54b0af2c1be89c1ecc9c0ef4f20d8e898c3d904cc630710a1fc0b",
+      "oldId": "recliningAngel",
+      "depth": "near"
+    }
+  ],
+  "graveyard": [
+    {
+      "id": "crosses-back-1",
+      "label": "Cruz sencilla",
+      "file": "assets/native/cemetery/crosses-back-1.png",
+      "source": "assets/source/cemetery/crosses-back.png",
+      "size": [
+        22,
+        32
+      ],
+      "anchor": [
+        11,
+        32
+      ],
+      "sourceSize": [
+        1983,
+        793
+      ],
+      "sourceRect": [
+        43,
+        378,
+        247,
+        349
+      ],
+      "sourceSha256": "71907b900e9525376083437580ed5f0872a4558dd8cc81bfa1dbb95c042e96ad",
+      "sha256": "0e9e1353b64d7e4f93028ba003df026d9913480e0849c9672640b3b6d39c9bff",
+      "depth": "architecture",
+      "row": "back"
+    },
+    {
+      "id": "crosses-back-2",
+      "label": "Cruz anillada",
+      "file": "assets/native/cemetery/crosses-back-2.png",
+      "source": "assets/source/cemetery/crosses-back.png",
+      "size": [
+        27,
+        40
+      ],
+      "anchor": [
+        13,
+        40
+      ],
+      "sourceSize": [
+        1983,
+        793
+      ],
+      "sourceRect": [
+        313,
+        284,
+        297,
+        443
+      ],
+      "sourceSha256": "71907b900e9525376083437580ed5f0872a4558dd8cc81bfa1dbb95c042e96ad",
+      "sha256": "e3dd5874e1ffc65dca8b49e30accda6bcf70f3e9ffc24ec1208ed36aa409f319",
+      "depth": "architecture",
+      "row": "back"
+    },
+    {
+      "id": "crosses-back-3",
+      "label": "Cruz delgada",
+      "file": "assets/native/cemetery/crosses-back-3.png",
+      "source": "assets/source/cemetery/crosses-back.png",
+      "size": [
+        19,
+        32
+      ],
+      "anchor": [
+        9,
+        32
+      ],
+      "sourceSize": [
+        1983,
+        793
+      ],
+      "sourceRect": [
+        637,
+        368,
+        213,
+        359
+      ],
+      "sourceSha256": "71907b900e9525376083437580ed5f0872a4558dd8cc81bfa1dbb95c042e96ad",
+      "sha256": "0cb0b50e93ee8fbcac3374b1174c17fc88d98f2bfc5724323e2f96f5b3cf5edb",
+      "depth": "architecture",
+      "row": "back"
+    },
+    {
+      "id": "crosses-back-4",
+      "label": "Cruz erosionada",
+      "file": "assets/native/cemetery/crosses-back-4.png",
+      "source": "assets/source/cemetery/crosses-back.png",
+      "size": [
+        26,
+        34
+      ],
+      "anchor": [
+        13,
+        34
+      ],
+      "sourceSize": [
+        1983,
+        793
+      ],
+      "sourceRect": [
+        1348,
+        347,
+        288,
+        378
+      ],
+      "sourceSha256": "71907b900e9525376083437580ed5f0872a4558dd8cc81bfa1dbb95c042e96ad",
+      "sha256": "dfc4fcb039c1d45ac8f2adb79786c4ad1679aab4ea7a3065f3abc509a52382c9",
+      "depth": "architecture",
+      "row": "back"
+    },
+    {
+      "id": "crosses-back-5",
+      "label": "Cruz baja",
+      "file": "assets/native/cemetery/crosses-back-5.png",
+      "source": "assets/source/cemetery/crosses-back.png",
+      "size": [
+        24,
+        30
+      ],
+      "anchor": [
+        12,
+        30
+      ],
+      "sourceSize": [
+        1983,
+        793
+      ],
+      "sourceRect": [
+        1670,
+        394,
+        266,
+        330
+      ],
+      "sourceSha256": "71907b900e9525376083437580ed5f0872a4558dd8cc81bfa1dbb95c042e96ad",
+      "sha256": "7fdd398772202220368151339e559cde9cff7bedfcb1c446b042251363dd1904",
+      "depth": "architecture",
+      "row": "back"
+    },
+    {
+      "id": "crosses-front-1",
+      "label": "Cruz alta",
+      "file": "assets/native/cemetery/crosses-front-1.png",
+      "source": "assets/source/cemetery/crosses-front.png",
+      "size": [
+        30,
+        56
+      ],
+      "anchor": [
+        15,
+        56
+      ],
+      "sourceSize": [
+        1864,
+        844
+      ],
+      "sourceRect": [
+        57,
+        194,
+        309,
+        581
+      ],
+      "sourceSha256": "e61ec97e6fb325e4de988a5acdbdae43af34b798cb68416de223613fb13a3bdf",
+      "sha256": "f58956c510d4771630598cd887bdeeafcb9198a5d28527fc70878e780ee85f45",
+      "depth": "near",
+      "row": "front"
+    },
+    {
+      "id": "crosses-front-2",
+      "label": "Cruz de madera",
+      "file": "assets/native/cemetery/crosses-front-2.png",
+      "source": "assets/source/cemetery/crosses-front.png",
+      "size": [
+        26,
+        36
+      ],
+      "anchor": [
+        13,
+        36
+      ],
+      "sourceSize": [
+        1864,
+        844
+      ],
+      "sourceRect": [
+        409,
+        400,
+        270,
+        375
+      ],
+      "sourceSha256": "e61ec97e6fb325e4de988a5acdbdae43af34b798cb68416de223613fb13a3bdf",
+      "sha256": "7ebd3c7599a270c546b0878ac94ab8e7e1a70ab4d98ca33d83546275e8289c36",
+      "depth": "near",
+      "row": "front"
+    },
+    {
+      "id": "crosses-front-3",
+      "label": "Cruz redondeada",
+      "file": "assets/native/cemetery/crosses-front-3.png",
+      "source": "assets/source/cemetery/crosses-front.png",
+      "size": [
+        27,
+        42
+      ],
+      "anchor": [
+        13,
+        42
+      ],
+      "sourceSize": [
+        1864,
+        844
+      ],
+      "sourceRect": [
+        1201,
+        336,
+        279,
+        439
+      ],
+      "sourceSha256": "e61ec97e6fb325e4de988a5acdbdae43af34b798cb68416de223613fb13a3bdf",
+      "sha256": "2883ff802638dfa42a7058f672b6aa883de0b3789c86749607a3d4c15ee3f013",
+      "depth": "near",
+      "row": "front"
+    },
+    {
+      "id": "crosses-front-4",
+      "label": "Lapida pequena",
+      "file": "assets/native/cemetery/crosses-front-4.png",
+      "source": "assets/source/cemetery/crosses-front.png",
+      "size": [
+        28,
+        26
+      ],
+      "anchor": [
+        14,
+        26
+      ],
+      "sourceSize": [
+        1864,
+        844
+      ],
+      "sourceRect": [
+        1518,
+        507,
+        292,
+        273
+      ],
+      "sourceSha256": "e61ec97e6fb325e4de988a5acdbdae43af34b798cb68416de223613fb13a3bdf",
+      "sha256": "6e8855d5c800ef5884b375b78448c8ba902f965eae212658e27079c684a2a46f",
+      "depth": "near",
+      "row": "front"
+    }
+  ],
+  "sourceSheets": [
+    {
+      "source": "assets/source/cemetery/crosses-back.png",
+      "sourceSize": [
+        1983,
+        793
+      ],
+      "sha256": "71907b900e9525376083437580ed5f0872a4558dd8cc81bfa1dbb95c042e96ad"
+    },
+    {
+      "source": "assets/source/cemetery/crosses-front.png",
+      "sourceSize": [
+        1864,
+        844
+      ],
+      "sha256": "e61ec97e6fb325e4de988a5acdbdae43af34b798cb68416de223613fb13a3bdf"
+    }
+  ],
+  "review": {
+    "tombV2Rejected": "The pitched lid broke the world perspective.",
+    "church": "256px native height, 23% larger than v2. No runtime stretch.",
+    "approval": "Awaiting user approval before promotion and stable delivery.",
+    "tombV3Rejected": "Box accepted; cross still skewed and right raised/shadowed lid edge rejected.",
+    "tombV4": "Direction corrected by user: cross should move left. Chamfered right corner rejected.",
+    "tombV5": "Rejected: transverse bar was still too screen-vertical instead of following the lid depth.",
+    "tombV6": "Cross transverse bar projected diagonally with lid depth using an independent construction guide and internet references. Awaiting approval."
+  }
+}

@@ -17,7 +17,7 @@
 #library-grid canvas { display: block; position: static; width: 208px; height: 208px; image-rendering: pixelated; }
 #library-grid figcaption { display: grid; gap: 4px; text-align: center; padding: 10px 0 4px; font-size: 12px; }
 #library-grid figcaption span { font-size: 11px; color: #586d69; overflow-wrap: anywhere; }
-.biome-controls { position: absolute; inset: auto 0 0; display: flex; justify-content: center; align-items: end; gap: 18px; padding: 12px 20px; background: #f1f5edea; border-top: 1px solid #b8cbbd; color: #233b37; }
+.biome-controls { position: absolute; inset: auto 0 0; display: flex; flex-wrap: wrap; justify-content: center; align-items: end; gap: 12px; padding: 12px 20px; background: #f1f5edea; border-top: 1px solid #b8cbbd; color: #233b37; }
 .biome-toolbar { position: relative; grid-row: 1; }
 .biome-controls { position: relative; grid-row: 3; }
 .biome-controls label { display: grid; gap: 6px; font-size: 11px; min-width: 0; }
@@ -25,7 +25,12 @@
 .position-control { width: 200px; }
 .position-control span { display: flex; justify-content: space-between; }
 .position-control input { height: 40px; margin: 0; width: 100%; accent-color: #426c53; }
+.time-control { width: 160px; }
+.time-control span { display: flex; justify-content: space-between; }
+.time-control input { height: 40px; margin: 0; width: 100%; accent-color: #426c53; }
 .biome-controls .icon-button { height: 40px; width: 40px; }
+.zone-control { display: grid; grid-template-columns: minmax(0,1fr) 40px 40px; gap: 6px; align-items: end; min-width: 0; }
+.zone-control select { width: 180px; max-width: 100%; }
 @media (max-width: 520px) {
   #app { display: grid; grid-template-rows: auto minmax(0,1fr) auto; }
   #app #world { position: static; grid-row: 2; width: 100%; height: 100%; min-height: 0; min-width: 0; }
@@ -34,8 +39,11 @@
   .biome-toolbar .icon-button { width: 36px; height: 36px; }
   .biome-controls { position: static; grid-row: 3; display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr) 40px 40px; gap: 10px; padding: 12px; }
   .biome-controls select { width: 100%; min-width: 0; }
-  .position-control { width: auto; grid-column: 1 / 4; grid-row: 2; }
-  .biome-controls .icon-button { grid-column: 4; grid-row: 2; }
+  .zone-control { grid-column: 1 / -1; grid-row: 2; }
+  .zone-control select { width: 100%; }
+  .position-control { width: auto; grid-column: 1 / 4; grid-row: 3; }
+  #biome-play { grid-column: 4; grid-row: 3; }
+  .time-control { width: auto; grid-column: 1 / -1; grid-row: 4; }
   #library-grid { grid-template-columns: minmax(240px,1fr); padding: 12px; }
   .library-toolbar h2 { font-size: 14px; }
   .library-toolbar { flex-wrap: wrap; gap: 8px; padding: 12px; }

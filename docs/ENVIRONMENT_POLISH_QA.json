@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-19",
+  "kind": "offline-production-renderer-not-browser-benchmark",
+  "tests": 257,
+  "build": "passed",
+  "assetsCheck": "passed",
+  "assets": 39,
+  "originals": 33,
+  "cases": 882,
+  "bodyPixels": 562422,
+  "binaryPixels": 1022908,
+  "restoredAlphaPixels": 18065,
+  "protectedFiles": 150,
+  "precacheFiles": 45,
+  "deliveryReport": "ENVIRONMENT_DELIVERY.json",
+  "gitWriteActions": false,
+  "browser": "In-app browser tab attachment failed in this turn; these images are offline renders."
+}

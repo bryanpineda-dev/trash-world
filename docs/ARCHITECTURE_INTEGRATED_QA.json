@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-19",
+  "kind": "offline-production-renderer-not-browser-benchmark",
+  "tests": 253,
+  "build": "passed",
+  "assetsCheck": "passed",
+  "assets": 38,
+  "originals": 33,
+  "cases": 882,
+  "bodyPixels": 562422,
+  "binaryPixels": 1071656,
+  "protectedFiles": 137,
+  "precacheFiles": 45,
+  "stableCopied": false,
+  "gitWriteActions": false,
+  "browser": {
+    "sandbox": "Center day/night and east night inspected in the actual biome viewer at 1280x720; fresh captures in docs/images/integrated-browser-*.png.",
+    "stableGame": "Actual application served from C:/Users/lrodr/Desktop/Bryan/Trash World at http://127.0.0.1:5190/ inspected at 1280x720. Fresh capture: docs/images/integrated-browser-game.png. Copy/check data in ARCHITECTURE_DELIVERY.json.",
+    "limits": "Not a browser FPS benchmark, physical phone check, disconnection check or full interactive-control regression."
+  }
+}

@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { SaveManager } from '../src/persistence/SaveManager.js';
 import { newSave, normalizeSave } from '../src/persistence/SaveSchema.js';
-import { CREATURE_MARGIN, SAVE_KEY } from '../src/core/Config.js';
+import { CREATURE_MARGIN, WORLD_LEFT, SAVE_KEY } from '../src/core/Config.js';
 
 function storage() {
   const values = new Map();
@@ -52,13 +52,13 @@ test('version zero migrates position and string states', () => {
 
 test('damaged fields are repaired without discarding valid discoveries', () => {
   const data = newSave(1000);
-  data.creature.needs.energy = 'bad'; data.creature.position.x = -100;
+  data.creature.needs.energy = 'bad'; data.creature.position.x = -10000;
   data.creature.state = { name: 'WALK', targetObject: 'missing' };
   data.world.discoveredObjects = ['can', 'missing', 'can'];
   data.world.events = [{ type: 'discovery', object: 'can', at: 10 }, 'bad'];
   const result = normalizeSave(data, 2000);
   assert.equal(result.creature.needs.energy, 84);
-  assert.equal(result.creature.position.x, CREATURE_MARGIN);
+  assert.equal(result.creature.position.x, WORLD_LEFT + CREATURE_MARGIN);
   assert.equal(result.creature.state.name, 'IDLE');
   assert.deepEqual(result.world.discoveredObjects, ['can']);
   assert.equal(result.world.events.length, 1);

@@ -1,0 +1,202 @@
+{
+  "date": "2026-10-19",
+  "kind": "architecture-candidate-offline",
+  "protectedFiles": 150,
+  "unchangedProduction": true,
+  "nativeRecords": [
+    {
+      "id": "church",
+      "size": [
+        140,
+        208
+      ],
+      "binaryAlpha": true,
+      "border": {
+        "top": 3,
+        "bottom": 138,
+        "left": 3,
+        "right": 6
+      }
+    },
+    {
+      "id": "oratory",
+      "size": [
+        116,
+        144
+      ],
+      "binaryAlpha": true,
+      "border": {
+        "top": 5,
+        "bottom": 104,
+        "left": 7,
+        "right": 8
+      }
+    },
+    {
+      "id": "tomb",
+      "size": [
+        112,
+        45
+      ],
+      "binaryAlpha": true,
+      "border": {
+        "top": 88,
+        "bottom": 104,
+        "left": 0,
+        "right": 13
+      }
+    }
+  ],
+  "cases": 96,
+  "animatedChangedPixels": 622,
+  "animationRecords": [
+    {
+      "id": "church",
+      "seconds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2
+      ],
+      "silhouetteUnchanged": true,
+      "changedPixels": 139
+    },
+    {
+      "id": "oratory",
+      "seconds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2
+      ],
+      "silhouetteUnchanged": true,
+      "changedPixels": 393
+    },
+    {
+      "id": "tomb",
+      "seconds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2
+      ],
+      "silhouetteUnchanged": true,
+      "changedPixels": 0
+    }
+  ],
+  "prototypeBundle": "passed",
+  "browser": {
+    "desktop": [
+      1280,
+      720
+    ],
+    "responsiveEmbeddedWindows": [
+      [
+        320,
+        720
+      ],
+      [
+        390,
+        844
+      ],
+      [
+        844,
+        390
+      ]
+    ],
+    "physicalPhone": false,
+    "controls": [
+      "day/night",
+      "current/candidate",
+      "scene/pieces",
+      "asset focus",
+      "camera endpoints",
+      "play/pause"
+    ],
+    "consoleErrors": 0,
+    "consoleWarnings": 0,
+    "limitations": [
+      "Low landscape viewport requires vertical document scroll to inspect whole canvas",
+      "No performance measurement",
+      "No disconnected offline test",
+      "Existing background/citadel not redesigned"
+    ]
+  },
+  "stableCopied": false,
+  "tests": {
+    "passed": 245,
+    "failed": 0
+  },
+  "assetsCheck": "passed",
+  "productionBuild": "passed",
+  "productionPrecacheFiles": 45,
+  "activeAssets": 29,
+  "candidateAssets": 3,
+  "sourceAndNativeFiles": 6,
+  "media": [
+    {
+      "path": "docs/images/architecture-pieces-day.png",
+      "size": [
+        1280,
+        720
+      ],
+      "sha256": "598fd5dc47560521f4b0c754353aaac8b3077c535fa116fd97c5a8eee0695ff9",
+      "kind": "offline-render-2x"
+    },
+    {
+      "path": "docs/images/architecture-scene-day.png",
+      "size": [
+        1280,
+        720
+      ],
+      "sha256": "3e279fe3c0fb8f7e41ec8ff50d87387019229d63666761a4d54214fa592d4e29",
+      "kind": "offline-render-2x"
+    },
+    {
+      "path": "docs/images/architecture-scene-night.png",
+      "size": [
+        1280,
+        720
+      ],
+      "sha256": "b7caeba6af95c92cb4e6e780448b6e31feb6880f3be5ce213e714608fb346d1d",
+      "kind": "offline-render-2x"
+    },
+    {
+      "path": "docs/images/architecture-browser-night.png",
+      "size": [
+        1280,
+        720
+      ],
+      "sha256": "7e2a95d26475932848bbc8317850addb6532fca6758ec7615c7d6fee401e4739",
+      "kind": "browser-screenshot-converted-to-png"
+    },
+    {
+      "path": "docs/images/architecture-browser-pieces.png",
+      "size": [
+        1280,
+        720
+      ],
+      "sha256": "76d3fbf6365dff0e39f83b9a3b45a4aaae9c9a1243cdcd2d4370c0fdd4a97631",
+      "kind": "browser-screenshot-converted-to-png"
+    },
+    {
+      "path": "docs/images/architecture-browser-mobile.png",
+      "size": [
+        1265,
+        712
+      ],
+      "sha256": "689f09543c795b2885f251571a6c8cc5cd3431465df739c98c3562c10e4bfe41",
+      "kind": "browser-screenshot-converted-to-png"
+    }
+  ],
+  "stable": {
+    "path": "C:/Users/lrodr/Desktop/Bryan/Trash World",
+    "status": "## main...origin/main",
+    "head": "2e01f604b643fb5c65c697914a2715a63a128162",
+    "copied": false
+  },
+  "gitWriteActions": false
+}

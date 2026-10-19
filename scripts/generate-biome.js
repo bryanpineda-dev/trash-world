@@ -33,14 +33,28 @@ export function generateBiome(checkOnly = false) {
   writeFileSync(new URL('../assets/generated/biome.png', import.meta.url), encodePng(bitmap));
   writeFileSync(new URL('../assets/generated/biome.json', import.meta.url), JSON.stringify({ version: 1, id: source.id,
     width: bitmap.width, height: bitmap.height, frames }, null, 2) + '\n');
+  console.log(`Generated legacy forest atlas: ${sprites.length} native sprites, three phases and three depth palettes.`);
+}
+
+export function biomePngExports(source = readBiomeSource()) {
+  validateBiome(source);
+  const files = new Map();
   for (const { id, path } of source.assetFiles) for (const phase of Object.keys(source.palettes)) for (const variant of biomeVariants(source.sprites[id])) {
     const sprite = source.sprites[id];
     const tile = createBitmap(...sprite.size);
     paintPixels(tile, biomePixels(sprite, variant), biomePalette(source, phase, 'near', sprite), 0, 0);
     const filename = phase.toLowerCase() + (variant === 'rest' ? '' : '-' + variant) + '.png';
-    const destination = new URL('../assets/generated/environment/' + path.replace(/\.json$/, '/' + filename), import.meta.url);
-    mkdirSync(new URL('.', destination), { recursive: true });
-    writeFileSync(destination, encodePng(tile));
+    files.set(path.replace(/\.json$/, '/' + filename), encodePng(tile));
   }
-  console.log(`Generated forest scenery: ${sprites.length} native sprites, three phases and three depth palettes.`);
+  return files;
+}
+
+export function exportLegacyBiome(directory = new URL('../.cache/legacy-assets/environment/', import.meta.url)) {
+  const files = biomePngExports();
+  for (const [path, bytes] of files) {
+    const destination = new URL(path, directory);
+    mkdirSync(new URL('.', destination), { recursive: true });
+    writeFileSync(destination, bytes);
+  }
+  console.log(`Exported ${files.size} legacy forest PNGs to ${directory.href}.`);
 }

@@ -1,0 +1,1152 @@
+{
+  "reviewDate": "2026-10-19",
+  "kind": "environment-polish",
+  "assets": 39,
+  "world": 39,
+  "originals": 33,
+  "libraryOnly": [],
+  "retiredSourceOnly": [
+    {
+      "id": "forestMiddle",
+      "label": "Bosque intermedio",
+      "family": "backgrounds",
+      "source": "source/backgrounds/forest-middle.png",
+      "sourceSha256": "425eaef8e2ed9b3428e310d9b7b1ceae121d7dec81088bedb0850d67a1b2bd61",
+      "retiredOn": "2026-10-19",
+      "reason": "Superseded by the unique forest layers. Original retained for provenance; native export removed."
+    },
+    {
+      "id": "forestFar",
+      "label": "Bosque lejano",
+      "family": "backgrounds",
+      "source": "source/backgrounds/forest-far.png",
+      "sourceSha256": "e1b20630999b5e753f89d3e211e6d621e822d1a984828c2c91bfa2ee812938cb",
+      "retiredOn": "2026-10-19",
+      "reason": "Superseded by the unique forest layers. Original retained for provenance; native export removed."
+    }
+  ],
+  "records": [
+    {
+      "id": "oakLeft",
+      "label": "Roble de encuadre izquierdo",
+      "family": "trees",
+      "file": "native/trees/oak-left.png",
+      "source": "source/trees/oak-left.png",
+      "size": [
+        215,
+        236
+      ],
+      "anchor": [
+        65,
+        236
+      ],
+      "sourceRect": {
+        "left": 14,
+        "top": 11,
+        "width": 1180,
+        "height": 1299
+      },
+      "generator": "image_gen built-in",
+      "sourceSha256": "8fbb785b4bacdca6e6cc0409f4cbfb2f89d25b0967fd2586b9d4183f14afacdc",
+      "sha256": "cb0a9c246a8877025e4bbb782783fe90e37d3c79ee2fcd0deeb75fab73dcb16a",
+      "usage": "world",
+      "bytes": 71920
+    },
+    {
+      "id": "oakRight",
+      "label": "Roble de encuadre derecho",
+      "family": "trees",
+      "file": "native/trees/oak-right.png",
+      "source": "source/trees/oak-right.png",
+      "size": [
+        208,
+        244
+      ],
+      "anchor": [
+        157,
+        244
+      ],
+      "sourceRect": {
+        "left": 9,
+        "top": 5,
+        "width": 1146,
+        "height": 1344
+      },
+      "generator": "image_gen built-in",
+      "sourceSha256": "5902a77543f3bee0d76923f731b84d28a2a70982b38ca22b93bff4d06c618a9b",
+      "sha256": "4af9bc9bd3ccbada5ff137ad87ac449a067289e25bc8266cb43295eab2955e75",
+      "usage": "world",
+      "bytes": 67345
+    },
+    {
+      "id": "gabledGrave",
+      "label": "Lapida de remate a dos aguas",
+      "family": "gravestones",
+      "file": "native/gravestones/gabled.png",
+      "source": "source/gravestones/gabled.png",
+      "size": [
+        50,
+        78
+      ],
+      "anchor": [
+        25,
+        78
+      ],
+      "sourceRect": {
+        "left": 137,
+        "top": 178,
+        "width": 768,
+        "height": 1214
+      },
+      "generator": "image_gen built-in",
+      "sourceSha256": "335ffa74286a9d72c0d63a8d61e723b59ef3656a7f86850035230c75025312e4",
+      "sha256": "8f37160e108cbd86ad685e3b4403a4f279b84009af0b2836de0e0526c4be9e6a",
+      "usage": "world",
+      "bytes": 8582
+    },
+    {
+      "id": "roundGrave",
+      "label": "Lapida arqueada",
+      "family": "gravestones",
+      "file": "native/gravestones/round.png",
+      "source": "source/gravestones/round.png",
+      "size": [
+        44,
+        53
+      ],
+      "anchor": [
+        22,
+        53
+      ],
+      "sourceRect": {
+        "left": 147,
+        "top": 231,
+        "width": 862,
+        "height": 992
+      },
+      "generator": "image_gen built-in",
+      "sourceSha256": "f83a484ecd1bfb767448fdbf328530d0ce47960826fe37981cc9a9eba9371537",
+      "sha256": "60c358dce3c4c8e9adadee11b7e15d5b555cbc17917e6c8d5369c50c95f65f95",
+      "usage": "world",
+      "bytes": 5332
+    },
+    {
+      "id": "ringCross",
+      "label": "Cruz anular erosionada",
+      "family": "gravestones",
+      "file": "native/gravestones/ring-cross.png",
+      "source": "source/gravestones/ring-cross.png",
+      "size": [
+        64,
+        112
+      ],
+      "anchor": [
+        32,
+        112
+      ],
+      "sourceRect": {
+        "left": 90,
+        "top": 18,
+        "width": 820,
+        "height": 1523
+      },
+      "generator": "image_gen built-in",
+      "sourceSha256": "8bbab093e5a1f6fd174b2bbe35fbf71f74ed8a5489828cc8c3d3c1296dbefc24",
+      "sha256": "a1ffeda68a2cde02691593ef0852a14ecb223e1605cd48c1e515f31183da76e6",
+      "usage": "world",
+      "bytes": 11395
+    },
+    {
+      "id": "chapel",
+      "label": "Iglesia del cementerio",
+      "family": "architecture",
+      "file": "native/architecture/church-rose.png",
+      "source": "source/architecture/church-rose.png",
+      "size": [
+        173,
+        256
+      ],
+      "anchor": [
+        86,
+        256
+      ],
+      "sourceRect": {
+        "left": 70,
+        "top": 80,
+        "width": 910,
+        "height": 1348
+      },
+      "generator": "image_gen built-in",
+      "sourceSha256": "cde47bc0bfaeb88851108bd3bd939c359ca6c9a453065618dbcd4d696befa379",
+      "sha256": "c4a103f2989ce24c38e557f16db717d204a5249577ddb76b2bcc584f29985f77",
+      "sourceSize": [
+        1013,
+        1552
+      ],
+      "provenance": "Architecture study revision 6; generated raster, see ARCHITECTURE_GENERATION.md.",
+      "usage": "world",
+      "bytes": 73470
+    },
+    {
+      "id": "ruin",
+      "label": "Pilar de dintel roto",
+      "family": "architecture",
+      "file": "native/architecture/broken-lintel.png",
+      "source": "source/architecture/broken-lintel.png",
+      "size": [
+        85,
+        142
+      ],
+      "anchor": [
+        31,
+        142
+      ],
+      "sourceRect": {
+        "left": 96,
+        "top": 146,
+        "width": 809,
+        "height": 1347
+      },
+      "generator": "image_gen built-in",
+      "sourceSha256": "4f038bc59ab528e0c809ab8e80f53f79adfbf80e833437b9d3966dc0d1ce2c4a",
+      "sha256": "1c9f7ece9e08d4384fcba821f45b5c31473c05bf1c437fe24176b15604a9322c",
+      "usage": "world",
+      "bytes": 16274
+    },
+    {
+      "id": "ground",
+      "label": "Sendero de piedra y raices",
+      "family": "terrain",
+      "file": "native/terrain/path.png",
+      "source": "source/terrain/path.png",
+      "size": [
+        560,
+        52
+      ],
+      "anchor": [
+        0,
+        12
+      ],
+      "sourceRect": {
+        "left": 0,
+        "top": 295,
+        "width": 2125,
+        "height": 210
+      },
+      "generator": "image_gen built-in",
+      "sourceSha256": "2a2ddc1eb5f65578d2f8a201f5ff2065a0330fbf1b311679fe822c6672aa099b",
+      "sha256": "c1fdbbdc4925afbb24043a3106c35acfffaed5170c5efa4e9f5bc9d2d94e4d9f",
+      "usage": "world",
+      "bytes": 52903
+    },
+    {
+      "id": "fence",
+      "label": "Tramo continuo de hierro",
+      "family": "architecture",
+      "file": "native/architecture/fence.png",
+      "source": "source/architecture/fence.png",
+      "size": [
+        84,
+        62
+      ],
+      "anchor": [
+        42,
+        62
+      ],
+      "sourceRect": {
+        "left": 79,
+        "top": 102,
+        "width": 1615,
+        "height": 698
+      },
+      "generator": "image_gen built-in",
+      "sourceSha256": "b8fbd2aba2cfc34b5d4b7215815b806952aaad724651b406e8552cbb988d7b0c",
+      "sha256": "b17a089f9237e071a8dddf7f3b56e893fe2f5b60beb818bb9027701eddca4beb",
+      "nativeRect": {
+        "left": 31,
+        "top": 0,
+        "width": 84,
+        "height": 62
+      },
+      "provenance": "Lossless native crop of the original fence; no horizontal stretching or duplicated masonry.",
+      "usage": "world",
+      "bytes": 4765
+    },
+    {
+      "id": "undergrowth",
+      "label": "Helechos, musgo y flores",
+      "family": "vegetation",
+      "file": "native/vegetation/ferns-and-flowers.png",
+      "source": "source/vegetation/ferns-and-flowers.png",
+      "size": [
+        79,
+        42
+      ],
+      "anchor": [
+        40,
+        42
+      ],
+      "sourceRect": {
+        "left": 66,
+        "top": 172,
+        "width": 1413,
+        "height": 751
+      },
+      "generator": "image_gen built-in",
+      "sourceSha256": "3ea41d899546302c86c2305c6ba0d3ebb8f9f90541c7c415b156203c85635255",
+      "sha256": "14d22968d74de52f3775f22de759b59e61654d009312fe0915e030a8efefe283",
+      "usage": "world",
+      "bytes": 5673
+    },
+    {
+      "id": "mushrooms",
+      "label": "Hongos decorativos",
+      "family": "vegetation",
+      "file": "native/vegetation/mushrooms.png",
+      "source": "source/vegetation/mushrooms.png",
+      "size": [
+        28,
+        20
+      ],
+      "anchor": [
+        14,
+        20
+      ],
+      "sourceRect": {
+        "left": 382,
+        "top": 338,
+        "width": 707,
+        "height": 497
+      },
+      "generator": "image_gen built-in",
+      "sourceSha256": "5abacb762f8591563fd63d60f24cfeda0dc9a046205e4ce3961dc70fb62c92bf",
+      "sha256": "3779d87bdd5d4a3bc3b9cb90d7a8ed69589c0ca76afb18d4bc2e43afec15bcc0",
+      "usage": "world",
+      "bytes": 1347
+    },
+    {
+      "id": "moon",
+      "label": "Luna de crateres",
+      "family": "sky",
+      "file": "native/sky/moon.png",
+      "source": "source/sky/moon.png",
+      "size": [
+        36,
+        36
+      ],
+      "anchor": [
+        18,
+        18
+      ],
+      "sourceRect": {
+        "left": 336,
+        "top": 332,
+        "width": 594,
+        "height": 575
+      },
+      "generator": "image_gen built-in",
+      "sourceSha256": "740928c9cf5f9977bd78f27873a8800359120c6667094c235475b46c963632ea",
+      "sha256": "ddb6942324c3722d072b5fd8add35e0c731a1afc3ad47cc95829cdce2e4fe6b8",
+      "usage": "world",
+      "bytes": 2188
+    },
+    {
+      "id": "prayingAngel",
+      "label": "Angel sobre pedestal",
+      "family": "gravestones",
+      "file": "native/gravestones/praying-angel.png",
+      "source": "source/gravestones/praying-angel.png",
+      "size": [
+        57,
+        156
+      ],
+      "anchor": [
+        28,
+        156
+      ],
+      "sourceRect": {
+        "left": 230,
+        "top": 66,
+        "width": 532,
+        "height": 1464
+      },
+      "generator": "image_gen built-in",
+      "provenance": "Reference-guided reconstruction; occluded parts generated, not a lossless crop",
+      "sourceSha256": "64e5fa39a98b02e05c00e13663bde393a8dc4da34db8a16704d04b8ca26ff8a4",
+      "sha256": "2eb30d69b425fadce6246a0377b0a24eb3549c1e7572400ccda8d6f7bb653a4b",
+      "usage": "world",
+      "bytes": 20410
+    },
+    {
+      "id": "mausoleum",
+      "label": "Oratorio abierto",
+      "family": "architecture",
+      "file": "native/architecture/open-oratory.png",
+      "source": "source/architecture/open-oratory.png",
+      "size": [
+        116,
+        144
+      ],
+      "anchor": [
+        58,
+        144
+      ],
+      "sourceRect": {
+        "left": 233,
+        "top": 47,
+        "width": 881,
+        "height": 1089
+      },
+      "generator": "image_gen built-in",
+      "provenance": "Architecture study revision 6; generated raster, see ARCHITECTURE_GENERATION.md.",
+      "sourceSha256": "b32588249d745a7fbd6345bd478f81fc93c3b8f283ae6b09261f4ad09113c247",
+      "sha256": "ad06434530ab01f0a045eec4512cbbe819ad92a08adc00aa887536281a672e35",
+      "sourceSize": [
+        1312,
+        1199
+      ],
+      "emission": {
+        "type": "altar-candles",
+        "wicks": [
+          [
+            47,
+            104
+          ],
+          [
+            57,
+            100
+          ],
+          [
+            66,
+            104
+          ]
+        ]
+      },
+      "usage": "world",
+      "bytes": 33588
+    },
+    {
+      "id": "cypressGrove",
+      "label": "Grupo de tres cipreses",
+      "family": "trees",
+      "file": "native/trees/cypress-grove.png",
+      "source": "source/trees/cypress-grove.png",
+      "size": [
+        126,
+        205
+      ],
+      "anchor": [
+        63,
+        205
+      ],
+      "sourceRect": {
+        "left": 162,
+        "top": 29,
+        "width": 819,
+        "height": 1328
+      },
+      "generator": "image_gen built-in",
+      "provenance": "Reference-guided reconstruction; occluded parts generated, not a lossless crop",
+      "sourceSha256": "0a471d840a44d0406e7c8655f05642b39942a647a01d4e7f3b81d8dc5605b39a",
+      "sha256": "4756a9ca6b7cf9d3c726545ebc5d10a007f154767ce9ba854af72e36c3f556d9",
+      "usage": "world",
+      "bytes": 33691
+    },
+    {
+      "id": "recliningAngel",
+      "label": "Sarcofago con cruz en relieve",
+      "family": "gravestones",
+      "file": "native/gravestones/relief-cross-tomb.png",
+      "source": "source/gravestones/relief-cross-tomb.png",
+      "size": [
+        120,
+        49
+      ],
+      "anchor": [
+        60,
+        49
+      ],
+      "sourceRect": {
+        "left": 152,
+        "top": 339,
+        "width": 1298,
+        "height": 525
+      },
+      "generator": "image_gen built-in",
+      "provenance": "Architecture study revision 6; generated raster, see ARCHITECTURE_GENERATION.md.",
+      "sourceSha256": "78d0d5bb0aa163947ad0b0449906af84d95a1329a878624702139912c9f2d94b",
+      "sha256": "57ab9133acc54b0af2c1be89c1ecc9c0ef4f20d8e898c3d904cc630710a1fc0b",
+      "sourceSize": [
+        1599,
+        984
+      ],
+      "usage": "world",
+      "bytes": 16390
+    },
+    {
+      "id": "brokenCross",
+      "label": "Cruz fracturada con hiedra",
+      "family": "gravestones",
+      "file": "native/gravestones/broken-cross.png",
+      "source": "source/gravestones/broken-cross.png",
+      "size": [
+        70,
+        82
+      ],
+      "anchor": [
+        35,
+        82
+      ],
+      "sourceRect": {
+        "left": 351,
+        "top": 126,
+        "width": 757,
+        "height": 890
+      },
+      "generator": "image_gen built-in",
+      "provenance": "Reference-guided reconstruction; occluded parts generated, not a lossless crop",
+      "sourceSha256": "21d6197086eb4cfc553be34194e6f021ce133124d12107ac70ff7b3ce7d491ef",
+      "sha256": "85fa06d7d8a386cc31f9597d6405d248bcdd8756422e86b7e7054b1c5c681a2c",
+      "usage": "world",
+      "bytes": 7613
+    },
+    {
+      "id": "distantCitadel",
+      "label": "Torre memorial con angel de piedra",
+      "family": "architecture",
+      "file": "native/architecture/guardian-tower.png",
+      "source": "source/architecture/guardian-tower.png",
+      "size": [
+        70,
+        190
+      ],
+      "anchor": [
+        35,
+        190
+      ],
+      "sourceRect": {
+        "left": 77,
+        "top": 85,
+        "width": 676,
+        "height": 1797
+      },
+      "generator": "image_gen built-in",
+      "provenance": "Reference-guided winged stone angel tower approved in direction by user; replaces citadel, bridge and waterfall, legacy id retained.",
+      "sourceSha256": "40bda3968b521dbae78e460202e99eb876ceac7cae1ab7ff949d226c5e282c55",
+      "sha256": "e11d8a80a1c69e2b97c1288b062de208a25c8979c3c3966624fad09690411414",
+      "usage": "world",
+      "bytes": 23344
+    },
+    {
+      "id": "watchtower",
+      "label": "Torre de guardia rota",
+      "family": "architecture",
+      "file": "native/architecture/ruined-watchtower.png",
+      "source": "source/architecture/ruined-watchtower.png",
+      "size": [
+        57,
+        148
+      ],
+      "anchor": [
+        28,
+        148
+      ],
+      "sourceRect": {
+        "left": 119,
+        "top": 87,
+        "width": 626,
+        "height": 1631
+      },
+      "generator": "image_gen built-in",
+      "provenance": "New reference-guided raster drawing; not a lossless extraction",
+      "sourceSha256": "c5bfd629c754b1db8f8bf23f2c50a62e1707649351730151cad96456eb05e662",
+      "sha256": "a2c145318203311f0a15c20e7e5d3cf9b1970d9a6482885b13868e87e4662a75",
+      "usage": "world",
+      "bytes": 17248
+    },
+    {
+      "id": "bareOak",
+      "label": "Roble seco del oeste",
+      "family": "trees",
+      "file": "native/trees/bare-oak.png",
+      "source": "source/trees/bare-oak.png",
+      "size": [
+        208,
+        238
+      ],
+      "anchor": [
+        48,
+        238
+      ],
+      "sourceRect": {
+        "left": 16,
+        "top": 10,
+        "width": 1144,
+        "height": 1308
+      },
+      "generator": "image_gen built-in",
+      "provenance": "New reference-guided raster drawing; not a lossless extraction",
+      "sourceSha256": "d5aba7cd89b1b3076ba97f9a85062728c99205e8e6a393137a9aacf215f1e5da",
+      "sha256": "f88a931996d91f3e53443d8a6313e9f01a205eb6bc72d4d3f8ae2e8223400ecf",
+      "usage": "world",
+      "bytes": 38158
+    },
+    {
+      "id": "silverAsh",
+      "label": "Fresno de corteza plateada",
+      "family": "trees",
+      "file": "native/trees/silver-ash.png",
+      "source": "source/trees/silver-ash.png",
+      "size": [
+        199,
+        238
+      ],
+      "anchor": [
+        157,
+        238
+      ],
+      "sourceRect": {
+        "left": 23,
+        "top": 32,
+        "width": 1098,
+        "height": 1316
+      },
+      "generator": "image_gen built-in",
+      "provenance": "New reference-guided raster drawing; not a lossless extraction",
+      "sourceSha256": "34b91af2218ce26c9cbacb04308bb79e2cb0cc404d4502f7f6cfa3aaf9590f2e",
+      "sha256": "a3a8a6b37cf361ab2a3fe4753800fac5d17b1d792407b24b6ac2e56bde999a40",
+      "usage": "world",
+      "bytes": 29260
+    },
+    {
+      "id": "roseGrave",
+      "label": "Lapida de marmol con rosas",
+      "family": "gravestones",
+      "file": "native/gravestones/rose-marble.png",
+      "source": "source/gravestones/rose-marble.png",
+      "size": [
+        51,
+        78
+      ],
+      "anchor": [
+        25,
+        78
+      ],
+      "sourceRect": {
+        "left": 137,
+        "top": 185,
+        "width": 780,
+        "height": 1203
+      },
+      "generator": "image_gen built-in",
+      "provenance": "New reference-guided raster drawing; not a lossless extraction",
+      "sourceSha256": "9a88dbfbdc007fb8a49f4b82fc6794949ccbcc1cc75e8d7882aa268e50412704",
+      "sha256": "9d2c5ad4586b6cbaa5fa0f91c0aaab0c1f3fd907f56b53dbec5cbce138d0ac66",
+      "usage": "world",
+      "bytes": 9163
+    },
+    {
+      "id": "graniteObelisk",
+      "label": "Obelisco de granito y espigas",
+      "family": "gravestones",
+      "file": "native/gravestones/granite-obelisk.png",
+      "source": "source/gravestones/granite-obelisk.png",
+      "size": [
+        37,
+        98
+      ],
+      "anchor": [
+        18,
+        98
+      ],
+      "sourceRect": {
+        "left": 193,
+        "top": 53,
+        "width": 579,
+        "height": 1541
+      },
+      "generator": "image_gen built-in",
+      "provenance": "New reference-guided raster drawing; not a lossless extraction",
+      "sourceSha256": "7bab3c922e0d9f7fcbaf45b4e17b6eccbde2d758790c76f78c583855734a0f54",
+      "sha256": "67605c12415a04045068fa84b272e8de4ffbce0a11191559ef791db7c9e2e829",
+      "usage": "world",
+      "bytes": 5190
+    },
+    {
+      "id": "flowerLedger",
+      "label": "Losa con flores azules",
+      "family": "gravestones",
+      "file": "native/gravestones/flower-ledger.png",
+      "source": "source/gravestones/flower-ledger.png",
+      "size": [
+        82,
+        25
+      ],
+      "anchor": [
+        41,
+        25
+      ],
+      "sourceRect": {
+        "left": 233,
+        "top": 272,
+        "width": 1399,
+        "height": 426
+      },
+      "generator": "image_gen built-in",
+      "provenance": "New reference-guided raster drawing; not a lossless extraction",
+      "sourceSha256": "e784b7309b960f986ab631d2d70487abc89d8ea2e08f5edcc518fdea3e564f7f",
+      "sha256": "a7873b2a590ee7bd11fb2f1c50ad5875c6f16c265618e8831a6d14880c294671",
+      "usage": "world",
+      "bytes": 5489
+    },
+    {
+      "id": "urnMemorial",
+      "label": "Urna de terracota y flores secas",
+      "family": "gravestones",
+      "file": "native/gravestones/terracotta-urn.png",
+      "source": "source/gravestones/terracotta-urn.png",
+      "size": [
+        34,
+        72
+      ],
+      "anchor": [
+        17,
+        72
+      ],
+      "sourceRect": {
+        "left": 204,
+        "top": 126,
+        "width": 617,
+        "height": 1304
+      },
+      "generator": "image_gen built-in",
+      "provenance": "New reference-guided raster drawing; not a lossless extraction",
+      "sourceSha256": "222893638292ac103c584956b390aa3238083cedca9512145f48112fbac73802",
+      "sha256": "233ba2edb159e451011a75521ea7c22f7a9e6f7067a6a9f99de5a8621bb63c16",
+      "usage": "world",
+      "bytes": 5212
+    },
+    {
+      "id": "westWildflowers",
+      "label": "Flores y hierbas del jardin",
+      "family": "vegetation",
+      "file": "native/vegetation/west-wildflowers.png",
+      "source": "source/vegetation/west-wildflowers.png",
+      "size": [
+        540,
+        45
+      ],
+      "anchor": [
+        270,
+        45
+      ],
+      "sourceRect": {
+        "left": 25,
+        "top": 649,
+        "width": 1489,
+        "height": 123
+      },
+      "generator": "image_gen built-in",
+      "provenance": "New reference-guided raster drawing; not a lossless extraction",
+      "sourceSha256": "3a030419d1dab5e60711a7c6c5de744a11522ee4b019e34f016eac3c2390f91f",
+      "sha256": "299b45a6d0bf9d05f22199b93d916c6fc7109d0f1205d799012eda998ee4aa4b",
+      "usage": "world",
+      "bytes": 15522
+    },
+    {
+      "id": "eastFungi",
+      "label": "Hongos y helechos del patio",
+      "family": "vegetation",
+      "file": "native/vegetation/east-fungi.png",
+      "source": "source/vegetation/east-fungi.png",
+      "size": [
+        540,
+        48
+      ],
+      "anchor": [
+        270,
+        48
+      ],
+      "sourceRect": {
+        "left": 20,
+        "top": 511,
+        "width": 1490,
+        "height": 132
+      },
+      "generator": "image_gen built-in",
+      "provenance": "New reference-guided raster drawing; not a lossless extraction",
+      "sourceSha256": "d75eb48fd90b5a4f7dcef6b538a70d8345ed15ccf43ea56334a4b9e8e936c24a",
+      "sha256": "580d07fa32284a64f129a8f7eac8f63d0bfdd8a2f695f36cbbdd5108e8a2c7c6",
+      "usage": "world",
+      "bytes": 13957
+    },
+    {
+      "id": "uniqueForestFar",
+      "label": "Bosque lejano sin repeticion",
+      "family": "backgrounds",
+      "file": "native/backgrounds/unique-forest-far.png",
+      "source": "source/backgrounds/unique-forest-far.png",
+      "size": [
+        1600,
+        220
+      ],
+      "anchor": [
+        800,
+        220
+      ],
+      "sourceRect": {
+        "left": 7,
+        "top": 260,
+        "width": 2086,
+        "height": 287
+      },
+      "generator": "image_gen built-in",
+      "provenance": "Native export regenerated directly from unchanged source rectangle and source alpha threshold 128; restores 18065 wrongly erased opaque pixels.",
+      "sourceSha256": "230b5112a7b5c39351f70e4cda17eeec938cdc3a4a5eaafcbfbbb467621d89af",
+      "sha256": "ca725adb64f526cd774e5755bc19ab6d7484f6e417335b53179fc6d344eeefac",
+      "alphaPolicy": "source-alpha>=128",
+      "usage": "world",
+      "bytes": 518742
+    },
+    {
+      "id": "uniqueForestMiddle",
+      "label": "Bosque intermedio sin repeticion",
+      "family": "backgrounds",
+      "file": "native/backgrounds/unique-forest-middle.png",
+      "source": "source/backgrounds/unique-forest-middle.png",
+      "size": [
+        900,
+        229
+      ],
+      "anchor": [
+        450,
+        229
+      ],
+      "sourceRect": {
+        "left": 0,
+        "top": 98,
+        "width": 2173,
+        "height": 552
+      },
+      "generator": "image_gen built-in",
+      "provenance": "Reference-guided canopy repair using image_gen; continuous leafy crowns, preserved lateral species layout.",
+      "sourceSha256": "495a3e7a50323bf4e33fe9e25624fcaec6cf1fe87a8d79625810945e906a5522",
+      "sha256": "2bb2ccb606a800a3cc4f1d3e1f4088a6a50676b9b44a11d0def4cd9f46d45f6d",
+      "usage": "world",
+      "bytes": 382411
+    },
+    {
+      "id": "crosses-back-1",
+      "label": "Cruz sencilla",
+      "family": "gravestones",
+      "file": "native/gravestones/crosses-back-1.png",
+      "source": "source/gravestones/cemetery-crosses-back.png",
+      "size": [
+        22,
+        32
+      ],
+      "anchor": [
+        11,
+        32
+      ],
+      "sourceRect": {
+        "left": 43,
+        "top": 378,
+        "width": 247,
+        "height": 349
+      },
+      "sourceSize": [
+        1983,
+        793
+      ],
+      "generator": "image_gen built-in",
+      "provenance": "Architecture study revision 6; generated raster, see ARCHITECTURE_GENERATION.md.",
+      "sourceSha256": "71907b900e9525376083437580ed5f0872a4558dd8cc81bfa1dbb95c042e96ad",
+      "sha256": "0e9e1353b64d7e4f93028ba003df026d9913480e0849c9672640b3b6d39c9bff",
+      "usage": "world",
+      "bytes": 1381
+    },
+    {
+      "id": "crosses-back-2",
+      "label": "Cruz anillada",
+      "family": "gravestones",
+      "file": "native/gravestones/crosses-back-2.png",
+      "source": "source/gravestones/cemetery-crosses-back.png",
+      "size": [
+        27,
+        40
+      ],
+      "anchor": [
+        13,
+        40
+      ],
+      "sourceRect": {
+        "left": 313,
+        "top": 284,
+        "width": 297,
+        "height": 443
+      },
+      "sourceSize": [
+        1983,
+        793
+      ],
+      "generator": "image_gen built-in",
+      "provenance": "Architecture study revision 6; generated raster, see ARCHITECTURE_GENERATION.md.",
+      "sourceSha256": "71907b900e9525376083437580ed5f0872a4558dd8cc81bfa1dbb95c042e96ad",
+      "sha256": "e3dd5874e1ffc65dca8b49e30accda6bcf70f3e9ffc24ec1208ed36aa409f319",
+      "usage": "world",
+      "bytes": 2027
+    },
+    {
+      "id": "crosses-back-3",
+      "label": "Cruz delgada",
+      "family": "gravestones",
+      "file": "native/gravestones/crosses-back-3.png",
+      "source": "source/gravestones/cemetery-crosses-back.png",
+      "size": [
+        19,
+        32
+      ],
+      "anchor": [
+        9,
+        32
+      ],
+      "sourceRect": {
+        "left": 637,
+        "top": 368,
+        "width": 213,
+        "height": 359
+      },
+      "sourceSize": [
+        1983,
+        793
+      ],
+      "generator": "image_gen built-in",
+      "provenance": "Architecture study revision 6; generated raster, see ARCHITECTURE_GENERATION.md.",
+      "sourceSha256": "71907b900e9525376083437580ed5f0872a4558dd8cc81bfa1dbb95c042e96ad",
+      "sha256": "0cb0b50e93ee8fbcac3374b1174c17fc88d98f2bfc5724323e2f96f5b3cf5edb",
+      "usage": "world",
+      "bytes": 1144
+    },
+    {
+      "id": "crosses-back-4",
+      "label": "Cruz erosionada",
+      "family": "gravestones",
+      "file": "native/gravestones/crosses-back-4.png",
+      "source": "source/gravestones/cemetery-crosses-back.png",
+      "size": [
+        26,
+        34
+      ],
+      "anchor": [
+        13,
+        34
+      ],
+      "sourceRect": {
+        "left": 1348,
+        "top": 347,
+        "width": 288,
+        "height": 378
+      },
+      "sourceSize": [
+        1983,
+        793
+      ],
+      "generator": "image_gen built-in",
+      "provenance": "Architecture study revision 6; generated raster, see ARCHITECTURE_GENERATION.md.",
+      "sourceSha256": "71907b900e9525376083437580ed5f0872a4558dd8cc81bfa1dbb95c042e96ad",
+      "sha256": "dfc4fcb039c1d45ac8f2adb79786c4ad1679aab4ea7a3065f3abc509a52382c9",
+      "usage": "world",
+      "bytes": 1589
+    },
+    {
+      "id": "crosses-back-5",
+      "label": "Cruz baja",
+      "family": "gravestones",
+      "file": "native/gravestones/crosses-back-5.png",
+      "source": "source/gravestones/cemetery-crosses-back.png",
+      "size": [
+        24,
+        30
+      ],
+      "anchor": [
+        12,
+        30
+      ],
+      "sourceRect": {
+        "left": 1670,
+        "top": 394,
+        "width": 266,
+        "height": 330
+      },
+      "sourceSize": [
+        1983,
+        793
+      ],
+      "generator": "image_gen built-in",
+      "provenance": "Architecture study revision 6; generated raster, see ARCHITECTURE_GENERATION.md.",
+      "sourceSha256": "71907b900e9525376083437580ed5f0872a4558dd8cc81bfa1dbb95c042e96ad",
+      "sha256": "7fdd398772202220368151339e559cde9cff7bedfcb1c446b042251363dd1904",
+      "usage": "world",
+      "bytes": 1385
+    },
+    {
+      "id": "crosses-front-1",
+      "label": "Cruz alta",
+      "family": "gravestones",
+      "file": "native/gravestones/crosses-front-1.png",
+      "source": "source/gravestones/cemetery-crosses-front.png",
+      "size": [
+        30,
+        56
+      ],
+      "anchor": [
+        15,
+        56
+      ],
+      "sourceRect": {
+        "left": 57,
+        "top": 194,
+        "width": 309,
+        "height": 581
+      },
+      "sourceSize": [
+        1864,
+        844
+      ],
+      "generator": "image_gen built-in",
+      "provenance": "Architecture study revision 6; generated raster, see ARCHITECTURE_GENERATION.md.",
+      "sourceSha256": "e61ec97e6fb325e4de988a5acdbdae43af34b798cb68416de223613fb13a3bdf",
+      "sha256": "f58956c510d4771630598cd887bdeeafcb9198a5d28527fc70878e780ee85f45",
+      "usage": "world",
+      "bytes": 2502
+    },
+    {
+      "id": "crosses-front-2",
+      "label": "Cruz de madera",
+      "family": "gravestones",
+      "file": "native/gravestones/crosses-front-2.png",
+      "source": "source/gravestones/cemetery-crosses-front.png",
+      "size": [
+        26,
+        36
+      ],
+      "anchor": [
+        13,
+        36
+      ],
+      "sourceRect": {
+        "left": 409,
+        "top": 400,
+        "width": 270,
+        "height": 375
+      },
+      "sourceSize": [
+        1864,
+        844
+      ],
+      "generator": "image_gen built-in",
+      "provenance": "Architecture study revision 6; generated raster, see ARCHITECTURE_GENERATION.md.",
+      "sourceSha256": "e61ec97e6fb325e4de988a5acdbdae43af34b798cb68416de223613fb13a3bdf",
+      "sha256": "7ebd3c7599a270c546b0878ac94ab8e7e1a70ab4d98ca33d83546275e8289c36",
+      "usage": "world",
+      "bytes": 1744
+    },
+    {
+      "id": "crosses-front-3",
+      "label": "Cruz redondeada",
+      "family": "gravestones",
+      "file": "native/gravestones/crosses-front-3.png",
+      "source": "source/gravestones/cemetery-crosses-front.png",
+      "size": [
+        27,
+        42
+      ],
+      "anchor": [
+        13,
+        42
+      ],
+      "sourceRect": {
+        "left": 1201,
+        "top": 336,
+        "width": 279,
+        "height": 439
+      },
+      "sourceSize": [
+        1864,
+        844
+      ],
+      "generator": "image_gen built-in",
+      "provenance": "Architecture study revision 6; generated raster, see ARCHITECTURE_GENERATION.md.",
+      "sourceSha256": "e61ec97e6fb325e4de988a5acdbdae43af34b798cb68416de223613fb13a3bdf",
+      "sha256": "2883ff802638dfa42a7058f672b6aa883de0b3789c86749607a3d4c15ee3f013",
+      "usage": "world",
+      "bytes": 2302
+    },
+    {
+      "id": "crosses-front-4",
+      "label": "Lapida pequena",
+      "family": "gravestones",
+      "file": "native/gravestones/crosses-front-4.png",
+      "source": "source/gravestones/cemetery-crosses-front.png",
+      "size": [
+        28,
+        26
+      ],
+      "anchor": [
+        14,
+        26
+      ],
+      "sourceRect": {
+        "left": 1518,
+        "top": 507,
+        "width": 292,
+        "height": 273
+      },
+      "sourceSize": [
+        1864,
+        844
+      ],
+      "generator": "image_gen built-in",
+      "provenance": "Architecture study revision 6; generated raster, see ARCHITECTURE_GENERATION.md.",
+      "sourceSha256": "e61ec97e6fb325e4de988a5acdbdae43af34b798cb68416de223613fb13a3bdf",
+      "sha256": "6e8855d5c800ef5884b375b78448c8ba902f965eae212658e27079c684a2a46f",
+      "usage": "world",
+      "bytes": 1758
+    },
+    {
+      "id": "fencePillar",
+      "label": "Pilar modular de la verja",
+      "family": "architecture",
+      "file": "native/architecture/fence-pillar.png",
+      "source": "source/architecture/fence.png",
+      "size": [
+        26,
+        62
+      ],
+      "anchor": [
+        13,
+        62
+      ],
+      "sourceRect": {
+        "left": 79,
+        "top": 102,
+        "width": 1615,
+        "height": 698
+      },
+      "generator": "image_gen built-in",
+      "sourceSha256": "b8fbd2aba2cfc34b5d4b7215815b806952aaad724651b406e8552cbb988d7b0c",
+      "sha256": "5730498cd48e697b0f9391689b24268d369ed86f2a8192ba6cd147042f9ad31f",
+      "nativeRect": {
+        "left": 0,
+        "top": 0,
+        "width": 26,
+        "height": 62
+      },
+      "provenance": "Lossless native crop of the original fence; stone support placed independently from iron spans.",
+      "usage": "world",
+      "bytes": 3698
+    }
+  ],
+  "duplicateNativeHashes": 0
+}

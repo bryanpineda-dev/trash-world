@@ -1,4 +1,5 @@
 import { moveToward } from '../physics/Collision.js';
+import { CREATURE_MARGIN } from '../core/Config.js';
 import { inspectionDuration } from '../world/LanternInteraction.js';
 
 export class CreatureAI {
@@ -54,7 +55,7 @@ export class CreatureAI {
     if (c.needs.boredom > 25 || this.random() < 0.25 + interest * 0.65) {
       const candidates = this.world.objects.filter(object => object.id !== c.memory.lastObject);
       if(!candidates.length) {
-        c.transition('WALK',10,{x:30+this.random()*(this.world.width-60)});
+        c.transition('WALK',10,{x:this.world.left+CREATURE_MARGIN+this.random()*(this.world.width-CREATURE_MARGIN*2)});
         return;
       }
       candidates.sort((a, b) => {
@@ -63,7 +64,7 @@ export class CreatureAI {
       });
       this.investigate(candidates[this.random() < 0.8 ? 0 : Math.min(1, candidates.length - 1)].id);
     } else if (this.random() < 0.55 - c.personality.laziness * 0.2) {
-      c.transition('WALK', 10, { x: 30 + this.random() * (this.world.width - 60) });
+      c.transition('WALK', 10, { x: this.world.left + CREATURE_MARGIN + this.random() * (this.world.width - CREATURE_MARGIN * 2) });
     } else {
       c.transition(this.random() < 0.5 ? 'IDLE' : 'LOOK_AROUND', 2 + this.random() * 5);
     }

@@ -1,4 +1,7 @@
-export const WORLD_WIDTH = 560;
+export const WORLD_LEFT = -560;
+export const WORLD_RIGHT = 1120;
+export const WORLD_WIDTH = WORLD_RIGHT - WORLD_LEFT;
+export const VIEW_WIDTH = 560;
 export const CREATURE_MARGIN = 32;
 export const FIXED_STEP = 1 / 30;
 export const DAY_SECONDS = 24 * 60;

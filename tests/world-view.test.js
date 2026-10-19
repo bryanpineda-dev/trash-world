@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { Camera, worldViewSize } from '../src/rendering/Camera.js';
-import { WORLD_WIDTH } from '../src/core/Config.js';
+import { WORLD_WIDTH, WORLD_LEFT, WORLD_RIGHT, VIEW_WIDTH } from '../src/core/Config.js';
 import { readBiomeSource } from '../scripts/biome-source.js';
 import { biomePalette, sceneryPosition } from '../src/rendering/BiomeModel.js';
 
@@ -17,7 +17,8 @@ test('world view shows more native space without changing aspect ratio or sprite
     assert.ok(size.width > oldWidth);
     assert.ok(56*w/size.width < 56*w/oldWidth);
   }
-  assert.equal(worldViewSize(1280,564).width,WORLD_WIDTH);
+  assert.equal(worldViewSize(1280,564).width,908);
+  assert.ok(worldViewSize(1280,564).width>VIEW_WIDTH);
 });
 
 test('wide cameras stay centered on the existing world instead of clamping to an inverted range', () => {
@@ -25,8 +26,8 @@ test('wide cameras stay centered on the existing world instead of clamping to an
     const {width,height} = worldViewSize(w,h);
     const camera = new Camera(x); camera.resize(width,height);
     camera.update(x,10);
-    if (width >= WORLD_WIDTH) assert.equal(camera.x,WORLD_WIDTH/2);
-    else assert.ok(camera.x >= width/2 && camera.x <= WORLD_WIDTH-width/2);
+    if (width >= WORLD_WIDTH) assert.equal(camera.x,(WORLD_LEFT+WORLD_RIGHT)/2);
+    else assert.ok(camera.x >= WORLD_LEFT+width/2 && camera.x <= WORLD_RIGHT-width/2);
     const point = camera.toScreen(x);
     assert.ok(point.x >= 0 && point.x < width);
   }

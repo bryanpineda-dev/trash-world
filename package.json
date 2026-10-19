@@ -8,6 +8,7 @@
     "dev": "vite --host 127.0.0.1",
     "assets": "node scripts/generate-assets.js && node scripts/generate-icons.js",
     "assets:check": "node scripts/generate-assets.js --check",
+    "assets:legacy": "node scripts/generate-assets.js --legacy-exports && node scripts/generate-cemetery-study.js",
     "predev": "npm run assets",
     "prebuild": "npm run assets",
     "build": "vite build",

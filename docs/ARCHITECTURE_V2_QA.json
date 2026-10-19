@@ -1,0 +1,348 @@
+{
+  "date": "2026-10-19",
+  "kind": "architecture-candidate-offline",
+  "protectedFiles": 150,
+  "unchangedProduction": true,
+  "nativeRecords": [
+    {
+      "id": "church",
+      "size": [
+        140,
+        208
+      ],
+      "binaryAlpha": true,
+      "border": {
+        "top": 3,
+        "bottom": 138,
+        "left": 3,
+        "right": 6
+      }
+    },
+    {
+      "id": "oratory",
+      "size": [
+        116,
+        144
+      ],
+      "binaryAlpha": true,
+      "border": {
+        "top": 5,
+        "bottom": 104,
+        "left": 7,
+        "right": 8
+      }
+    },
+    {
+      "id": "tomb",
+      "size": [
+        112,
+        56
+      ],
+      "binaryAlpha": true,
+      "border": {
+        "top": 84,
+        "bottom": 103,
+        "left": 5,
+        "right": 14
+      }
+    },
+    {
+      "id": "crosses-back-1",
+      "size": [
+        22,
+        32
+      ],
+      "binaryAlpha": true,
+      "border": {
+        "top": 4,
+        "bottom": 20,
+        "left": 1,
+        "right": 2
+      }
+    },
+    {
+      "id": "crosses-back-2",
+      "size": [
+        27,
+        40
+      ],
+      "binaryAlpha": true,
+      "border": {
+        "top": 3,
+        "bottom": 25,
+        "left": 1,
+        "right": 2
+      }
+    },
+    {
+      "id": "crosses-back-3",
+      "size": [
+        19,
+        32
+      ],
+      "binaryAlpha": true,
+      "border": {
+        "top": 2,
+        "bottom": 17,
+        "left": 1,
+        "right": 2
+      }
+    },
+    {
+      "id": "crosses-back-4",
+      "size": [
+        26,
+        34
+      ],
+      "binaryAlpha": true,
+      "border": {
+        "top": 1,
+        "bottom": 24,
+        "left": 0,
+        "right": 1
+      }
+    },
+    {
+      "id": "crosses-back-5",
+      "size": [
+        24,
+        30
+      ],
+      "binaryAlpha": true,
+      "border": {
+        "top": 1,
+        "bottom": 24,
+        "left": 2,
+        "right": 3
+      }
+    },
+    {
+      "id": "crosses-front-1",
+      "size": [
+        30,
+        56
+      ],
+      "binaryAlpha": true,
+      "border": {
+        "top": 6,
+        "bottom": 28,
+        "left": 0,
+        "right": 2
+      }
+    },
+    {
+      "id": "crosses-front-2",
+      "size": [
+        26,
+        36
+      ],
+      "binaryAlpha": true,
+      "border": {
+        "top": 3,
+        "bottom": 23,
+        "left": 2,
+        "right": 4
+      }
+    },
+    {
+      "id": "crosses-front-3",
+      "size": [
+        27,
+        42
+      ],
+      "binaryAlpha": true,
+      "border": {
+        "top": 5,
+        "bottom": 27,
+        "left": 1,
+        "right": 10
+      }
+    },
+    {
+      "id": "crosses-front-4",
+      "size": [
+        28,
+        26
+      ],
+      "binaryAlpha": true,
+      "border": {
+        "top": 7,
+        "bottom": 11,
+        "left": 0,
+        "right": 1
+      }
+    }
+  ],
+  "cases": 96,
+  "animatedChangedPixels": 614,
+  "animationRecords": [
+    {
+      "id": "church",
+      "seconds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2
+      ],
+      "silhouetteUnchanged": true,
+      "changedPixels": 139
+    },
+    {
+      "id": "oratory",
+      "seconds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2
+      ],
+      "silhouetteUnchanged": true,
+      "changedPixels": 393
+    },
+    {
+      "id": "tomb",
+      "seconds": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2
+      ],
+      "silhouetteUnchanged": true,
+      "changedPixels": 0
+    }
+  ],
+  "prototypeBundle": "passed",
+  "browser": {
+    "desktop": [
+      1280,
+      720
+    ],
+    "fixturesViaUrl": [
+      "day scene with cemetery",
+      "night scene with cemetery",
+      "isolated tomb at native scale"
+    ],
+    "limitation": "Checkbox interaction and a new-tab attempt timed out in the browser control tool; no successful interaction claim for these attempts. Responsive cases are offline renders, not fresh mobile-browser evidence."
+  },
+  "stableCopied": false,
+  "revision": 2,
+  "tests": {
+    "passed": 247,
+    "failed": 0
+  },
+  "productionBuild": "passed",
+  "assetsCheck": "passed",
+  "productionPrecacheFiles": 45,
+  "documentation": [
+    {
+      "path": "README.md",
+      "sha256": "f38fdff3cf033298e983aa313b4bafdefcabdf097a40bac52261c42f508ad1bb"
+    },
+    {
+      "path": "docs/ARCHITECTURE_STUDY.md",
+      "sha256": "646a0c8d37b1b8ac1b55b189eb857cf0e9b7ef48dc3c2754a491984175dbe735"
+    },
+    {
+      "path": "docs/VERIFICATION.md",
+      "sha256": "9a86ccf0e497873b8ae5e3ba88df0be2449d4f2fbc702b85187403b6cd203855"
+    },
+    {
+      "path": "studies/architecture/GENERATION.md",
+      "sha256": "b82c222a85198db4b79b2a6304b92ead1c886039d6d4bdbe8d7d4b2e2e30a17c"
+    },
+    {
+      "path": "studies/architecture/prompts-v2.json",
+      "sha256": "245620297cd1e4bf6daa9b45ebd9991196e4b3594ce19b240f65106c80605291"
+    }
+  ],
+  "inventory": {
+    "production": 29,
+    "studyMain": 3,
+    "studyGraves": 9,
+    "native": 12,
+    "originals": 5,
+    "uncataloguedPngs": 0
+  },
+  "media": [
+    {
+      "path": "docs/images/architecture-v2-pieces-day.png",
+      "size": [
+        1280,
+        720
+      ],
+      "sha256": "16e4a25e2dfcc52d8c176d466a3fcb35367c4531f2bc815c4080fee9000e52c6",
+      "kind": "offline-2x"
+    },
+    {
+      "path": "docs/images/architecture-v2-scene-day.png",
+      "size": [
+        1280,
+        720
+      ],
+      "sha256": "7e044a46c8c19b9d83cf6c54029b61ad126e7d359634de3f57c60d3e33a4ab82",
+      "kind": "offline-2x"
+    },
+    {
+      "path": "docs/images/architecture-v2-scene-night.png",
+      "size": [
+        1280,
+        720
+      ],
+      "sha256": "7148c546bfa157258f2ba8cdb343f454cffba32c9848b5169c6f768f0a9979bc",
+      "kind": "offline-2x"
+    },
+    {
+      "path": "docs/images/architecture-v2-tomb-comparison.png",
+      "size": [
+        960,
+        370
+      ],
+      "sha256": "4310ef91efc89d9943f5692aa7716ff6b56abe6dda2ec1474884c83858d1ab63",
+      "kind": "offline-1x-and-4x"
+    },
+    {
+      "path": "docs/images/architecture-v2-browser-day.png",
+      "size": [
+        1280,
+        720
+      ],
+      "sha256": "02eb97fadf61bbce5cb258707db02bfd65089cd8e045a9b94ea3d3b3f7beca59",
+      "kind": "browser-screenshot-converted-to-png"
+    },
+    {
+      "path": "docs/images/architecture-v2-browser-night.png",
+      "size": [
+        1280,
+        720
+      ],
+      "sha256": "5b33c53a770ce61bb2f3319ac8bbd28f0b28f75f4ed87bd45c3d46cba7017b33",
+      "kind": "browser-screenshot-converted-to-png"
+    },
+    {
+      "path": "docs/images/architecture-v2-browser-tomb.png",
+      "size": [
+        1280,
+        720
+      ],
+      "sha256": "cf8f368ff1996b0e68eb71646b8640a9ed83e299fcd8f1725f8ceab88df7920f",
+      "kind": "browser-screenshot-converted-to-png"
+    }
+  ],
+  "visualReview": {
+    "previousTomb": "Rejected by user: bar instead of a readable cross.",
+    "firstRegeneration": "Discarded: crossbar still too short.",
+    "selectedTomb": "Compared at native 112px width and 4x; pitched lid exposes a prominent off-center crossbar.",
+    "firstComposition": "Rejected during QA: foreground fence hid too many crosses.",
+    "selectedComposition": "Rear boundary fence, then five small crosses and four larger markers. No church enlargement or new fog.",
+    "approval": "Candidate, user approval still required."
+  },
+  "stable": {
+    "path": "C:/Users/lrodr/Desktop/Bryan/Trash World",
+    "copied": false,
+    "status": "## main...origin/main",
+    "head": "2e01f604b643fb5c65c697914a2715a63a128162"
+  },
+  "gitWriteActions": false
+}

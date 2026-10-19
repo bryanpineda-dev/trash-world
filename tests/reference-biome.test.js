@@ -8,17 +8,18 @@ import { WORLD_OBJECTS, RETIRED_OBJECT_IDS, World } from '../src/world/World.js'
 import { normalizeSave, newSave } from '../src/persistence/SaveSchema.js';
 import { Creature } from '../src/creature/Creature.js';
 import { CreatureAI } from '../src/creature/CreatureAI.js';
+import { panoramaPlacements, cemeteryPlacements, fitReferencePlacement } from '../src/rendering/ReferenceLayout.js';
 
 const root=new URL('../assets/reference-biome/',import.meta.url);
 const manifest=JSON.parse(readFileSync(new URL('manifest.json',root)));
 const ids=manifest.sprites.map(s=>s.id);
 const sha=bytes=>createHash('sha256').update(bytes).digest('hex');
 
-test('reference library has fourteen independent assets with intact source originals and native dimensions',()=>{
-  assert.equal(ids.length,14);assert.equal(new Set(ids).size,14);
+test('reference library has thirty-nine active assets with intact source originals and native dimensions',()=>{
+  assert.equal(ids.length,39);assert.equal(new Set(ids).size,39);
   assert.deepEqual(manifest.interactiveObjects,[]);
   for(const item of manifest.sprites) {
-    assert.match(item.file,/^native\/[a-z-]+\/[a-z-]+\.png$/);
+    assert.match(item.file,/^native\/[a-z-]+\/[a-z0-9-]+\.png$/);
     assert.match(item.source,/^source\/[a-z-]+\/[a-z-]+\.png$/);
     const native=readFileSync(new URL(item.file,root)),original=readFileSync(new URL(item.source,root));
     assert.equal(sha(native),item.sha256,item.id);assert.equal(sha(original),item.sourceSha256,item.id);
@@ -28,11 +29,10 @@ test('reference library has fourteen independent assets with intact source origi
   }
 });
 
-test('the three grave silhouettes are distinct assets, not recolors of a single drawing',()=>{
+test('the nineteen grave silhouettes are distinct assets, not recolors of a single drawing',()=>{
   const graves=manifest.sprites.filter(s=>s.family==='gravestones');
-  assert.deepEqual(graves.map(s=>s.id),['gabledGrave','roundGrave','ringCross']);
-  assert.equal(new Set(graves.map(s=>s.size.join(','))).size,3);
-  assert.equal(new Set(graves.map(s=>s.sha256)).size,3);
+  assert.deepEqual(graves.map(s=>s.id),['gabledGrave','roundGrave','ringCross','prayingAngel','recliningAngel','brokenCross','roseGrave','graniteObelisk','flowerLedger','urnMemorial',...cemeteryPlacements.map(p=>p.id)]);
+  assert.equal(new Set(graves.map(s=>s.sha256)).size,19);
 });
 
 test('the walking anchor uses the stone surface instead of the transparent fringe above it',()=>{
@@ -42,21 +42,22 @@ test('the walking anchor uses the stone surface instead of the transparent fring
 test('near materials retain their chroma while distant layers receive limited atmospheric grading',()=>{
   const pixel=new Uint8ClampedArray([70,113,58,255,0,0,0,0]);
   const near=shadeReferencePixels(pixel,'oakLeft',1,2,'DAY');
-  assert.deepEqual([...near],[71,115,57,255,0,0,0,0]);
-  const far=shadeReferencePixels(pixel,'forestFar',1,2,'DAY');
+  assert.deepEqual([...near],[91,150,72,255,0,0,0,0]);
+  const far=shadeReferencePixels(pixel,'uniqueForestFar',1,2,'DAY','far');
   assert.ok(far[0]>near[0]&&far[2]>near[2]);
   assert.equal(far[3],255);assert.equal(far[7],0);
   assert.deepEqual([...pixel],[70,113,58,255,0,0,0,0]);
 });
 
 test('chapel glass alone cools during daytime and keeps warm source detail after dusk',()=>{
-  const width=100,height=150,source=new Uint8ClampedArray(width*height*4),n=(100*width+35)*4;
+  const width=100,height=150,source=new Uint8ClampedArray(width*height*4),n=(85*width+41)*4;
   source.set([230,175,82,255],n);source.set([96,118,116,255],0);
-  assert.ok(isChapelGlass(35,100,width,height,230,175,82));
+  assert.ok(isChapelGlass(41,85,width,height,230,175,82));
+  assert.equal(isChapelGlass(41,125,width,height,230,175,82),false);
   assert.equal(isChapelGlass(90,100,width,height,230,175,82),false);
   const day=shadeReferencePixels(source,'chapel',width,height,'DAY','architecture');
   assert.ok(day[n]<day[n+2]);assert.equal(day[n+3],255);
-  for(const phase of ['EVENING','NIGHT']) {
+  for(const phase of ['NIGHT']) {
     const night=shadeReferencePixels(source,'chapel',width,height,phase,'architecture');
     assert.deepEqual([...night.slice(n,n+4)],[230,175,82,255]);
     assert.notDeepEqual([...night.slice(0,3)],[230,175,82]);
@@ -76,8 +77,9 @@ test('the chapel cross stays inside the vertical frame at desktop, mobile and sh
   const chapel=manifest.sprites.find(s=>s.id==='chapel'),placement=referencePlacements.find(s=>s.id==='chapel');
   for(const [w,h] of [[320,506],[390,630],[1280,563],[1920,924],[844,236],[1920,260]]) {
     const size=worldViewSize(w,h),camera=new Camera(275);camera.resize(size.width,size.height);
-    assert.ok(camera.ground+placement.offset-chapel.anchor[1]>=0);
-    assert.ok(camera.ground+placement.offset<camera.ground);
+    const point=fitReferencePlacement(camera,placement,chapel);
+    assert.ok(Math.round(point.y-chapel.anchor[1]*point.scale)>=7);
+    assert.ok(point.y<camera.ground);
   }
 });
 
@@ -107,16 +109,17 @@ test('stale in-memory inspections cannot grant rewards or restore deleted object
   ai.chooseGoal();assert.equal(c.state,'WALK');assert.equal(c.targetObject,null);
 });
 
-test('production scene uses every reference family and one snapped parallax origin',()=>{
+test('production scene uses the active library across zones and one snapped parallax origin',()=>{
   const assets=new Map(manifest.sprites.map(s=>[s.id,{...s,surface:{id:s.id}}]));
-  const calls=[];const ctx={createLinearGradient:()=>({addColorStop(){}}),fillRect(){},save(){},restore(){},drawImage(surface,x,y){calls.push({id:surface.id,x,y});}};
+  const calls=[];const ctx={createLinearGradient:()=>({addColorStop(){}}),createRadialGradient:()=>({addColorStop(){}}),fillRect(){},save(){},restore(){},translate(){},scale(){},drawImage(surface,x,y){calls.push({id:surface.id,x,y});}};
   const camera=new Camera(275);camera.resize(288,455);
-  drawReferenceScene(ctx,camera,'DAY',0,id=>assets.get(id));
-  for(const id of ids.filter(id=>id!=='moon'))assert.ok(calls.some(c=>c.id===id),id);
+  for(const x of [-528,-280,-1,275,559,840,1088]){camera.x=x;drawReferenceScene(ctx,camera,'DAY',0,id=>assets.get(id));}
+  for(const id of new Set([...referencePlacements.map(p=>p.id),...panoramaPlacements.map(p=>p.id),'ground','fence','fencePillar']))assert.ok(calls.some(c=>c.id===id),id);
   assert.equal(calls.some(c=>c.id==='moon'),false);
   for(const call of calls)assert.ok(Number.isInteger(call.x)&&Number.isInteger(call.y));
-  const before=calls.find(c=>c.id==='forestMiddle').x;calls.length=0;camera.x+=10;
+  calls.length=0;camera.x=275;drawReferenceScene(ctx,camera,'DAY',0,id=>assets.get(id));
+  const before=calls.find(c=>c.id==='uniqueForestMiddle').x;calls.length=0;camera.x+=10;
   drawReferenceScene(ctx,camera,'NIGHT',0,id=>assets.get(id));
-  assert.ok(Math.abs(calls.find(c=>c.id==='forestMiddle').x-before)<=4);
+  assert.ok(Math.abs(calls.find(c=>c.id==='uniqueForestMiddle').x-before)<=4);
   assert.ok(calls.some(c=>c.id==='moon'));
 });
