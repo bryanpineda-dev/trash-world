@@ -6,7 +6,7 @@ import { World } from './world/World.js';
 import { WORLD_LEFT, WORLD_RIGHT, CREATURE_MARGIN, DAY_SECONDS } from './core/Config.js';
 import { cemeteryZones } from './rendering/ReferenceLayout.js';
 import { sampleDaylight } from './rendering/Daylight.js';
-import { batSprite,drawBat } from './rendering/AmbientSprites.js';
+import { ambientSprites,drawAmbientSprite } from './rendering/AmbientSprites.js';
 import './biome-lab.css';
 
 const icons = { Earth, Grid2x2, Shapes, X, Pause, Play, ChevronLeft, ChevronRight };
@@ -47,9 +47,9 @@ for (const [id,label] of Object.entries(families)) {
   option.value = id; option.textContent = label; family.append(option);
 }
 const paths = Object.fromEntries(referenceManifest.sprites.map(({id,file})=>[id,file.replace('native/','')]));
-paths.bat='fauna/woodland-bat';
+for(const [id,sprite]of Object.entries(ambientSprites))paths[id]='fauna/'+sprite.id;
 const tiles = [];
-for (const [id, sprite] of [['miga',{label:'Miga',size:[64,64]}],['bat',{label:'Murcielago del bosque',size:batSprite.size}],...referenceManifest.sprites.map(sprite=>[sprite.id,sprite])]) {
+for (const [id, sprite] of [['miga',{label:'Miga',size:[64,64]}],...Object.entries(ambientSprites).map(([id,sprite])=>[id,{...sprite,label:sprite.label??'Murcielago del bosque'}]),...referenceManifest.sprites.map(sprite=>[sprite.id,sprite])]) {
   const figure = document.createElement('figure');
   const canvas = document.createElement('canvas');
   canvas.width = canvas.height = 208;
@@ -81,7 +81,7 @@ function drawLibrary() {
     ctx.fillStyle = '#395b47';
     ctx.fillRect(0,200,208,8);
     if(id === 'miga') renderer.assets.drawCharacter(ctx,'miga','idle',0,104,200,1);
-    else if(id==='bat')drawBat(ctx,104,104,0,8);
+    else if(ambientSprites[id])drawAmbientSprite(ctx,ambientSprites[id],104,104,0,8);
     else {
       const lighting=sampleDaylight(Number(hour.value));
       const item=renderer.scenery.surface(id,lighting.from);

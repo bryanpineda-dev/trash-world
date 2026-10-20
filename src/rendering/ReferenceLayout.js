@@ -41,6 +41,23 @@ export const additionalGraves=Object.freeze([
   {id:'trefoilMemorial',x:-329,offset:-17,parallax:cemeteryParallax,depth:'architecture',row:'back'},
   {id:'weatheredWoodCross',x:473,offset:-19,parallax:cemeteryParallax,depth:'architecture',row:'back'},
   {id:'flowerTablet',x:695,offset:-16,parallax:cemeteryParallax,depth:'architecture',row:'back'},
+  {id:'slateShoulder',x:-600,offset:-19,parallax:cemeteryParallax,depth:'architecture',row:'back'},
+  {id:'lancetStone',x:-455,offset:-22,parallax:cemeteryParallax,depth:'architecture',row:'back'},
+  {id:'roseMemorial',x:-230,offset:-17,parallax:cemeteryParallax,depth:'architecture',row:'back'},
+]);
+
+export const gardenDetails=Object.freeze([
+  {id:'wildViolets',x:-100,offset:-17,parallax:cemeteryParallax,depth:'architecture',row:'cover'},
+  {id:'honeyFungi',x:-280,offset:-16,parallax:cemeteryParallax,depth:'architecture',row:'cover'},
+]);
+
+export const pollinatorStations=Object.freeze([
+  {id:'bee-west',kind:'bee',x:-380,offset:-24,parallax:1,seed:1},
+  {id:'bee-violets',kind:'bee',x:-100+1/cemeteryParallax,offset:-34,parallax:cemeteryParallax,seed:4,perch:'wildViolets'},
+  {id:'bee-clearing',kind:'bee',x:200,offset:-19,parallax:1,seed:7},
+  {id:'bee-east',kind:'bee',x:673,offset:-22,parallax:1,seed:10},
+  {id:'dragonfly-west',kind:'dragonfly',x:-210,offset:-35,parallax:1,seed:13},
+  {id:'dragonfly-east',kind:'dragonfly',x:920,offset:-38,parallax:1,seed:16},
 ]);
 
 export function soilTiles(camera,layer,asset) {

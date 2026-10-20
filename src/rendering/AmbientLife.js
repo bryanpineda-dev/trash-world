@@ -1,20 +1,20 @@
 import { sampleDaylight, smoothstep } from './Daylight.js';
-import { batFrameAt, drawBat } from './AmbientSprites.js';
+import { batFrameAt, drawBat,ambientSprites,drawAmbientSprite } from './AmbientSprites.js';
+import { pollinators } from './Pollinators.js';
+import { referencePosition } from './ReferenceLayout.js';
 
 const habitats = [
-  { x:-430, seed:1 }, { x:-160, seed:4 }, { x:170, seed:7 },
+  { x:-510, seed:19 }, { x:-365, seed:1 }, { x:-210, seed:4 }, {x:-55,seed:22}, { x:170, seed:7 },
   { x:420, seed:10 }, { x:755, seed:13 }, { x:990, seed:16 },
 ];
 
-const project = (camera,x,y,parallax=.94) => ({
-  x:Math.round(camera.width/2+(x-camera.pixelX)*parallax), y:Math.round(camera.ground+y),
-});
+const project = (camera,x,y,parallax=.94) => referencePosition(camera,{x,offset:y,parallax});
 const visible = (camera,point) => point.x>=-3&&point.x<camera.width+3&&point.y>=0&&point.y<camera.ground-8;
 
 export function ambientLife(camera,phase,seconds) {
   const time=Number.isFinite(seconds)?Math.max(0,seconds):0;
   const fireflies=[],butterflies=[],leaves=[],bats=[];
-  if(typeof phase==='string'&&!['DAY','EVENING','NIGHT'].includes(phase))return {fireflies,butterflies,leaves,bats};
+  if(typeof phase==='string'&&!['DAY','EVENING','NIGHT'].includes(phase))return {fireflies,butterflies,leaves,bats,bees:[],dragonflies:[]};
   const lighting=sampleDaylight(phase),intensity=lighting.fireflies;
   if(intensity)for(const habitat of habitats)for(let i=0;i<3;i++) {
     const seed=habitat.seed+i*.71;
@@ -26,8 +26,8 @@ export function ambientLife(camera,phase,seconds) {
     const point=project(camera,worldX,worldY);
     const glow=(.5+.5*Math.sin(time*(.57+i*.043)+seed*2.3))**3;
     const breath=.8+.2*Math.sin(time*.19+seed*.7);
-    const alpha=intensity*(.015+.985*glow*breath);
-    if(visible(camera,point)&&fireflies.length<8)fireflies.push({id:'firefly-'+habitat.seed+'-'+i,...point,worldX,worldY,alpha,resting,color:i%2?'#c7d995':'#e5d99c'});
+    const alpha=intensity*(.055+.945*glow*breath);
+    if(visible(camera,point)&&fireflies.length<12)fireflies.push({id:'firefly-'+habitat.seed+'-'+i,...point,worldX,worldY,alpha,resting,color:i%2?'#c7d995':'#e5d99c'});
   }
   if(lighting.lamps>0) {
     const passage=Math.floor((time+9)/24),age=(time+9)%24;
@@ -43,7 +43,7 @@ export function ambientLife(camera,phase,seconds) {
     }
   }
   if(lighting.butterflies>0||lighting.leaves>0) {
-    for(const [i,center]of [-300,925].entries()) {
+    for(const [i,center]of [-445,-140,300,925].entries()) {
       const worldX=center+Math.sin(time*.23+i*2.1)*28+Math.sin(time*.7+i)*6;
       const worldY=-27-Math.sin(time*.41+i)**2*17;
       const point=project(camera,worldX,worldY,.98);
@@ -59,30 +59,38 @@ export function ambientLife(camera,phase,seconds) {
       if(visible(camera,point))leaves.push({id:'leaf-'+i,...point,worldX,worldY,alpha:Math.sin(progress*Math.PI)*.38*lighting.leaves,color:'#b4a073'});
     }
   }
-  return {fireflies,butterflies,leaves,bats};
+  return {fireflies,butterflies,leaves,bats,...pollinators(camera,lighting,time)};
 }
 
 export function drawAmbientLife(ctx,camera,phase,seconds,layer='all') {
   const samples=ambientLife(camera,phase,seconds);
   ctx.save();
-  if(layer!=='near')for(const bat of samples.bats) {
+  if(layer!=='near'&&layer!=='cemetery')for(const bat of samples.bats) {
     ctx.globalAlpha=bat.alpha;drawBat(ctx,bat.x,bat.y,bat.frame);
   }
   if(layer==='distant'){ctx.restore();return;}
-  for(const particle of samples.fireflies) {
-    ctx.fillStyle=particle.color;
-    ctx.globalAlpha=particle.alpha*.07;ctx.fillRect(particle.x-1,particle.y-1,3,3);
-    ctx.globalAlpha=particle.alpha;ctx.fillRect(particle.x,particle.y,1,1);
+  if(layer!=='cemetery'){
+    for(const particle of samples.fireflies) {
+      ctx.fillStyle=particle.color;
+      ctx.globalAlpha=particle.alpha*.07;ctx.fillRect(particle.x-1,particle.y-1,3,3);
+      ctx.globalAlpha=particle.alpha;ctx.fillRect(particle.x,particle.y,1,1);
+    }
+    for(const particle of samples.butterflies) {
+      const wing=particle.wing>.5?2:1;
+      ctx.globalAlpha=particle.alpha*(.5+particle.wing*.5);ctx.fillStyle=particle.color;
+      ctx.fillRect(particle.x-wing,particle.y-1,wing,1);
+      ctx.fillRect(particle.x+1,particle.y-1,wing,1);
+      ctx.globalAlpha=particle.alpha;ctx.fillStyle='#43534d';ctx.fillRect(particle.x,particle.y-1,1,2);
+    }
+    for(const particle of samples.leaves) {
+      ctx.globalAlpha=particle.alpha;ctx.fillStyle=particle.color;ctx.fillRect(particle.x,particle.y,2,1);
+    }
   }
-  for(const particle of samples.butterflies) {
-    const wing=particle.wing>.5?2:1;
-    ctx.globalAlpha=particle.alpha*(.5+particle.wing*.5);ctx.fillStyle=particle.color;
-    ctx.fillRect(particle.x-wing,particle.y-1,wing,1);
-    ctx.fillRect(particle.x+1,particle.y-1,wing,1);
-    ctx.globalAlpha=particle.alpha;ctx.fillStyle='#43534d';ctx.fillRect(particle.x,particle.y-1,1,2);
-  }
-  for(const particle of samples.leaves) {
-    ctx.globalAlpha=particle.alpha;ctx.fillStyle=particle.color;ctx.fillRect(particle.x,particle.y,2,1);
+  for(const particle of [...samples.bees,...samples.dragonflies]){
+    if(layer==='cemetery'&&particle.layer!=='cemetery')continue;
+    if(layer==='near'&&particle.layer==='cemetery')continue;
+    ctx.globalAlpha=particle.alpha;
+    drawAmbientSprite(ctx,ambientSprites[particle.kind],particle.x,particle.y,particle.frame,1,particle.direction);
   }
   ctx.restore();
 }

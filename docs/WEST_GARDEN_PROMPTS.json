@@ -1,0 +1,82 @@
+{
+  "date": "2026-10-20",
+  "generator": "image_gen built-in",
+  "status": "approved",
+  "entries": [
+    {
+      "id": "slateShoulder",
+      "label": "Lapida de pizarra escalonada",
+      "family": "gravestones",
+      "name": "slate-shoulder",
+      "height": 42,
+      "source": "C:/Users/lrodr/.codex/generated_images/01a1108f-6fcc-7610-a99f-01b751c1e0dd/exec-cf13d8d7-2185-41d1-8a26-8c85172c744c.png",
+      "prompt": "Use case: stylized-concept. Asset type: ONE transparent pixel-art game prop for Trash World. Reference image 1 is STYLE ONLY (do not duplicate its silhouette); image 2 shows the existing world for palette and scale. Draw ONE modest upright old slate headstone, a square-topped tablet with two small stepped shoulders, broad flat front, a very simple incised Latin cross centered, slightly chipped corners, a thin darker right side. No runes, no writing, no large moss coating, no extra objects or scenery. It will be used at about 29 by 40 native pixels, so use deliberate chunky pixel clusters, clean stepped silhouette, readable construction, very restrained cracks. Low side-scroller eye level, front facing with only tiny depth to the right, not isometric or top-down. Cool desaturated grey slate, warm pale top-left highlights, deep green-grey contour instead of black outline. Match the craftsmanship of the reference and keep a compact footprint with just two tiny grass leaves at the foot. One complete object, centered, generous transparent padding, real alpha transparency. No ground plane, cast shadow, labels, framing, lighting glow or background.",
+      "savedSource": "source/gravestones/slate-shoulder.png",
+      "savedNative": "native/gravestones/slate-shoulder.png",
+      "nativeSize": [
+        26,
+        42
+      ]
+    },
+    {
+      "id": "lancetStone",
+      "label": "Estela de arco apuntado",
+      "family": "gravestones",
+      "name": "lancet-stone",
+      "height": 40,
+      "source": "C:/Users/lrodr/.codex/generated_images/01a1108f-6fcc-7610-a99f-01b751c1e0dd/exec-2767372e-dd54-4534-a40b-60940fcdd398.png",
+      "prompt": "Use case: stylized-concept. Asset type: ONE original transparent pixel-art gravestone prop for the attached Trash World scene. Attached image is a style/palette/world-scale reference, NOT an image to edit. Make one slim upright gothic pointed-arch limestone headstone: flat rectangular lower body, a continuous lancet-shaped arched top, NO projecting cross arms and NO pedestal plinth. Broad clean front with a small simple recessed Latin cross in the upper third and two very short weathered inscription marks below (no readable letters). Thin dark right thickness only. A single nick on one lower corner. Mostly clean, NO vines or moss coat, a few tiny dried grass blades only at its foot. This will be used at about 24 by 37 native game pixels, use crisp low-resolution pixel clusters, clean stair-step curves, no painterly noise or microdetail. Same premium textured pixel-art material, stone colors and top-left daylight as the existing cemetery; cool grey limestone with subdued sage-grey shadow, pale warm highlights, colored dark contour, never a black cartoon outline. Low side-scroller eye level, nearly frontal, not isometric, no tilted ground. Centered COMPLETE standalone object with generous true transparent padding. NO landscape, characters, shadows, ground strip, props, frame, labels or glow.",
+      "savedSource": "source/gravestones/lancet-stone.png",
+      "savedNative": "native/gravestones/lancet-stone.png",
+      "nativeSize": [
+        21,
+        40
+      ]
+    },
+    {
+      "id": "roseMemorial",
+      "label": "Memorial bajo con rosas",
+      "family": "gravestones",
+      "name": "rose-memorial",
+      "height": 33,
+      "source": "C:/Users/lrodr/.codex/generated_images/01a1108f-6fcc-7610-a99f-01b751c1e0dd/exec-4283bb7e-e121-4417-82c8-c66874727050.png",
+      "prompt": "Use case: stylized-concept. Asset type: ONE transparent standalone pixel-art cemetery game prop. Attached Trash World scene is reference for world style and material only; create an additional original prop, not an edit of the scene. Subject: a LOW BROAD old rounded sandstone grave marker, roughly as wide as tall, with softly stepped rounded shoulders, a shallow inset oval face and a tiny incised Latin cross above a few short unreadable inscription strokes. A SMALL loose bunch of dusty rose and ivory flowers lies across the left foot of the slab, no vase. Shape is not a cross, not a tall pointed slab, and not a sarcophagus. Stone muted grey taupe with cool sage shadows and warm top-left edge light, sparse chips; absolutely NO moss blanket or trailing vines. Mature side-view textured pixel art, readable chunky clusters suitable for a native 33 by 32 pixel game object, clear stepped outline with dark material colors not a black stroke. Near frontal side-scroller viewpoint with a very thin right side only, minimal perspective, not isometric. One object only, complete and centered on REAL alpha transparency with spacious padding. No environment, flat ground, detached props, lighting glows, cast shadows, text or frame.",
+      "savedSource": "source/gravestones/rose-memorial.png",
+      "savedNative": "native/gravestones/rose-memorial.png",
+      "nativeSize": [
+        38,
+        33
+      ]
+    },
+    {
+      "id": "wildViolets",
+      "label": "Violetas silvestres",
+      "family": "vegetation",
+      "name": "wild-violets",
+      "height": 19,
+      "source": "C:/Users/lrodr/.codex/generated_images/01a1108f-6fcc-7610-a99f-01b751c1e0dd/exec-db9a399c-bd9e-49ba-b735-0fb111d1ed2d.png",
+      "prompt": "Use case: stylized-concept. Asset type: ONE small transparent pixel-art groundcover prop for the attached woodland cemetery game. Reference is the existing environment for style/palette only. Draw one airy tuft of wild violets: three small distinct lavender-blue five-petal flower heads at different heights, little pale yellow centers, thin green stems and a low loose rosette of dark sage and olive leaves. Not a dense bush, not a planted flowerpot; leave transparent spaces between stems. Small handful of leaves and no detached flowers. Intended native size only around 24 by 18 game pixels, so design with bold readable pixel clusters and crisp stepped edges, no tiny painterly details, no blur. Side-scroller front view close to ground, top-left soft daylight, same premium textured pixel language as the scene, colored dark green outlines, no black cartoon border. One complete compact plant, centered with true transparent padding. No soil patch or ground, cast shadow, glow, scenery, characters, labels, frame or other props.",
+      "savedSource": "source/vegetation/wild-violets.png",
+      "savedNative": "native/vegetation/wild-violets.png",
+      "nativeSize": [
+        16,
+        19
+      ]
+    },
+    {
+      "id": "honeyFungi",
+      "label": "Colonia de hongos ocres",
+      "family": "vegetation",
+      "name": "honey-fungi",
+      "height": 20,
+      "source": "C:/Users/lrodr/.codex/generated_images/01a1108f-6fcc-7610-a99f-01b751c1e0dd/exec-1b1e9ed1-55b7-4f16-9b54-b52c99ac7d1d.png",
+      "prompt": "Use case: stylized-concept. Asset type: ONE transparent small pixel-art game groundcover prop matching the attached Trash World scene. Create a small compact colony of THREE woodland honey/chestnut mushrooms: one medium umbrella cap, one smaller rounded cap and one tiny button, cream stems, a subtle collar under the tallest cap, warm ochre-brown caps with restrained pale highlight specks. The reference scene is STYLE and scale guidance only, not an edit target. A few low dark sage leaves at the feet, loose silhouette with transparent gaps between stems; NO red caps with white spots, no moss blanket, no long log or soil tile. It must read clearly around 26 by 17 native pixels, with deliberate chunky pixel clusters and crisp stair-step outlines, mature premium textured pixel art, no smoothing or soft painterly shading. Side-scroller eye level, low nearly frontal view, top-left daylight, dark colored contours not pure black. One complete cluster centered on REAL alpha transparency with ample padding. No other props, background, cast shadow, floor, glow, text, frame or characters.",
+      "savedSource": "source/vegetation/honey-fungi.png",
+      "savedNative": "native/vegetation/honey-fungi.png",
+      "nativeSize": [
+        22,
+        20
+      ]
+    }
+  ]
+}

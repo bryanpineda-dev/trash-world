@@ -2,17 +2,17 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {Camera} from '../src/rendering/Camera.js';
-import {cemeteryParallax,cemeteryPlacements,additionalGraves,cemeteryFence,fenceModules,referencePosition,soilLayers,soilTiles} from '../src/rendering/ReferenceLayout.js';
+import {cemeteryParallax,cemeteryPlacements,additionalGraves,gardenDetails,cemeteryFence,fenceModules,referencePosition,soilLayers,soilTiles} from '../src/rendering/ReferenceLayout.js';
 import {drawReferenceScene} from '../src/rendering/ReferenceScene.js';
 
 const catalog=JSON.parse(readFileSync(new URL('../assets/reference-biome/manifest.json',import.meta.url)));
 const items=new Map(catalog.sprites.map(a=>[a.id,a]));
 const graves=[...cemeteryPlacements,...additionalGraves];
-const project=view=>[...graves.map(p=>referencePosition(view,p)),...fenceModules(view)];
+const project=view=>[...graves,...gardenDetails].map(p=>referencePosition(view,p)).concat(fenceModules(view));
 const spacing=points=>points.map(p=>p.x-points[0].x);
 
 test('cemetery, earth and local fence share a single parallax without flattening their ground rows',()=>{
-  assert.equal(graves.length,12);assert.equal(cemeteryParallax,.66);
+  assert.equal(graves.length,15);assert.equal(cemeteryParallax,.66);
   for(const p of [...graves,cemeteryFence,soilLayers[0]])assert.equal(p.parallax,cemeteryParallax);
   assert.ok(new Set(graves.map(p=>p.offset)).size>3);
   assert.ok(graves.every(p=>p.offset<cemeteryFence.offset));
@@ -83,7 +83,7 @@ test('fence is a finite 232px sector with an open center, never a viewport-filli
   }
 });
 
-test('all twelve cemetery markers are drawn before the local rails and their two supports',()=>{
+test('all fifteen cemetery markers are drawn before the local rails and their two supports',()=>{
   const view=new Camera(280);view.resize(1680,401);const calls=[];
   const ctx={globalAlpha:1,createLinearGradient:()=>({addColorStop(){}}),createRadialGradient:()=>({addColorStop(){}}),fillRect(){},save(){},restore(){},translate(){},scale(){},drawImage(surface){calls.push(surface.id);}};
   drawReferenceScene(ctx,view,12,0,id=>items.has(id)?{...items.get(id),surface:{id}}:null);

@@ -1,5 +1,13 @@
 # Verificacion de V0.1
 
+## Jardin Occidental Y Polinizadores, 2026-10-20
+
+- Revision aprobada para integracion sobre la base v0.1.13. Tres lapidas unicas, un grupo de violetas y hongos ocres; originales y nativos separados y catalogados, sin clones ni vegetacion bajo el sendero.
+- El material reduce el pigmento marron de los dos suelos preservando vegetacion, piedra fria, alpha, geometria y todos los PNG anteriores. No se introduce una franja verde ni niebla plana.
+- Abejas y libelulas con sprites reutilizables, fases de vuelo y pausa, desaparicion gradual al anochecer y una abeja posada en una flor de violeta. Cuatro habitats de mariposas; luciernagas hasta doce con mas cobertura occidental y brillo minimo algo mas visible. Murcielago y reloj existentes intactos.
+- [Alcance y medios nuevos](WEST_GARDEN.md), [prompts y exportaciones](WEST_GARDEN_PROMPTS.json), [resultados actuales](WEST_GARDEN_QA.json). Las imagenes y la secuencia son renders offline del renderer principal, no capturas reales ni mediciones de FPS.
+- Aprobacion visual recibida. [Entrega estable y comprobaciones en destino](WEST_GARDEN_DELIVERY.json), con respaldo de base y hashes. QA interactivo pendiente; no se hace staging, commit, etiqueta ni push.
+
 ## Cementerio Y Verja Local, 2026-10-20
 
 - Revision aprobada por el usuario para integracion. Cruces, marcadores adicionales, tierra y verja comparten parallax 0.66; las dos alturas de las filas se conservan. Las anclas se recolocan para mantener aproximadamente la composicion central anterior.

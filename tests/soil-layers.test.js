@@ -44,7 +44,7 @@ test('soil parallax follows one snapped camera with no time smoothing',()=>{
 
 test('grave infill uses unique silhouettes in continuous world coordinates',()=>{
   assert.ok(additionalGraves.some(p=>p.x<0));assert.ok(additionalGraves.some(p=>p.x>560));assert.ok(additionalGraves.some(p=>p.x>=0&&p.x<=560));
-  assert.equal(new Set(referencePlacements.filter(p=>p.row).map(p=>p.id)).size,12);
+  assert.equal(new Set(referencePlacements.filter(p=>p.row==='back'||p.row==='front').map(p=>p.id)).size,15);
   for(const p of additionalGraves){assert.ok(p.offset<=-14);assert.equal(p.row,'back');assert.equal(p.parallax,cemeteryParallax);}
 });
 
@@ -61,5 +61,5 @@ test('earth and leaf litter sit behind grave feet while underground stays behind
   const ctx={globalAlpha:1,createLinearGradient:()=>({addColorStop(){}}),createRadialGradient:()=>({addColorStop(){}}),fillRect(){},save(){},restore(){},translate(){},scale(){},drawImage(s){calls.push(s.id);}};
   drawReferenceScene(ctx,camera,12,0,id=>{const a=items.get(id);return a?{...a,surface:{id}}:null;});
   const at=id=>calls.indexOf(id);assert.ok(at('uniqueForestMiddle')<at('cemeterySoil'));assert.ok(at('cemeterySoil')<at('fence'));assert.ok(at('cemeterySoil')<at('crosses-back-1'));assert.ok(at('earthFace')<at('ground'));assert.ok(at('ground')<at('crosses-front-1'));
-  assert.equal(referencePlacements.filter(p=>p.row).length,12);
+  assert.equal(referencePlacements.filter(p=>p.row==='back'||p.row==='front').length,15);
 });

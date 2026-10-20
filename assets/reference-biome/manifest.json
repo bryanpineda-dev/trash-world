@@ -1191,6 +1191,156 @@
       "provenance": "Continuity study 2026-10-20; see docs/CONTINUITY_PROMPTS.json.",
       "sourceSha256": "1850474bb61ac38c6d21a9741f86646866d9c039ffba39dc69034e67338fa11d",
       "sha256": "5096992bc143649fab6e895eccee11ea21a38ef7f65727a074b0891b1fdb74dc"
+    },
+    {
+      "id": "slateShoulder",
+      "label": "Lapida de pizarra escalonada",
+      "family": "gravestones",
+      "source": "source/gravestones/slate-shoulder.png",
+      "file": "native/gravestones/slate-shoulder.png",
+      "size": [
+        26,
+        42
+      ],
+      "anchor": [
+        13,
+        42
+      ],
+      "sourceRect": {
+        "left": 448,
+        "top": 345,
+        "width": 448,
+        "height": 722
+      },
+      "sourceSize": [
+        1346,
+        1168
+      ],
+      "generator": "image_gen built-in",
+      "alphaPolicy": "source-alpha>=128",
+      "provenance": "West garden study 2026-10-20; see docs/WEST_GARDEN_PROMPTS.json.",
+      "sourceSha256": "08de1ccec9817419145876207bc31519cdb9ead8e3f400ca9dcdef83785187dd",
+      "sha256": "db5dad9506379218683003ff0c8a075ac2751d28336fee4f47c950f47ecad811"
+    },
+    {
+      "id": "lancetStone",
+      "label": "Estela de arco apuntado",
+      "family": "gravestones",
+      "source": "source/gravestones/lancet-stone.png",
+      "file": "native/gravestones/lancet-stone.png",
+      "size": [
+        21,
+        40
+      ],
+      "anchor": [
+        10,
+        40
+      ],
+      "sourceRect": {
+        "left": 296,
+        "top": 413,
+        "width": 428,
+        "height": 801
+      },
+      "sourceSize": [
+        1011,
+        1556
+      ],
+      "generator": "image_gen built-in",
+      "alphaPolicy": "source-alpha>=128",
+      "provenance": "West garden study 2026-10-20; see docs/WEST_GARDEN_PROMPTS.json.",
+      "sourceSha256": "8d510312ba83a29d7c75fcdd28e4563446b9987a782a24b08bdb6e2dfa989623",
+      "sha256": "88457fb27fcbcf30bfdf7692da0447c73c12a73033ed0f970ca73b34d6f263a2"
+    },
+    {
+      "id": "roseMemorial",
+      "label": "Memorial bajo con rosas",
+      "family": "gravestones",
+      "source": "source/gravestones/rose-memorial.png",
+      "file": "native/gravestones/rose-memorial.png",
+      "size": [
+        38,
+        33
+      ],
+      "anchor": [
+        19,
+        33
+      ],
+      "sourceRect": {
+        "left": 262,
+        "top": 402,
+        "width": 713,
+        "height": 621
+      },
+      "sourceSize": [
+        1274,
+        1235
+      ],
+      "generator": "image_gen built-in",
+      "alphaPolicy": "source-alpha>=128",
+      "provenance": "West garden study 2026-10-20; see docs/WEST_GARDEN_PROMPTS.json.",
+      "sourceSha256": "139cff3418770c886d25429cd679ad63c9db2633cde23c048c7bac39599330c1",
+      "sha256": "9f64502b99082b3719be2106d3cc55751a5e25abe6a6afcbd8e0d0914a9e1b8c"
+    },
+    {
+      "id": "wildViolets",
+      "label": "Violetas silvestres",
+      "family": "vegetation",
+      "source": "source/vegetation/wild-violets.png",
+      "file": "native/vegetation/wild-violets.png",
+      "size": [
+        16,
+        19
+      ],
+      "anchor": [
+        8,
+        19
+      ],
+      "sourceRect": {
+        "left": 472,
+        "top": 279,
+        "width": 510,
+        "height": 619
+      },
+      "sourceSize": [
+        1448,
+        1086
+      ],
+      "generator": "image_gen built-in",
+      "alphaPolicy": "source-alpha>=128",
+      "provenance": "West garden study 2026-10-20; see docs/WEST_GARDEN_PROMPTS.json.",
+      "sourceSha256": "a562cea212525250dcda7965f6f9df8fdd96b0ff3990b95edfa2d3b1ff049683",
+      "sha256": "b5726c6685b8d0aa3399be3b187f142e07461654d6a6497aa4bd76fdec2155c0"
+    },
+    {
+      "id": "honeyFungi",
+      "label": "Colonia de hongos ocres",
+      "family": "vegetation",
+      "source": "source/vegetation/honey-fungi.png",
+      "file": "native/vegetation/honey-fungi.png",
+      "size": [
+        22,
+        20
+      ],
+      "anchor": [
+        11,
+        20
+      ],
+      "sourceRect": {
+        "left": 488,
+        "top": 292,
+        "width": 559,
+        "height": 500
+      },
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "generator": "image_gen built-in",
+      "alphaPolicy": "source-alpha>=128",
+      "provenance": "West garden study 2026-10-20; see docs/WEST_GARDEN_PROMPTS.json.",
+      "sourceSha256": "9fefac6beaae2f918c4632d7c952a307de0d7f73f61b556837bc1540c4327ea7",
+      "sha256": "a28416f0e9c3a8d4b8d0d7729b0c23c0b09e630c249f7ec0c3834526cf29d2ad"
     }
   ],
   "worldBounds": [

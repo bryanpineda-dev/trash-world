@@ -1,5 +1,5 @@
 import { WORLD_LEFT, WORLD_RIGHT } from '../core/Config.js';
-import { lateralPlacements, panoramaPlacements, referencePosition, fitReferencePlacement, terrainSegments, cemeteryPlacements, additionalGraves, fenceModules, soilLayers, soilTiles } from './ReferenceLayout.js';
+import { lateralPlacements, panoramaPlacements, referencePosition, fitReferencePlacement, terrainSegments, cemeteryPlacements, additionalGraves, gardenDetails, fenceModules, soilLayers, soilTiles } from './ReferenceLayout.js';
 import { roseGlass, drawAltarCandles } from './ArchitectureLighting.js';
 import { drawAmbientLife } from './AmbientLife.js';
 import { sampleDaylight, daylightGrades, rgb, drawSkyStars, smoothstep } from './Daylight.js';
@@ -23,6 +23,7 @@ export const referencePlacements = [
   ...lateralPlacements,
   ...cemeteryPlacements,
   ...additionalGraves,
+  ...gardenDetails,
 ];
 
 export function isChapelGlass(x,y,width,height,r,g,b) {
@@ -50,8 +51,11 @@ export function shadeReferencePixels(pixels,id,width,height,phase,depth='near') 
     // Cool distant stone stays chromatic; dark lower foliage reads as forest litter, not fog.
     const soil=(depth==='far'||depth==='middle')?smoothstep(.68,.97,y/height)*.55:0;
     const luma=r*.2126+g*.7152+b*.0722;
+    const earth=(id==='cemeterySoil'||id==='earthFace')?smoothstep(4,28,r-b)*smoothstep(1,20,r-g)*.82:0;
+    const mineral=[luma*.93,luma*1.015,luma*.94];
     for(let c=0;c<3;c++) {
-      const material=output[n+c]*(1-soil)+luma*soilRamp[c]*soil;
+      const pigment=output[n+c]*(1-earth)+mineral[c]*earth;
+      const material=pigment*(1-soil)+luma*soilRamp[c]*soil;
       const value=(material*factor[c]+lift[c])*(1-haze)+air[c]*haze;
       output[n+c]=clamp((value<=210?value:210+(value-210)*.38)*burialShade);
     }
@@ -134,6 +138,8 @@ export function drawReferenceScene(ctx,camera,time,seconds,get) {
   }
   for(const [x,scale] of [[25,.5],[66,.55],[111,.46],[197,.54],[270,.49],[311,.57],[391,.5],[469,.53],[550,.48]])draw('undergrowth',x-left,ground+1,'near',scale);
   for(const placement of referencePlacements.filter(p=>p.row==='front'))place(placement);
+  for(const placement of referencePlacements.filter(p=>p.row==='cover'))place(placement);
+  drawAmbientLife(ctx,camera,lighting,seconds,'cemetery');
   for(const module of fenceModules(camera))draw(module.id,module.x,module.y,'architecture');
   for(const placement of referencePlacements.filter(p=>p.depth==='near'&&!p.row))place(placement);
   for(const placement of referencePlacements.filter(p=>p.depth==='groundcover'))place(placement);

@@ -72,14 +72,15 @@ test('night uses fireflies and occasional bats while daytime retains butterflies
   const view=camera(280,1680);
   const night=ambientLife(view,'NIGHT',3),day=ambientLife(view,'DAY',3);
   assert.ok(night.fireflies.length>0);assert.deepEqual(night.butterflies,[]);assert.deepEqual(night.leaves,[]);
-  assert.deepEqual(day.fireflies,[]);assert.equal(day.butterflies.length,2);
+  assert.deepEqual(day.fireflies,[]);assert.equal(day.butterflies.length,4);
   assert.deepEqual(day.bats,[]);assert.ok(night.bats.length<=1);
 });
 
 test('particle density and coverage stay bounded through a full minute',()=>{
   for(const phase of ['DAY','EVENING','NIGHT'])for(let time=0;time<=60;time+=.5)for(const x of [-528,-280,280,840,1088]) {
     const view=camera(x),samples=ambientLife(view,phase,time);
-    assert.ok(samples.fireflies.length<=8);assert.ok(samples.butterflies.length<=2);assert.ok(samples.leaves.length<=2);assert.ok(samples.bats.length<=1);
+    assert.ok(samples.fireflies.length<=12);assert.ok(samples.butterflies.length<=4);assert.ok(samples.leaves.length<=2);assert.ok(samples.bats.length<=1);
+    assert.ok(samples.bees.length<=4);assert.ok(samples.dragonflies.length<=2);
     const list=particles(samples);assert.equal(new Set(list.map(p=>p.id)).size,list.length);
     for(const p of list) {
       assert.ok(Number.isInteger(p.x)&&Number.isInteger(p.y));
@@ -151,7 +152,7 @@ test('falling leaves are intermittent and never land as new objects on the walk 
 test('invalid ambient time is sanitized and unknown phases do not create particles',()=>{
   const view=camera(-280);
   for(const time of [NaN,Infinity,-5])assert.deepEqual(ambientLife(view,'NIGHT',time),ambientLife(view,'NIGHT',0));
-  assert.deepEqual(ambientLife(view,'UNKNOWN',0),{fireflies:[],butterflies:[],leaves:[],bats:[]});
+  assert.deepEqual(ambientLife(view,'UNKNOWN',0),{fireflies:[],butterflies:[],leaves:[],bats:[],bees:[],dragonflies:[]});
 });
 
 test('ambient drawing restores canvas state and uses only tiny native-pixel marks',()=>{

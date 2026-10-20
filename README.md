@@ -4,25 +4,25 @@ Un mundo de bolsillo habitado por Miga: una calaverita autonoma que explora, obs
 
 **Canvas 2D | Pixel art | Cementerio del bosque | Guardado local**
 
-![Cementerio con verja local delante de las cruces.](docs/images/cemetery-center-day.png)
+![Jardin occidental con mas lapidas, flores e insectos.](docs/images/west-garden-west-day.png)
 
 *Revision aprobada, 2026-10-20, a las 12:00: render offline nativo de 712 x 401. No es captura de navegador ni medida de FPS.*
 
 ## Revision Actual
 
-**Revision aprobada: cementerio estable y verja localizada.** Las doce piezas pequenas del cementerio y su tierra comparten un desplazamiento de camara, manteniendo las dos alturas de las filas. La verja se dibuja delante de ellas y solo ocupa dos tramos de hierro junto a la iglesia: 232px de extremo a extremo, mas el espesor de los dos apoyos exteriores, con una apertura central de 64px. Ya no se repite a lo largo del bioma. [Alcance y comparacion](docs/CEMETERY_MOTION.md), [QA de esta revision](docs/CEMETERY_MOTION_QA.json).
+**Revision aprobada: jardin occidental con mas vida.** Tres lapidas originales, violetas y hongos ocres enriquecen el lado izquierdo sin repetir monumentos. Los tonos marrones de la tierra se acercan a un suelo mineral mas neutro, conservando piedra, raices y hojarasca. De dia hay abejas, libelulas y mas habitats de mariposas; de noche, luciernagas mas perceptibles y distribuidas. [Alcance y comparacion](docs/WEST_GARDEN.md), [QA de esta revision](docs/WEST_GARDEN_QA.json).
 
-La [entrega actual](docs/CEMETERY_MOTION_DELIVERY.json) registra la copia estable y sus comprobaciones. La [entrega anterior](docs/CONTINUITY_DELIVERY.json) retiro las cinco plantas inferiores y agrego tres marcadores unicos; se conserva como historial, no como evidencia de esta correccion.
+La [entrega actual](docs/WEST_GARDEN_DELIVERY.json) registra la copia estable y sus comprobaciones. La [entrega anterior](docs/CEMETERY_MOTION_DELIVERY.json), base de esta revision, conserva la verja localizada delante del cementerio. No se han agregado plantas debajo del sendero. La copia no equivale a commit, etiqueta o publicacion nuevos.
 
 Miga conserva sus clips de produccion. La direccion anatomica del candidato esta aprobada para seguir afinandola, no como sustitucion final del personaje. El [laboratorio](studies/locomotion/index.html?view=world) compara ambas caminatas sobre el terreno real, con camara, sombras e iluminacion diurna/nocturna. Es una prueba opcional de desarrollo, no un motor completo ni una reconstruccion de todos los estados.
 
-![Antes a la izquierda y propuesta a la derecha durante el desplazamiento.](docs/images/cemetery-motion.webp)
+![Detalle de vida diurna a la izquierda y nocturna a la derecha.](docs/images/west-garden-life.webp)
 
-*Secuencia offline nueva de seis segundos, con Miga y la camara del renderer principal. Muestreo cada 50ms; no es una grabacion ni un benchmark de navegador. El salto del final reinicia la comparacion.*
+*Detalle offline nuevo de seis segundos del renderer principal: recortes nativos de 450 x 110 por momento, muestreados cada 50ms. No es una grabacion ni un benchmark de navegador. El bucle reinicia la muestra.*
 
 [Alcance ambiental anterior](docs/CONTINUITY.md), [investigacion y plan de Miga](docs/LOCOMOTION_RESEARCH.md) y [QA anterior del visor en terreno](docs/LOCOMOTION_WORLD_QA.json). Quedan pendientes aprobacion de la caminata en contexto e integracion de la locomocion. El acceso automatizado al navegador sigue bloqueado.
 
-El suelo de tierra, piedra y raices, el sendero, las torres lejanas, la hiedra discreta y la fauna de las revisiones anteriores se conservan. Historia y procedencia en [Suelo](docs/SOIL_REVIEW.md) y [Torres e iglesia](docs/DEPTH_VEGETATION.md). No cambian IA, guardados, limites, velocidad del juego ni dependencias. La copia estable no equivale a un commit, etiqueta o publicacion nuevos.
+El sendero, las torres lejanas, la hiedra discreta y las capas existentes se conservan. Los originales y exports anteriores no se redibujan: el ajuste de tierra se aplica al material, no al resto de la paleta. Historia y procedencia en [Suelo](docs/SOIL_REVIEW.md) y [Torres e iglesia](docs/DEPTH_VEGETATION.md). No cambian IA, guardados, limites, velocidad del juego ni dependencias.
 
 ## Empezar
 
@@ -57,11 +57,11 @@ Un recorrido continuo de 1680 unidades, desde -560 hasta 1120, con tres zonas:
 
 | Zona | Contenido |
 | --- | --- |
-| Jardin de los angeles | Roble seco, estatua, tumba con rosas, obelisco y torre memorial alada distante |
+| Jardin de los angeles | Roble seco, estatua, tumbas variadas, obelisco, violetas, hongos ocres y torre memorial alada distante |
 | Claro de Miga | Iglesia unica, nueve cruces, robles y monumentos del cementerio |
 | Patio del oratorio | Oratorio abierto, sarcofago, urna, cipreses, torre y fresno |
 
-![Patio del oratorio de noche en la propuesta actual.](docs/images/cemetery-east-night.png)
+![Jardin occidental de noche en la revision actual.](docs/images/west-garden-west-night.png)
 
 *Render offline nuevo del renderer principal, a resolucion nativa. No es una captura de navegador.*
 
@@ -74,9 +74,10 @@ El encuadre de escritorio se abre globalmente: a 1280 x 720 el canvas logico es 
 - Dia de 24 minutos, con amanecer, dia, luz dorada, crepusculo y noche interpolados.
 - Roseton frio de dia y ambar de noche; la variacion se limita a su cristal, sin iluminar la madera de las puertas.
 - Tres velas pequenas independientes en el oratorio, con un derrame nocturno localizado.
-- Hasta ocho luciernagas sutiles, con pausas de vuelo y destellos desfasados; de dia no aparecen.
+- Hasta doce luciernagas sutiles, con mas habitats en el oeste, pausas de vuelo y destellos desfasados; de dia no aparecen.
 - Un murcielago nocturno ocasional, con intervalos sin vuelo, sin repetirlo por zona o viewport.
-- Mariposas diurnas y hojas ocasionales; abejas y libelulas quedan para la siguiente etapa.
+- Cuatro habitats de mariposas, hasta cuatro abejas y dos libelulas diurnas segun encuadre, con fases de vuelo y pausas independientes. Una abeja puede posarse en las violetas y compartir exactamente su plano de camara.
+- Hojas ocasionales, sin convertirlas en objetos del sendero. No hay insectos diurnos durante la noche.
 - Estrellas con canales de posicion independientes, separacion minima de referencia y titilacion suave; sin movimiento artificial del cielo.
 - Estrellas detras del paisaje y luna sin oscurecimiento de material.
 - Desactivar movimiento ambiental congela sus animaciones sin detener el reloj del mundo.
@@ -84,7 +85,7 @@ El encuadre de escritorio se abre globalmente: a 1280 x 720 el canvas logico es 
 
 ## Biblioteca De Assets
 
-**44 PNG ambientales activos, 38 originales distintos y un sprite de fauna de 13 x 9 con cuatro poses.** La revision agrega tres marcadores, sin modificar los 41 exports anteriores. El murcielago usa mascaras de pixeles editables, consumidas directamente por el mundo y la categoria Fauna de la biblioteca; no genera PNG duplicados. El hierro y el pilar comparten su original; nueve marcadores se recortan de dos hojas de origen. Dos originales de bosques sustituidos se mantienen solo como procedencia, fuera del catalogo activo.
+**49 PNG ambientales activos, 43 originales distintos y tres sprites de fauna editables.** La revision agrega cinco dibujos, sin modificar los 44 exports anteriores. Abeja de 9 x 6 y libelula de 13 x 7 tienen vuelo y reposo; el murcielago de 13 x 9 mantiene sus cuatro poses. Los tres se consumen directamente en el mundo y en la categoria Fauna de la biblioteca, sin PNG duplicados. El hierro y el pilar comparten su original; nueve marcadores se recortan de dos hojas de origen. Dos originales de bosques sustituidos se mantienen solo como procedencia, fuera del catalogo activo.
 
 ```text
 assets/reference-biome/
@@ -94,7 +95,7 @@ assets/reference-biome/
   source/
   native/
     architecture/    # Iglesia, oratorio, dos torres, ruina, hierro y pilar
-    gravestones/     # 22 monumentos y cruces, incluido el sarcofago
+    gravestones/     # 25 monumentos y cruces, incluido el sarcofago
     trees/           # Robles, fresno y cipreses
     backgrounds/     # Dos panoramicas activas
     vegetation/      # Helechos, flores y hongos
@@ -112,9 +113,12 @@ assets/reference-biome/
 | Bosque intermedio | 900 x 229 |
 | Hierro / pilar de la verja | 84 x 62 / 26 x 62 |
 | Murcielago, cuatro poses | 13 x 9 |
+| Abeja / libelula, vuelo y reposo | 9 x 6 / 13 x 7 |
+| Pizarra / estela / memorial bajo nuevos | 26 x 42 / 21 x 40 / 38 x 33 |
+| Violetas / hongos ocres nuevos | 16 x 19 / 22 x 20 |
 | Nueve cruces/lapidas de las filas | 19-30px de ancho, 26-56px de alto |
 
-El arte del escenario es raster generado con ImageGen y guiado por referencias, no dibujo manual pixel a pixel. Originales, recortes, dimensiones, anclas y hashes quedan registrados. Los exports usan vecino mas cercano y alpha binario. El murcielago nuevo es un sprite code-native definido en `assets/source/ambient/bat.js`, siguiendo el dibujado por pixeles del proyecto, sin generacion raster nueva. Miga conserva su paleta y clips aprobados.
+El arte del escenario es raster generado con ImageGen y guiado por referencias, no dibujo manual pixel a pixel. Originales, recortes, dimensiones, anclas, hashes y [prompts de los cinco dibujos](docs/WEST_GARDEN_PROMPTS.json) quedan registrados. Los exports usan vecino mas cercano y alpha binario. La fauna es code-native: `assets/source/ambient/bat.js` y `assets/source/ambient/pollinators.js`, siguiendo el dibujado por pixeles del proyecto. Miga conserva su paleta y clips aprobados.
 
 Los identificadores internos `chapel`, `mausoleum`, `recliningAngel` y `distantCitadel` se conservan por compatibilidad del catalogo. Sus archivos y etiquetas visibles corresponden a iglesia, oratorio, sarcofago y torre alada. Los PNG sustituidos se retiran del proyecto tras respaldo; no se borran archivos ajenos.
 
@@ -122,7 +126,7 @@ Los identificadores internos `chapel`, `mausoleum`, `recliningAngel` y `distantC
 
 ## Verificacion
 
-[La pasada actual](docs/CEMETERY_MOTION_QA.json) distingue pruebas del motor, build principal, secuencia de movimiento y renders offline nuevos de las tres zonas de dia/noche. Comprueba separacion constante entre cruces, tierra y verja; los 44 PNG ambientales y ambas bases de animacion de Miga permanecen intactos. La distribucion de la verja esta aprobada; QA interactivo de navegador y rendimiento siguen pendientes. La caminata candidata aun no forma parte del mundo principal; su [prueba anterior](docs/LOCOMOTION_WORLD_QA.json) no sustituye el QA de esta correccion.
+[La pasada actual](docs/WEST_GARDEN_QA.json) distingue pruebas del motor, build, secuencia de insectos y renders offline nuevos. Comprueba visibilidad de los cinco dibujos nuevos, inventario, alpha, estabilidad del plano, material y ciclos de fauna. Los 44 PNG ambientales previos y ambas bases de animacion de Miga permanecen intactos. La revision artistica esta aprobada; QA interactivo de navegador y rendimiento siguen pendientes. La caminata candidata aun no forma parte del mundo principal; su [prueba anterior](docs/LOCOMOTION_WORLD_QA.json) no sustituye el QA de esta correccion.
 
 La propuesta de suelo tiene resultados nuevos en [Revision del suelo](docs/SOIL_REVIEW.md) y [QA](docs/SOIL_QA.json). Se distinguen pruebas del motor, renders offline y comprobaciones reales en navegador: el acceso automatizado al navegador quedo bloqueado por su politica y no se presenta como aprobado. El visor HTTP esta disponible para revision manual. Las pruebas de navegador de [la revision anterior](docs/DEPTH_VEGETATION.md) y las imagenes anteriores se conservan como historia, no como evidencia de este cambio.
 
@@ -136,6 +140,7 @@ El service worker se registra solo en produccion. Requiere HTTPS o localhost y u
 
 ## Documentacion
 
+- [Jardin occidental y polinizadores, revision actual](docs/WEST_GARDEN.md)
 - [Cementerio fijo y verja localizada, propuesta actual](docs/CEMETERY_MOTION.md)
 - [Continuidad del bioma y biblioteca nueva](docs/CONTINUITY.md)
 - [Investigacion de caminata y base de personajes](docs/LOCOMOTION_RESEARCH.md)

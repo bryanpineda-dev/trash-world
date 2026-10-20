@@ -1,0 +1,68 @@
+{
+  "date": "2026-10-20T23:03:28.109Z",
+  "status": "environment-approved",
+  "tests": 317,
+  "assetsCheck": "passed",
+  "build": "passed",
+  "nativeAssets": 49,
+  "originals": 43,
+  "offline": {
+    "productionRenderer": true,
+    "cases": 90,
+    "snapshots": [
+      "west-garden-west-day.png",
+      "west-garden-west-night.png",
+      "west-garden-center-day.png",
+      "west-garden-center-night.png",
+      "west-garden-east-day.png",
+      "west-garden-east-night.png"
+    ],
+    "visibleAssetPixels": {
+      "slateShoulder": 833,
+      "lancetStone": 590,
+      "roseMemorial": 855,
+      "wildViolets": 141,
+      "honeyFungi": 244
+    },
+    "binaryAlphaPixels": 1180850,
+    "protectedFiles": 184,
+    "westernLife": {
+      "day": {
+        "fireflies": 0,
+        "butterflies": 2,
+        "leaves": 1,
+        "bats": 0,
+        "bees": 2,
+        "dragonflies": 1
+      },
+      "night": {
+        "fireflies": 12,
+        "butterflies": 0,
+        "leaves": 0,
+        "bats": 1,
+        "bees": 0,
+        "dragonflies": 0
+      }
+    },
+    "animation": {
+      "file": "west-garden-life.webp",
+      "durationMs": 6000,
+      "frames": 120,
+      "frameDelay": 50,
+      "crop": "450x110 per moment, native scale; ground and fauna detail",
+      "losslessFirstFrameVerified": true,
+      "notBrowserRecording": true
+    }
+  },
+  "browser": {
+    "status": "blocked-not-tested",
+    "controls": "pending",
+    "fps": "not-measured"
+  },
+  "stable": {
+    "deliveryRecord": "WEST_GARDEN_DELIVERY.json",
+    "verification": "Recorded after copy and destination checks."
+  },
+  "gitWrites": false,
+  "approval": "User approved the western graves, neutral soil, flora and ambient life for stable integration."
+}
