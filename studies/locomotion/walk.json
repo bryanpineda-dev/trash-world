@@ -1,0 +1,140 @@
+{
+  "id": "casual-walk-study-1",
+  "stride": 16,
+  "plants": [
+    {
+      "bone": "nearAnkle",
+      "start": 0,
+      "end": 0.5,
+      "y": 59
+    },
+    {
+      "bone": "farAnkle",
+      "start": 0.5,
+      "end": 1,
+      "y": 59
+    }
+  ],
+  "keys": [
+    {
+      "phase": 0,
+      "name": "contact-a",
+      "rise": 0,
+      "angles": {
+        "nearHip": -23.99278,
+        "nearKnee": 20.71175,
+        "farHip": 2.11772,
+        "farKnee": 20.71175,
+        "nearShoulder": 16,
+        "nearElbow": -12,
+        "farShoulder": -16,
+        "farElbow": -18
+      }
+    },
+    {
+      "phase": 0.125,
+      "name": "down-a",
+      "rise": 0.25,
+      "angles": {
+        "nearHip": -25.79397,
+        "nearKnee": 36.0942,
+        "farHip": -27.3536,
+        "farKnee": 78.57165,
+        "nearShoulder": 10,
+        "nearElbow": -14,
+        "farShoulder": -10,
+        "farElbow": -16
+      }
+    },
+    {
+      "phase": 0.25,
+      "name": "passing-a",
+      "rise": -0.25,
+      "angles": {
+        "nearHip": -14.32507,
+        "nearKnee": 27.11508,
+        "farHip": -49.41403,
+        "farKnee": 92.21788,
+        "nearShoulder": 0,
+        "nearElbow": -18,
+        "farShoulder": 0,
+        "farElbow": -15
+      }
+    },
+    {
+      "phase": 0.375,
+      "name": "up-a",
+      "rise": -0.25,
+      "angles": {
+        "nearHip": -6.05838,
+        "nearKnee": 23.81405,
+        "farHip": -46.27662,
+        "farKnee": 62.42894,
+        "nearShoulder": -10,
+        "nearElbow": -20,
+        "farShoulder": 10,
+        "farElbow": -12
+      }
+    },
+    {
+      "phase": 0.5,
+      "name": "contact-b",
+      "rise": 0,
+      "angles": {
+        "nearHip": 2.11772,
+        "nearKnee": 20.71175,
+        "farHip": -23.99278,
+        "farKnee": 20.71175,
+        "nearShoulder": -16,
+        "nearElbow": -18,
+        "farShoulder": 16,
+        "farElbow": -12
+      }
+    },
+    {
+      "phase": 0.625,
+      "name": "down-b",
+      "rise": 0.25,
+      "angles": {
+        "nearHip": -27.3536,
+        "nearKnee": 78.57165,
+        "farHip": -25.79397,
+        "farKnee": 36.0942,
+        "nearShoulder": -10,
+        "nearElbow": -16,
+        "farShoulder": 10,
+        "farElbow": -14
+      }
+    },
+    {
+      "phase": 0.75,
+      "name": "passing-b",
+      "rise": -0.25,
+      "angles": {
+        "nearHip": -49.41403,
+        "nearKnee": 92.21788,
+        "farHip": -14.32507,
+        "farKnee": 27.11508,
+        "nearShoulder": 0,
+        "nearElbow": -15,
+        "farShoulder": 0,
+        "farElbow": -18
+      }
+    },
+    {
+      "phase": 0.875,
+      "name": "up-b",
+      "rise": -0.25,
+      "angles": {
+        "nearHip": -46.27662,
+        "nearKnee": 62.42894,
+        "farHip": -6.05838,
+        "farKnee": 23.81405,
+        "nearShoulder": 10,
+        "nearElbow": -12,
+        "farShoulder": -10,
+        "farElbow": -20
+      }
+    }
+  ]
+}

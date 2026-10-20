@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-20",
+  "tool": "image_gen built-in",
+  "status": "environment-approved",
+  "assets": [
+    {
+      "id": "trefoilMemorial",
+      "label": "Memorial trilobulado",
+      "stem": "trefoil-memorial",
+      "height": 42,
+      "path": "C:/Users/lrodr/.codex/generated_images/01a1108f-6fcc-7610-a99f-01b751c1e0dd/exec-8c33568e-a3bb-44d4-9ee6-406f851f5efc.png",
+      "prompt": "Use case: stylized-concept. Asset type: ONE reusable grave marker sprite for the existing Trash World side-view pixel-art cemetery. Input image 1 (existing marker source sheet) and image 2 (current world) are STYLE AND MATERIAL REFERENCES ONLY, not edit targets. Create a NEW small gray slate headstone with a modest trefoil/clover-shaped upper silhouette, beveled stone rim, a shallow recessed Latin cross, and two tiny faded violet flowers set at the foot. One object only. A different silhouette from all existing markers. NO moss blanket, NO vines, NO platform, NO scene or other graves. Keep the stone front-facing, at the same very low side-view camera as the reference, with only a narrow RIGHT-facing stone thickness, and a level base. Hand-placed-looking pixel clusters, crisp stair-stepped edges, readable large forms at a future 28 x 40 native pixel export; subtle gray-teal stone shadows and pale warm edges, NOT black outlines, NOT a painted or blurry rendering. Daylight-neutral material, lit from upper left; no baked glow. Transparent background including outside and around the tiny flowers, no ground shadow, no text, no letters, no labels. Show the complete base and top with generous transparent padding. Match the reference world's material richness without its background.",
+      "savedSource": "C:/Users/lrodr/Documents/Codex/2026-10-06/ho/work/trash-world/assets/reference-biome/source/gravestones/trefoil-memorial.png",
+      "savedNative": "C:/Users/lrodr/Documents/Codex/2026-10-06/ho/work/trash-world/assets/reference-biome/native/gravestones/trefoil-memorial.png"
+    },
+    {
+      "id": "weatheredWoodCross",
+      "label": "Cruz de roble seco",
+      "stem": "weathered-wood-cross",
+      "height": 38,
+      "path": "C:/Users/lrodr/.codex/generated_images/01a1108f-6fcc-7610-a99f-01b751c1e0dd/exec-d9942af5-f858-4d08-a2fa-250b4ef481bd.png",
+      "prompt": "Use case: stylized-concept. Asset type: ONE new reusable small wooden grave-cross sprite for Trash World, matching the side-view pixel-art world in image 2 and the material/edge style of the stone-marker reference image 1. The references are style references ONLY. A rough narrow weathered dark-oak Latin cross with a slightly chipped short upper tip, a slender vertical stake, short sturdy horizontal arms, and a small iron nail at the joint. Distinct silhouette: straight squared timber ends, longer lower shaft, no rope bow and no rounded stone lobes. A very small cluster of rust-red and ivory dried flowers leans at its foot, with a little bare gravel. No green vines, no moss, no lush grass base. Upright front view at the reference world's very low side camera angle, with only a tiny right-hand thickness, level base. Crisp stair-step pixel clusters readable at a future 22 x 38 native pixel export. Muted warm timber, gray-teal shadows, warm pale edge highlights; no black cartoon outline and no smooth gradients. Single complete isolated object with transparent background and ample padding, no scene, no other crosses, no typography, no labels, no ground shadow, no halo or baked light.",
+      "savedSource": "C:/Users/lrodr/Documents/Codex/2026-10-06/ho/work/trash-world/assets/reference-biome/source/gravestones/weathered-wood-cross.png",
+      "savedNative": "C:/Users/lrodr/Documents/Codex/2026-10-06/ho/work/trash-world/assets/reference-biome/native/gravestones/weathered-wood-cross.png"
+    },
+    {
+      "id": "flowerTablet",
+      "label": "Lapida con flores secas",
+      "stem": "flower-tablet",
+      "height": 32,
+      "path": "C:/Users/lrodr/.codex/generated_images/01a1108f-6fcc-7610-a99f-01b751c1e0dd/exec-41e62dd4-a513-41a5-a556-5523f99818a9.png",
+      "prompt": "Use case: stylized-concept. Asset type: ONE new small headstone sprite for the existing side-view Trash World cemetery, not a full scene. Input 1 and 2 are style/material references only. Create a distinct, low rectangular gray-blue slate grave tablet with a shallow rounded arch at the top, two restrained beveled vertical borders and a tiny recessed Latin cross near the upper third, with a few worn illegible rectangular stone dents below it. Broader and lower than a cross, readable at a future native size of about 30 x 35 pixels. A tiny off-center cluster of ivory and faded pink flowers is set directly at the bottom left; dry brown leaf litter and gravel at its level base, NO moss, NO vines, NO lush grass pedestal. Front-facing with only narrow right-hand stone thickness, same low side camera angle as the current world. Crisp intentional pixel clusters, nuanced gray-teal shadows and pale warm left-edge highlights matching the reference, no black cartoon outlines, no gradients or blur. One complete isolated object on transparent background, generous transparent padding all sides, no labels, no words, no text, no scene, no other monuments, no ground shadow or glow.",
+      "savedSource": "C:/Users/lrodr/Documents/Codex/2026-10-06/ho/work/trash-world/assets/reference-biome/source/gravestones/flower-tablet.png",
+      "savedNative": "C:/Users/lrodr/Documents/Codex/2026-10-06/ho/work/trash-world/assets/reference-biome/native/gravestones/flower-tablet.png"
+    }
+  ]
+}

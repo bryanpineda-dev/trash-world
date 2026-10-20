@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-20T22:07:50.534Z",
+  "status": "environment-approved",
+  "tests": 302,
+  "assetsCheck": "passed",
+  "build": "passed",
+  "nativeAssets": 44,
+  "offline": {
+    "productionRenderer": true,
+    "cases": 48,
+    "motionSteps": 10080,
+    "backRowSpacingRangeBefore": 1,
+    "backRowSpacingRangeAfter": 0,
+    "allCemeterySpacingConstant": true,
+    "animation": {
+      "file": "cemetery-motion.webp",
+      "frames": 120,
+      "frameDelay": 50,
+      "durationMs": 6000,
+      "losslessFirstFrameVerified": true,
+      "notBrowserRecording": true
+    },
+    "snapshots": [
+      "cemetery-west-day.png",
+      "cemetery-west-night.png",
+      "cemetery-center-day.png",
+      "cemetery-center-night.png",
+      "cemetery-east-day.png",
+      "cemetery-east-night.png"
+    ],
+    "protectedFiles": 188
+  },
+  "browser": {
+    "status": "blocked-not-tested",
+    "fps": "not-measured",
+    "controls": "pending"
+  },
+  "stable": {
+    "deliveryRecord": "CEMETERY_MOTION_DELIVERY.json",
+    "verification": "Recorded separately after copy and destination checks."
+  },
+  "gitWrites": false,
+  "approval": {
+    "distribution": "approved by user",
+    "productionWalkReplacement": false,
+    "browserPerformance": "not certified"
+  }
+}

@@ -4,23 +4,25 @@ Un mundo de bolsillo habitado por Miga: una calaverita autonoma que explora, obs
 
 **Canvas 2D | Pixel art | Cementerio del bosque | Guardado local**
 
-![Iglesia con hiedra fina y planos lejanos coherentes.](docs/images/depth-center-night.png)
+![Cementerio con verja local delante de las cruces.](docs/images/cemetery-center-day.png)
 
-*Render offline nuevo del renderer principal, 2026-10-19, a las 22:00: canvas 712 x 401 ampliado exactamente 2x sin suavizado. No es una captura de navegador ni una medida de FPS.*
+*Revision aprobada, 2026-10-20, a las 12:00: render offline nativo de 712 x 401. No es captura de navegador ni medida de FPS.*
 
 ## Revision Actual
 
-Las dos torres lejanas comparten parallax 0.22, apoyo 71 unidades sobre el sendero y orden de capas detras del bosque intermedio. La torre derecha conserva su export nativo de 57 x 148; no se agranda ni se cambian los arboles para simular distancia.
+**Revision aprobada: cementerio estable y verja localizada.** Las doce piezas pequenas del cementerio y su tierra comparten un desplazamiento de camara, manteniendo las dos alturas de las filas. La verja se dibuja delante de ellas y solo ocupa dos tramos de hierro junto a la iglesia: 232px de extremo a extremo, mas el espesor de los dos apoyos exteriores, con una apertura central de 64px. Ya no se repite a lo largo del bioma. [Alcance y comparacion](docs/CEMETERY_MOTION.md), [QA de esta revision](docs/CEMETERY_MOTION_QA.json).
 
-La iglesia conserva encuadre, ancla y export de 173 x 256, con hiedra mas fina y discreta aprobada por el usuario. La cobertura verde medida baja aproximadamente un 49%; el roseton sigue frio de dia y ambar de noche. No cambia el zoom del mundo.
+La [entrega actual](docs/CEMETERY_MOTION_DELIVERY.json) registra la copia estable y sus comprobaciones. La [entrega anterior](docs/CONTINUITY_DELIVERY.json) retiro las cinco plantas inferiores y agrego tres marcadores unicos; se conserva como historial, no como evidencia de esta correccion.
 
-Se mantienen la fauna nocturna y las estrellas revisadas de la pasada anterior, junto con la biblioteca sin duplicados del estudio. [Detalle de los dos ajustes y QA](docs/DEPTH_VEGETATION.md).
+Miga conserva sus clips de produccion. La direccion anatomica del candidato esta aprobada para seguir afinandola, no como sustitucion final del personaje. El [laboratorio](studies/locomotion/index.html?view=world) compara ambas caminatas sobre el terreno real, con camara, sombras e iluminacion diurna/nocturna. Es una prueba opcional de desarrollo, no un motor completo ni una reconstruccion de todos los estados.
 
-Esta revision se prepara para aprobacion visual y commit. No equivale a una publicacion, etiqueta o release nuevos. Miga, su rig, animaciones, necesidades, controles, guardados y limites del mundo no cambian.
+![Antes a la izquierda y propuesta a la derecha durante el desplazamiento.](docs/images/cemetery-motion.webp)
 
-![Iglesia diurna con hiedra mas fina.](docs/images/depth-center-day.png)
+*Secuencia offline nueva de seis segundos, con Miga y la camara del renderer principal. Muestreo cada 50ms; no es una grabacion ni un benchmark de navegador. El salto del final reinicia la comparacion.*
 
-*Render offline nuevo a las 12:00, sin movimiento ambiental. No lee la partida ni demuestra rendimiento o interaccion en navegador.*
+[Alcance ambiental anterior](docs/CONTINUITY.md), [investigacion y plan de Miga](docs/LOCOMOTION_RESEARCH.md) y [QA anterior del visor en terreno](docs/LOCOMOTION_WORLD_QA.json). Quedan pendientes aprobacion de la caminata en contexto e integracion de la locomocion. El acceso automatizado al navegador sigue bloqueado.
+
+El suelo de tierra, piedra y raices, el sendero, las torres lejanas, la hiedra discreta y la fauna de las revisiones anteriores se conservan. Historia y procedencia en [Suelo](docs/SOIL_REVIEW.md) y [Torres e iglesia](docs/DEPTH_VEGETATION.md). No cambian IA, guardados, limites, velocidad del juego ni dependencias. La copia estable no equivale a un commit, etiqueta o publicacion nuevos.
 
 ## Empezar
 
@@ -45,6 +47,7 @@ npm run preview
 | `/` | Mundo autonomo, interfaz de cristal y guardado local |
 | `/biome-lab.html` | Zonas, hora, poses, camara, pausa y biblioteca por familias, sin tocar partidas |
 | `/asset-lab.html` | Rig de Miga y kit historico de objetos; no activa esos props en el mundo |
+| `/studies/locomotion/` | Comparacion articular candidata, solo desarrollo; no incluida en `dist/` |
 
 `dist/` es la aplicacion estatica compilada. Dependencias, builds, caches y configuraciones locales no se versionan.
 
@@ -58,11 +61,11 @@ Un recorrido continuo de 1680 unidades, desde -560 hasta 1120, con tres zonas:
 | Claro de Miga | Iglesia unica, nueve cruces, robles y monumentos del cementerio |
 | Patio del oratorio | Oratorio abierto, sarcofago, urna, cipreses, torre y fresno |
 
-![Patio del oratorio de noche.](docs/images/depth-east-night.png)
+![Patio del oratorio de noche en la propuesta actual.](docs/images/cemetery-east-night.png)
 
-*Render offline nuevo del renderer principal, ampliado exactamente 2x sin suavizado. No es una captura de navegador.*
+*Render offline nuevo del renderer principal, a resolucion nativa. No es una captura de navegador.*
 
-Los monumentos y arboles de encuadre se colocan una sola vez. El sendero y la verja son modulos estructurales reutilizables. Los tramos de hierro miden 84px, sin estirar barrotes; los pilares se colocan cada 252px, no en ambos extremos de cada tramo. Las dos panoramicas forestales conservan su parallax y todos los planos comparten el mismo origen de camara.
+Los monumentos y arboles de encuadre se colocan una sola vez. Solo el terreno se repite a lo largo del bioma. Los dos tramos locales de hierro conservan sus 84px nativos, sin estirar barrotes ni insertar muros intermedios. Las panoramicas forestales mantienen sus factores de parallax. La proyeccion de cada plano redondea una traslacion comun, no el desplazamiento de cada sprite por separado.
 
 El encuadre de escritorio se abre globalmente: a 1280 x 720 el canvas logico es 712 x 401. No se estira la iglesia ni se cambia el pixel del personaje. En un movil de 320 x 720 sigue siendo 288 x 648. Los panoramas extremadamente bajos conservan el limite de 2048px y el ajuste de encuadre de edificios para no cortar sus remates.
 
@@ -81,7 +84,7 @@ El encuadre de escritorio se abre globalmente: a 1280 x 720 el canvas logico es 
 
 ## Biblioteca De Assets
 
-**39 PNG ambientales activos, 33 originales distintos y un sprite de fauna de 13 x 9 con cuatro poses.** El murcielago usa mascaras de pixeles editables, consumidas directamente por el mundo y la categoria Fauna de la biblioteca; no genera PNG duplicados. El hierro y el pilar comparten su original; nueve marcadores se recortan de dos hojas de origen. Dos originales de bosques sustituidos se mantienen solo como procedencia, fuera del catalogo activo.
+**44 PNG ambientales activos, 38 originales distintos y un sprite de fauna de 13 x 9 con cuatro poses.** La revision agrega tres marcadores, sin modificar los 41 exports anteriores. El murcielago usa mascaras de pixeles editables, consumidas directamente por el mundo y la categoria Fauna de la biblioteca; no genera PNG duplicados. El hierro y el pilar comparten su original; nueve marcadores se recortan de dos hojas de origen. Dos originales de bosques sustituidos se mantienen solo como procedencia, fuera del catalogo activo.
 
 ```text
 assets/reference-biome/
@@ -91,11 +94,11 @@ assets/reference-biome/
   source/
   native/
     architecture/    # Iglesia, oratorio, dos torres, ruina, hierro y pilar
-    gravestones/     # 19 monumentos y cruces, incluido el sarcofago
+    gravestones/     # 22 monumentos y cruces, incluido el sarcofago
     trees/           # Robles, fresno y cipreses
     backgrounds/     # Dos panoramicas activas
     vegetation/      # Helechos, flores y hongos
-    terrain/         # Sendero
+    terrain/         # Sendero, tierra del cementerio y subsuelo
     sky/             # Luna
 ```
 
@@ -119,7 +122,9 @@ Los identificadores internos `chapel`, `mausoleum`, `recliningAngel` y `distantC
 
 ## Verificacion
 
-266 tests, `assets:check` y build aprobados en el sandbox; 24 renders de produccion offline en cuatro proporciones y tres zonas. Comprobacion real del visor y del mundo principal a 495 x 452, sin extrapolar a escritorio, FPS o Android. Detalle de esta revision en [Profundidad e hiedra](docs/DEPTH_VEGETATION.md), [Verificacion](docs/VERIFICATION.md) y el [historial ambiental](docs/ENVIRONMENT_POLISH.md). Se distinguen pruebas del motor, renders offline y capturas reales del navegador. Las imagenes de revisiones anteriores se conservan como historia, no como evidencia nueva.
+[La pasada actual](docs/CEMETERY_MOTION_QA.json) distingue pruebas del motor, build principal, secuencia de movimiento y renders offline nuevos de las tres zonas de dia/noche. Comprueba separacion constante entre cruces, tierra y verja; los 44 PNG ambientales y ambas bases de animacion de Miga permanecen intactos. La distribucion de la verja esta aprobada; QA interactivo de navegador y rendimiento siguen pendientes. La caminata candidata aun no forma parte del mundo principal; su [prueba anterior](docs/LOCOMOTION_WORLD_QA.json) no sustituye el QA de esta correccion.
+
+La propuesta de suelo tiene resultados nuevos en [Revision del suelo](docs/SOIL_REVIEW.md) y [QA](docs/SOIL_QA.json). Se distinguen pruebas del motor, renders offline y comprobaciones reales en navegador: el acceso automatizado al navegador quedo bloqueado por su politica y no se presenta como aprobado. El visor HTTP esta disponible para revision manual. Las pruebas de navegador de [la revision anterior](docs/DEPTH_VEGETATION.md) y las imagenes anteriores se conservan como historia, no como evidencia de este cambio.
 
 La perspectiva y el acabado artistico siguen abiertos a mejoras posteriores. No se han validado Android fisico, rendimiento/consumo ni desconexion real en esta pasada.
 
@@ -131,6 +136,10 @@ El service worker se registra solo en produccion. Requiere HTTPS o localhost y u
 
 ## Documentacion
 
+- [Cementerio fijo y verja localizada, propuesta actual](docs/CEMETERY_MOTION.md)
+- [Continuidad del bioma y biblioteca nueva](docs/CONTINUITY.md)
+- [Investigacion de caminata y base de personajes](docs/LOCOMOTION_RESEARCH.md)
+- [Muestra de suelo, comparacion y limites actuales](docs/SOIL_REVIEW.md)
 - [Profundidad de torres e hiedra de iglesia](docs/DEPTH_VEGETATION.md)
 - [Vida nocturna y limpieza anterior](docs/NIGHTLIFE.md)
 - [Revision ambiental actual y limites de QA](docs/ENVIRONMENT_POLISH.md)

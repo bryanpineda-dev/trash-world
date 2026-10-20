@@ -1,0 +1,76 @@
+{
+  "date": "2026-10-20T21:00:50.859Z",
+  "status": "historical-anatomy-base-approved-for-refinement",
+  "tests": 284,
+  "assetsCheck": "passed",
+  "build": "passed",
+  "studyBundle": "passed",
+  "offline": {
+    "productionRenderer": true,
+    "matrixCases": 84,
+    "protectedFiles": 169,
+    "markerVisibility": [
+      {
+        "id": "trefoilMemorial",
+        "hour": 12,
+        "visiblePixels": 732
+      },
+      {
+        "id": "trefoilMemorial",
+        "hour": 22,
+        "visiblePixels": 732
+      },
+      {
+        "id": "weatheredWoodCross",
+        "hour": 12,
+        "visiblePixels": 363
+      },
+      {
+        "id": "weatheredWoodCross",
+        "hour": 22,
+        "visiblePixels": 363
+      },
+      {
+        "id": "flowerTablet",
+        "hour": 12,
+        "visiblePixels": 861
+      },
+      {
+        "id": "flowerTablet",
+        "hour": 22,
+        "visiblePixels": 861
+      }
+    ],
+    "animationFrames": 96,
+    "animationFps": 25,
+    "animationSpeed": 16.666666666666668,
+    "browserFpsMeasured": false
+  },
+  "assets": 44,
+  "newMarkers": 3,
+  "removedUndergroundPlantPlacements": 5,
+  "existingChurchMarkers": 9,
+  "productionMigaUnchanged": true,
+  "newRig": "Study only; not integrated into production, not a completed character engine.",
+  "browser": "Browser automation remains blocked by URL policy; no alternate automation was used. Interactive browser and mobile QA pending.",
+  "stable": "See CONTINUITY_DELIVERY.json. The experimental character does not replace the production clips.",
+  "locomotionReviewedAt": "2026-10-20T21:06:53.987Z",
+  "studySources": {
+    "src/animation/JointRig.js": "f59fc5d3a8046f537f8bb3cc808688d469e7e481db3a5ee05a011c3e83accf8a",
+    "studies/locomotion/rig.json": "5309a3c392d4e055a86818046efe6a181628710e94b0f079624ecca644d3b2da",
+    "studies/locomotion/walk.json": "b414be977d7e53e85dfecabdf05e578760e80bd7e798066861d2f77b75e23704",
+    "studies/locomotion/skin.json": "cd4737f7522b7212c6694799cd7b7eaeed96ead4a5d879cc611b4db91ab50941",
+    "studies/locomotion/pixels.js": "2e3ae60bfdead6ad9765bdebf44aef4f0b0591a9a9ed69cf3ec06775012abf0a"
+  },
+  "encodedAnimation": {
+    "frames": 96,
+    "delayMs": 40,
+    "durationMs": 3840
+  },
+  "approval": {
+    "scenario": true,
+    "anatomyDirection": true,
+    "completeCharacterEngine": false
+  },
+  "currentQa": "LOCOMOTION_WORLD_QA.json"
+}

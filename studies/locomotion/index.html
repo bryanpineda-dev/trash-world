@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Miga | Locomocion</title></head>
+<body>
+  <main>
+    <header><h1>Miga <span>/ Locomoción</span></h1><a href="/biome-lab.html">Cementerio</a><a href="/asset-lab.html?clip=walk">Assets</a></header>
+    <div class="toolbar">
+      <button id="play" aria-label="Pausar" title="Pausar"><i data-lucide="pause"></i></button>
+      <button id="reset" aria-label="Reiniciar" title="Reiniciar"><i data-lucide="rotate-ccw"></i></button>
+      <button id="direction" aria-label="Cambiar dirección" title="Cambiar dirección"><i data-lucide="arrow-left-right"></i></button>
+      <label>Vista <select id="view"><option value="studio">Estudio</option><option value="world">Terreno</option></select></label>
+      <label>Luz <select id="hour"><option value="12">Día</option><option value="22">Noche</option></select></label>
+      <label>Velocidad <input id="speed" type="range" min="8" max="28" value="16"><output id="speed-value">16 px/s</output></label>
+      <label><input id="joints" type="checkbox">Articulaciones</label>
+      <label>Piel <select id="skin"><option value="original">Marfil</option><option value="cool">Ceniza</option></select></label>
+      <label>Escala <select id="zoom"><option value="2">2x</option><option value="3" selected>3x</option></select></label>
+    </div>
+    <section class="views" id="views">
+      <figure><figcaption>Actual <span>8 poses</span></figcaption><canvas id="before" width="320" height="192" aria-label="Caminata actual" role="img"></canvas></figure>
+      <figure><figcaption>Candidato <span>Rig articulado</span></figcaption><canvas id="after" width="320" height="192" aria-label="Caminata candidata" role="img"></canvas></figure>
+    </section>
+    <div class="timeline"><label for="phase">Ciclo</label><input id="phase" type="range" min="0" max="1000" value="0"><output id="phase-value">0%</output></div>
+    <footer><span id="contact">Apoyo cercano</span><span>Zancada 16 px</span><a href="/docs/LOCOMOTION_RESEARCH.md">Investigación</a></footer>
+  </main>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

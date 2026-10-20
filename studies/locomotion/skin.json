@@ -1,0 +1,17 @@
+{
+  "id":"miga-study",
+  "ink":{"outline":"k","light":"h","shade":"b"},
+  "patterns":{
+    "foot":["khbbkk.","khhhhhk","kkkkkkk"],
+    "hand":[".kkk.","khhbk","kbbsk",".kkk."]
+  },
+  "layers":[
+    {"type":"limb","chain":["farShoulder","farElbow","farWrist"],"remap":{"h":"b","b":"s"},"tip":{"pattern":"hand","offset":[-2,-1]}},
+    {"type":"limb","chain":["farHip","farKnee","farAnkle"],"remap":{"h":"b","b":"s"},"tip":{"pattern":"foot","offset":[-1,-1]}},
+    {"type":"limb","chain":["nearHip","nearKnee","nearAnkle"],"tip":{"pattern":"foot","offset":[-1,-1]}},
+    {"type":"attachment","bone":"pelvis","part":"pelvis","variant":"profile","offset":[-7,-4]},
+    {"type":"attachment","bone":"pelvis","part":"ribs","variant":"profile","offset":[-7,-20]},
+    {"type":"limb","chain":["nearShoulder","nearElbow","nearWrist"],"tip":{"pattern":"hand","offset":[-2,-1]}},
+    {"type":"attachment","bone":"pelvis","part":"skull","variant":"profile","offset":[-9,-37]}
+  ]
+}

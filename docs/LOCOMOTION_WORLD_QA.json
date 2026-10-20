@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-20T21:26:07.213Z",
+  "status": "scenario-approved-locomotion-world-preview-pending",
+  "tests": 294,
+  "assetsCheck": "passed",
+  "build": "passed",
+  "studyBundle": "passed",
+  "offline": {
+    "productionRenderer": true,
+    "cases": 108,
+    "outsideActorPixelDifferences": 0,
+    "protectedFiles": 169,
+    "snapshots": [
+      "miga-world-day.png",
+      "miga-world-night.png"
+    ],
+    "approvedAnatomyUnchanged": true,
+    "cameraAndContactSteps": 864,
+    "pixelComparisonCases": 108
+  },
+  "browser": {
+    "status": "blocked-not-tested",
+    "interactiveControls": "pending",
+    "desktopMobileLayout": "pending",
+    "fps": "not-measured"
+  },
+  "productionCharacterChanged": false,
+  "scope": "Approved environment; optional world-space locomotion preview only. No AI, save, production animation or dependency changes.",
+  "approval": {
+    "scenario": "approved",
+    "anatomyDirection": "approved for continued refinement",
+    "worldWalkIntegration": "pending"
+  }
+}

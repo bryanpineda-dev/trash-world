@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-19",
+  "status": "blocked-not-tested",
+  "origin": "http://127.0.0.1:5185",
+  "scope": "Current soil sandbox proposal only",
+  "reason": "The browser URL policy denied acquiring the existing error-page tab. No alternate browser, raw automation or policy bypass was attempted.",
+  "httpServer": "Startup helper confirmed HTTP 200 for the sandbox lab. This is not browser QA.",
+  "manualPreview": "http://127.0.0.1:5185/biome-lab.html?zone=clearing&hour=12&paused=1",
+  "screenshots": [],
+  "pending": ["Manual browser visual review", "FPS and memory", "Physical device", "Offline disconnect"]
+}

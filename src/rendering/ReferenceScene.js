@@ -1,5 +1,5 @@
 import { WORLD_LEFT, WORLD_RIGHT } from '../core/Config.js';
-import { lateralPlacements, panoramaPlacements, referencePosition, fitReferencePlacement, terrainSegments, cemeteryPlacements, fenceModules } from './ReferenceLayout.js';
+import { lateralPlacements, panoramaPlacements, referencePosition, fitReferencePlacement, terrainSegments, cemeteryPlacements, additionalGraves, fenceModules, soilLayers, soilTiles } from './ReferenceLayout.js';
 import { roseGlass, drawAltarCandles } from './ArchitectureLighting.js';
 import { drawAmbientLife } from './AmbientLife.js';
 import { sampleDaylight, daylightGrades, rgb, drawSkyStars, smoothstep } from './Daylight.js';
@@ -22,6 +22,7 @@ export const referencePlacements = [
   {id:'mushrooms',x:376,offset:0,depth:'near'},
   ...lateralPlacements,
   ...cemeteryPlacements,
+  ...additionalGraves,
 ];
 
 export function isChapelGlass(x,y,width,height,r,g,b) {
@@ -33,6 +34,7 @@ export function shadeReferencePixels(pixels,id,width,height,phase,depth='near') 
   if(id==='moon')return output;
   const grade=daylightGrades[phase]??daylightGrades[sampleDaylight(phase).from];
   const {factor,lift,air}=grade;
+  const burialShade=id==='earthFace'?.78:1;
   const soilRamp=[.65,1.03,.73];
   const haze=depth==='far'?.12:depth==='middle'?.025:depth==='landmark'?.16:depth==='distant'?.2:depth==='architecture'?.035:depth==='grove'?.06:0;
   const emission={NIGHT:1,DAWN:.25,DAY:0,GOLDEN:0,DUSK:.65}[phase]??sampleDaylight(phase).lamps;
@@ -51,7 +53,7 @@ export function shadeReferencePixels(pixels,id,width,height,phase,depth='near') 
     for(let c=0;c<3;c++) {
       const material=output[n+c]*(1-soil)+luma*soilRamp[c]*soil;
       const value=(material*factor[c]+lift[c])*(1-haze)+air[c]*haze;
-      output[n+c]=clamp(value<=210?value:210+(value-210)*.38);
+      output[n+c]=clamp((value<=210?value:210+(value-210)*.38)*burialShade);
     }
   }
   return output;
@@ -60,7 +62,9 @@ export function shadeReferencePixels(pixels,id,width,height,phase,depth='near') 
 export function candleGlowAt(seconds) {return .075+Math.sin(seconds*.83)*.025+Math.sin(seconds*1.73+.8)*.015;}
 
 export function drawWoodlandSoil(ctx,camera,lighting) {
-  ctx.fillStyle=rgb(lighting.floor);
+  const from=shadeReferencePixels([33,29,27,255],'earthFace',1,1,lighting.from);
+  const to=shadeReferencePixels([33,29,27,255],'earthFace',1,1,lighting.to);
+  ctx.fillStyle=rgb(Array.from(from.slice(0,3),(v,c)=>v+(to[c]-v)*lighting.blend));
   for(let x=0;x<camera.width;x+=4) {
     const worldX=x-camera.width/2+camera.pixelX*.5;
     const top=Math.round(camera.ground-57+Math.sin(worldX*.025)*4+Math.sin(worldX*.087)*2);
@@ -98,6 +102,13 @@ export function drawReferenceScene(ctx,camera,time,seconds,get) {
       if(light){ctx.save();ctx.globalAlpha=candleGlowAt(seconds)*lighting.lamps;draw('chapel-glass',point.x,point.y,placement.depth,scale);ctx.restore();}
     }
   };
+  const soil=id=>{
+    const layer=soilLayers.find(p=>p.id===id),asset=get(id,lighting.from,layer.depth);if(!asset)return;
+    for(const tile of soilTiles(camera,layer,asset)) {
+      if(tile.flipped){ctx.save();ctx.translate(tile.x+asset.size[0],0);ctx.scale(-1,1);draw(id,0,tile.y,layer.depth);ctx.restore();}
+      else draw(id,tile.x,tile.y,layer.depth);
+    }
+  };
   for(const placement of panoramaPlacements.filter(p=>p.depth==='far'))place(placement);
   const middleParallax=panoramaPlacements.find(p=>p.depth==='middle').parallax;
   for(const placement of referencePlacements.filter(p=>p.depth==='landmark'&&p.parallax<middleParallax))place(placement);
@@ -105,16 +116,16 @@ export function drawReferenceScene(ctx,camera,time,seconds,get) {
   for(const placement of panoramaPlacements.filter(p=>p.depth==='middle'))place(placement);
   drawAmbientLife(ctx,camera,lighting,seconds,'distant');
   for(const placement of referencePlacements.filter(p=>p.depth==='landmark'&&p.parallax>=middleParallax))place(placement);
-  // A planted understory joins the far woodland to the fence, with no opaque mist band.
-  for(let x=WORLD_LEFT-40;x<WORLD_RIGHT+60;x+=43) {
+  soil('cemeterySoil');
+  // Sparse plants leave the stone and leaf litter visible between the grave rows.
+  for(let x=WORLD_LEFT-40;x<WORLD_RIGHT+60;x+=97) {
     const point=referencePosition(camera,{x,offset:-4,parallax:.76});
-    draw('undergrowth',point.x,point.y,'grove',.43+(Math.abs(x)%5)*.025);
+    draw('undergrowth',point.x,point.y,'grove',.3+(Math.abs(x)%5)*.018);
   }
   for(const depth of ['distant','grove','architecture'])for(const placement of referencePlacements.filter(p=>p.depth===depth&&!p.row))place(placement);
-  for(const module of fenceModules(camera))draw(module.id,module.x,module.y,'architecture');
-  for(const placement of cemeteryPlacements.filter(p=>p.row==='back'))place(placement);
+  for(const placement of referencePlacements.filter(p=>p.row==='back'))place(placement);
   // Terrain establishes the same walkable y as the unchanged creature rig.
-  ctx.fillStyle=rgb(lighting.floor.map(v=>v*.65));ctx.fillRect(0,ground,width,height-ground);
+  soil('earthFace');
   const terrain=get('ground',lighting.from);
   if(terrain)for(const segment of terrainSegments(left,width,terrain.size[0])) {
     const x=Math.round(segment.x-left);
@@ -122,10 +133,9 @@ export function drawReferenceScene(ctx,camera,time,seconds,get) {
     else draw('ground',x,ground);
   }
   for(const [x,scale] of [[25,.5],[66,.55],[111,.46],[197,.54],[270,.49],[311,.57],[391,.5],[469,.53],[550,.48]])draw('undergrowth',x-left,ground+1,'near',scale);
-  for(const placement of cemeteryPlacements.filter(p=>p.row==='front'))place(placement);
+  for(const placement of referencePlacements.filter(p=>p.row==='front'))place(placement);
+  for(const module of fenceModules(camera))draw(module.id,module.x,module.y,'architecture');
   for(const placement of referencePlacements.filter(p=>p.depth==='near'&&!p.row))place(placement);
   for(const placement of referencePlacements.filter(p=>p.depth==='groundcover'))place(placement);
-  // A quieter layer below the path avoids a bare cut-out platform in tall viewports.
-  for(const x of [34,185,345,510])draw('undergrowth',x-left,Math.max(ground+76,height+12),'near',1.18);
   drawAmbientLife(ctx,camera,lighting,seconds,'near');
 }

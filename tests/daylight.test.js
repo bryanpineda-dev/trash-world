@@ -158,13 +158,13 @@ test('ambient brightness has no discontinuities at the old phase boundaries',()=
   }
 });
 
-test('woodland soil closes every lower sky gap with an irregular chromatic ground line',()=>{
+test('woodland fallback closes lower sky gaps with neutral earth instead of a green slab',()=>{
   const calls=[],ctx={fillRect(x,y,w,h){calls.push({x,y,w,h});}};
   drawWoodlandSoil(ctx,camera,sampleDaylight(12));
   assert.equal(calls.reduce((sum,c)=>sum+c.w,0),camera.width);
   assert.ok(new Set(calls.map(c=>c.y)).size>5);
   for(const c of calls){assert.ok(c.y<camera.ground-48);assert.equal(c.y+c.h,camera.height);}
-  assert.equal(ctx.fillStyle,'rgb(26,56,34)');
+  assert.equal(ctx.fillStyle,'rgb(37,36,29)');
 });
 
 test('sunlit stone retains highlight differences instead of clipping to luminous white',()=>{

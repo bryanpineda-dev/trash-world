@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFileSync,readdirSync,existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { referencePlacements } from '../src/rendering/ReferenceScene.js';
-import { panoramaPlacements } from '../src/rendering/ReferenceLayout.js';
+import { panoramaPlacements,soilLayers } from '../src/rendering/ReferenceLayout.js';
 
 const root=new URL('../',import.meta.url);
 const manifest=JSON.parse(readFileSync(new URL('assets/reference-biome/manifest.json',root)));
@@ -17,6 +17,7 @@ function files(directory,prefix='') {
 test('every active reference asset has a world use and every world use has an active asset',()=>{
   const used=new Set([...referencePlacements,...panoramaPlacements].map(p=>p.id));
   for(const id of ['ground','fence','fencePillar','moon'])used.add(id);
+  for(const layer of soilLayers)used.add(layer.id);
   assert.deepEqual(manifest.sprites.map(a=>a.id).sort(),[...used].sort());
 });
 

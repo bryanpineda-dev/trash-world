@@ -7,16 +7,15 @@ const base=new URL('../assets/reference-biome/',import.meta.url);
 const manifest=JSON.parse(readFileSync(new URL('manifest.json',base)));
 const item=id=>manifest.sprites.find(a=>a.id===id);
 
-test('iron modules meet at native scale and stone supports occur only once per three spans',()=>{
+test('two native iron spans frame a local open entrance with only two outer stone supports',()=>{
   assert.equal(cemeteryFence.railWidth,item('fence').size[0]);
-  assert.equal(cemeteryFence.pillarSpacing,3*cemeteryFence.railWidth);
   for(const width of [288,712,1680])for(const x of [-528,-280,0,280,840,1088]){
     const camera=new Camera(x);camera.resize(width,401);
     const modules=fenceModules(camera),rails=modules.filter(m=>m.id==='fence'),posts=modules.filter(m=>m.id==='fencePillar');
-    assert.ok(rails[0].x-42<=0);assert.ok(rails.at(-1).x+42>=width);
-    for(let i=1;i<rails.length;i++)assert.equal(rails[i].x-rails[i-1].x,84);
-    for(let i=1;i<posts.length;i++)assert.equal(posts[i].x-posts[i-1].x,252);
-    assert.ok(modules.every(m=>Number.isInteger(m.x)&&m.y===camera.ground-30));
+    assert.equal(rails.length,2);assert.equal(posts.length,2);
+    assert.equal(rails[1].x-rails[0].x,84+cemeteryFence.gap);
+    assert.equal(posts[0].x,rails[0].x-42);assert.equal(posts[1].x,rails[1].x+42);
+    assert.ok(modules.every(m=>Number.isInteger(m.x)&&m.y===camera.ground+cemeteryFence.offset));
   }
 });
 

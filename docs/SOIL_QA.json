@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-19T23:06:48.812Z",
+  "status": "visually-approved",
+  "tests": 273,
+  "assetsCheck": "passed",
+  "build": "passed",
+  "offline": {
+    "productionRenderer": true,
+    "matrixCases": 60,
+    "comparison": "Fresh before/after builds from the archived approved source and current sandbox.",
+    "materialPixels": 1350630,
+    "oldGreenPixels": 0,
+    "protectedFiles": 165
+  },
+  "assets": 41,
+  "newAssets": [
+    "cemeterySoil",
+    "earthFace"
+  ],
+  "newCrosses": 0,
+  "browser": "Recorded separately in SOIL_BROWSER.json; offline renders are not browser captures or FPS evidence.",
+  "stable": "See SOIL_DELIVERY.json for the verified copy and destination checks."
+}

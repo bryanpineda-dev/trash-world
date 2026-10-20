@@ -1,9 +1,9 @@
 {
-  "reviewDate": "2026-10-19",
-  "kind": "depth-and-church-vegetation",
-  "assets": 39,
-  "world": 39,
-  "originals": 33,
+  "reviewDate": "2026-10-20",
+  "kind": "continuity-approved",
+  "assets": 44,
+  "world": 44,
+  "originals": 38,
   "libraryOnly": [],
   "retiredSourceOnly": [
     {
@@ -1146,6 +1146,161 @@
       "provenance": "Lossless native crop of the original fence; stone support placed independently from iron spans.",
       "usage": "world",
       "bytes": 3698
+    },
+    {
+      "id": "cemeterySoil",
+      "label": "Tierra y hojarasca del cementerio",
+      "family": "terrain",
+      "file": "native/terrain/cemetery-soil.png",
+      "source": "source/terrain/cemetery-soil.png",
+      "size": [
+        560,
+        74
+      ],
+      "anchor": [
+        0,
+        74
+      ],
+      "sourceRect": {
+        "left": 0,
+        "top": 310,
+        "width": 2126,
+        "height": 280
+      },
+      "sourceSize": [
+        2126,
+        740
+      ],
+      "generator": "image_gen built-in",
+      "provenance": "Companion receding soil surface; export selects the upper 280 source rows of the visible bed. Approved path unchanged. Sandbox proposal, see docs/SOIL_REVIEW.md.",
+      "sourceSha256": "1f8cfc7203a5595726a9c11917bc23ad6ec7a32c4595c15b5e8f4f01fa9cb0f5",
+      "sha256": "0b47318750c0c9059e9384ba601db09ada54f49f7dc170a028838bd0ae0002af",
+      "usage": "world",
+      "bytes": 80291
+    },
+    {
+      "id": "earthFace",
+      "label": "Tierra, roca y raices bajo el sendero",
+      "family": "terrain",
+      "file": "native/terrain/earth-face.png",
+      "source": "source/terrain/earth-face.png",
+      "size": [
+        560,
+        195
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "sourceRect": {
+        "left": 0,
+        "top": 0,
+        "width": 2126,
+        "height": 740
+      },
+      "sourceSize": [
+        2126,
+        740
+      ],
+      "generator": "image_gen built-in",
+      "provenance": "Companion soil layer derived from approved path material; original path unchanged. Sandbox proposal, see docs/SOIL_REVIEW.md.",
+      "sourceSha256": "a7db8f3419024aa49d43178044dad094b63e31278a2157698c32454fa74cc64f",
+      "sha256": "19f4e865f5b2e044ec8ebc26bc62ca16625bfb99158edc039ae4c3035254b29a",
+      "usage": "world",
+      "bytes": 185919
+    },
+    {
+      "id": "trefoilMemorial",
+      "label": "Memorial trilobulado",
+      "family": "gravestones",
+      "source": "source/gravestones/trefoil-memorial.png",
+      "file": "native/gravestones/trefoil-memorial.png",
+      "size": [
+        29,
+        42
+      ],
+      "anchor": [
+        14,
+        42
+      ],
+      "sourceRect": {
+        "left": 410,
+        "top": 275,
+        "width": 530,
+        "height": 764
+      },
+      "sourceSize": [
+        1346,
+        1168
+      ],
+      "generator": "image_gen built-in",
+      "provenance": "Continuity study 2026-10-20; see docs/CONTINUITY_PROMPTS.json.",
+      "sourceSha256": "226c272b318be698f89394f24b26ac9f450b5404123c2e66f4cec8db7adb22fe",
+      "sha256": "636098425474efa6ced54fdcb66e490ebe6ff85f8b3b172b68eb08f0fdd72571",
+      "usage": "world",
+      "bytes": 2716
+    },
+    {
+      "id": "weatheredWoodCross",
+      "label": "Cruz de roble seco",
+      "family": "gravestones",
+      "source": "source/gravestones/weathered-wood-cross.png",
+      "file": "native/gravestones/weathered-wood-cross.png",
+      "size": [
+        23,
+        38
+      ],
+      "anchor": [
+        11,
+        38
+      ],
+      "sourceRect": {
+        "left": 379,
+        "top": 181,
+        "width": 544,
+        "height": 917
+      },
+      "sourceSize": [
+        1299,
+        1211
+      ],
+      "generator": "image_gen built-in",
+      "provenance": "Continuity study 2026-10-20; see docs/CONTINUITY_PROMPTS.json.",
+      "sourceSha256": "ddc6b7036cd1b4dd06b1ea6cc509e481adf9a5090bf7379a582d30a169b0bf50",
+      "sha256": "580157e860c3a3d8e271e61dc41ae751d6ae57d94e625057099f6150f2d82f20",
+      "usage": "world",
+      "bytes": 1574
+    },
+    {
+      "id": "flowerTablet",
+      "label": "Lapida con flores secas",
+      "family": "gravestones",
+      "source": "source/gravestones/flower-tablet.png",
+      "file": "native/gravestones/flower-tablet.png",
+      "size": [
+        40,
+        32
+      ],
+      "anchor": [
+        20,
+        32
+      ],
+      "sourceRect": {
+        "left": 346,
+        "top": 479,
+        "width": 685,
+        "height": 546
+      },
+      "sourceSize": [
+        1374,
+        1145
+      ],
+      "generator": "image_gen built-in",
+      "provenance": "Continuity study 2026-10-20; see docs/CONTINUITY_PROMPTS.json.",
+      "sourceSha256": "1850474bb61ac38c6d21a9741f86646866d9c039ffba39dc69034e67338fa11d",
+      "sha256": "5096992bc143649fab6e895eccee11ea21a38ef7f65727a074b0891b1fdb74dc",
+      "usage": "world",
+      "bytes": 3092
     }
   ]
 }

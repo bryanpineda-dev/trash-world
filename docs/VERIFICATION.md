@@ -1,5 +1,34 @@
 # Verificacion de V0.1
 
+## Cementerio Y Verja Local, 2026-10-20
+
+- Revision aprobada por el usuario para integracion. Cruces, marcadores adicionales, tierra y verja comparten parallax 0.66; las dos alturas de las filas se conservan. Las anclas se recolocan para mantener aproximadamente la composicion central anterior.
+- La traslacion de cada plano se redondea una sola vez desde la camara continua. Se elimina el redondeo por sprite, sin cambiar el seguimiento de camara, zoom, Miga, animaciones, guardados o dependencias.
+- Dos tramos de hierro nativo con centro abierto sustituyen la repeticion infinita. Ambos se dibujan despues de las dos filas y antes de los monumentos cercanos; dos pilares exteriores, sin muros intermedios.
+- [Resultados nuevos](CEMETERY_MOTION_QA.json), [alcance y limites](CEMETERY_MOTION.md). Renders `cemetery-` y secuencia WebP nuevos, calculados con el renderer principal anterior y candidato; no son capturas, FPS ni pruebas de controles de navegador.
+- Carpeta estable respaldada y cotejada contra su base antes de copiar; [entrega y comprobaciones en destino](CEMETERY_MOTION_DELIVERY.json). QA interactivo y rendimiento pendientes. Sin staging, commit, etiquetas ni push.
+
+## Escenario Aprobado Y Prueba En Terreno, 2026-10-20
+
+- El usuario aprueba el escenario y la direccion anatomica para seguir afinandola. La entrega estable se registra en [CONTINUITY_DELIVERY.json](CONTINUITY_DELIVERY.json); la caminata activa no cambia.
+- El visor opcional usa el renderer real de ambos lados, cache nativo por actor, sombra e hitbox derivadas del mismo frame y desplazamiento acumulado real. No lee partidas ni ejecuta IA.
+- [QA nuevo](LOCOMOTION_WORLD_QA.json): pruebas completas, ambos builds y renders offline nuevos `miga-world-`. El dibujado articular se extrae a un modulo compartido sin cambiar su logica ni la anatomia aprobada.
+- QA interactivo del navegador y aprobacion visual en contexto pendientes. El giro de la prueba no es una animacion final. Sin staging, commit, etiquetas ni push.
+
+## Continuidad Y Locomocion Candidata, 2026-10-20
+
+- Solo sandbox: se retiran cinco colocaciones bajo el sendero y se agregan tres marcadores unicos. Matorrales de superficie, nueve cruces de iglesia, suelo aprobado, edificios y arboles intactos.
+- Rig de locomocion separado de produccion: cadera como raiz, cadenas articulares, piel por capas y fase por distancia. La primera muestra demasiado delgada/flexionada se descarta; la candidata no sustituye aun clips, hitboxes o contactos activos.
+- [Investigacion y limites](LOCOMOTION_RESEARCH.md), [alcance ambiental](CONTINUITY.md) y [QA nuevo](CONTINUITY_QA.json). Medios `continuity-` y `miga-joint-` nuevos; renders offline, no capturas ni FPS de navegador. Compilacion separada del laboratorio.
+- Aprobacion artistica, QA interactivo y entrega estable pendientes. Sin staging, commit, etiquetas ni push.
+
+## Revision De Suelo, 2026-10-19
+
+- Revision aprobada visualmente por el usuario para copia estable. Dos materiales nuevos sustituyen rellenos verdes; cinco grupos pequenos bajo el sendero abarcan las tres zonas. Sin cruces nuevas ni cambios en el sendero aprobado, Miga, edificios, arboles, escalas o reglas.
+- Medios `soil-` nuevos, compilando el renderer aprobado archivado y el renderer actual con las mismas condiciones. Son renders offline; no capturas de navegador ni benchmarks.
+- [Alcance y referencias](SOIL_REVIEW.md), [resultados nuevos](SOIL_QA.json) y [limite de navegador](SOIL_BROWSER.json). Las pruebas del navegador anteriores no se reutilizan como evidencia actual.
+- [Entrega estable, hashes y comprobaciones en destino](SOIL_DELIVERY.json). Sin staging, commit, etiqueta ni push.
+
 ## Profundidad E Hiedra, 2026-10-19
 
 - Las dos torres comparten parallax 0.22, apoyo -71 y plano `landmark` detras del bosque intermedio. La torre oriental no cambia de dibujo ni de escala nativa.

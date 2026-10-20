@@ -8,15 +8,15 @@ import { WORLD_OBJECTS, RETIRED_OBJECT_IDS, World } from '../src/world/World.js'
 import { normalizeSave, newSave } from '../src/persistence/SaveSchema.js';
 import { Creature } from '../src/creature/Creature.js';
 import { CreatureAI } from '../src/creature/CreatureAI.js';
-import { panoramaPlacements, cemeteryPlacements, fitReferencePlacement } from '../src/rendering/ReferenceLayout.js';
+import { panoramaPlacements, cemeteryPlacements, additionalGraves, fitReferencePlacement } from '../src/rendering/ReferenceLayout.js';
 
 const root=new URL('../assets/reference-biome/',import.meta.url);
 const manifest=JSON.parse(readFileSync(new URL('manifest.json',root)));
 const ids=manifest.sprites.map(s=>s.id);
 const sha=bytes=>createHash('sha256').update(bytes).digest('hex');
 
-test('reference library has thirty-nine active assets with intact source originals and native dimensions',()=>{
-  assert.equal(ids.length,39);assert.equal(new Set(ids).size,39);
+test('reference library has forty-four active assets with intact source originals and native dimensions',()=>{
+  assert.equal(ids.length,44);assert.equal(new Set(ids).size,44);
   assert.deepEqual(manifest.interactiveObjects,[]);
   for(const item of manifest.sprites) {
     assert.match(item.file,/^native\/[a-z-]+\/[a-z0-9-]+\.png$/);
@@ -29,10 +29,10 @@ test('reference library has thirty-nine active assets with intact source origina
   }
 });
 
-test('the nineteen grave silhouettes are distinct assets, not recolors of a single drawing',()=>{
+test('the twenty-two grave silhouettes are distinct assets, not recolors of a single drawing',()=>{
   const graves=manifest.sprites.filter(s=>s.family==='gravestones');
-  assert.deepEqual(graves.map(s=>s.id),['gabledGrave','roundGrave','ringCross','prayingAngel','recliningAngel','brokenCross','roseGrave','graniteObelisk','flowerLedger','urnMemorial',...cemeteryPlacements.map(p=>p.id)]);
-  assert.equal(new Set(graves.map(s=>s.sha256)).size,19);
+  assert.deepEqual(graves.map(s=>s.id),['gabledGrave','roundGrave','ringCross','prayingAngel','recliningAngel','brokenCross','roseGrave','graniteObelisk','flowerLedger','urnMemorial',...cemeteryPlacements.map(p=>p.id),...additionalGraves.map(p=>p.id)]);
+  assert.equal(new Set(graves.map(s=>s.sha256)).size,22);
 });
 
 test('the walking anchor uses the stone surface instead of the transparent fringe above it',()=>{

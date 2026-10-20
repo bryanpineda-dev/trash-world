@@ -1,0 +1,20 @@
+{
+  "id": "pixel-biped-study-1",
+  "size": [64,64],
+  "anchor": [32,61],
+  "bones": [
+    {"id":"pelvis","parent":null,"at":[33,41.75]},
+    {"id":"farHip","parent":"pelvis","at":[-0.5,0]},
+    {"id":"farKnee","parent":"farHip","at":[0,8.5]},
+    {"id":"farAnkle","parent":"farKnee","at":[0,9.5]},
+    {"id":"nearHip","parent":"pelvis","at":[0.5,0]},
+    {"id":"nearKnee","parent":"nearHip","at":[0,8.5]},
+    {"id":"nearAnkle","parent":"nearKnee","at":[0,9.5]},
+    {"id":"farShoulder","parent":"pelvis","at":[-1,-16]},
+    {"id":"farElbow","parent":"farShoulder","at":[0,8.5]},
+    {"id":"farWrist","parent":"farElbow","at":[0,8]},
+    {"id":"nearShoulder","parent":"pelvis","at":[-2.5,-16]},
+    {"id":"nearElbow","parent":"nearShoulder","at":[0,8.5]},
+    {"id":"nearWrist","parent":"nearElbow","at":[0,8]}
+  ]
+}

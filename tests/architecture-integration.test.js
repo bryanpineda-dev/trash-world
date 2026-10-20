@@ -19,15 +19,16 @@ test('the main catalog consumes the selected architecture exports without runtim
   for(const path of ['native/architecture/chapel.png','native/architecture/mausoleum.png','native/gravestones/reclining-angel.png'])assert.ok(!existsSync(new URL('assets/reference-biome/'+path,root)));
 });
 
-test('nine individual markers are used once, with two depths between church and near monuments',()=>{
+test('nine individual markers retain two ground rows on one rigid plane behind the local fence',()=>{
   assert.equal(cemeteryPlacements.length,9);
   const church=referencePlacements.find(p=>p.id==='chapel');
   assert.equal(church.parallax,.48);assert.ok(cemeteryFence.parallax>church.parallax);
   for(const p of cemeteryPlacements) {
     assert.equal(referencePlacements.filter(q=>q.id===p.id).length,1);
     assert.equal(items.get(p.id).sha256,study.graveyard.find(a=>a.id===p.id).sha256);
-    assert.ok(p.parallax>cemeteryFence.parallax&&p.parallax<1);
+    assert.equal(p.parallax,cemeteryFence.parallax);assert.ok(p.parallax<1);
     assert.ok(p.offset>church.offset&&p.offset<0);
+    assert.ok(p.offset<cemeteryFence.offset);
   }
 });
 
@@ -47,13 +48,14 @@ test('rose mask excludes the warm door while altar metadata matches the three in
   assert.equal(new Set(altarWicks.map((_,i)=>candleState(1,i).alpha)).size,3);
 });
 
-test('main scene orders architecture, fence, rear graves, path, front graves and near objects coherently',()=>{
+test('main scene places both cemetery rows behind the local fence and near monuments in front',()=>{
   const camera=new Camera(280);camera.resize(1680,401);const calls=[];
   const ctx={createLinearGradient:()=>({addColorStop(){}}),createRadialGradient:()=>({addColorStop(){}}),fillRect(){},save(){},restore(){},translate(){},scale(){},drawImage(s){calls.push(s.id);}};
   drawReferenceScene(ctx,camera,22,1,id=>{const a=items.get(id.replace('-glass',''));return a?{...a,surface:{id}}:null;});
   const at=id=>calls.indexOf(id);
-  assert.ok(at('chapel')<at('fence'));assert.ok(at('fence')<at('crosses-back-1'));
+  assert.ok(at('chapel')<at('crosses-back-1'));assert.ok(at('crosses-back-1')<at('fence'));
   assert.ok(at('crosses-back-1')<at('ground'));assert.ok(at('ground')<at('crosses-front-1'));
   assert.ok(at('crosses-front-1')<at('gabledGrave'));assert.ok(at('ground')<at('mausoleum'));
+  assert.ok(at('crosses-front-1')<at('fence'));
   assert.ok(at('fence')<at('mausoleum'));
 });
